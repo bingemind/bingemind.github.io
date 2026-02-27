@@ -6,6 +6,11 @@
 <title>Bingemind — Your Business on Autopilot</title>
 <meta name="description" content="Bingemind — AI automation agency for local businesses. We build custom WhatsApp AI systems, review collection, appointment bots and automation workflows. Done for you in 3–5 days."/>
 <meta property="og:description" content="Custom AI automation for local businesses. Done for you in 3–5 days."/>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png"/>
+<link rel="shortcut icon" href="favicon_io/favicon.ico"/>
+<link rel="manifest" href="favicon_io/site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -124,7 +129,9 @@ body::before{
 .nav-logo{
   font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;
   color:var(--white);letter-spacing:-.01em;flex-shrink:0;
+  display:flex;align-items:center;gap:8px;
 }
+.nav-logo-img{height:30px;width:30px;border-radius:6px;object-fit:contain;}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{
@@ -812,7 +819,7 @@ footer{
 ═══════════════════════════════════════════ -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#" class="nav-logo">Binge<span>mind</span></a>
+    <a href="#" class="nav-logo"><img src="favicon_io/android-chrome-192x192.png" alt="Bingemind logo" class="nav-logo-img"/>Binge<span>mind</span></a>
 
     <ul class="nav-links">
       <li><a href="#services" data-i18n="nav_services">Services</a></li>
