@@ -494,48 +494,74 @@ body::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--gold-glow),transparent);
 }
-.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.spot-block{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:56px 0}
+.spot-block-2{background:rgba(255,255,255,.02);border-radius:20px;padding:56px 40px;margin:0 -40px}
+.spot-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}
+.spot-badge{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-lt);border:1px solid rgba(26,86,219,.4);background:rgba(26,86,219,.08);border-radius:20px;padding:4px 12px;margin-bottom:16px}
+.spot-badge-gold{color:var(--gold);border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.08)}
+.spot-block-title{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;line-height:1.15;margin-bottom:14px}
+.spot-block-desc{font-size:1rem;line-height:1.8;color:var(--gray);max-width:480px}
+.spot-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.spot-pill{font-size:.78rem;font-weight:600;padding:5px 14px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);color:var(--white)}
+.spot-block-2 .flow{margin-top:0}
 
-/* Flow diagram */
+/* Flow diagram — vertical */
 .flow{margin-top:36px}
-.flow-row{
-  display:flex;align-items:center;gap:0;
-  margin-bottom:12px;
+.flow-vcard{
+  border-radius:16px;padding:16px 20px;
+  font-size:.88rem;font-weight:600;color:var(--white);
+  display:flex;align-items:center;gap:12px;
+  width:100%;box-sizing:border-box;
 }
-.flow-box{
-  background:var(--surface2);border:1px solid var(--border);
-  border-radius:10px;padding:12px 18px;
-  font-size:.82rem;font-weight:600;color:var(--white);
-  white-space:nowrap;
-}
-.flow-box.trigger{
-  background:rgba(26,86,219,.1);border-color:rgba(26,86,219,.3);
+.flow-vcard.trigger{
+  background:rgba(26,86,219,.1);border:1.5px solid rgba(26,86,219,.45);
   color:var(--blue-lt);
 }
-.flow-box.good{
-  background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.3);
-  color:var(--wa);
+.flow-vcard.neutral{
+  background:var(--surface2);border:1.5px solid var(--border);color:var(--white);
 }
-.flow-box.bad{
-  background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.3);
-  color:var(--gold);
+.flow-vcard.good{
+  background:rgba(34,197,94,.08);border:1.5px solid #22c55e;color:#4ade80;
 }
-.flow-arrow{
-  flex:1;height:1px;background:var(--border);position:relative;margin:0 8px;
-  min-width:20px;
+.flow-vcard.bad{
+  background:rgba(245,158,11,.08);border:1.5px solid #F59E0B;color:#fbbf24;
 }
-.flow-arrow::after{
-  content:'▶';position:absolute;right:-6px;top:50%;transform:translateY(-50%);
-  font-size:.5rem;color:var(--gray-dk);
+.flow-vcard-icon{font-size:1.15rem;line-height:1;flex-shrink:0}
+.flow-card-title{font-size:.88rem;font-weight:700;line-height:1.2}
+.flow-card-sub{font-size:.78rem;font-weight:500;opacity:.85;margin-top:3px}
+.flow-vconnect{display:flex;justify-content:center;padding:2px 0}
+.flow-vline{
+  width:2px;height:30px;
+  background:repeating-linear-gradient(to bottom,
+    rgba(99,115,191,.5) 0,rgba(99,115,191,.5) 4px,
+    transparent 4px,transparent 8px);
 }
-.flow-split{
-  display:flex;flex-direction:column;gap:10px;margin-left:8px;
+.flow-ybranch{display:flex;height:40px;position:relative}
+.flow-ybranch::before{
+  content:'';position:absolute;left:calc(50% - 1px);top:0;
+  height:50%;width:2px;
+  background:repeating-linear-gradient(to bottom,
+    rgba(99,115,191,.5) 0,rgba(99,115,191,.5) 4px,
+    transparent 4px,transparent 8px);
 }
+.flow-ybranch::after{
+  content:'';position:absolute;left:25%;right:25%;top:calc(50% - 1px);
+  height:2px;
+  background:repeating-linear-gradient(to right,
+    rgba(99,115,191,.5) 0,rgba(99,115,191,.5) 4px,
+    transparent 4px,transparent 8px);
+}
+.flow-arm{flex:1;position:relative}
+.flow-arm::after{
+  content:'';position:absolute;left:calc(50% - 1px);top:50%;height:50%;width:2px;
+  background:repeating-linear-gradient(to bottom,
+    rgba(99,115,191,.5) 0,rgba(99,115,191,.5) 4px,
+    transparent 4px,transparent 8px);
+}
+.flow-split-row{display:flex;gap:12px}
 .flow-note{
-  font-size:.76rem;color:var(--gray-dk);margin-top:6px;
-  font-style:italic;padding:8px 12px;
-  background:rgba(255,255,255,.03);border-radius:6px;
-  border-left:2px solid var(--border);
+  font-size:.76rem;color:var(--gray-dk);margin-top:14px;
+  font-style:italic;text-align:center;
 }
 
 /* Survox phone (right side) */
@@ -685,7 +711,7 @@ body::before{
   display:flex;gap:18px;align-items:flex-start;
   transition:all var(--t4);
 }
-.founder:hover{border-color:rgba(26,86,219,.3);transform:translateX(6px)}
+.founder:hover{border-color:#0077B5;transform:translateX(6px)}
 .founder-av{
   width:52px;height:52px;border-radius:14px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
@@ -704,6 +730,13 @@ body::before{
   background:rgba(255,255,255,.05);border:1px solid var(--border);
   color:var(--gray);padding:3px 10px;border-radius:6px;
   font-size:.72rem;font-weight:500;
+}
+a.founder{text-decoration:none;cursor:pointer;}
+.li-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#0077B5;color:#fff;font-weight:700;font-size:.6rem;
+  width:16px;height:16px;border-radius:3px;margin-left:8px;
+  vertical-align:middle;flex-shrink:0;
 }
 
 /* ═══════════════════════════════════════════
@@ -779,7 +812,8 @@ footer{
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr;gap:40px}
   .hero-right{display:none}
-  .spot-grid{grid-template-columns:1fr;gap:48px}
+  .spot-block{grid-template-columns:1fr;gap:40px}
+  .spot-block-2{padding:40px 28px;margin:0 -28px}
   .about-grid{grid-template-columns:1fr;gap:48px}
   .pricing-grid{grid-template-columns:1fr 1fr}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
@@ -1107,61 +1141,92 @@ footer{
 ═══════════════════════════════════════════ -->
 <section class="section spotlight" id="products">
   <div class="container">
-    <div class="spot-grid">
-      <div>
-        <div class="s-label fi">Our Flagship Products</div>
-        <h2 class="s-title fi d1" data-i18n="spot_title">GrahakBot +<br><span class="gold">Survox</span></h2>
-        <p class="s-sub fi d2" data-i18n="spot_sub">Two products. One unified platform. Your WhatsApp number handles everything — automatically.</p>
 
-        <div class="flow fi d3">
-          <div class="flow-row">
-            <div class="flow-box trigger">Customer messages</div>
-            <div class="flow-arrow"></div>
-            <div class="flow-box">AI responds 24/7</div>
-            <div class="flow-arrow"></div>
-            <div class="flow-box">Asks for review</div>
-          </div>
-          <div style="display:flex;gap:12px;margin-top:12px;padding-left:20px">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div style="width:1px;height:48px;background:var(--border)"></div>
-              <div style="width:1px;height:48px;background:var(--border)"></div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:10px;flex:1">
-              <div class="flow-row">
-                <div class="flow-box good">4–5 ★ Rating</div>
-                <div class="flow-arrow"></div>
-                <div class="flow-box good">→ Google Maps ✅</div>
-              </div>
-              <div class="flow-row">
-                <div class="flow-box bad">1–3 ★ Rating</div>
-                <div class="flow-arrow"></div>
-                <div class="flow-box bad">→ Owner alerted 🔒</div>
-              </div>
-            </div>
-          </div>
-          <p class="flow-note" data-i18n="spot_note">Available standalone or as unified GrahakBot platform</p>
+    <!-- ── Block 1: GrahakBot ── -->
+    <div class="spot-block">
+      <div>
+        <div class="spot-badge fi">🤖 GrahakBot</div>
+        <h2 class="spot-block-title fi d1">Your Business's 24/7 AI Assistant</h2>
+        <p class="spot-block-desc fi d2">Answers customer questions, books appointments, collects documents — all on WhatsApp. While you sleep.</p>
+        <div class="spot-pills fi d3">
+          <span class="spot-pill">💬 Answers queries</span>
+          <span class="spot-pill">📅 Books appointments</span>
+          <span class="spot-pill">📄 Collects docs</span>
         </div>
       </div>
-
       <div class="spot-right fi d2">
         <div class="phone2">
           <div class="phone2-header">
             <div class="p2-avatar">SR</div>
             <div>
-              <div class="p2-biz-name">Sharma Restaurant</div>
+              <div class="p2-biz-name">Sharma Restaurant 🍽️</div>
               <div class="p2-status">● online</div>
             </div>
           </div>
           <div class="phone2-chat">
-            <div class="b2 b2-r">Thanks for dining with us today! 🍽️</div>
-            <div class="b2 b2-r">How was your experience? Rate us 1–5 ⭐</div>
-            <div class="b2 b2-s">5 stars! Food was amazing 😍</div>
-            <div class="b2 b2-r">Amazing! Would you mind sharing this on Google? It helps us a lot 🙏<br><br>👉 g.page/sharmasrestaurant</div>
+            <div class="b2 b2-r">👋 Hi! Welcome to Sharma Restaurant. How can I help you today?</div>
+            <div class="b2 b2-s">Do you have tables available tomorrow at 7pm?</div>
+            <div class="b2 b2-r">✅ Yes! I've reserved a table for 2 tomorrow at 7pm. You'll get a reminder 1 hour before. Anything else?</div>
+            <div class="b2 b2-s">That's great, thanks!</div>
+            <div class="b2 b2-r">🙏 Thank you for choosing us! Quick question — how would you rate your last visit with us? (1–5 ⭐)</div>
+            <div class="b2 b2-s">5 stars! Love the food 😍</div>
+            <div class="b2 b2-r">Amazing! Would you mind sharing on Google? It really helps us 🙏<br>👉 g.page/sharmarestaurant</div>
             <div class="b2 b2-s">Sure, just posted! ✅</div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="spot-divider"></div>
+
+    <!-- ── Block 2: Survox ── -->
+    <div class="spot-block spot-block-2">
+      <div>
+        <div class="spot-badge spot-badge-gold fi">⭐ Survox — inside GrahakBot</div>
+        <h2 class="spot-block-title fi d1">Protect &amp; Grow Your Reputation</h2>
+        <p class="spot-block-desc fi d2">After every interaction, GrahakBot asks for a review. Happy customers go to Google. Unhappy ones are caught privately.</p>
+      </div>
+      <div class="fi d2">
+        <div class="flow">
+          <!-- Step 1 -->
+          <div class="flow-vcard trigger">
+            <span class="flow-vcard-icon">💬</span>
+            <div><div class="flow-card-title">Customer messages on WhatsApp</div></div>
+          </div>
+          <div class="flow-vconnect"><div class="flow-vline"></div></div>
+          <!-- Step 2 -->
+          <div class="flow-vcard neutral">
+            <span class="flow-vcard-icon">🤖</span>
+            <div><div class="flow-card-title">AI responds instantly, 24/7</div></div>
+          </div>
+          <div class="flow-vconnect"><div class="flow-vline"></div></div>
+          <!-- Step 3 -->
+          <div class="flow-vcard neutral">
+            <span class="flow-vcard-icon">⭐</span>
+            <div><div class="flow-card-title">AI asks for a review</div></div>
+          </div>
+          <!-- Y-branch -->
+          <div class="flow-ybranch"><div class="flow-arm"></div><div class="flow-arm"></div></div>
+          <!-- Step 4: split -->
+          <div class="flow-split-row">
+            <div class="flow-vcard good">
+              <div>
+                <div class="flow-card-title">4–5 ★ Happy</div>
+                <div class="flow-card-sub">→ Google Maps ✅</div>
+              </div>
+            </div>
+            <div class="flow-vcard bad">
+              <div>
+                <div class="flow-card-title">1–3 ★ Unhappy</div>
+                <div class="flow-card-sub">→ Owner alerted 🔒</div>
+              </div>
+            </div>
+          </div>
+          <p class="flow-note">Available standalone or bundled with GrahakBot</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1208,7 +1273,7 @@ footer{
         <ul class="plan-features">
           <li data-i18n="plan2_f1">Everything in Starter</li>
           <li data-i18n="plan2_f2">Auto review collection (powered by Survox)</li>
-          <li data-i18n="plan2_f3">WhatsApp QR setup</li>
+          <!-- <li data-i18n="plan2_f3">WhatsApp QR setup</li> -->
           <li data-i18n="plan2_f4">Monthly performance report</li>
         </ul>
         <a href="https://wa.me/916376068337?text=I'm%20interested%20in%20the%20Essential%20plan"
@@ -1257,7 +1322,7 @@ footer{
       </div>
     </div>
 
-    <p class="pricing-note fi">Not sure which plan fits? <a href="https://wa.me/916376068337?text=I%20need%20help%20choosing%20a%20plan" target="_blank" rel="noopener">WhatsApp us →</a> We'll figure it out together.</p>
+    <p class="pricing-note fi">Not sure which plan fits? <a href="https://wa.me/916376068337?text=I%20need%20help%20choosing%20a%20plan" target="_blank" rel="noopener">WhatsApp us →</a> We'll figure it out together.<br>We plan to provide additional 20% discounts for our first 20 customers.</p>
   </div>
 </section>
 
@@ -1275,20 +1340,20 @@ footer{
         </blockquote>
         <div class="about-stats">
           <div class="astat fi d1">
-            <div class="astat-num">4+</div>
-            <div class="astat-lbl">AI Products Built</div>
+            <div class="astat-num" data-i18n="astat1_n">3–5 Days</div>
+            <div class="astat-lbl" data-i18n="astat1_l">Deployment Timeline</div>
           </div>
           <div class="astat fi d2">
-            <div class="astat-num">7+</div>
-            <div class="astat-lbl">Years Experience</div>
+            <div class="astat-num" data-i18n="astat2_n">24/7</div>
+            <div class="astat-lbl" data-i18n="astat2_l">System Uptime</div>
           </div>
           <div class="astat fi d3">
-            <div class="astat-num">2</div>
-            <div class="astat-lbl">Continents Served</div>
+            <div class="astat-num" data-i18n="astat3_n">Same Day</div>
+            <div class="astat-lbl" data-i18n="astat3_l">Support Response</div>
           </div>
           <div class="astat fi d4">
-            <div class="astat-num">30D</div>
-            <div class="astat-lbl">ROI Guarantee</div>
+            <div class="astat-num" data-i18n="astat4_n">No Lock-in</div>
+            <div class="astat-lbl" data-i18n="astat4_l">Month-to-month, cancel anytime</div>
           </div>
         </div>
         <p class="fi d3" style="font-size:.93rem;line-height:1.85;color:var(--gray)">
@@ -1298,10 +1363,10 @@ footer{
 
       <div class="about-right">
         <div class="founders">
-          <div class="founder fi d1">
+          <a class="founder fi d1" href="https://www.linkedin.com/in/abhimishra321/" target="_blank" rel="noopener">
             <div class="founder-av tech">👨‍💻</div>
             <div class="founder-info">
-              <div class="founder-name">Abhishek Mishra</div>
+              <div class="founder-name">Abhishek Mishra <span class="li-badge">in</span></div>
               <div class="founder-role">Technical Co-founder</div>
               <div class="founder-tags">
                 <span class="ftag">Full Stack</span>
@@ -1310,11 +1375,11 @@ footer{
                 <span class="ftag">n8n / Make</span>
               </div>
             </div>
-          </div>
-          <div class="founder fi d2">
+          </a>
+          <a class="founder fi d2" href="https://www.linkedin.com/in/prashantjindalie/" target="_blank" rel="noopener">
             <div class="founder-av biz">🌍</div>
             <div class="founder-info">
-              <div class="founder-name">Prashant</div>
+              <div class="founder-name">Prashant Jindal <span class="li-badge">in</span></div>
               <div class="founder-role">Business Co-founder</div>
               <div class="founder-tags">
                 <span class="ftag">Sales</span>
@@ -1323,7 +1388,7 @@ footer{
                 <span class="ftag">Strategy</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -1456,6 +1521,7 @@ const LANGS = {
     hero_sub:'We build custom AI systems that save time, capture leads and grow your business — starting with WhatsApp, expanding to your entire operation. No tech knowledge needed. Results in 3–5 days.',
     hero_cta1:'💬 Get a Free Demo', hero_cta2:'See Our Services',
     stat1:'Businesses Automated', stat2:'Days to Go Live', stat3:'AI Never Sleeps',
+    astat1_n:'3–5 Days', astat1_l:'Deployment Timeline', astat2_n:'24/7', astat2_l:'System Uptime', astat3_n:'Same Day', astat3_l:'Support Response', astat4_n:'No Lock-in', astat4_l:'Month-to-month, cancel anytime',
     prob_label:'The Problem', prob_title:'Still Running Your Business Manually?',
     prob_sub:'Every missed WhatsApp message is a missed customer.',
     prob1_title:'Gym & Fitness Owners', prob1_desc:'Tracking memberships on WhatsApp threads and spreadsheets.',
@@ -1477,7 +1543,7 @@ const LANGS = {
     svc6_t:'Membership Renewals', svc6_d:'Never lose a member to a forgotten renewal again',
     svc7_t:'AI Automation Workflows', svc7_d:'Automate 10+ hours/week of repetitive manual work',
     svc8_t:'Customer Re-engagement', svc8_d:"Automatically bring back customers who haven't visited in a while",
-    spot_title:'GrahakBot + Survox', spot_sub:'Two products. One unified platform.',
+    spot_title:'Meet GrahakBot', spot_sub:"Your business's 24/7 WhatsApp AI — answers customers, books appointments, and collects reviews automatically. Survox is the reputation module built inside it.",
     spot_note:'Available standalone or as unified GrahakBot platform',
     price_label:'Transparent Pricing', price_title:'Simple, Honest Plans',
     price_sub:'No hidden fees. No lock-in. Cancel anytime after month 3.',
@@ -1500,6 +1566,7 @@ const LANGS = {
     hero_sub:'हम कस्टम AI सिस्टम बनाते हैं जो समय बचाते हैं, लीड्स कैप्चर करते हैं और आपका बिज़नेस बढ़ाते हैं — WhatsApp से शुरू, पूरे ऑपरेशन तक। कोई टेक जानकारी नहीं चाहिए। 3–5 दिनों में नतीजे।',
     hero_cta1:'💬 फ्री डेमो लें', hero_cta2:'हमारी सेवाएं देखें',
     stat1:'बिज़नेस ऑटोमेटेड', stat2:'दिनों में शुरू', stat3:'AI हमेशा चालू',
+    astat1_n:'3–5 दिन', astat1_l:'डिप्लॉयमेंट टाइमलाइन', astat2_n:'24/7', astat2_l:'सिस्टम अपटाइम', astat3_n:'उसी दिन', astat3_l:'सपोर्ट रिस्पॉन्स', astat4_n:'नो लॉक-इन', astat4_l:'महीने दर महीने, कभी भी कैंसिल करें',
     prob_label:'समस्या', prob_title:'अभी भी मैन्युअली चला रहे हैं?',
     prob_sub:'हर मिस्ड WhatsApp मैसेज एक खोया हुआ कस्टमर है।',
     prob1_title:'जिम ओनर्स', prob1_desc:'WhatsApp थ्रेड में मेंबरशिप ट्रैक करना।',
@@ -1544,6 +1611,7 @@ const LANGS = {
     hero_sub:'Hum custom AI systems banate hain jo time bachate hain, leads capture karte hain aur aapka business badhate hain — WhatsApp se shuru, poore operation tak. Koi tech knowledge nahi chahiye. 3–5 din mein results.',
     hero_cta1:'💬 Free Demo Lo', hero_cta2:'Hamari Services Dekho',
     stat1:'Businesses Automated', stat2:'Din Mein Live', stat3:'AI Kabhi Nahi Sota',
+    astat1_n:'3–5 Din', astat1_l:'Deployment Timeline', astat2_n:'24/7', astat2_l:'System Uptime', astat3_n:'Same Day', astat3_l:'Support Response', astat4_n:'No Lock-in', astat4_l:'Month-to-month, kabhi bhi cancel karo',
     prob_label:'Problem Kya Hai', prob_title:'Abhi Bhi Manually Chal Raha Hai Business?',
     prob_sub:'Har missed WhatsApp message ek lost customer hai bhai.',
     prob1_title:'Gym Owners', prob1_desc:'WhatsApp threads mein membership track karna, spreadsheets mein dhundhna.',
@@ -1588,6 +1656,7 @@ const LANGS = {
     hero_sub:'Construimos sistemas de IA personalizados que ahorran tiempo, capturan leads y hacen crecer tu negocio — empezando con WhatsApp, expandiéndose a toda tu operación. Sin conocimientos técnicos. Resultados en 3–5 días.',
     hero_cta1:'💬 Demo Gratis', hero_cta2:'Ver Servicios',
     stat1:'Negocios Automatizados', stat2:'Días para Activar', stat3:'IA 24/7',
+    astat1_n:'3–5 Días', astat1_l:'Tiempo de Despliegue', astat2_n:'24/7', astat2_l:'Disponibilidad del Sistema', astat3_n:'Mismo Día', astat3_l:'Respuesta de Soporte', astat4_n:'Sin Ataduras', astat4_l:'Mes a mes, cancela cuando quieras',
     prob_label:'El Problema', prob_title:'¿Aún Gestionas Todo Manualmente?',
     prob_sub:'Cada mensaje perdido de WhatsApp es un cliente perdido.',
     prob1_title:'Gimnasios y Fitness', prob1_desc:'Rastreando membresías en hilos de WhatsApp.',
