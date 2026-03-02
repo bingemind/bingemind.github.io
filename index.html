@@ -11,9 +11,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png"/>
 <link rel="shortcut icon" href="favicon_io/favicon.ico"/>
 <link rel="manifest" href="favicon_io/site.webmanifest"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════════
@@ -41,19 +41,24 @@
   --t4:        .4s var(--ease);
   --t6:        .6s var(--ease);
 }
+*{font-family:'Bricolage Grotesque',sans-serif;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Bricolage Grotesque',sans-serif;
   background:var(--bg);
   color:var(--white);
   overflow-x:hidden;
   position:relative;
 }
-h1,h2,h3,h4{font-family:'Syne',sans-serif}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-1.5px;line-height:1.05}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-1px;line-height:1.1}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;letter-spacing:-0.5px}
+h4{font-family:'Bricolage Grotesque',sans-serif}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
-button,input,select,textarea{font-family:'DM Sans',sans-serif}
+p{font-weight:300;line-height:1.7}
+button,input,select,textarea{font-family:'Bricolage Grotesque',sans-serif}
 
 /* Grain overlay */
 body::before{
@@ -90,7 +95,7 @@ body::before{
 .btn{
   display:inline-flex;align-items:center;gap:9px;
   padding:13px 26px;border-radius:8px;
-  font-size:.88rem;font-weight:600;letter-spacing:.02em;
+  font-size:.88rem;font-weight:600;letter-spacing:0.3px;
   border:none;cursor:pointer;transition:all var(--t3);
 }
 .btn-wa{background:var(--wa);color:#fff}
@@ -127,7 +132,7 @@ body::before{
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{
-  font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;
   color:var(--white);letter-spacing:-.01em;flex-shrink:0;
   display:flex;align-items:center;gap:8px;
 }
@@ -135,7 +140,7 @@ body::before{
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{
-  font-size:.84rem;font-weight:500;color:var(--gray);
+  font-size:.84rem;font-weight:400;letter-spacing:0;color:var(--gray);
   transition:color var(--t3);position:relative;
 }
 .nav-links a:hover{color:var(--white)}
@@ -186,7 +191,7 @@ body::before{
 }
 .mob-nav.open{display:flex}
 .mob-nav a{
-  font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:700;
   color:var(--gray);transition:color var(--t3);
 }
 .mob-nav a:hover{color:var(--gold)}
@@ -250,7 +255,7 @@ body::before{
   padding-top:28px;border-top:1px solid var(--border);
 }
 .hstat{display:flex;flex-direction:column;gap:3px}
-.hstat-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white)}
+.hstat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white)}
 .hstat-lbl{font-size:.74rem;color:var(--gray);font-weight:500}
 .hstat-divider{width:1px;height:32px;background:var(--border)}
 
@@ -362,7 +367,7 @@ body::before{
 .prob-card:hover::before{opacity:1}
 .prob-icon{font-size:2.2rem;margin-bottom:18px}
 .prob-title{
-  font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:700;
   color:var(--white);margin-bottom:12px;
 }
 .prob-desc{font-size:.88rem;line-height:1.75;color:var(--gray)}
@@ -436,7 +441,7 @@ body::before{
   background:var(--blue);color:#fff;
   font-size:.7rem;font-weight:700;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;
+  font-family:'Bricolage Grotesque',sans-serif;
 }
 .hiw-title{font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:12px}
 .hiw-desc{font-size:.88rem;line-height:1.75;color:var(--gray)}
@@ -472,7 +477,7 @@ body::before{
 .svc-card:hover::after{transform:scaleX(1)}
 .svc-card-icon{font-size:1.8rem;margin-bottom:16px}
 .svc-card-title{
-  font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:700;
   color:var(--white);margin-bottom:8px;
 }
 .svc-card-desc{font-size:.82rem;line-height:1.7;color:var(--gray);margin-bottom:16px}
@@ -635,14 +640,14 @@ body::before{
   white-space:nowrap;
 }
 .plan-name{
-  font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:800;
   color:var(--white);margin-bottom:6px;
 }
 .plan-price{
-  font-family:'Syne',sans-serif;
+  font-family:'Bricolage Grotesque',sans-serif;
   margin:16px 0;
 }
-.plan-price .setup{font-size:1.8rem;font-weight:800;color:var(--white)}
+.plan-price .setup{font-size:1.8rem;font-weight:700;letter-spacing:-2px;color:var(--white)}
 .plan-price .retainer{font-size:.85rem;color:var(--gray);margin-top:4px}
 .plan-price .custom{font-size:1.4rem;font-weight:800;color:var(--blue-lt)}
 .plan-divider{height:1px;background:var(--border);margin:18px 0}
@@ -683,7 +688,7 @@ body::before{
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .about-left{}
 .pull-quote{
-  font-family:'Syne',sans-serif;
+  font-family:'Bricolage Grotesque',sans-serif;
   font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;
   line-height:1.35;color:var(--white);
   margin-bottom:36px;padding-left:20px;
@@ -698,7 +703,7 @@ body::before{
   border-radius:12px;padding:20px;text-align:center;
 }
 .astat-num{
-  font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1.8rem;font-weight:800;
   color:var(--gold);line-height:1;margin-bottom:6px;
 }
 .astat-lbl{font-size:.74rem;color:var(--gray);font-weight:500;line-height:1.4}
@@ -721,7 +726,7 @@ body::before{
 .founder-av.biz{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25)}
 .founder-info{}
 .founder-name{
-  font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:700;
   color:var(--white);margin-bottom:4px;
 }
 .founder-role{font-size:.78rem;color:var(--gold);font-weight:500;margin-bottom:10px}
@@ -799,7 +804,7 @@ footer{
   display:flex;align-items:center;justify-content:space-between;
   gap:24px;flex-wrap:wrap;
 }
-.foot-logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white)}
+.foot-logo{font-family:'Bricolage Grotesque',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white)}
 .foot-logo span{color:var(--gold)}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap}
 .foot-links a{font-size:.82rem;color:var(--gray);transition:color var(--t3)}
@@ -818,6 +823,147 @@ footer{
   .pricing-grid{grid-template-columns:1fr 1fr}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
 }
+/* ── BOT RECEPTIONIST SCENE ── */
+.reception-scene{
+  position:relative;
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  min-height:400px;
+}
+.call-bubble{
+  position:absolute;
+  background:#1A1A28;
+  border:1px solid #2A2A3A;
+  border-radius:12px;
+  padding:8px 14px;
+  font-size:12px;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  white-space:nowrap;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+  color:#C0C0CC;
+  z-index:10;
+}
+.cb-dot{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:#22C55E;
+  flex-shrink:0;
+  animation:blinkDot 1.5s ease-in-out infinite;
+}
+.cb-dot-gold{
+  background:#F59E0B;
+  animation-delay:0.5s;
+}
+@keyframes blinkDot{
+  0%,100%{opacity:1}
+  50%{opacity:0.2}
+}
+.cb1{top:12%;left:-5%;animation:floatBubble 4s ease-in-out infinite}
+.cb2{
+  top:30%;right:-5%;
+  border-color:rgba(245,158,11,0.25);
+  color:#F59E0B;
+  animation:floatBubble 4.5s ease-in-out infinite 0.6s;
+}
+.cb3{top:50%;left:-8%;animation:floatBubble 5s ease-in-out infinite 1.2s}
+@keyframes floatBubble{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-8px)}
+}
+.bot-receptionist{
+  position:absolute;
+  bottom:80px;left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  animation:botBob 3s ease-in-out infinite;
+}
+@keyframes botBob{
+  0%,100%{transform:translateX(-50%) translateY(0px)}
+  50%{transform:translateX(-50%) translateY(-8px)}
+}
+.bot-wrap{position:relative;display:inline-block;cursor:pointer}
+.bot-wrap:hover svg{filter:drop-shadow(0 0 12px rgba(245,158,11,0.25));transition:filter 0.3s ease}
+.antenna-pulse{animation:antennaPing 2s ease-out infinite}
+@keyframes antennaPing{
+  0%{transform:scale(1);opacity:0.8;transform-origin:45px 1px}
+  100%{transform:scale(3.5);opacity:0;transform-origin:45px 1px}
+}
+.headset-badge{
+  position:absolute;
+  top:-12px;right:-12px;
+  background:#F59E0B;
+  border-radius:50%;
+  width:26px;height:26px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;
+  z-index:6;
+  animation:headsetPulse 2s ease-in-out infinite;
+}
+@keyframes headsetPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.5)}
+  50%{box-shadow:0 0 0 8px rgba(245,158,11,0)}
+}
+.reception-desk{
+  position:absolute;
+  bottom:58px;left:50%;
+  transform:translateX(-50%);
+  width:180px;height:16px;
+  background:linear-gradient(135deg,#1E1E30,#252535);
+  border-radius:8px;
+  border:1px solid #2A2A3A;
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);
+  z-index:4;
+}
+.reception-desk::after{
+  content:'';
+  position:absolute;
+  bottom:-36px;left:8px;right:8px;height:36px;
+  background:linear-gradient(180deg,#1E1E30,#161622);
+  border-radius:0 0 8px 8px;
+  border:1px solid #2A2A3A;
+  border-top:none;
+}
+.customer-queue{
+  position:absolute;
+  bottom:30px;
+  left:calc(50% - 110px);
+  display:flex;gap:8px;align-items:flex-end;
+  z-index:3;
+}
+.q-person{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  animation:queueWait 2.5s ease-in-out infinite;
+}
+.q-person:nth-child(2){animation-delay:0.4s}
+.q-person:nth-child(3){animation-delay:0.8s}
+@keyframes queueWait{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-4px)}
+}
+.q-head{
+  width:14px;height:14px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.03);
+}
+.q-body{
+  width:10px;height:10px;
+  border-radius:3px;
+  border:1.5px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.02);
+}
+.q-head-gold{border-color:rgba(245,158,11,0.5);background:rgba(245,158,11,0.07)}
+.q-body-gold{border-color:rgba(245,158,11,0.35);background:rgba(245,158,11,0.05)}
+.reception-scene::before{
+  content:'';
+  position:absolute;
+  top:30%;left:50%;
+  transform:translate(-50%,-50%);
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(245,158,11,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+
 @media(max-width:768px){
   .section{padding:80px 0}
   .nav-links,.nav-right .lang-wrap,.nav-right .btn{display:none}
@@ -830,6 +976,11 @@ footer{
   .about-stats{grid-template-columns:1fr 1fr}
   .hero-stats{gap:20px}
   .hstat-divider{display:none}
+  .reception-scene{min-height:280px}
+  .call-bubble{font-size:10px;padding:6px 10px}
+  .cb1{left:0;top:5%}
+  .cb2{right:0;top:25%}
+  .cb3{display:none}
 }
 @media(max-width:480px){
   .hero-h1{font-size:2.6rem}
@@ -944,42 +1095,170 @@ footer{
     </div>
 
     <div class="hero-right fi d2">
-      <div class="phone-wrap">
-        <div class="phone-glow"></div>
-        <div class="phone">
-          <div class="phone-header">
-            <div class="phone-avatar">BM</div>
-            <div class="phone-biz">
-              <div class="phone-biz-name">Sharma's Gym</div>
-              <div class="phone-status">● online</div>
-            </div>
-          </div>
-          <div class="phone-chat">
-            <div class="bubble bubble-recv">
-              Hi! I'd like to book a trial session 🙏
-              <div class="bubble-time">10:32 AM</div>
-            </div>
-            <div class="bubble bubble-sent">
-              Welcome! 💪 We have slots tomorrow at 6AM, 7AM, or 6PM. Which works for you?
-              <div class="bubble-time">10:32 AM ✓✓</div>
-            </div>
-            <div class="bubble bubble-recv">
-              7AM please!
-              <div class="bubble-time">10:33 AM</div>
-            </div>
-            <div class="typing">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="bubble bubble-sent">
-              ✅ Booked! Tomorrow 7AM. Your trainer will be Rahul. See you then! 🏋️
-              <div class="bubble-time">10:33 AM ✓✓</div>
-            </div>
-            <div class="bubble bubble-recv">
-              Thank you so much! 🙌
-              <div class="bubble-time">10:34 AM</div>
-            </div>
+      <div class="reception-scene">
+
+        <!-- Floating call bubbles -->
+        <div class="call-bubble cb1">
+          <div class="cb-dot"></div>
+          Incoming call · Riya S.
+        </div>
+        <div class="call-bubble cb2">
+          <div class="cb-dot cb-dot-gold"></div>
+          Booking confirmed ✓
+        </div>
+        <div class="call-bubble cb3">
+          <div class="cb-dot"></div>
+          3 calls in queue
+        </div>
+
+        <!-- Bot with headset -->
+        <div class="bot-receptionist">
+          <div class="bot-wrap">
+            <div class="headset-badge">🎧</div>
+            <svg id="bingemind-bot" width="160" height="210"
+              viewBox="0 0 90 120" fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="cursor:pointer;">
+
+              <!-- Antenna -->
+              <line x1="45" y1="10" x2="45" y2="1"
+                stroke="#F59E0B" stroke-width="2"
+                stroke-linecap="round"/>
+              <circle cx="45" cy="1" r="3.5"
+                fill="#F59E0B" opacity="0.9"/>
+              <!-- Antenna pulse ring -->
+              <circle cx="45" cy="1" r="3.5"
+                stroke="#F59E0B" stroke-width="1.5"
+                fill="none" class="antenna-pulse"/>
+
+              <!-- Head -->
+              <rect x="12" y="10" width="66" height="50" rx="22"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.8"/>
+
+              <!-- ── EYES CLOSED (default) ── -->
+              <g class="eyes-closed">
+                <!-- Left eye closed arc -->
+                <path d="M 24 33 Q 31 27 38 33"
+                  stroke="#F59E0B" stroke-width="2.2"
+                  fill="none" stroke-linecap="round"/>
+                <!-- Right eye closed arc -->
+                <path d="M 52 33 Q 59 27 66 33"
+                  stroke="#F59E0B" stroke-width="2.2"
+                  fill="none" stroke-linecap="round"/>
+              </g>
+
+              <!-- ── EYES OPEN (hover state, hidden by default) ── -->
+              <g class="eyes-open" style="display:none;">
+                <!-- Left eye outer ring -->
+                <circle cx="31" cy="32" r="9"
+                  stroke="#F59E0B" stroke-width="1.8"
+                  fill="#F59E0B" fill-opacity="0.06"/>
+                <!-- Left pupil -->
+                <circle cx="31" cy="32" r="5"
+                  fill="#F59E0B" fill-opacity="0.35"/>
+                <circle cx="31" cy="32" r="2.5"
+                  fill="#F59E0B"/>
+                <!-- Left highlight -->
+                <circle cx="34" cy="29" r="1.5"
+                  fill="white" opacity="0.8"/>
+
+                <!-- Right eye outer ring -->
+                <circle cx="59" cy="32" r="9"
+                  stroke="#F59E0B" stroke-width="1.8"
+                  fill="#F59E0B" fill-opacity="0.06"/>
+                <!-- Right pupil -->
+                <circle cx="59" cy="32" r="5"
+                  fill="#F59E0B" fill-opacity="0.35"/>
+                <circle cx="59" cy="32" r="2.5"
+                  fill="#F59E0B"/>
+                <!-- Right highlight -->
+                <circle cx="62" cy="29" r="1.5"
+                  fill="white" opacity="0.8"/>
+              </g>
+
+              <!-- Blush (always visible) -->
+              <ellipse cx="17" cy="46" rx="6" ry="3.5"
+                fill="#F59E0B" fill-opacity="0.18"/>
+              <ellipse cx="73" cy="46" rx="6" ry="3.5"
+                fill="#F59E0B" fill-opacity="0.18"/>
+
+              <!-- Smile -->
+              <path d="M 30 48 Q 45 60 60 48"
+                stroke="#F59E0B" stroke-width="2.2"
+                fill="none" stroke-linecap="round"/>
+
+              <!-- Neck -->
+              <rect x="37" y="60" width="16" height="9" rx="4.5"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+
+              <!-- Body -->
+              <rect x="14" y="69" width="62" height="44" rx="18"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.8"/>
+
+              <!-- Chest panel -->
+              <rect x="28" y="78" width="34" height="22" rx="8"
+                stroke="#F59E0B" stroke-width="1"
+                fill="#F59E0B" fill-opacity="0.04"/>
+
+              <!-- Heart on chest panel -->
+              <path d="M 38 86 C 38 83 41 81 45 84
+                       C 49 81 52 83 52 86
+                       C 52 91 45 97 45 97
+                       C 45 97 38 91 38 86 Z"
+                fill="#F59E0B" fill-opacity="0.3"
+                stroke="#F59E0B" stroke-width="1.2"/>
+
+              <!-- Left arm — slightly angled out -->
+              <rect x="-1" y="72" width="15" height="32" rx="7.5"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"
+                transform="rotate(-8 6 72)"/>
+              <!-- Left hand -->
+              <circle cx="4" cy="108" r="7"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+
+              <!-- Right arm — slightly angled out -->
+              <rect x="76" y="72" width="15" height="32" rx="7.5"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"
+                transform="rotate(8 84 72)"/>
+              <!-- Right hand -->
+              <circle cx="86" cy="108" r="7"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+
+              <!-- Legs -->
+              <rect x="20" y="111" width="20" height="16" rx="8"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+              <rect x="50" y="111" width="20" height="16" rx="8"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+
+              <!-- Feet -->
+              <ellipse cx="30" cy="128" rx="14" ry="7"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+              <ellipse cx="60" cy="128" rx="14" ry="7"
+                fill="#13131F" stroke="#F59E0B" stroke-width="1.5"/>
+
+            </svg>
           </div>
         </div>
+
+        <!-- Reception desk -->
+        <div class="reception-desk"></div>
+
+        <!-- Customer queue -->
+        <div class="customer-queue">
+          <div class="q-person">
+            <div class="q-head q-head-gold"></div>
+            <div class="q-body q-body-gold"></div>
+          </div>
+          <div class="q-person">
+            <div class="q-head"></div>
+            <div class="q-body"></div>
+          </div>
+          <div class="q-person">
+            <div class="q-head"></div>
+            <div class="q-body"></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1016,7 +1295,7 @@ footer{
           <li data-i18n="prob2_c">Client communication scattered</li>
         </ul>
       </div>
-      <div class="prob-card fi d3">
+      <!-- <div class="prob-card fi d3">
         <div class="prob-icon">💇</div>
         <div class="prob-title" data-i18n="prob3_title">Salons & Clinics</div>
         <div class="prob-desc" data-i18n="prob3_desc">Double bookings, no-shows, forgotten appointments. Your staff spends more time on the phone than serving customers.</div>
@@ -1024,6 +1303,16 @@ footer{
           <li data-i18n="prob3_a">Manual appointment booking</li>
           <li data-i18n="prob3_b">No-show rate stays high</li>
           <li data-i18n="prob3_c">Review collection never happens</li>
+        </ul>
+      </div> -->
+      <div class="prob-card fi d4">
+        <div class="prob-icon">📞</div>
+        <div class="prob-title">Service Businesses &amp; Clinics</div>
+        <div class="prob-desc">Calls going to voicemail during busy hours. Patients hanging up and calling a competitor. Your front desk can't be everywhere at once.</div>
+        <ul class="prob-items">
+          <li>Missed calls = missed bookings</li>
+          <li>No after-hours coverage</li>
+          <li>Staff time wasted on repeat FAQs</li>
         </ul>
       </div>
     </div>
@@ -1116,11 +1405,11 @@ footer{
         <div class="svc-card-title" data-i18n="svc5_t">Document Collection</div>
         <div class="svc-card-desc" data-i18n="svc5_d">Stop chasing clients for paperwork on WhatsApp</div>
       </div>
-      <div class="svc-card fi d2">
+      <!-- <div class="svc-card fi d2">
         <div class="svc-card-icon">🏋️</div>
         <div class="svc-card-title" data-i18n="svc6_t">Membership Renewals</div>
         <div class="svc-card-desc" data-i18n="svc6_d">Never lose a member to a forgotten renewal again</div>
-      </div>
+      </div> -->
       <div class="svc-card fi d3">
         <div class="svc-card-icon">⚙️</div>
         <div class="svc-card-title" data-i18n="svc7_t">AI Automation Workflows</div>
@@ -1130,6 +1419,11 @@ footer{
         <div class="svc-card-icon">🔄</div>
         <div class="svc-card-title" data-i18n="svc8_t">Customer Re-engagement</div>
         <div class="svc-card-desc" data-i18n="svc8_d">Automatically bring back customers who haven't visited in a while</div>
+      </div>
+      <div class="svc-card fi d1">
+        <div class="svc-card-icon">📞</div>
+        <div class="svc-card-title">AI Voice Receptionist</div>
+        <div class="svc-card-desc">Never miss a call again. AI answers your phone 24/7 — books appointments, answers FAQs, captures leads, and transfers to you when it matters.</div>
       </div>
     </div>
   </div>
@@ -1796,6 +2090,51 @@ track.innerHTML = doubledBiz.map(b =>
 /* ── INIT ────────────────────────────────── */
 buildLangDropdown();
 setLanguage(currentLang);
+</script>
+<script>
+(function() {
+  const bot = document.getElementById('bingemind-bot');
+  if (!bot) return;
+
+  const eyesClosed = bot.querySelector('.eyes-closed');
+  const eyesOpen   = bot.querySelector('.eyes-open');
+
+  let blinkInterval;
+
+  function openEyes() {
+    eyesClosed.style.display = 'none';
+    eyesOpen.style.display   = 'block';
+    clearInterval(blinkInterval);
+    blinkInterval = setInterval(blink, 3200);
+  }
+
+  function closeEyes() {
+    clearInterval(blinkInterval);
+    eyesClosed.style.display = 'block';
+    eyesOpen.style.display   = 'none';
+  }
+
+  function blink() {
+    eyesOpen.style.display   = 'none';
+    eyesClosed.style.display = 'block';
+    setTimeout(function() {
+      eyesClosed.style.display = 'none';
+      eyesOpen.style.display   = 'block';
+    }, 120);
+  }
+
+  bot.addEventListener('mouseenter', openEyes);
+  bot.addEventListener('mouseleave', closeEyes);
+
+  bot.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (eyesOpen.style.display === 'none') {
+      openEyes();
+    } else {
+      closeEyes();
+    }
+  });
+})();
 </script>
 </body>
 </html>
