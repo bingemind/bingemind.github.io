@@ -1047,6 +1047,155 @@ footer{background:#060810;padding:56px 0 32px}
 [dir="rtl"] .nav-inner{flex-direction:row-reverse}
 [dir="rtl"] .pull-quote{border-left:none;border-right:4px solid var(--blue);padding-left:0;padding-right:28px}
 
+/* ═══════════════════════════════════════════
+   ZARA — SHARED
+═══════════════════════════════════════════ */
+@keyframes zaraDotPulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.4)}
+}
+
+/* ═══════════════════════════════════════════
+   ZARA CHARACTER CARD
+═══════════════════════════════════════════ */
+.zara-card{
+  background:linear-gradient(135deg,#0D1B4B 0%,#091530 100%);
+  border:1px solid #C9A84C;border-radius:12px;
+  padding:24px;box-shadow:0 8px 32px rgba(201,168,76,0.12);
+  margin-bottom:24px;
+}
+.zara-live-row{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.zara-dot{
+  width:8px;height:8px;border-radius:50%;background:#4ade80;
+  animation:zaraDotPulse 2s ease-in-out infinite;flex-shrink:0;
+}
+.zara-live-text{
+  font-size:11px;font-weight:500;color:#C9A84C;
+  text-transform:uppercase;letter-spacing:1px;font-variant:small-caps;
+}
+.zara-avatar-row{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;margin-bottom:20px;
+}
+.zara-emoji{font-size:60px;line-height:1;margin-bottom:12px}
+.zara-name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:24px;font-weight:700;color:#fff;margin-bottom:4px;
+}
+.zara-title-lbl{font-size:14px;color:#C9A84C;margin-bottom:12px}
+.zara-lang-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.zara-lang-pill{
+  background:rgba(13,27,75,0.8);border:1px solid #C9A84C;
+  color:#C9A84C;font-size:11px;padding:4px 10px;
+  border-radius:6px;font-weight:500;
+}
+.zara-quote-wrap{
+  min-height:60px;display:flex;align-items:center;justify-content:center;
+  text-align:center;margin-bottom:20px;padding:12px;
+  background:rgba(255,255,255,0.04);border-radius:8px;
+}
+.zara-quote{
+  font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;
+  transition:opacity 0.5s ease;
+}
+.zara-cta-btn{
+  display:block;width:100%;background:#C9A84C;color:#0D1B4B;
+  font-weight:600;font-size:14px;text-align:center;
+  padding:12px 20px;border-radius:12px;border:none;cursor:pointer;
+  transition:background .3s ease,transform .2s ease;
+  font-family:'DM Sans',sans-serif;text-decoration:none;
+}
+.zara-cta-btn:hover{background:#E8C96A;transform:translateY(-2px);color:#0D1B4B}
+.zara-free-note{
+  text-align:center;font-size:11px;
+  color:rgba(255,255,255,0.35);margin-top:10px;
+}
+
+/* ═══════════════════════════════════════════
+   MEET ZARA SECTION
+═══════════════════════════════════════════ */
+.meet-zara{
+  background:linear-gradient(135deg,#0D1B4B 0%,#060D2E 60%,#0B1120 100%);
+  padding:100px 0;text-align:center;position:relative;overflow:hidden;
+}
+.meet-zara-inner{max-width:860px;margin:0 auto}
+.zara-eyebrow{
+  display:inline-flex;align-items:center;
+  border:1px solid #C9A84C;color:#C9A84C;
+  padding:5px 16px;border-radius:100px;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;
+  margin-bottom:28px;background:transparent;
+}
+.meet-zara-h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:1.0;
+  color:#fff;margin-bottom:24px;letter-spacing:-3px;
+}
+.meet-zara-h2 .zara-gold{color:#C9A84C}
+.meet-zara-sub{
+  font-size:20px;color:rgba(255,255,255,0.7);max-width:640px;
+  margin:0 auto;line-height:1.6;font-weight:400;
+}
+.meet-zara-sub2{font-size:16px;color:rgba(255,255,255,0.5);margin-top:8px}
+.zara-caps{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:12px;margin-top:32px;
+}
+.zara-cap-pill{
+  background:rgba(255,255,255,0.06);border:1px solid #C9A84C;
+  color:#C9A84C;padding:8px 12px;border-radius:20px;
+  font-size:13px;font-weight:500;
+}
+.zara-stats{
+  display:flex;justify-content:center;gap:48px;
+  flex-wrap:wrap;margin-top:48px;
+}
+.zara-stat{display:flex;flex-direction:column;align-items:center;gap:6px}
+.zara-stat-num{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:40px;font-weight:800;color:#C9A84C;line-height:1;
+}
+.zara-stat-lbl{font-size:14px;color:rgba(255,255,255,0.6);font-weight:400}
+.zara-main-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#C9A84C;color:#0D1B4B;font-weight:700;font-size:18px;
+  padding:18px 40px;border-radius:12px;margin-top:48px;
+  transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;
+}
+.zara-main-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(201,168,76,0.35);color:#0D1B4B;
+}
+.zara-below-cta{margin-top:12px;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8}
+.zara-divider{width:60px;height:1px;background:#C9A84C;opacity:0.3;margin:48px auto 0}
+
+/* Trust bar Zara */
+.trust-dot-pulse{
+  width:8px;height:8px;border-radius:50%;background:#4ade80;
+  animation:zaraDotPulse 2s ease-in-out infinite;
+  flex-shrink:0;display:inline-block;vertical-align:middle;
+}
+.trust-item-zara a{
+  color:#C9A84C;text-decoration:underline;text-underline-offset:2px;
+  transition:color var(--t3);
+}
+.trust-item-zara a:hover{color:#E8C96A}
+
+/* Pricing Zara pill */
+.zara-plan-pill{
+  display:inline-block;background:transparent;border:1px solid #C9A84C;
+  color:#C9A84C;font-size:11px;padding:4px 12px;
+  border-radius:100px;font-weight:600;margin-top:12px;
+}
+
+@media(max-width:768px){
+  .meet-zara{padding:64px 0}
+  .meet-zara-sub{font-size:16px}
+  .zara-stats{gap:28px}
+  .zara-stat-num{font-size:32px}
+  .zara-main-cta{font-size:15px;padding:14px 28px}
+}
+
 </style>
 </head>
 <body>
@@ -1080,7 +1229,7 @@ footer{background:#060810;padding:56px 0 32px}
         </button>
         <div class="lang-drop" id="langDrop"></div>
       </div>
-      <a href="https://wa.me/7897543050?text=Hi%20Bingemind!%20I%27d%20like%20to%20get%20a%20demo."
+      <a href="https://wa.me/6376068337?text=Hi%20Bingemind!%20I%27d%20like%20to%20get%20a%20demo."
          class="btn-demo" target="_blank" rel="noopener" data-i18n="nav_cta">
         Apply Now
       </a>
@@ -1098,7 +1247,7 @@ footer{background:#060810;padding:56px 0 32px}
   <a href="#pricing" onclick="closeMob()" data-i18n="nav_pricing">Pricing</a>
   <a href="#about" onclick="closeMob()" data-i18n="nav_about">About</a>
   <a href="#contact" onclick="closeMob()" data-i18n="nav_contact">Contact</a>
-  <a href="https://wa.me/7897543050?text=Hi%20Bingemind!%20I%27d%20like%20to%20apply%20for%20the%20free%20AI%20Strategy%20Audit." target="_blank" rel="noopener" data-i18n="nav_cta">Apply Now</a>
+  <a href="https://wa.me/6376068337?text=Hi%20Bingemind!%20I%27d%20like%20to%20apply%20for%20the%20free%20AI%20Strategy%20Audit." target="_blank" rel="noopener" data-i18n="nav_cta">Apply Now</a>
 </div>
 
 
@@ -1123,7 +1272,7 @@ footer{background:#060810;padding:56px 0 32px}
       </p>
 
       <div class="hero-ctas fi d3">
-        <a href="https://wa.me/7897543050?text=Hi%20Bingemind!%20I%27d%20like%20a%20free%20demo."
+        <a href="https://wa.me/6376068337?text=Hi%20Bingemind!%20I%27d%20like%20a%20free%20demo."
            class="btn-primary" target="_blank" rel="noopener" data-i18n="hero_cta1">
           💬 Get a Free Demo
         </a>
@@ -1270,6 +1419,10 @@ footer{background:#060810;padding:56px 0 32px}
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
         Service Businesses
+      </div>
+      <div class="trust-item trust-item-zara">
+        <span class="trust-dot-pulse"></span>
+        Zara is live — <a href="#meet-zara">call her now</a>
       </div>
     </div>
   </div>
@@ -1471,9 +1624,9 @@ footer{background:#060810;padding:56px 0 32px}
         <div class="vbot-bubble vbot-b1">Appointment booked ✓</div>
         <div class="vbot-bubble vbot-b2">FAQ answered instantly</div>
       </div>
-      <div class="voice-eyebrow fi">NEW · AI Voice Receptionist</div>
-      <h2 class="voice-h2 fi d1">Your Phone, Answered. Always.</h2>
-      <p class="voice-sub fi d2">Never miss a call again. Our AI receptionist answers 24/7, books appointments, captures leads and handles FAQs — in Hindi, English or Hinglish.</p>
+      <div class="voice-eyebrow fi">NEW · Meet Zara</div>
+      <h2 class="voice-h2 fi d1">An AI That Makes Millions of Calls.</h2>
+      <p class="voice-sub fi d2">Zara is Bingemind's AI voice receptionist — programmed to make and receive calls for any business, at any scale. Sales. Customer support. Front desk. Appointment booking. She does it all — in Hindi, English, Hinglish, or any language you prefer.</p>
 
       <div class="voice-features fi d2">
         <div class="voice-feat">
@@ -1514,7 +1667,7 @@ footer{background:#060810;padding:56px 0 32px}
         </div>
       </div>
 
-      <a href="https://wa.me/7897543050?text=I%27d%20like%20to%20try%20the%20Voice%20Receptionist%20demo"
+      <a href="https://wa.me/6376068337?text=I%27d%20like%20to%20try%20the%20Voice%20Receptionist%20demo"
          class="btn-primary fi d3" target="_blank" rel="noopener">
         Try the Demo →
       </a>
@@ -1522,6 +1675,30 @@ footer{background:#060810;padding:56px 0 32px}
 
     <!-- RIGHT — Voice UI card -->
     <div class="fi d2">
+
+      <!-- ZARA CHARACTER CARD -->
+      <div class="zara-card">
+        <div class="zara-live-row">
+          <span class="zara-dot"></span>
+          <span class="zara-live-text">Zara · Live Now</span>
+        </div>
+        <div class="zara-avatar-row">
+          <div class="zara-emoji">👩‍💼</div>
+          <div class="zara-name">Zara</div>
+          <div class="zara-title-lbl">AI Voice Receptionist</div>
+          <div class="zara-lang-pills">
+            <span class="zara-lang-pill">Hindi</span>
+            <span class="zara-lang-pill">English</span>
+            <span class="zara-lang-pill">Hinglish</span>
+          </div>
+        </div>
+        <div class="zara-quote-wrap">
+          <p class="zara-quote" id="zaraQuote">Hello! Main Zara hoon — bataiye kya kar sakti hoon aapke liye?</p>
+        </div>
+        <a href="tel:+13182428302" class="zara-cta-btn">📞 Call Zara — Live Demo</a>
+        <p class="zara-free-note">Free. No commitment. Just call.</p>
+      </div>
+
       <div class="voice-card">
         <div class="voice-card-header">
           <span class="voice-card-title">AI Receptionist · Live Demo</span>
@@ -1587,6 +1764,59 @@ footer{background:#060810;padding:56px 0 32px}
 
 
 <!-- ═══════════════════════════════════════════
+     MEET ZARA
+═══════════════════════════════════════════ -->
+<!-- <section class="meet-zara" id="meet-zara">
+  <div class="container meet-zara-inner">
+
+    <div class="zara-eyebrow fi">AI Voice Agent · Powered by Bingemind</div>
+
+    <h2 class="meet-zara-h2 fi d1"><span>Meet </span><span class="zara-gold">Zara.</span></h2>
+
+    <p class="meet-zara-sub fi d2">
+      An AI agent that makes millions of phone calls for any kind of business.
+      Programmed to do sales, customer support, front desk, appointment booking —
+      or really any type of phone call.
+    </p>
+    <p class="meet-zara-sub2 fi d2">Comfortable in English, Hindi, or any language you prefer.</p>
+
+    <div class="zara-caps fi d3">
+      <span class="zara-cap-pill">📞 Sales Calls</span>
+      <span class="zara-cap-pill">🎧 Customer Support</span>
+      <span class="zara-cap-pill">🏥 Front Desk</span>
+      <span class="zara-cap-pill">📅 Appointment Booking</span>
+      <span class="zara-cap-pill">🌐 Any Language</span>
+    </div>
+
+    <div class="zara-stats fi d3">
+      <div class="zara-stat">
+        <span class="zara-stat-num">1M+</span>
+        <span class="zara-stat-lbl">Calls Ready</span>
+      </div>
+      <div class="zara-stat">
+        <span class="zara-stat-num">24/7</span>
+        <span class="zara-stat-lbl">Always On</span>
+      </div>
+      <div class="zara-stat">
+        <span class="zara-stat-num">3 sec</span>
+        <span class="zara-stat-lbl">Avg Response</span>
+      </div>
+    </div>
+
+    <div class="fi d4">
+      <a href="tel:+13182428302" class="zara-main-cta">📞 Call Zara Right Now</a>
+      <p class="zara-below-cta">
+        She's already live at businesses in Lucknow.<br>
+        Your business could be next.
+      </p>
+      <div class="zara-divider"></div>
+    </div>
+
+  </div>
+</section> -->
+
+
+<!-- ═══════════════════════════════════════════
      PRICING
 ═══════════════════════════════════════════ -->
 <section class="section pricing" id="pricing">
@@ -1609,7 +1839,7 @@ footer{background:#060810;padding:56px 0 32px}
           <li data-i18n="plan1_f3">Contact form setup</li>
           <li data-i18n="plan1_f4">30 days support</li>
         </ul>
-        <a href="https://wa.me/7897543050?text=I'm%20interested%20in%20the%20Starter%20plan"
+        <a href="https://wa.me/6376068337?text=I'm%20interested%20in%20the%20Starter%20plan"
            class="plan-btn" target="_blank" rel="noopener" data-i18n="plan_cta">Get Started</a>
         <p class="plan-best" data-i18n="plan1_best">Best for: Small shops, freelancers, photographers</p>
       </div>
@@ -1624,7 +1854,7 @@ footer{background:#060810;padding:56px 0 32px}
           <li data-i18n="plan2_f2">Auto review AI collection bot</li>
           <li data-i18n="plan2_f4">Monthly performance report</li>
         </ul>
-        <a href="https://wa.me/7897543050?text=I'm%20interested%20in%20the%20Essential%20plan"
+        <a href="https://wa.me/6376068337?text=I'm%20interested%20in%20the%20Essential%20plan"
            class="plan-btn" target="_blank" rel="noopener" data-i18n="plan_cta">Get Started</a>
         <p class="plan-best" data-i18n="plan2_best">Best for: Restaurants, salons, local services</p>
       </div>
@@ -1641,7 +1871,7 @@ footer{background:#060810;padding:56px 0 32px}
           <li data-i18n="plan3_f3">Lead capture &amp; qualification</li>
           <li data-i18n="plan3_f4">Analytics dashboard</li>
         </ul>
-        <a href="https://wa.me/7897543050?text=I'm%20interested%20in%20the%20Growth%20plan"
+        <a href="https://wa.me/6376068337?text=I'm%20interested%20in%20the%20Growth%20plan"
            class="plan-btn" target="_blank" rel="noopener" data-i18n="plan_cta">Get Started</a>
         <p class="plan-best" data-i18n="plan3_best">Best for: Gyms, clinics, coaching institutes</p>
       </div>
@@ -1656,16 +1886,17 @@ footer{background:#060810;padding:56px 0 32px}
           <li data-i18n="plan4_f2">Appointment bookings automation</li>
           <li data-i18n="plan4_f3">Document collection &amp; renewals</li>
           <li data-i18n="plan4_f4">Custom solutions for your business</li>
-          <li>AI Voice Receptionist</li>
+          <li>🟢 Zara — AI Voice Receptionist (24/7 calls)</li>
         </ul>
-        <p class="plan-note" data-i18n="plan4_note">Scope decided together — WhatsApp us to discuss</p>
-        <a href="https://wa.me/7897543050?text=I'm%20interested%20in%20the%20Full%20Stack%20plan"
+        <span class="zara-plan-pill">Includes Zara setup &amp; configuration</span>
+        <p class="plan-note" data-i18n="plan4_note" style="margin-top:12px">Scope decided together — WhatsApp us to discuss</p>
+        <a href="https://wa.me/6376068337?text=I'm%20interested%20in%20the%20Full%20Stack%20plan"
            class="plan-btn" target="_blank" rel="noopener" data-i18n="plan_cta">Get Started</a>
         <p class="plan-best" data-i18n="plan4_best">Best for: CA firms, multi-service businesses, enterprises</p>
       </div>
     </div>
 
-    <p class="pricing-note fi">Not sure which plan fits? <a href="https://wa.me/7897543050?text=I%20need%20help%20choosing%20a%20plan" target="_blank" rel="noopener">WhatsApp us →</a> We'll figure it out together.<br>We plan to provide additional 20% discounts for our first 20 customers.</p>
+    <p class="pricing-note fi">Not sure which plan fits? <a href="https://wa.me/6376068337?text=I%20need%20help%20choosing%20a%20plan" target="_blank" rel="noopener">WhatsApp us →</a> We'll figure it out together.<br>We plan to provide additional 20% discounts for our first 20 customers.</p>
   </div>
 </section>
 
@@ -1776,6 +2007,15 @@ footer{background:#060810;padding:56px 0 32px}
     <div class="faq-list">
       <div class="faq-item fi d1">
         <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Who is Zara?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <p class="faq-a-text">Zara is Bingemind's AI voice receptionist — an AI agent built to make and receive phone calls for any type of business. She can be programmed for sales, customer support, front desk duties, appointment booking, or any phone-based workflow. She speaks Hindi, English, Hinglish, and can be configured for other languages. You can call her live right now on +1 (318) 242-8302 — no sign-up, no commitment, just try her.</p>
+        </div>
+      </div>
+      <div class="faq-item fi d2">
+        <div class="faq-q" onclick="toggleFaq(this)">
           <span class="faq-q-text">Do I need a WhatsApp Business API account?</span>
           <div class="faq-icon">+</div>
         </div>
@@ -1843,7 +2083,7 @@ footer{background:#060810;padding:56px 0 32px}
     <h2 class="cta-h2 fi d1">Apply for Your Free<br>AI Strategy Audit.</h2>
     <p class="cta-sub fi d2">We review your business, map your 3 highest-ROI automations, and tell you exactly what to build — free, no obligation. Not everyone qualifies.</p>
     <div class="cta-btns fi d3">
-      <a href="https://wa.me/7897543050?text=Hi%20Bingemind!%20I%27d%20like%20to%20apply%20for%20the%20free%20AI%20Strategy%20Audit."
+      <a href="https://wa.me/6376068337?text=Hi%20Bingemind!%20I%27d%20like%20to%20apply%20for%20the%20free%20AI%20Strategy%20Audit."
          class="btn-wa" target="_blank" rel="noopener">
         Apply on WhatsApp →
       </a>
@@ -1895,7 +2135,7 @@ footer{background:#060810;padding:56px 0 32px}
       <div>
         <div class="foot-col-head">Contact</div>
         <ul class="foot-col-links">
-          <li><a href="https://wa.me/7897543050" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://wa.me/6376068337" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:hello@bingemind.com">hello@bingemind.com</a></li>
           <li><a href="https://www.linkedin.com/in/abhimishra321/" target="_blank" rel="noopener">LinkedIn — Abhishek</a></li>
           <li><a href="https://www.linkedin.com/in/prashantjindalie/" target="_blank" rel="noopener">LinkedIn — Prashant</a></li>
@@ -1911,7 +2151,7 @@ footer{background:#060810;padding:56px 0 32px}
 </footer>
 
 <!-- WhatsApp floating button -->
-<a class="wa-float" href="https://wa.me/7897543050" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa-float" href="https://wa.me/6376068337" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   💬
 </a>
 
@@ -2065,6 +2305,30 @@ const track = document.getElementById('marqueeTrack');
 track.innerHTML = doubledBiz.map(b =>
   `<div class="marquee-item"><span>${b.icon}</span>${b.name}<div class="marquee-dot"></div></div>`
 ).join('');
+
+/* ── ZARA QUOTE ROTATOR ───────────────────── */
+(function(){
+  const quotes = [
+    "Hello! Main Zara hoon — bataiye kya kar sakti hoon aapke liye?",
+    "Hi! I'm Zara — how can I help your business today?",
+    "Namaste! Main aapke business ke liye 24/7 available hoon."
+  ];
+  let qi = 0;
+  const el = document.getElementById('zaraQuote');
+  if (el) {
+    setInterval(function(){
+      el.style.opacity = '0';
+      setTimeout(function(){
+        qi = (qi + 1) % quotes.length;
+        el.textContent = quotes[qi];
+        el.style.opacity = '1';
+      }, 500);
+    }, 4000);
+  }
+})();
+
+/* ── MEET ZARA FADE-IN ───────────────────── */
+document.querySelectorAll('.meet-zara .fi').forEach(el => io.observe(el));
 
 /* ── INIT ────────────────────────────────── */
 buildLangDropdown();
