@@ -1,0 +1,24 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bingemind",
+  "description": "AI automation agency for local businesses. WhatsApp AI, Voice Receptionist, appointment booking, review collection.",
+  "url": "https://bingemind.com",
+  "email": "hello@bingemind.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/abhimishra321/",
+    "https://www.linkedin.com/in/prashantjindalie/"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "description": "AI automation systems for local businesses starting at ₹12,000"
+  }
+}
+</script>
