@@ -1,0 +1,13 @@
+{
+  "name": "Sourdough Starter Feeding Calculator",
+  "short_name": "Starter Feeding",
+  "description": "Grams of starter, flour and water for any feeding ratio.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f4ec",
+  "theme_color": "#854d0e",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Rebar Weight Calculator",
+  "short_name": "Rebar Weight",
+  "description": "Rebar weight calculator for bar #3 to #18 in pounds, kilograms and tons.",
+  "start_url": "/rebar-weight-calculator/",
+  "scope": "/rebar-weight-calculator/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b91c1c",
+  "icons": [
+    {
+      "src": "/rebar-weight-calculator/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/rebar-weight-calculator/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/rebar-weight-calculator/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
