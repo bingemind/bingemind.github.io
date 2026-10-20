@@ -1,0 +1,14 @@
+{
+  "name": "Online Ruler",
+  "short_name": "Online Ruler",
+  "description": "A free online ruler that is true to size on your screen.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f5",
+  "theme_color": "#8a6a00",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
