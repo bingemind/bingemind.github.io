@@ -21,12 +21,12 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bingemind logo">
+<meta property="og:image:alt" content="Bingemind: AI that answers, books and follows up for you. AI automation agency. Open-source plus custom. Worldwide.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bingemind | AI Automation Agency: Voice Agents and Workflows">
 <meta name="twitter:description" content="AI voice agents, receptionists, chat assistants and workflow automation. Open-source AI plus custom builds.">
 <meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
-<meta name="twitter:image:alt" content="Bingemind logo">
+<meta name="twitter:image:alt" content="Bingemind: AI that answers, books and follows up for you. AI automation agency. Open-source plus custom. Worldwide.">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
@@ -149,7 +149,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 .n2{left:50%;top:76%;translate:-50% 0}
 .n3{right:0;top:20%}
 .n4{right:2%;top:88%}
-.stage figcaption{position:absolute;left:0;bottom:-4px;font-size:.8rem;color:var(--muted);max-width:44%}
+.stage figcaption{position:absolute;left:0;bottom:-4px;font-size:.8rem;color:var(--muted);max-width:min(100%,340px);text-wrap:balance}
 
 @media (prefers-reduced-motion:no-preference){
   .mesh{animation:drift 22s ease-in-out infinite alternate}
@@ -185,9 +185,9 @@ ul,ol{list-style:none;margin:0;padding:0}
 .story-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
 .story h2{font-size:clamp(2rem,3.6vw,3rem);margin-bottom:28px}
 .beats{display:grid;gap:18px;counter-reset:b}
-.beats li{color:var(--muted);padding-left:18px;border-left:2px solid var(--line);transition:opacity .4s,border-color .4s}
+.beats li{color:var(--muted);padding-left:18px;border-left:2px solid var(--line);transition:color .4s,border-color .4s}
 .beats li b{display:block;color:var(--ink);font-weight:600}
-.js .beats li{opacity:.5}
+.js .beats li:not(.on) b{color:var(--muted)}
 .js .beats li.on{opacity:1;border-left-color:var(--accent)}
 .prog{height:3px;background:var(--line);border-radius:3px;margin-top:28px;overflow:hidden}
 .prog i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
@@ -199,7 +199,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .clip .poster-light{display:none}:root:not([data-theme="light"]) .clip .poster-dark{display:block}}
 .clip video{opacity:0;transition:opacity .3s}
 .clip.ready video{opacity:1}
-@media (prefers-reduced-motion:reduce){.story{height:auto;padding:96px 0}.story-pin{position:static;height:auto}.js .beats li{opacity:1}.prog{display:none}}
+@media (prefers-reduced-motion:reduce){.story{height:auto;padding:96px 0}.story-pin{position:static;height:auto}.prog{display:none}}
 
 /* Sections */
 section{position:relative}
@@ -231,7 +231,6 @@ section{position:relative}
 .c-kb p{color:var(--navy-muted)}
 .c-kb .badge{color:#f5be1e}
 .c-kb .chips li{border-color:rgba(255,255,255,.18);color:var(--navy-muted)}
-.c-docs{background-image:repeating-linear-gradient(180deg,transparent 0 27px,color-mix(in srgb,var(--line) 70%,transparent) 27px 28px)}
 .wave{display:flex;align-items:center;gap:5px;height:72px;margin:8px 0 4px}
 .wave i{display:block;width:6px;height:100%;border-radius:6px;background:var(--accent);transform:scaleY(var(--h))}
 @media (prefers-reduced-motion:no-preference){.wave i{animation:eq 1.6s ease-in-out infinite;animation-delay:calc(var(--k) * -120ms)}}
@@ -268,9 +267,8 @@ section{position:relative}
 
 /* Free tools */
 .tools-sec{background:var(--surface);border-block:1px solid var(--line)}
-.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .tgroup{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--bg)}
-.tgroup.gym{grid-row:span 2}
 .tgroup h3{display:flex;align-items:center;gap:10px;font:600 1rem/1.3 var(--body);letter-spacing:0;padding:4px 6px 14px}
 .tgroup h3 .ic{color:var(--accent-text)}
 .tgroup a{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;padding:12px;border-radius:var(--radius-sm);text-decoration:none;min-height:44px;transition:background-color .2s}
@@ -313,10 +311,10 @@ section{position:relative}
 .cta .phone a{color:var(--navy-ink);display:inline-block;padding:12px 0}
 
 /* Footer */
-footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
+footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
 .f-brand p{color:var(--muted);margin-top:14px;max-width:32ch;font-size:.95rem}
-.f-col h2{font:600 .95rem/1.3 var(--body);letter-spacing:0;margin-bottom:6px}
+.f-col .f-title{font:600 .95rem/1.3 var(--body);letter-spacing:0;margin-bottom:6px}
 .f-col a{display:flex;align-items:center;min-height:44px;color:var(--muted);text-decoration:none;font-size:.95rem}
 .f-col a:hover{color:var(--ink)}
 .f-bottom{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
@@ -324,6 +322,8 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
 
 .wa-float{position:fixed;right:20px;bottom:20px;z-index:40;display:grid;place-items:center;width:56px;height:56px;border-radius:999px;background:#1a7f45;color:#fff;box-shadow:0 10px 30px -8px rgba(18,23,34,.45)}
 .wa-float .ic{width:28px;height:28px}
+.wa-float{transition:opacity .25s,transform .25s}.wa-float.away{opacity:0;pointer-events:none;transform:scale(.8)}
+@media (max-width:768px){.wa-float{width:44px;height:44px;right:12px;bottom:12px}.wa-float .ic{width:22px;height:22px}}
 
 /* Scroll reveal. Only when JS runs and motion is allowed; content is visible otherwise. */
 @media (prefers-reduced-motion:no-preference){
@@ -626,56 +626,39 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head rv">
       <h2 id="tools-title">Free tools</h2>
-      <p>Small, single-purpose tools that work in your browser. No sign-up, and your data stays on your device.</p>
+      <p>Free browser tools we built and keep free. No sign-up, and your data stays on your device.</p>
     </div>
     <div class="tgrid">
-      <div class="tgroup gym rv">
+      <div class="tgroup rv" style="--d:0">
         <h3><svg class="ic" aria-hidden="true"><use href="#i-barbell"/></svg>Gym and running</h3>
         <ul>
           <li><a href="/barbell-plate-calculator/"><strong>Barbell plate calculator</strong><small>See which plates to load on each side.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/warm-up-set-calculator/"><strong>Warm up set calculator</strong><small>Warm-up sets from the empty bar to your work weight.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/percent-of-1rm/"><strong>Percent of 1RM calculator</strong><small>50% to 100% of your 1RM as loadable weights.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/531-program-calculator/"><strong>5/3/1 program calculator</strong><small>The full 4-week cycle, rounded to your plates.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/gzclp-calculator/"><strong>GZCLP calculator</strong><small>Today's T1, T2 and T3 sets and the next session.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
           <li><a href="/rpe-chart/"><strong>RPE chart and calculator</strong><small>Estimate your 1RM from weight, reps and RPE.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/treadmill-pace-converter/"><strong>Treadmill pace converter</strong><small>Treadmill speed to pace and back, with incline.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/track-split-calculator/"><strong>Track split calculator</strong><small>Lap splits for any goal time, plus a pace band.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
         </ul>
       </div>
       <div class="tgroup rv" style="--d:1">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-chef"/></svg>Kitchen and baking</h3>
-        <ul>
-          <li><a href="/cake-pan-converter/"><strong>Cake pan size converter</strong><small>Convert any pan size and scale the recipe.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/sourdough-starter-calculator/"><strong>Sourdough starter feeding calculator</strong><small>Starter, flour and water in grams for any ratio.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:2">
         <h3><svg class="ic" aria-hidden="true"><use href="#i-hammer"/></svg>Home and trades</h3>
         <ul>
           <li><a href="/board-and-batten-calculator/"><strong>Board and batten calculator</strong><small>Exact gaps, batten marks and boards to buy.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
           <li><a href="/rolling-offset-calculator/"><strong>Rolling offset calculator</strong><small>True offset, travel and cut length for pipe.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/rebar-weight-calculator/"><strong>Rebar weight calculator</strong><small>Total weight in lb, kg and tons for a bar list.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:1">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg>Measure, crafts and print</h3>
-        <ul>
-          <li><a href="/online-ruler/"><strong>Online ruler</strong><small>A true-size ruler in cm, mm and inches.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/knitting-increase-calculator/"><strong>Knitting increase evenly calculator</strong><small>Spread increases or decreases evenly across a row.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/poster-tiler/"><strong>Print a poster on multiple pages</strong><small>Split any image into a multi-page PDF poster.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/dpi-changer/"><strong>Change image DPI to 300</strong><small>Set the DPI of a JPEG or PNG. Pixels stay the same.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
         </ul>
       </div>
       <div class="tgroup rv" style="--d:2">
         <h3><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Work and data</h3>
         <ul>
           <li><a href="/markdown-to-pdf/"><strong>Markdown to PDF</strong><small>Convert Markdown to a clean PDF in your browser.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/column-to-comma/"><strong>Column to comma separated list</strong><small>Turn a pasted column into a comma separated list.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
           <li><a href="/cash-drawer-counter/"><strong>Cash drawer counter</strong><small>Count your drawer and see the deposit at shift end.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
         </ul>
       </div>
+      <div class="tgroup rv" style="--d:3">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg>Measure and print</h3>
+        <ul>
+          <li><a href="/online-ruler/"><strong>Online ruler</strong><small>A true-size ruler in cm, mm and inches.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/poster-tiler/"><strong>Print a poster on multiple pages</strong><small>Split any image into a multi-page PDF poster.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+        </ul>
+      </div>
     </div>
-    <div class="tools-more rv"><a class="btn btn-ghost mag" href="/tools/">See all free tools <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="tools-more rv"><a class="btn btn-primary mag" href="/tools/">See all 20 free tools <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
@@ -683,7 +666,7 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head rv">
       <h2 id="team-title">The team</h2>
-      <p>Two founders, one technical and one business. The people on your first call are the people who build your system.</p>
+      <p>Two founders, one technical and one business. You talk to the founders, not a sales team.</p>
     </div>
     <div class="team rv">
       <a href="https://www.linkedin.com/in/abhimishra321/" target="_blank" rel="noopener"><b>Abhishek Mishra <svg class="ic" aria-hidden="true"><use href="#i-in"/></svg></b><span>Technical co-founder</span><span class="sr">(LinkedIn, opens in a new tab)</span></a>
@@ -755,7 +738,7 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
         <p>AI automation agency. Open-source AI plus custom builds, for businesses worldwide.</p>
       </div>
       <nav class="f-col" aria-labelledby="f-services">
-        <h2 id="f-services">Services</h2>
+        <p class="f-title" id="f-services">Services</p>
         <a href="#services">AI voice agents</a>
         <a href="#services">AI receptionist</a>
         <a href="#services">Chat and WhatsApp assistants</a>
@@ -763,7 +746,7 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
         <a href="#services">Document automation</a>
       </nav>
       <nav class="f-col" aria-labelledby="f-company">
-        <h2 id="f-company">Company</h2>
+        <p class="f-title" id="f-company">Company</p>
         <a href="#how">How it works</a>
         <a href="/tools/">Free tools</a>
         <a href="#faq">FAQ</a>
@@ -771,7 +754,7 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
         <a href="/privacy/">Privacy</a>
       </nav>
       <div class="f-col">
-        <h2>Contact</h2>
+        <p class="f-title">Contact</p>
         <a href="https://wa.me/916376068337" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:hello@bingemind.com">hello@bingemind.com</a>
         <a href="tel:+916376068337">+91 63760 68337</a>
@@ -832,6 +815,9 @@ footer{padding:72px 0 40px;margin-top:112px;border-top:1px solid var(--line)}
      The theme picks the light or dark render. Scroll progress picks the frame. */
   var clip=document.getElementById('clip'),video=document.getElementById('clipVideo');
   var beats=document.querySelectorAll('#beats li'),bar=document.getElementById('progBar');
+  if(reduce){for(var r=0;r<beats.length;r++){beats[r].classList.toggle('on',r===beats.length-1);}}
+  var wa=document.querySelector('.wa-float'),ct=document.getElementById('contact');
+  if(wa&&ct&&'IntersectionObserver' in window){new IntersectionObserver(function(e){wa.classList.toggle('away',e[0].isIntersecting);},{threshold:0}).observe(ct);}
   var clipLoaded=false,target=0,pending=false;
   function clipSrc(){var t=isDark()?'dark':'light';var mp4=video.canPlayType('video/mp4; codecs="avc1.640028"');return '/media/receptionist-'+t+(mp4?'.mp4':'.webm');}
   /* Scene windows of the clip, in seconds. Each step gets a quarter of the scroll: 80% shows its
@@ -1083,28 +1069,16 @@ window.bmMotion=function(){
       "@type": "ItemList",
       "@id": "https://bingemind.com/#free-tools",
       "name": "Bingemind free tools",
-      "numberOfItems": 20,
+      "numberOfItems": 8,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Barbell plate calculator", "url": "https://bingemind.com/barbell-plate-calculator/" },
-        { "@type": "ListItem", "position": 2, "name": "Warm up set calculator", "url": "https://bingemind.com/warm-up-set-calculator/" },
-        { "@type": "ListItem", "position": 3, "name": "Percent of 1RM calculator", "url": "https://bingemind.com/percent-of-1rm/" },
-        { "@type": "ListItem", "position": 4, "name": "5/3/1 program calculator", "url": "https://bingemind.com/531-program-calculator/" },
-        { "@type": "ListItem", "position": 5, "name": "GZCLP calculator", "url": "https://bingemind.com/gzclp-calculator/" },
-        { "@type": "ListItem", "position": 6, "name": "RPE chart and calculator", "url": "https://bingemind.com/rpe-chart/" },
-        { "@type": "ListItem", "position": 7, "name": "Treadmill pace converter", "url": "https://bingemind.com/treadmill-pace-converter/" },
-        { "@type": "ListItem", "position": 8, "name": "Track split calculator", "url": "https://bingemind.com/track-split-calculator/" },
-        { "@type": "ListItem", "position": 9, "name": "Cake pan size converter", "url": "https://bingemind.com/cake-pan-converter/" },
-        { "@type": "ListItem", "position": 10, "name": "Sourdough starter feeding calculator", "url": "https://bingemind.com/sourdough-starter-calculator/" },
-        { "@type": "ListItem", "position": 11, "name": "Board and batten calculator", "url": "https://bingemind.com/board-and-batten-calculator/" },
-        { "@type": "ListItem", "position": 12, "name": "Rolling offset calculator", "url": "https://bingemind.com/rolling-offset-calculator/" },
-        { "@type": "ListItem", "position": 13, "name": "Rebar weight calculator", "url": "https://bingemind.com/rebar-weight-calculator/" },
-        { "@type": "ListItem", "position": 14, "name": "Online ruler", "url": "https://bingemind.com/online-ruler/" },
-        { "@type": "ListItem", "position": 15, "name": "Knitting increase evenly calculator", "url": "https://bingemind.com/knitting-increase-calculator/" },
-        { "@type": "ListItem", "position": 16, "name": "Print a poster on multiple pages", "url": "https://bingemind.com/poster-tiler/" },
-        { "@type": "ListItem", "position": 17, "name": "Change image DPI to 300", "url": "https://bingemind.com/dpi-changer/" },
-        { "@type": "ListItem", "position": 18, "name": "Markdown to PDF", "url": "https://bingemind.com/markdown-to-pdf/" },
-        { "@type": "ListItem", "position": 19, "name": "Column to comma separated list", "url": "https://bingemind.com/column-to-comma/" },
-        { "@type": "ListItem", "position": 20, "name": "Cash drawer counter", "url": "https://bingemind.com/cash-drawer-counter/" }
+        { "@type": "ListItem", "position": 2, "name": "RPE chart and calculator", "url": "https://bingemind.com/rpe-chart/" },
+        { "@type": "ListItem", "position": 3, "name": "Board and batten calculator", "url": "https://bingemind.com/board-and-batten-calculator/" },
+        { "@type": "ListItem", "position": 4, "name": "Rolling offset calculator", "url": "https://bingemind.com/rolling-offset-calculator/" },
+        { "@type": "ListItem", "position": 5, "name": "Markdown to PDF", "url": "https://bingemind.com/markdown-to-pdf/" },
+        { "@type": "ListItem", "position": 6, "name": "Cash drawer counter", "url": "https://bingemind.com/cash-drawer-counter/" },
+        { "@type": "ListItem", "position": 7, "name": "Online ruler", "url": "https://bingemind.com/online-ruler/" },
+        { "@type": "ListItem", "position": 8, "name": "Print a poster on multiple pages", "url": "https://bingemind.com/poster-tiler/" }
       ]
     }
   ]
