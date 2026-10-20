@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Sitemap: https://bingemind.com/sitemap-index.xml
 Sitemap: https://bingemind.com/sitemap.xml
 Sitemap: https://bingemind.com/cake-pan-converter/sitemap-index.xml
 Sitemap: https://bingemind.com/sourdough-starter-calculator/sitemap-index.xml
