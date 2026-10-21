@@ -5,7 +5,7 @@ Website for [Bingemind](https://bingemind.com/), an AI automation agency, plus a
 Every tool is a single-purpose page that runs fully in the browser. No sign-up, no limits, nothing is uploaded.
 
 - Tools hub: https://bingemind.com/tools/
-- Made by [Abhishek Mishra](https://bingemind.com/abhishek-mishra/), SDE @ Oqu AI
+- Made by [Abhishek Mishra](https://bingemind.com/abhishek-mishra/). Made with love by Bingemind
 
 ## Free tools
 
