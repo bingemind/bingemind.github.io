@@ -36,12 +36,13 @@
 /* Theme: a saved choice wins, else follow the browser. Runs before first paint. */
 (function(){try{var t=localStorage.getItem('bm-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}document.documentElement.classList.add('js');})();
 </script>
-<link rel="preload" as="image" href="/3d-rendered-robot-mascot-removebg-preview.webp" imagesrcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" imagesizes="(max-width: 768px) 160px, 290px" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/3d-rendered-robot-mascot-removebg-preview.webp" imagesrcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" imagesizes="(max-width: 768px) 160px, 370px" type="image/webp" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin.woff2" crossorigin>
 <style>
 /* Self-hosted variable fonts (latin). swap keeps text visible while they load. */
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 700;font-stretch:100%;font-display:swap;src:url(/fonts/bricolage-grotesque-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
-@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/dm-sans-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 700;font-stretch:100%;font-display:optional;src:url(/fonts/bricolage-grotesque-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 600;font-display:optional;src:url(/fonts/dm-sans-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
 /* Tokens. One accent: the gold of the Bingemind logo bolt. */
 :root{
   --bg:#f6f7f9;--surface:#ffffff;--surface-2:#eef0f4;--ink:#121722;--muted:#4a5262;--line:#dde1e8;
@@ -124,7 +125,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 
 /* Hero */
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:32px 0 72px}
-.mesh{position:absolute;inset:-20% -10% auto -10%;height:120%;z-index:-1;pointer-events:none;
+.mesh{position:absolute;top:-80px;left:-10%;right:-10%;height:820px;z-index:-1;pointer-events:none;
   background:radial-gradient(40% 45% at 75% 35%,var(--accent-soft),transparent 70%),radial-gradient(30% 35% at 15% 15%,color-mix(in srgb,var(--ink) 5%,transparent),transparent 70%)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;min-height:min(620px,calc(100dvh - 68px - 120px))}
 .eyebrow{font:600 1rem/1.2 var(--body);color:var(--accent-text)}
@@ -132,6 +133,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 .hero h1 .w{display:inline}
 .hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,var(--accent-soft) 64%);padding:0 .04em}
 .lede{font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--muted);max-width:36ch}
+.for{margin-top:12px;font-weight:600;color:var(--ink);max-width:40ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
 /* Hero object (from sample H): the mascot in a glass lens. The voice sphere wakes inside the lens
@@ -145,6 +147,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 .lens canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s var(--ease)}
 .device.listening .lens canvas{opacity:1}
 .lens img{position:relative;width:52%;height:auto;margin-top:12%;filter:drop-shadow(0 22px 30px rgba(18,23,34,.25))}
+@media (min-width:961px){.lens img{width:66%;margin-top:18%}}
 .state{position:absolute;left:50%;top:7%;translate:-50% 0;z-index:2;display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;
   background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;font-weight:600;white-space:nowrap}
 .state i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
@@ -380,7 +383,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 .dial .lbl{font-size:1rem;color:var(--muted);margin-top:6px}
 
 /* Who it is for, and the proof item */
-.who{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.who{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .who li{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .who .ic{width:24px;height:24px;color:var(--accent-text)}
 .who h3{font:600 1.05rem/1.3 var(--body);letter-spacing:0;margin:14px 0 6px}
@@ -410,6 +413,10 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 .field.bad input,.field.bad textarea{border-color:#b42318}
 .form-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .form .note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.form .note a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+.form .status{margin-top:14px;font-weight:600;color:var(--ink)}
+.form .status:empty{display:none}
+.form .status:not(:empty){padding:12px 14px;border-radius:var(--radius-sm);background:var(--accent-soft)}
 
 @media (max-width:1080px){
   .who{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -424,7 +431,11 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .r-mid .line{display:none}
 }
 @media (max-width:768px){
-  .who{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr 1fr;gap:10px}
+  .who li{padding:14px}
+  .who .ic{width:20px;height:20px}
+  .who h3{font-size:.95rem;margin:8px 0 4px}
+  .who p{font-size:.86rem;line-height:1.45}
   .form{padding:22px}
   .form-row .btn{width:100%}
   .facts{grid-template-columns:1fr 1fr}
@@ -440,10 +451,12 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 }
 
 /* Responsive */
-@media (max-width:1080px){
+@media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;min-height:0;gap:56px}
   .hero-copy{order:-1}
   .device{max-width:440px}
+}
+@media (max-width:1080px){
   .c-voice{grid-column:span 6;grid-row:auto}
   .c-rec,.c-chat{grid-column:span 3}
   .c-kb,.c-web{grid-column:span 6}
@@ -571,7 +584,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       <div class="ring" aria-hidden="true"></div>
       <div class="lens" id="lens">
         <canvas id="listen" aria-hidden="true"></canvas>
-        <img src="/3d-rendered-robot-mascot-removebg-preview.webp" srcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" sizes="(max-width: 768px) 160px, 290px" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset" fetchpriority="high">
+        <img src="/3d-rendered-robot-mascot-removebg-preview.webp" srcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" sizes="(max-width: 768px) 160px, 370px" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset" fetchpriority="high">
       </div>
       <p class="state" aria-hidden="true"><i></i><span id="stateText">Ready for calls</span></p>
       <div class="chip c1" data-depth="40"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>Call comes in</b><span>9:42 pm, new caller</span></div></div>
@@ -584,8 +597,9 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       <p class="eyebrow">AI automation agency</p>
       <h1 id="hero-title"><span class="w" style="--i:0">AI</span> <span class="w" style="--i:1">that</span> <span class="w" style="--i:2"><em>answers,</em></span> <span class="w" style="--i:3"><em>books</em></span> <span class="w" style="--i:4">and</span> <span class="w" style="--i:5"><em>follows&nbsp;up</em></span> <span class="w" style="--i:6">for</span> <span class="w" style="--i:7">you.</span></h1>
       <p class="lede">We set up proven open-source AI and build custom automation on top. For businesses anywhere in the world.</p>
+      <p class="for">For clinics, estate agents, online shops and busy operations teams.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary mag" href="#book">Book a free audit <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-primary mag" href="#book">Book a free automation audit <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost mag" href="#services">See services</a>
       </div>
     </div>
@@ -760,10 +774,9 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     </div>
     <ul class="who">
       <li class="rv"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><h3>Clinics and dental practices</h3><p>Answer calls after hours, book appointments and send reminders.</p></li>
-      <li class="rv" style="--d:1"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><h3>Estate and letting agents</h3><p>Reply to property enquiries, book viewings and log every lead.</p></li>
-      <li class="rv" style="--d:2"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><h3>Real estate brokers</h3><p>Qualify buyers on WhatsApp and pass ready leads to your team.</p></li>
-      <li class="rv" style="--d:3"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg><h3>D2C and ecommerce brands</h3><p>Answer order and return questions and follow up with customers.</p></li>
-      <li class="rv" style="--d:4"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg><h3>Operations teams</h3><p>Read documents, move data between systems and cut manual entry.</p></li>
+      <li class="rv" style="--d:1"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><h3>Estate agents, letting agents and brokers</h3><p>Reply to property enquiries, book viewings, qualify buyers and log every lead.</p></li>
+      <li class="rv" style="--d:2"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg><h3>D2C and ecommerce brands</h3><p>Answer order and return questions and follow up with customers.</p></li>
+      <li class="rv" style="--d:3"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg><h3>Operations teams</h3><p>Read documents, move data between systems and cut manual entry.</p></li>
     </ul>
     <div class="proof rv">
       <p><b>See how we build.</b> We made and keep running our own free browser tools. They are fast, private and work without sign-up.</p>
@@ -791,7 +804,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       <div class="field" id="f-name"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required><span class="err" id="bNameErr">Please add your name.</span></div>
       <div class="field"><label for="bType">Type of business</label>
         <select id="bType" name="type">
-          <option>Clinic or dental practice</option><option>Estate or letting agent</option><option>Real estate broker</option>
+          <option>Clinic or dental practice</option><option>Estate agent, letting agent or broker</option>
           <option>D2C or ecommerce brand</option><option>Operations team</option><option>Something else</option>
         </select></div>
       <div class="field" id="f-time"><label for="bTime">What takes your team's time?</label><span class="hint" id="bTimeHint">For example: missed calls, booking appointments, copying data from emails.</span><textarea id="bTime" name="time" required aria-describedby="bTimeHint"></textarea><span class="err" id="bTimeErr">Please tell us a little about it.</span></div>
@@ -799,7 +812,8 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
         <button class="btn btn-primary" type="submit"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
         <button class="btn btn-ghost" type="button" id="bMail"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Send by email</button>
       </div>
-      <p class="note">This opens WhatsApp or your email app with your answers filled in. Nothing is stored on this site.</p>
+      <p class="status" id="bStatus" role="status" aria-live="polite"></p>
+      <p class="note">This opens WhatsApp or your email app with your answers filled in. Nothing is stored on this site. You can also write to <a href="mailto:hello@bingemind.com">hello@bingemind.com</a>.</p>
     </form>
   </div>
 </section>
@@ -901,8 +915,8 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="cta rv">
-      <h2 id="contact-title">Book a free automation audit</h2>
-      <p>Tell us what takes up your team's time. We will show you what to automate first and what it would take.</p>
+      <h2 id="contact-title">Other ways to reach us</h2>
+      <p>Prefer to talk now? Message us on WhatsApp, write an email or call. We set call times that suit your time zone.</p>
       <div class="cta-row">
         <a class="btn btn-primary mag" href="https://wa.me/916376068337?text=Hi%20Bingemind%2C%20I%27d%20like%20a%20free%20automation%20audit." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Book on WhatsApp</a>
         <a class="btn btn-ghost mag" href="mailto:hello@bingemind.com?subject=Free%20automation%20audit"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>hello@bingemind.com</a>
@@ -1001,7 +1015,13 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   var beats=document.querySelectorAll('#beats li'),bar=document.getElementById('progBar');
   if(reduce){for(var r=0;r<beats.length;r++){beats[r].classList.toggle('on',r===beats.length-1);}}
   var wa=document.querySelector('.wa-float'),ct=document.getElementById('contact');
-  if(wa&&ct&&'IntersectionObserver' in window){new IntersectionObserver(function(e){wa.classList.toggle('away',e[0].isIntersecting);},{threshold:0}).observe(ct);}
+  if(wa&&ct&&'IntersectionObserver' in window){
+    var inCt=false,inHero=true,small=matchMedia('(max-width: 480px)');
+    function waSet(){wa.classList.toggle('away',inCt||(small.matches&&inHero));}
+    new IntersectionObserver(function(e){inCt=e[0].isIntersecting;waSet();},{threshold:0}).observe(ct);
+    new IntersectionObserver(function(e){inHero=e[0].isIntersecting;waSet();},{threshold:0}).observe(document.getElementById('device'));
+    if(small.addEventListener){small.addEventListener('change',waSet);}
+  }
   var clipLoaded=false,target=0,pending=false;
   function clipSrc(){var t=isDark()?'dark':'light';var mp4=video.canPlayType('video/mp4; codecs="avc1.640028"');return '/media/receptionist-'+t+(mp4?'.mp4':'.webm');}
   /* Scene windows of the clip, in seconds. Each step gets a quarter of the scroll: 80% shows its
@@ -1154,13 +1174,14 @@ addEventListener('DOMContentLoaded',function(){
   }
   window.bmHow=function(p){var k=Math.min(3,Math.floor(p*4));pr.setAttribute('stroke-dashoffset',100-Math.max(4,p*100));setStep(k);};
   if(!reduce&&desktop.matches){how.classList.add('pinned');}
-  items.forEach(function(li,k){li.querySelector('button').addEventListener('click',function(){
+  function goStep(k){
     if(how.classList.contains('pinned')){
       var top=how.getBoundingClientRect().top+scrollY,range=how.offsetHeight-innerHeight;
       scrollTo({top:top+range*(k+.5)/4,behavior:reduce?'auto':'smooth'});
     }
     setStep(k);
-  });});
+  }
+  items.forEach(function(li,k){var b=li.querySelector('button');b.addEventListener('click',function(){goStep(k);});b.addEventListener('focus',function(){goStep(k);});});
 
   /* Open source lead: split into words for the desktop reveal (GSAP drives it) */
   var lead=document.getElementById('osLead');
@@ -1183,8 +1204,9 @@ addEventListener('DOMContentLoaded',function(){
     return ok;
   }
   function message(){return 'Hi Bingemind, I would like a free automation audit.\n\nName: '+val('bName')+'\nBusiness: '+val('bType')+'\nWhat takes our time: '+val('bTime');}
-  form.addEventListener('submit',function(e){e.preventDefault();if(!check())return;window.open('https://wa.me/916376068337?text='+encodeURIComponent(message()),'_blank','noopener');});
-  document.getElementById('bMail').addEventListener('click',function(){if(!check())return;location.href='mailto:hello@bingemind.com?subject='+encodeURIComponent('Free automation audit')+'&body='+encodeURIComponent(message());});
+  var status=document.getElementById('bStatus');
+  form.addEventListener('submit',function(e){e.preventDefault();if(!check())return;window.open('https://wa.me/916376068337?text='+encodeURIComponent(message()),'_blank','noopener');status.textContent='WhatsApp opened with your message. Press send there to book.';});
+  document.getElementById('bMail').addEventListener('click',function(){if(!check())return;status.textContent='Your email app should open with your message. If it does not, write to hello@bingemind.com.';location.href='mailto:hello@bingemind.com?subject='+encodeURIComponent('Free automation audit')+'&body='+encodeURIComponent(message());});
 });
 </script>
 
