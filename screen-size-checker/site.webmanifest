@@ -1,7 +1,7 @@
 {
   "name": "Screen Size Checker",
   "short_name": "Screen Size",
-  "description": "Measure your real screen size in inches and cm with a bank card.",
+  "description": "See your screen size in inches and cm at once, then measure it exactly with a bank card.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
