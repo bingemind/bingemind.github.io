@@ -36,12 +36,12 @@
 /* Theme: a saved choice wins, else follow the browser. Runs before first paint. */
 (function(){try{var t=localStorage.getItem('bm-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}document.documentElement.classList.add('js');})();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="/3d-rendered-robot-mascot-removebg-preview.webp" type="image/webp">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"></noscript>
+<link rel="preload" as="image" href="/3d-rendered-robot-mascot-removebg-preview.webp" imagesrcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" imagesizes="(max-width: 768px) 160px, 290px" type="image/webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage-grotesque-latin.woff2" crossorigin>
 <style>
+/* Self-hosted variable fonts (latin). swap keeps text visible while they load. */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 700;font-stretch:100%;font-display:swap;src:url(/fonts/bricolage-grotesque-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(/fonts/dm-sans-latin.woff2) format('woff2');unicode-range:U+0020-007E,U+00A0,U+00A9,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+20B9,U+2192}
 /* Tokens. One accent: the gold of the Bingemind logo bolt. */
 :root{
   --bg:#f6f7f9;--surface:#ffffff;--surface-2:#eef0f4;--ink:#121722;--muted:#4a5262;--line:#dde1e8;
@@ -50,6 +50,7 @@
   --shadow:0 1px 2px rgba(18,23,34,.05),0 12px 32px rgba(18,23,34,.07);
   --btn-shadow:0 1px 2px rgba(18,23,34,.12),0 6px 16px -8px rgba(18,23,34,.3);
   --radius:16px;--radius-sm:10px;--ease:cubic-bezier(.16,1,.3,1);
+  --glass:rgba(255,255,255,.58);--edge:rgba(255,255,255,.95);--dots:#2b3242;
   --display:'Bricolage Grotesque',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
   --body:'DM Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
   color-scheme:light;
@@ -58,13 +59,13 @@
   :root:not([data-theme="light"]){
     --bg:#0d1119;--surface:#141a25;--surface-2:#1a2130;--ink:#eef1f6;--muted:#a7b0bf;--line:#263042;
     --accent:#f5be1e;--accent-text:#f5be1e;--accent-soft:rgba(245,190,30,.14);
-    --navy:#070a10;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35);--btn-shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark;
+    --navy:#070a10;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35);--btn-shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark;--glass:rgba(22,29,42,.6);--edge:rgba(255,255,255,.12);--dots:#c3cbd8;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0d1119;--surface:#141a25;--surface-2:#1a2130;--ink:#eef1f6;--muted:#a7b0bf;--line:#263042;
   --accent:#f5be1e;--accent-text:#f5be1e;--accent-soft:rgba(245,190,30,.14);
-  --navy:#070a10;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35);--btn-shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark;
+  --navy:#070a10;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35);--btn-shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark;--glass:rgba(22,29,42,.6);--edge:rgba(255,255,255,.12);--dots:#c3cbd8;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -125,44 +126,66 @@ ul,ol{list-style:none;margin:0;padding:0}
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:32px 0 72px}
 .mesh{position:absolute;inset:-20% -10% auto -10%;height:120%;z-index:-1;pointer-events:none;
   background:radial-gradient(40% 45% at 75% 35%,var(--accent-soft),transparent 70%),radial-gradient(30% 35% at 15% 15%,color-mix(in srgb,var(--ink) 5%,transparent),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;min-height:min(640px,calc(100dvh - 68px - 104px))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;min-height:min(620px,calc(100dvh - 68px - 120px))}
 .eyebrow{font:600 1rem/1.2 var(--body);color:var(--accent-text)}
-.hero h1{font-size:clamp(2.5rem,5vw,4.1rem);margin:20px 0 22px;letter-spacing:-.035em;line-height:1.06}
-.hero h1 .w{display:inline-block}
+.hero h1{font-size:clamp(2.4rem,4.6vw,3.9rem);margin:18px 0 20px;letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
+.hero h1 .w{display:inline}
 .hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,var(--accent-soft) 64%);padding:0 .04em}
 .lede{font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--muted);max-width:36ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
-.stage{position:relative;aspect-ratio:560/520;width:100%;max-width:560px;margin:0 0 0 auto}
-.stage svg.flow{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.track{fill:none;stroke:color-mix(in srgb,var(--muted) 45%,transparent);stroke-width:2;stroke-dasharray:3 7}
-.packet{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;stroke-dasharray:6 200;stroke-dashoffset:-100}
-.bot{position:absolute;left:50%;top:50%;width:38%;translate:-50% -56%;filter:drop-shadow(0 24px 36px rgba(18,23,34,.22))}
-.bot img{width:100%;height:auto}
-.node{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.86rem;line-height:1.25;white-space:nowrap}
-.node b{display:block;font-weight:600}
-.node span{color:var(--muted)}
-.node .dot{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--surface-2);color:var(--ink);flex:none}
-.node .dot .ic{width:18px;height:18px}
-.n2 .dot{background:var(--accent);color:var(--on-accent)}
-.n1{left:0;top:6%}
-.n2{left:50%;top:76%;translate:-50% 0}
-.n3{right:0;top:20%}
-.n4{right:2%;top:88%}
-.stage figcaption{position:absolute;left:0;bottom:-4px;font-size:.8rem;color:var(--muted);max-width:min(100%,340px);text-wrap:balance}
-
+/* Hero object (from sample H): the mascot in a glass lens. The voice sphere wakes inside the lens
+   when a call comes in, the status pill names the step, and the call-flow chips light in turn. */
+.device{position:relative;aspect-ratio:1;width:100%;max-width:540px;margin:0 auto;perspective:1100px}
+.ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--line);transition:border-color .5s}
+.device.listening .ring{border-color:var(--accent)}
+.lens{position:absolute;inset:4.5%;border-radius:50%;overflow:hidden;display:grid;place-items:center;
+  background:var(--glass);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid var(--edge);box-shadow:inset 0 1px 0 var(--edge),0 28px 60px -18px rgba(18,23,34,.28)}
+.lens canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s var(--ease)}
+.device.listening .lens canvas{opacity:1}
+.lens img{position:relative;width:52%;height:auto;margin-top:12%;filter:drop-shadow(0 22px 30px rgba(18,23,34,.25))}
+.state{position:absolute;left:50%;top:7%;translate:-50% 0;z-index:2;display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;font-weight:600;white-space:nowrap}
+.state i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.device.listening .state i{background:var(--accent)}
+.chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;padding:9px 14px 9px 9px;border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;line-height:1.25;white-space:nowrap;transition:border-color .35s}
+.chip b{display:block;font-weight:600;color:var(--ink)}
+.chip span{color:var(--muted)}
+.chip .dot{display:grid;place-items:center;width:32px;height:32px;border-radius:999px;background:var(--surface-2);color:var(--ink);flex:none;transition:background-color .35s}
+.chip .dot .ic{width:17px;height:17px}
+.chip.live{border-color:var(--accent)}
+.chip.live .dot,.chip.done .dot{background:var(--accent);color:var(--on-accent)}
+.c1{left:-6%;top:24%}.c2{right:-8%;top:36%}.c3{left:-3%;bottom:16%}.c4{right:-3%;bottom:5%}
+.device figcaption{position:absolute;left:0;right:0;bottom:-34px;text-align:center;font-size:.8rem;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){
   .mesh{animation:drift 22s ease-in-out infinite alternate}
-  .hero h1 .w{animation:rise .9s var(--ease) both;animation-delay:calc(var(--i) * 55ms)}
-  .bot{animation:float 6s ease-in-out infinite}
-  .packet{animation:travel 5.4s var(--ease) infinite}
-  .p2{animation-delay:1.5s}.p3{animation-delay:3s}
-  .paused .mesh,.paused .bot,.paused .packet{animation-play-state:paused}
+  .hero h1{animation:rise .9s var(--ease) both}
+  .device.listening .ring{animation:breathe 2.4s ease-in-out infinite}
+  .device.listening .state i{animation:blink 1s steps(2) infinite}
+  .lens img{animation:bob 6s ease-in-out infinite}
+  .paused .mesh,.paused .ring,.paused .lens img{animation-play-state:paused}
 }
 @keyframes drift{to{transform:translate3d(-4%,6%,0) scale(1.08)}}
 @keyframes rise{from{transform:translateY(.35em)}}
-@keyframes float{50%{translate:-50% -60%}}
-@keyframes travel{0%{stroke-dashoffset:6}28%,100%{stroke-dashoffset:-100}}
+@keyframes breathe{50%{scale:1.012}}
+@keyframes blink{50%{opacity:.3}}
+@keyframes bob{50%{translate:0 -8px}}
+
+/* Channels rail (from sample B's content): what comes in, what goes out */
+.rail{padding:0 0 40px}
+.rail-in{display:grid;grid-template-columns:auto auto auto;justify-content:space-between;align-items:center;gap:20px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.r-group{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.r-group.out{align-items:flex-end}
+.r-label{font-size:.82rem;font-weight:600;color:var(--muted)}
+.r-group ul{display:flex;flex-wrap:wrap;gap:8px}
+.r-group li{display:flex;align-items:center;gap:7px;font-size:.88rem;font-weight:500;padding:7px 12px;border-radius:999px;background:var(--surface-2)}
+.r-group li .ic{width:16px;height:16px;color:var(--accent-text)}
+.r-mid{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem}
+.r-mid .line{width:36px;height:2px;background:linear-gradient(90deg,var(--line),var(--accent))}
+.r-mid .line.r{background:linear-gradient(90deg,var(--accent),var(--line))}
+.r-mid img{width:34px;height:auto}
 
 /* Marquee (the only one on the page) */
 .oss{border-block:1px solid var(--line);padding:22px 0;overflow:hidden}
@@ -231,10 +254,6 @@ section{position:relative}
 .c-kb p{color:var(--navy-muted)}
 .c-kb .badge{color:#f5be1e}
 .c-kb .chips li{border-color:rgba(255,255,255,.18);color:var(--navy-muted)}
-.wave{display:flex;align-items:center;gap:5px;height:72px;margin:8px 0 4px}
-.wave i{display:block;width:6px;height:100%;border-radius:6px;background:var(--accent);transform:scaleY(var(--h))}
-@media (prefers-reduced-motion:no-preference){.wave i{animation:eq 1.6s ease-in-out infinite;animation-delay:calc(var(--k) * -120ms)}}
-@keyframes eq{50%{transform:scaleY(calc(var(--h) * .35))}}
 .mini-flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
 .mini-flow span{font-size:.82rem;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--surface-2)}
 .mini-flow .ic{width:16px;height:16px;color:var(--accent-text)}
@@ -254,16 +273,6 @@ section{position:relative}
 .pl2{top:140px;background:var(--bg)}
 .pl3{top:30px;background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .pl3 span{color:#3a2a00}
-
-/* How it works: timeline */
-.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
-.steps::before,.steps .bar{content:"";position:absolute;left:24px;right:24px;top:23px;height:2px;background:var(--line)}
-.steps .bar{background:var(--accent);transform-origin:left}
-.js .steps .bar{transform:scaleX(0)}
-.step{position:relative}
-.step .num{position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:999px;background:var(--bg);border:2px solid var(--accent);font:700 1.05rem/1 var(--display)}
-.step h3{font-size:1.3rem;margin:24px 0 10px}
-.step p{color:var(--muted)}
 
 /* Free tools */
 .tools-sec{background:var(--surface);border-block:1px solid var(--line)}
@@ -325,17 +334,116 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 .wa-float{transition:opacity .25s,transform .25s}.wa-float.away{opacity:0;pointer-events:none;transform:scale(.8)}
 @media (max-width:768px){.wa-float{width:44px;height:44px;right:12px;bottom:12px}.wa-float .ic{width:22px;height:22px}}
 
+
+/* Number row (from sample F): real promises only */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.fact{padding:26px 24px 28px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font:700 clamp(2rem,3.4vw,2.8rem)/1 var(--display);letter-spacing:-.04em;white-space:nowrap}
+.fact b small{font-size:.5em;letter-spacing:-.01em;margin-left:4px}
+.fact span{display:block;margin-top:10px;color:var(--muted);font-size:.95rem;max-width:26ch}
+
+/* Voice card: the flattened voice sphere (from sample E) */
+.voice-band{display:block;width:100%;height:96px;margin:6px 0 2px}
+
+/* Open source lead: words light up with scroll on desktop only. At rest they use the muted text colour (AA). */
+.rw{transition:color .25s}
+.reveal-on .rw{color:var(--muted)}
+.reveal-on .rw.lit{color:var(--ink)}
+
+/* How it works: stacked list by default (phones, reduced motion, no JS). Pinned stepper with a ring on desktop. */
+.how-list{display:grid;gap:14px;counter-reset:s}
+.how-list li{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.how-list .num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);font:700 1.05rem/1 var(--display)}
+.how-list h3{font-size:1.25rem}
+.how-list h3 button{all:unset;cursor:pointer;border-radius:6px}
+.how-list h3 button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.how-list p{color:var(--muted);margin-top:6px}
+.dial{display:none}
+.how.pinned{height:300vh;padding:0}
+.how.pinned .how-pin{position:sticky;top:0;height:100vh;height:100dvh;display:grid;align-items:center}
+.how.pinned .how-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.how.pinned .sec-head{margin-bottom:28px}
+.how.pinned .how-list{gap:6px}
+.how.pinned .how-list li{border-color:transparent;background:transparent;transition:background-color .35s,border-color .35s}
+.how.pinned .how-list li p{max-height:0;overflow:hidden;margin-top:0;transition:max-height .5s var(--ease),margin .3s}
+.how.pinned .how-list li.on{background:var(--surface);border-color:var(--line)}
+.how.pinned .how-list li.on p{max-height:90px;margin-top:6px}
+.how.pinned .how-list li:not(.on) .num{border-color:var(--line)}
+.how.pinned .how-list li.on .num{background:var(--accent);color:var(--on-accent)}
+.how.pinned .dial{display:block;position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:1}
+.dial svg{width:100%;height:100%;rotate:-90deg}
+.dial .tr{fill:none;stroke:var(--line);stroke-width:2}
+.dial .pr{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.dial .mid{position:absolute;inset:16%;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.dial .big{font:700 clamp(3.5rem,6vw,5.5rem)/1 var(--display);letter-spacing:-.05em}
+.dial .lbl{font-size:1rem;color:var(--muted);margin-top:6px}
+
+/* Who it is for, and the proof item */
+.who{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.who li{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.who .ic{width:24px;height:24px;color:var(--accent-text)}
+.who h3{font:600 1.05rem/1.3 var(--body);letter-spacing:0;margin:14px 0 6px}
+.who p{color:var(--muted);font-size:.95rem}
+.proof{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:24px;padding:22px 26px;border-radius:var(--radius);background:var(--surface-2)}
+.proof p{max-width:62ch}
+.proof b{font-weight:600}
+
+/* Booking step */
+.book-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.get{display:grid;gap:14px;margin-top:28px}
+.get li{display:flex;gap:12px;align-items:flex-start}
+.get .tick{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:.85rem}
+.alt{margin-top:28px;color:var(--muted)}
+.alt a{color:var(--ink);font-weight:600;text-underline-offset:3px;display:inline-block;padding:10px 0}
+.form{padding:32px;border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow)}
+.field{display:grid;gap:8px;margin-bottom:18px}
+.field label{font-weight:600}
+.field .hint{font-size:.88rem;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid color-mix(in srgb,var(--muted) 55%,var(--line));border-radius:var(--radius-sm);padding:12px 14px;min-height:48px;width:100%}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.field .err{display:none;font-size:.9rem;color:#b42318}
+:root[data-theme="dark"] .field .err{color:#ff8a80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .field .err{color:#ff8a80}}
+.field.bad .err{display:block}
+.field.bad input,.field.bad textarea{border-color:#b42318}
+.form-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.form .note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+
+@media (max-width:1080px){
+  .who{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .book-grid{grid-template-columns:1fr;gap:36px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:900px){
+  .rail-in{grid-template-columns:1fr;gap:12px}
+  .r-group.out{align-items:flex-start}
+  .r-mid .line{display:none}
+}
+@media (max-width:768px){
+  .who{grid-template-columns:1fr}
+  .form{padding:22px}
+  .form-row .btn{width:100%}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact{padding:20px 14px 20px 0}
+  .fact+.fact{padding-left:14px}
+  .fact:nth-child(3){padding-left:0}
+}
+
 /* Scroll reveal. Only when JS runs and motion is allowed; content is visible otherwise. */
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0) * 80ms)}
   .js .rv.in{opacity:1;transform:none}
 }
-@media (prefers-reduced-motion:reduce){.js .steps .bar{transform:none}}
 
 /* Responsive */
 @media (max-width:1080px){
-  .hero-grid{grid-template-columns:1fr;min-height:0;gap:28px}
-  .stage{margin:0 auto;max-width:520px}
+  .hero-grid{grid-template-columns:1fr;min-height:0;gap:56px}
+  .hero-copy{order:-1}
+  .device{max-width:440px}
   .c-voice{grid-column:span 6;grid-row:auto}
   .c-rec,.c-chat{grid-column:span 3}
   .c-kb,.c-web{grid-column:span 6}
@@ -361,12 +469,6 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .bento{grid-template-columns:1fr}
   .bento>.card{grid-column:auto;grid-row:auto}
   .c-voice,.card{padding:24px}
-  .steps{grid-template-columns:1fr;gap:36px;padding-left:64px}
-  .steps::before,.steps .bar{left:23px;right:auto;top:24px;bottom:24px;width:2px;height:auto}
-  .steps .bar{transform-origin:top}
-  .js .steps .bar{transform:scaleY(0)}
-  .step .num{position:absolute;left:-64px;top:-4px}
-  .step h3{margin-top:6px}
   .reasons{grid-template-columns:1fr}
   .layers{height:330px}
   .plate{height:118px;left:4%;right:4%;padding:16px 18px}
@@ -379,10 +481,14 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .cta{padding:48px 24px;border-radius:20px}
   .cta .btn{width:100%}
   .f-grid{grid-template-columns:1fr}
-  .node{font-size:.74rem;padding:7px 10px 7px 7px;gap:7px}
-  .node .dot{width:26px;height:26px}
-  .node .dot .ic{width:14px;height:14px}
-  .stage figcaption{display:none}
+  .device{max-width:300px}
+  .chip{font-size:.74rem;padding:6px 10px 6px 6px;gap:7px}
+  .chip span{display:none}
+  .chip .dot{width:24px;height:24px}
+  .chip .dot .ic{width:13px;height:13px}
+  .c1{left:-6%;top:18%}.c2{right:-5%;top:40%}.c3{left:-6%;bottom:16%}.c4{left:24%;right:auto;bottom:-3%}
+  .state{font-size:.74rem;padding:5px 10px}
+  .hero-grid{gap:44px}
   .oss-label{display:none}
   .oss-in{gap:12px}
   .hero-ctas .btn{flex:1 1 auto}
@@ -442,7 +548,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       <svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
       <svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
     </button>
-    <a class="btn btn-primary nav-cta mag" href="#contact">Book a free audit</a>
+    <a class="btn btn-primary nav-cta mag" href="#book">Book a free audit</a>
     <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mob" aria-label="Open menu">
       <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
     </button>
@@ -452,7 +558,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     <a href="#how">How it works</a>
     <a href="#free-tools">Free tools</a>
     <a href="#faq">FAQ</a>
-    <a class="btn btn-primary" href="#contact">Book a free audit</a>
+    <a class="btn btn-primary" href="#book">Book a free audit</a>
   </nav>
 </header>
 
@@ -461,32 +567,44 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 <section class="hero" id="home" aria-labelledby="hero-title">
   <div class="mesh" aria-hidden="true"></div>
   <div class="wrap hero-grid">
+    <figure class="device" id="device">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="lens" id="lens">
+        <canvas id="listen" aria-hidden="true"></canvas>
+        <img src="/3d-rendered-robot-mascot-removebg-preview.webp" srcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" sizes="(max-width: 768px) 160px, 290px" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset" fetchpriority="high">
+      </div>
+      <p class="state" aria-hidden="true"><i></i><span id="stateText">Ready for calls</span></p>
+      <div class="chip c1" data-depth="40"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>Call comes in</b><span>9:42 pm, new caller</span></div></div>
+      <div class="chip c2" data-depth="65"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></span><div><b>AI agent answers</b><span>Books a slot</span></div></div>
+      <div class="chip c3" data-depth="50"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><div><b>CRM updated</b><span>Lead and notes saved</span></div></div>
+      <div class="chip c4" data-depth="30"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span><div><b>WhatsApp sent</b><span>Booking confirmed</span></div></div>
+      <figcaption>Example flow. One call, handled end to end.</figcaption>
+    </figure>
     <div class="hero-copy">
       <p class="eyebrow">AI automation agency</p>
-      <h1 id="hero-title"><span class="w" style="--i:0">AI</span> <span class="w" style="--i:1">that</span> <span class="w" style="--i:2"><em>answers,</em></span> <span class="w" style="--i:3"><em>books</em></span> <span class="w" style="--i:4">and</span> <span class="w" style="--i:5"><em>follows</em></span> <span class="w" style="--i:6"><em>up</em></span> <span class="w" style="--i:7">for</span> <span class="w" style="--i:8">you.</span></h1>
+      <h1 id="hero-title"><span class="w" style="--i:0">AI</span> <span class="w" style="--i:1">that</span> <span class="w" style="--i:2"><em>answers,</em></span> <span class="w" style="--i:3"><em>books</em></span> <span class="w" style="--i:4">and</span> <span class="w" style="--i:5"><em>follows&nbsp;up</em></span> <span class="w" style="--i:6">for</span> <span class="w" style="--i:7">you.</span></h1>
       <p class="lede">We set up proven open-source AI and build custom automation on top. For businesses anywhere in the world.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary mag" href="#contact">Book a free audit <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-primary mag" href="#book">Book a free audit <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost mag" href="#services">See services</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <figure class="stage" id="stage">
-      <svg class="flow" viewBox="0 0 560 520" aria-hidden="true" focusable="false">
-        <path class="track" d="M92 78 C92 170 150 230 214 250"/>
-        <path class="track" d="M346 236 C410 210 450 170 470 140"/>
-        <path class="track" d="M492 142 C560 260 540 380 470 462"/>
-        <path class="packet p1" pathLength="100" d="M92 78 C92 170 150 230 214 250"/>
-        <path class="packet p2" pathLength="100" d="M346 236 C410 210 450 170 470 140"/>
-        <path class="packet p3" pathLength="100" d="M492 142 C560 260 540 380 470 462"/>
-      </svg>
-      <div class="bot"><img src="/3d-rendered-robot-mascot-removebg-preview.webp" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset" fetchpriority="high" decoding="async"></div>
-      <div class="node n1"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>Call comes in</b><span>9:42 pm, new caller</span></div></div>
-      <div class="node n2"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></span><div><b>AI agent answers</b><span>Books a slot</span></div></div>
-      <div class="node n3"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><div><b>CRM updated</b><span>Lead and notes saved</span></div></div>
-      <div class="node n4"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span><div><b>WhatsApp sent</b><span>Booking confirmed</span></div></div>
-      <figcaption>Example flow. One call, handled end to end.</figcaption>
-    </figure>
+<section class="rail" aria-label="Channels the AI agent works with">
+  <div class="wrap">
+    <div class="rail-in">
+      <div class="r-group"><span class="r-label">Comes in</span><ul>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Phone calls</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Web chat</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</li></ul></div>
+      <div class="r-mid" aria-hidden="true"><i class="line"></i><img src="/3d-rendered-robot-mascot-removebg-preview.webp" width="433" height="577" alt="" loading="lazy" decoding="async">AI agent<i class="line r"></i></div>
+      <div class="r-group out"><span class="r-label">Goes out</span><ul>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg>Bookings</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>CRM records</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg>Hand-off to a person</li></ul></div>
+    </div>
   </div>
 </section>
 
@@ -504,6 +622,15 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       </div>
     </div>
     <button class="icon-btn motion-btn" type="button" id="motionBtn" aria-pressed="false" aria-label="Pause animations"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg></button>
+  </div>
+</section>
+
+<section aria-label="What you can count on">
+  <div class="wrap facts">
+    <div class="fact"><b>24/7</b><span>The AI receptionist answers calls, web chat and WhatsApp.</span></div>
+    <div class="fact"><b>4<small>steps</small></b><span>From a free audit call to support after launch.</span></div>
+    <div class="fact"><b>13<small>tools</small></b><span>Open-source tools we set up and extend, listed above.</span></div>
+    <div class="fact"><b>Free</b><span>The audit call. You get a plan and decide if you go ahead.</span></div>
   </div>
 </section>
 
@@ -542,9 +669,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
         <span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
         <h3>AI voice agents</h3>
         <p>Agents that take and make phone calls. They answer questions, book appointments and call leads back, day or night.</p>
-        <div class="wave" aria-hidden="true">
-          <i style="--h:.35;--k:0"></i><i style="--h:.6;--k:1"></i><i style="--h:.9;--k:2"></i><i style="--h:.5;--k:3"></i><i style="--h:.75;--k:4"></i><i style="--h:1;--k:5"></i><i style="--h:.55;--k:6"></i><i style="--h:.8;--k:7"></i><i style="--h:.4;--k:8"></i><i style="--h:.7;--k:9"></i><i style="--h:.95;--k:10"></i><i style="--h:.5;--k:11"></i><i style="--h:.65;--k:12"></i><i style="--h:.3;--k:13"></i><i style="--h:.85;--k:14"></i><i style="--h:.45;--k:15"></i>
-        </div>
+        <canvas class="voice-band" id="voiceBand" aria-hidden="true"></canvas>
         <ul class="chips"><li>Inbound calls</li><li>Outbound calls</li><li>Bookings</li><li>Follow-ups</li></ul>
       </article>
       <article class="card c-rec rv" style="--d:1">
@@ -588,7 +713,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     <div>
       <div class="sec-head rv" style="margin-bottom:0">
         <h2 id="hybrid-title">Open source where it works. Custom where it counts.</h2>
-        <p>We start from proven open-source tools. Then we build the parts that are specific to your business.</p>
+        <p id="osLead">We start from proven open-source tools. Then we build the parts that are specific to your business.</p>
       </div>
       <div class="reasons">
         <div class="rv"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg><h3>You own your stack</h3><p>The code, the setup and the data are yours. You are not locked in to one vendor.</p></div>
@@ -605,20 +730,77 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<section class="sec" id="how" aria-labelledby="how-title">
+<section class="sec how" id="how" aria-labelledby="how-title">
+  <div class="how-pin">
+    <div class="wrap how-grid">
+      <div>
+        <div class="sec-head">
+          <h2 id="how-title">How it works</h2>
+        </div>
+        <ol class="how-list" id="howList">
+          <li class="on"><span class="num" aria-hidden="true">1</span><div><h3><button type="button" data-k="0">Free audit call</button></h3><p>A short call. We look at how work flows today and where AI can save time.</p></div></li>
+          <li><span class="num" aria-hidden="true">2</span><div><h3><button type="button" data-k="1">Plan</button></h3><p>You get a written plan: what to build, which tools, the timeline and the cost.</p></div></li>
+          <li><span class="num" aria-hidden="true">3</span><div><h3><button type="button" data-k="2">Build and launch</button></h3><p>We set up the tools, build the custom parts, test with real cases and go live.</p></div></li>
+          <li><span class="num" aria-hidden="true">4</span><div><h3><button type="button" data-k="3">Support</button></h3><p>We watch it, fix issues and improve it as your business changes.</p></div></li>
+        </ol>
+      </div>
+      <div class="dial" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle class="tr" cx="50" cy="50" r="46"/><circle class="pr" id="dialPr" cx="50" cy="50" r="46" pathLength="100" stroke-dasharray="100" stroke-dashoffset="75"/></svg>
+        <div class="mid"><div><div class="big" id="dialN">1</div><div class="lbl" id="dialL">Free audit call</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="who" aria-labelledby="who-title" style="padding-top:40px">
   <div class="wrap">
     <div class="sec-head rv">
-      <h2 id="how-title">How it works</h2>
+      <h2 id="who-title">Who it is for</h2>
+      <p>Businesses where calls, messages and paperwork take up the team's day.</p>
     </div>
-    <div class="steps" id="steps">
-      <span class="bar" id="stepsBar" aria-hidden="true"></span>
-      <ol style="display:contents">
-        <li class="step rv"><span class="num" aria-hidden="true">1</span><h3>Free audit call</h3><p>A short call. We look at how work flows today and where AI can save time.</p></li>
-        <li class="step rv" style="--d:1"><span class="num" aria-hidden="true">2</span><h3>Plan</h3><p>You get a written plan: what to build, which tools, the timeline and the cost.</p></li>
-        <li class="step rv" style="--d:2"><span class="num" aria-hidden="true">3</span><h3>Build and launch</h3><p>We set up the tools, build the custom parts, test with real cases and go live.</p></li>
-        <li class="step rv" style="--d:3"><span class="num" aria-hidden="true">4</span><h3>Support</h3><p>We watch it, fix issues and improve it as your business changes.</p></li>
-      </ol>
+    <ul class="who">
+      <li class="rv"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><h3>Clinics and dental practices</h3><p>Answer calls after hours, book appointments and send reminders.</p></li>
+      <li class="rv" style="--d:1"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><h3>Estate and letting agents</h3><p>Reply to property enquiries, book viewings and log every lead.</p></li>
+      <li class="rv" style="--d:2"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><h3>Real estate brokers</h3><p>Qualify buyers on WhatsApp and pass ready leads to your team.</p></li>
+      <li class="rv" style="--d:3"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg><h3>D2C and ecommerce brands</h3><p>Answer order and return questions and follow up with customers.</p></li>
+      <li class="rv" style="--d:4"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg><h3>Operations teams</h3><p>Read documents, move data between systems and cut manual entry.</p></li>
+    </ul>
+    <div class="proof rv">
+      <p><b>See how we build.</b> We made and keep running our own free browser tools. They are fast, private and work without sign-up.</p>
+      <a class="btn btn-ghost" href="/tools/">See our free tools <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="book" aria-labelledby="book-title" style="padding-top:40px">
+  <div class="wrap book-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <h2 id="book-title">Book a free automation audit</h2>
+        <p>Tell us what takes up your team's time. We will show you what to automate first and what it would take.</p>
+      </div>
+      <ul class="get">
+        <li><span class="tick" aria-hidden="true">1</span><span>A 30-minute call about how work flows in your business today.</span></li>
+        <li><span class="tick" aria-hidden="true">2</span><span>A short list of what to automate first, and what it would take.</span></li>
+        <li><span class="tick" aria-hidden="true">3</span><span>No cost. You decide if you want to go ahead.</span></li>
+      </ul>
+      <p class="alt">Prefer to talk now? <a href="https://wa.me/916376068337?text=Hi%20Bingemind%2C%20I%27d%20like%20a%20free%20automation%20audit." target="_blank" rel="noopener">WhatsApp</a>, <a href="tel:+916376068337">+91 63760 68337</a> or <a href="mailto:hello@bingemind.com?subject=Free%20automation%20audit">hello@bingemind.com</a>.</p>
+    </div>
+    <!-- Booking: replace this form with a cal.com embed when a calendar is ready. -->
+    <form class="form" id="bookForm" novalidate>
+      <div class="field" id="f-name"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required><span class="err" id="bNameErr">Please add your name.</span></div>
+      <div class="field"><label for="bType">Type of business</label>
+        <select id="bType" name="type">
+          <option>Clinic or dental practice</option><option>Estate or letting agent</option><option>Real estate broker</option>
+          <option>D2C or ecommerce brand</option><option>Operations team</option><option>Something else</option>
+        </select></div>
+      <div class="field" id="f-time"><label for="bTime">What takes your team's time?</label><span class="hint" id="bTimeHint">For example: missed calls, booking appointments, copying data from emails.</span><textarea id="bTime" name="time" required aria-describedby="bTimeHint"></textarea><span class="err" id="bTimeErr">Please tell us a little about it.</span></div>
+      <div class="form-row">
+        <button class="btn btn-primary" type="submit"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
+        <button class="btn btn-ghost" type="button" id="bMail"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Send by email</button>
+      </div>
+      <p class="note">This opens WhatsApp or your email app with your answers filled in. Nothing is stored on this site.</p>
+    </form>
   </div>
 </section>
 
@@ -630,31 +812,33 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     </div>
     <div class="tgrid">
       <div class="tgroup rv" style="--d:0">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-barbell"/></svg>Gym and running</h3>
-        <ul>
-          <li><a href="/barbell-plate-calculator/"><strong>Barbell plate calculator</strong><small>See which plates to load on each side.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/rpe-chart/"><strong>RPE chart and calculator</strong><small>Estimate your 1RM from weight, reps and RPE.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:1">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-hammer"/></svg>Home and trades</h3>
-        <ul>
-          <li><a href="/board-and-batten-calculator/"><strong>Board and batten calculator</strong><small>Exact gaps, batten marks and boards to buy.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/rolling-offset-calculator/"><strong>Rolling offset calculator</strong><small>True offset, travel and cut length for pipe.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:2">
         <h3><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Work and data</h3>
         <ul>
           <li><a href="/markdown-to-pdf/"><strong>Markdown to PDF</strong><small>Convert Markdown to a clean PDF in your browser.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/cash-drawer-counter/"><strong>Cash drawer counter</strong><small>Count your drawer and see the deposit at shift end.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/json-diff/"><strong>JSON diff checker</strong><small>Compare two JSON files and see what changed.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/text-diff/"><strong>Text diff checker</strong><small>Compare two texts line by line.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
         </ul>
       </div>
-      <div class="tgroup rv" style="--d:3">
+      <div class="tgroup rv" style="--d:1">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-coin"/></svg>Shop and office</h3>
+        <ul>
+          <li><a href="/cash-drawer-counter/"><strong>Cash drawer counter</strong><small>Count your drawer and see the deposit at shift end.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/column-to-comma/"><strong>Column to comma</strong><small>Turn a column of values into a comma list.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/dpi-changer/"><strong>DPI changer</strong><small>Change the DPI of an image for print.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="tgroup rv" style="--d:2">
         <h3><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg>Measure and print</h3>
         <ul>
           <li><a href="/online-ruler/"><strong>Online ruler</strong><small>A true-size ruler in cm, mm and inches.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
           <li><a href="/poster-tiler/"><strong>Print a poster on multiple pages</strong><small>Split any image into a multi-page PDF poster.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="tgroup rv" style="--d:3">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-hammer"/></svg>Home, trades and gym</h3>
+        <ul>
+          <li><a href="/board-and-batten-calculator/"><strong>Board and batten calculator</strong><small>Exact gaps, batten marks and boards to buy.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a href="/barbell-plate-calculator/"><strong>Barbell plate calculator</strong><small>See which plates to load on each side.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
         </ul>
       </div>
     </div>
@@ -880,12 +1064,16 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 })();
 </script>
 <script>
-/* GSAP 3.12.5 and ScrollTrigger load after the page has loaded, so they never delay the first paint. */
+/* GSAP 3.12.5 and ScrollTrigger (self-hosted) load after the page has loaded, so they never delay the first paint. */
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   function add(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb;document.head.appendChild(s);}
-  function go(){add('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',function(){add('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',function(){window.bmMotion&&window.bmMotion();});});}
-  if(document.readyState==='complete'){go();}else{addEventListener('load',go);}
+  function go(){add('/js/gsap.min.js',function(){add('/js/ScrollTrigger.min.js',function(){window.bmMotion&&window.bmMotion();});});}
+  /* Wait for the first scroll, touch or key, or 3 s after load, so the scripts never compete with the first paint */
+  var started=false;function once(){if(started)return;started=true;go();}
+  ['scroll','pointerdown','keydown','wheel','touchstart'].forEach(function(ev){addEventListener(ev,once,{once:true,passive:true});});
+  function later(){setTimeout(once,3000);}
+  if(document.readyState==='complete'){later();}else{addEventListener('load',later);}
 })();
 /* Scroll-linked motion with GSAP 3.12.5 and ScrollTrigger. Skipped under reduced motion.
    Without GSAP the page still works: the story shows its poster and steps stay readable. */
@@ -900,15 +1088,25 @@ window.bmMotion=function(){
   /* Hero parallax: copy lifts and fades, the flow stage moves slower */
   var st={trigger:'#home',start:'top top',end:'bottom top',scrub:true};
   gsap.to('.hero-copy',{yPercent:-14,opacity:.3,ease:'none',scrollTrigger:st});
-  gsap.to('#stage',{y:-50,ease:'none',scrollTrigger:st});
+  gsap.to('#device',{y:-40,ease:'none',scrollTrigger:st});
 
   /* Open source + custom: the three layers start apart and settle into a stack as you scroll */
   gsap.from('.pl3',{y:120,ease:'none',scrollTrigger:{trigger:'#layers',start:'top 85%',end:'center 50%',scrub:true}});
   gsap.from('.pl2',{y:50,ease:'none',scrollTrigger:{trigger:'#layers',start:'top 85%',end:'center 50%',scrub:true}});
 
-  /* How it works: the timeline line fills with scroll */
-  mm.add('(min-width: 769px)',function(){gsap.fromTo('#stepsBar',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#steps',start:'top 80%',end:'bottom 55%',scrub:true}});});
-  mm.add('(max-width: 768px)',function(){gsap.fromTo('#stepsBar',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'#steps',start:'top 75%',end:'bottom 60%',scrub:true}});});
+  /* How it works (desktop only): scroll moves through the steps and fills the ring */
+  mm.add('(min-width: 1081px)',function(){
+    if(!document.getElementById('how').classList.contains('pinned'))return;
+    ScrollTrigger.create({trigger:'#how',start:'top top',end:'bottom bottom',onUpdate:function(s){window.bmHow(s.progress);}});
+  });
+
+  /* Open source lead (desktop only): words light up as the section scrolls in. Muted, not hidden, at rest. */
+  mm.add('(min-width: 1081px)',function(){
+    var words=window.bmWords||[];if(!words.length)return;
+    document.getElementById('osLead').classList.add('reveal-on');
+    ScrollTrigger.create({trigger:'#open-source',start:'top 75%',end:'top 25%',onUpdate:function(s){var n=Math.round(s.progress*words.length);for(var i=0;i<words.length;i++){words[i].classList.toggle('lit',i<n);}}});
+    return function(){document.getElementById('osLead').classList.remove('reveal-on');};
+  });
 
   /* Hover: gentle tilt on service cards and magnetic buttons, for a fine pointer only */
   if(matchMedia('(hover: hover) and (pointer: fine)').matches){
@@ -925,6 +1123,69 @@ window.bmMotion=function(){
     });
   }
 };
+</script>
+
+<script src="/js/hero-core.js" defer></script>
+<script>
+/* Hero lens, voice band, stepper, word reveal and the booking form. Runs after the HTML is parsed. */
+addEventListener('DOMContentLoaded',function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var desktop=matchMedia('(min-width: 1081px)');
+
+  /* Hero: the voice sphere wakes inside the lens when a call comes in, the pill names the step */
+  var device=document.getElementById('device'),stateText=document.getElementById('stateText');
+  if(window.BMSphere&&window.BMLens){
+    var sphere=BMSphere(document.getElementById('listen'),{ink:'--dots',accent:'--accent',mode:'call',radius:.42,count:900,alpha:.45,size:1.2,tilt:.4});
+    var states=['Listening','Answering','Saving to CRM','Sending WhatsApp'];
+    BMLens(device,document.getElementById('lens'),device.querySelectorAll('.chip'),{interval:1700,tilt:8,onStep:function(i){
+      device.classList.add('listening');stateText.textContent=states[i];sphere.pulse(i<2?1.5:.8);
+      if(i===3){setTimeout(function(){device.classList.remove('listening');stateText.textContent='Ready for calls';sphere.calm();},1500);}
+    }});
+    /* Voice card: the same sphere, flattened into a voice band */
+    BMSphere(document.getElementById('voiceBand'),{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
+  }
+
+  /* How it works: pinned stepper on desktop with motion allowed; a plain list everywhere else */
+  var how=document.getElementById('how'),items=[].slice.call(document.querySelectorAll('#howList li'));
+  var pr=document.getElementById('dialPr'),dN=document.getElementById('dialN'),dL=document.getElementById('dialL');
+  function setStep(k){
+    items.forEach(function(li,j){li.classList.toggle('on',j===k);var b=li.querySelector('button');if(j===k){b.setAttribute('aria-current','step');}else{b.removeAttribute('aria-current');}});
+    dN.textContent=k+1;dL.textContent=items[k].querySelector('button').textContent;
+  }
+  window.bmHow=function(p){var k=Math.min(3,Math.floor(p*4));pr.setAttribute('stroke-dashoffset',100-Math.max(4,p*100));setStep(k);};
+  if(!reduce&&desktop.matches){how.classList.add('pinned');}
+  items.forEach(function(li,k){li.querySelector('button').addEventListener('click',function(){
+    if(how.classList.contains('pinned')){
+      var top=how.getBoundingClientRect().top+scrollY,range=how.offsetHeight-innerHeight;
+      scrollTo({top:top+range*(k+.5)/4,behavior:reduce?'auto':'smooth'});
+    }
+    setStep(k);
+  });});
+
+  /* Open source lead: split into words for the desktop reveal (GSAP drives it) */
+  var lead=document.getElementById('osLead');
+  if(!reduce&&desktop.matches){
+    lead.innerHTML=lead.textContent.split(' ').map(function(w){return '<span class="rw">'+w+'</span>';}).join(' ');
+    window.bmWords=[].slice.call(lead.querySelectorAll('.rw'));
+  }
+
+  /* Booking form: opens WhatsApp or email with the answers filled in. Nothing is sent from this site. */
+  var form=document.getElementById('bookForm');
+  function val(id){return document.getElementById(id).value.trim();}
+  function check(){
+    var ok=true;
+    [['bName','f-name','bNameErr'],['bTime','f-time','bTimeErr']].forEach(function(f){
+      var bad=!val(f[0]);document.getElementById(f[1]).classList.toggle('bad',bad);
+      var el=document.getElementById(f[0]);el.setAttribute('aria-invalid',bad?'true':'false');
+      if(bad){el.setAttribute('aria-describedby',f[2]);}else if(f[0]==='bTime'){el.setAttribute('aria-describedby','bTimeHint');}else{el.removeAttribute('aria-describedby');}
+      if(bad&&ok){el.focus();ok=false;}
+    });
+    return ok;
+  }
+  function message(){return 'Hi Bingemind, I would like a free automation audit.\n\nName: '+val('bName')+'\nBusiness: '+val('bType')+'\nWhat takes our time: '+val('bTime');}
+  form.addEventListener('submit',function(e){e.preventDefault();if(!check())return;window.open('https://wa.me/916376068337?text='+encodeURIComponent(message()),'_blank','noopener');});
+  document.getElementById('bMail').addEventListener('click',function(){if(!check())return;location.href='mailto:hello@bingemind.com?subject='+encodeURIComponent('Free automation audit')+'&body='+encodeURIComponent(message());});
+});
 </script>
 
 <script type="application/ld+json">
