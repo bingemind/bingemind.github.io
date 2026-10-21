@@ -23,3 +23,4 @@ Sitemap: https://bingemind.com/column-to-comma/sitemap-index.xml
 Sitemap: https://bingemind.com/cash-drawer-counter/sitemap-index.xml
 Sitemap: https://bingemind.com/online-ruler/sitemap-index.xml
 Sitemap: https://bingemind.com/json-diff/sitemap-index.xml
+Sitemap: https://bingemind.com/text-diff/sitemap-index.xml
