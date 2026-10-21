@@ -24,3 +24,7 @@ Sitemap: https://bingemind.com/cash-drawer-counter/sitemap-index.xml
 Sitemap: https://bingemind.com/online-ruler/sitemap-index.xml
 Sitemap: https://bingemind.com/json-diff/sitemap-index.xml
 Sitemap: https://bingemind.com/text-diff/sitemap-index.xml
+Sitemap: https://bingemind.com/screen-size-checker/sitemap-index.xml
+Sitemap: https://bingemind.com/image-to-pdf/sitemap-index.xml
+Sitemap: https://bingemind.com/newspaper-front-page-maker/sitemap-index.xml
+Sitemap: https://bingemind.com/funny-award-certificate/sitemap-index.xml
