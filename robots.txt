@@ -28,3 +28,4 @@ Sitemap: https://bingemind.com/screen-size-checker/sitemap-index.xml
 Sitemap: https://bingemind.com/image-to-pdf/sitemap-index.xml
 Sitemap: https://bingemind.com/newspaper-front-page-maker/sitemap-index.xml
 Sitemap: https://bingemind.com/funny-award-certificate/sitemap-index.xml
+Sitemap: https://bingemind.com/banner-letter-maker/sitemap-index.xml
