@@ -1023,11 +1023,12 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   var clip=document.getElementById('clip'),video=document.getElementById('clipVideo');
   var beats=document.querySelectorAll('#beats li'),bar=document.getElementById('progBar');
   if(reduce){for(var r=0;r<beats.length;r++){beats[r].classList.toggle('on',r===beats.length-1);}}
-  var wa=document.querySelector('.wa-float'),ct=document.getElementById('contact');
-  if(wa&&ct&&'IntersectionObserver' in window){
-    var inCt=false,inHero=true,small=matchMedia('(max-width: 480px)');
-    function waSet(){wa.classList.toggle('away',inCt||(small.matches&&inHero));}
+  var wa=document.querySelector('.wa-float'),ct=document.getElementById('contact'),bk=document.getElementById('book');
+  if(wa&&ct&&bk&&'IntersectionObserver' in window){
+    var inCt=false,inBk=false,inHero=true,small=matchMedia('(max-width: 480px)');
+    function waSet(){wa.classList.toggle('away',inCt||inBk||(small.matches&&inHero));}
     new IntersectionObserver(function(e){inCt=e[0].isIntersecting;waSet();},{threshold:0}).observe(ct);
+    new IntersectionObserver(function(e){inBk=e[0].isIntersecting;waSet();},{threshold:0}).observe(bk);
     new IntersectionObserver(function(e){inHero=e[0].isIntersecting;waSet();},{threshold:0}).observe(document.getElementById('device'));
     if(small.addEventListener){small.addEventListener('change',waSet);}
   }
@@ -1154,16 +1155,26 @@ window.bmMotion=function(){
 };
 </script>
 
-<script src="/js/hero-core.js" defer></script>
+<script>
+/* hero-core.js (voice sphere and glass lens) loads after the page has loaded and the browser is idle, so it never delays the first paint. */
+(function(){
+  var done=false;
+  function boot(){if(done)return;done=true;var s=document.createElement('script');s.src='/js/hero-core.js';s.onload=function(){if(window.bmHero)window.bmHero();};document.head.appendChild(s);}
+  function idle(){if('requestIdleCallback' in window){requestIdleCallback(boot,{timeout:1500});}else{setTimeout(boot,300);}}
+  if(document.readyState==='complete'){idle();}else{addEventListener('load',idle);}
+})();
+</script>
 <script>
 /* Hero lens, voice band, stepper, word reveal and the booking form. Runs after the HTML is parsed. */
 addEventListener('DOMContentLoaded',function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var desktop=matchMedia('(min-width: 1081px)');
 
-  /* Hero: the voice sphere wakes inside the lens when a call comes in, the pill names the step */
-  var device=document.getElementById('device'),stateText=document.getElementById('stateText');
-  if(window.BMSphere&&window.BMLens){
+  /* Hero: the voice sphere wakes inside the lens when a call comes in, the pill names the step.
+     Runs from the loader above once hero-core.js has loaded (after the first paint). */
+  window.bmHero=function(){
+    var device=document.getElementById('device'),stateText=document.getElementById('stateText');
+    if(!window.BMSphere||!window.BMLens)return;
     var sphere=BMSphere(document.getElementById('listen'),{ink:'--dots',accent:'--accent',mode:'call',radius:.42,count:900,alpha:.45,size:1.2,tilt:.4});
     var states=['Listening','Answering','Saving to CRM','Sending WhatsApp'];
     BMLens(device,document.getElementById('lens'),device.querySelectorAll('.chip'),{interval:1700,tilt:8,onStep:function(i){
@@ -1172,7 +1183,7 @@ addEventListener('DOMContentLoaded',function(){
     }});
     /* Voice card: the same sphere, flattened into a voice band */
     BMSphere(document.getElementById('voiceBand'),{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
-  }
+  };
 
   /* How it works: pinned stepper on desktop with motion allowed; a plain list everywhere else */
   var how=document.getElementById('how'),items=[].slice.call(document.querySelectorAll('#howList li'));
