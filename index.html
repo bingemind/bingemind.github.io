@@ -1387,5 +1387,22 @@ addEventListener('DOMContentLoaded',function(){
   ]
 }
 </script>
+<script>
+  // GA4 event "book_call_click": booking form submit, WhatsApp links, email links and the email button.
+  (function () {
+    function send(m) { if (typeof gtag === 'function') gtag('event', 'book_call_click', { method: m }); }
+    function filled() { return ['bName', 'bTime'].every(function (id) { var el = document.getElementById(id); return el && el.value.trim(); }); }
+    var form = document.getElementById('bookForm');
+    if (form) form.addEventListener('submit', function () { if (filled()) send('form'); });
+    document.addEventListener('click', function (e) {
+      var t = e.target && e.target.closest ? e.target.closest('a[href],#bMail') : null;
+      if (!t) return;
+      if (t.id === 'bMail') { if (filled()) send('email'); return; }
+      var h = t.getAttribute('href') || '';
+      if (h.indexOf('https://wa.me/') === 0) send('whatsapp');
+      else if (h.indexOf('mailto:') === 0) send('email');
+    }, true);
+  })();
+</script>
 </body>
 </html>
