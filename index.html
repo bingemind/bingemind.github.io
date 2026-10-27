@@ -11,7 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-F4Y30PMRBB');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F4Y30PMRBB"></script>
+<script>
+  // Load gtag.js after window.load, when the browser is idle (2 s limit). Events queue in dataLayer until then.
+  (function () {
+    var started = false;
+    function load() {
+      if (started) return;
+      started = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F4Y30PMRBB';
+      document.head.appendChild(s);
+    }
+    function idle() { if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 2000 }); else setTimeout(load, 2000); }
+    if (document.readyState === 'complete') idle(); else addEventListener('load', idle);
+  })();
+</script>
 <title>Bingemind | AI Automation Agency: Voice Agents and Workflows</title>
 <meta name="description" content="Bingemind is an AI automation agency. We set up proven open-source AI and build custom voice agents, receptionists, chat assistants and workflows.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
