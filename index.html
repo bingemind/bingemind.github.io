@@ -17,6 +17,7 @@
     var started = false;
     function load() {
       if (started) return;
+      if (!/(^|\.)bingemind\.com$/.test(location.hostname)) return; // bingemind.com only: test copies send no analytics
       started = true;
       var s = document.createElement('script');
       s.async = true;
