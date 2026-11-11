@@ -1,6 +1,7 @@
 /* Bingemind hero parts (from design sample H).
-   BMSphere: a 3D dot sphere on a plain 2D canvas that ripples like a voice.
-   It stops moving under prefers-reduced-motion. */
+   1. BMSphere: a 3D dot sphere on a plain 2D canvas that ripples like a voice.
+   2. BMLens: the mascot in a glass lens with live call-flow chips, pointer tilt and depth parallax.
+   Both stop moving under prefers-reduced-motion. */
 (function () {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const cssVar = (name, el) => getComputedStyle(el || document.documentElement).getPropertyValue(name).trim();
@@ -79,6 +80,39 @@
     return { pulse(v) { target = v || 1; energy = Math.max(energy, .4); }, calm() { target = .15; } };
   }
 
+  /* wrap: element that receives the tilt; lens: the glass disc; chips: call-flow chips with data-depth.
+     onStep(i): called each time a chip goes live (0 = call comes in). */
+  function BMLens(wrap, lens, chips, opts) {
+    const o = Object.assign({interval:1500, tilt:14, onStep:null}, opts || {});
+    chips = [...chips];
+    let k = 0;
+    const step = () => {
+      if (document.documentElement.classList.contains('still')) return;
+      chips.forEach((c, i) => { c.classList.toggle('live', i === k); c.classList.toggle('done', i < k); });
+      if (o.onStep) o.onStep(k);
+      k = (k + 1) % (chips.length + 1);
+      if (k === chips.length) { setTimeout(() => { chips.forEach(c => c.classList.remove('live', 'done')); k = 0; }, o.interval * .9); }
+    };
+    if (reduce) { chips.forEach(c => c.classList.add('done')); return; }
+    setTimeout(() => { step(); setInterval(() => { if (k < chips.length) step(); }, o.interval); }, 1400);
+    // pointer: lens tilt and chip parallax use the CSS rotate and translate properties,
+    // so they never fight GSAP tweens that animate transform
+    const movers = chips.map(c => ({el:c, d:+(c.dataset.depth || 40)}));
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    const tick = () => {
+      cx += (tx - cx) * .08; cy += (ty - cy) * .08;
+      const mag = Math.hypot(cx, cy);
+      lens.style.rotate = mag > .001 ? `${-cy} ${cx} 0 ${mag * o.tilt * 2}deg` : 'none';
+      movers.forEach(m => m.el.style.translate = `${(cx * m.d).toFixed(1)}px ${(cy * m.d * .5).toFixed(1)}px`);
+      raf = (Math.abs(tx - cx) + Math.abs(ty - cy) > .001) ? requestAnimationFrame(tick) : 0;
+    };
+    addEventListener('pointermove', e => {
+      tx = e.clientX / innerWidth - .5; ty = e.clientY / innerHeight - .5;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+  }
+
   window.BMSphere = BMSphere;
+  window.BMLens = BMLens;
   window.BMReduce = reduce;
 })();

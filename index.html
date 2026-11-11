@@ -170,6 +170,9 @@ ul,ol{list-style:none;margin:0;padding:0}
 .hero-tools span{display:block;flex:1;padding:12px 14px;font-weight:600;font-size:.92rem;line-height:1.3}
 @media (prefers-reduced-motion:no-preference){
   .mesh{animation:drift 22s ease-in-out infinite alternate}
+  .adev.listening .ring{animation:breathe 2.4s ease-in-out infinite}
+  .adev.listening .state i{animation:blink 1s steps(2) infinite}
+  .lens img{animation:bob 6s ease-in-out infinite}
   .hero h1{animation:rise .9s var(--ease) both}
   .paused .mesh{animation-play-state:paused}
 }
@@ -180,8 +183,36 @@ ul,ol{list-style:none;margin:0;padding:0}
 @keyframes bob{50%{translate:0 -8px}}
 
 /* Channels rail (from sample B's content): what comes in, what goes out */
-.bridge{padding-top:8px;padding-bottom:20px}
-.bridge h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-top:8px}
+/* Hero object (from sample H): the mascot in a glass lens. The voice sphere wakes inside the lens
+   when a call comes in, the status pill names the step, and the call-flow chips light in turn. */
+.adev{position:relative;aspect-ratio:1;width:100%;max-width:540px;margin:0 auto;perspective:1100px}
+.ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--line);transition:border-color .5s}
+.adev.listening .ring{border-color:var(--accent)}
+.lens{position:absolute;inset:4.5%;border-radius:50%;overflow:hidden;display:grid;place-items:center;
+  background:var(--glass);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid var(--edge);box-shadow:inset 0 1px 0 var(--edge),0 28px 60px -18px rgba(18,23,34,.28)}
+.lens canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s var(--ease)}
+.adev.listening .lens canvas{opacity:1}
+.lens img{position:relative;width:52%;height:auto;margin-top:12%;filter:drop-shadow(0 22px 30px rgba(18,23,34,.25))}
+@media (min-width:961px){.lens img{width:66%;margin-top:18%}}
+.state{position:absolute;left:50%;top:7%;translate:-50% 0;z-index:2;display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;font-weight:600;white-space:nowrap}
+.state i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.adev.listening .state i{background:var(--accent)}
+.chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;padding:9px 14px 9px 9px;border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);box-shadow:var(--shadow);font-size:.84rem;line-height:1.25;white-space:nowrap;transition:border-color .35s}
+.chip b{display:block;font-weight:600;color:var(--ink)}
+.chip span{color:var(--muted)}
+.chip .dot{display:grid;place-items:center;width:32px;height:32px;border-radius:999px;background:var(--surface-2);color:var(--ink);flex:none;transition:background-color .35s}
+.chip .dot .ic{width:17px;height:17px}
+.chip.live{border-color:var(--accent)}
+.chip.live .dot,.chip.done .dot{background:var(--accent);color:var(--on-accent)}
+.c1{left:-6%;top:24%}.c2{right:-8%;top:36%}.c3{left:-3%;bottom:16%}.c4{right:-3%;bottom:5%}
+.adev figcaption{position:absolute;left:0;right:0;bottom:-34px;text-align:center;font-size:.8rem;color:var(--muted)}
+.bridge{overflow-x:clip;padding:24px 0 72px}
+.bridge-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.bridge h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:8px;letter-spacing:-.03em;line-height:1.1}
+.bridge p.sub{margin:16px 0 28px;color:var(--muted);font-size:1.1rem;max-width:40ch}
 .rail{padding:0 0 40px}
 .rail-in{display:grid;grid-template-columns:auto auto auto;justify-content:space-between;align-items:center;gap:20px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .r-group{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
@@ -281,20 +312,6 @@ section{position:relative}
 .pl2{top:140px;background:var(--bg)}
 .pl3{top:30px;background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .pl3 span{color:#3a2a00}
-
-/* Free tools */
-.tools-sec{background:var(--surface);border-block:1px solid var(--line)}
-.tgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.tgroup{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--bg)}
-.tgroup h3{display:flex;align-items:center;gap:10px;font:600 1rem/1.3 var(--body);letter-spacing:0;padding:4px 6px 14px}
-.tgroup h3 .ic{color:var(--accent-text)}
-.tgroup a{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;padding:12px;border-radius:var(--radius-sm);text-decoration:none;min-height:44px;transition:background-color .2s}
-.tgroup a:hover{background:var(--surface-2)}
-.tgroup a strong{font-weight:600;line-height:1.3}
-.tgroup a small{grid-column:1;font-size:.88rem;color:var(--muted);line-height:1.4;margin-top:2px}
-.tgroup a .ic{grid-column:2;grid-row:1 / span 2;width:18px;height:18px;color:var(--muted);transition:transform .3s var(--ease),color .2s}
-.tgroup a:hover .ic{transform:translate(2px,-2px);color:var(--accent-text)}
-.tools-more{margin-top:32px}
 
 /* Team */
 .team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
@@ -459,6 +476,8 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;min-height:0;gap:56px}
   .hero-copy,.device{grid-column:auto;grid-row:auto}
+  .bridge-grid{grid-template-columns:1fr;gap:56px}
+  .adev{max-width:440px}
 }
 @media (max-width:1080px){
   .c-voice{grid-column:span 6;grid-row:auto}
@@ -467,8 +486,6 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .hy-grid,.faq-grid{grid-template-columns:1fr;gap:40px}
   .faq-grid .sec-head{position:static;margin-bottom:0}
   .layers{max-width:520px;width:100%;margin:0 auto}
-  .tgrid{grid-template-columns:1fr 1fr}
-  .tgroup.gym{grid-row:span 3}
   .f-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
@@ -490,8 +507,6 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .layers{height:330px}
   .plate{height:118px;left:4%;right:4%;padding:16px 18px}
   .pl1{top:196px}.pl2{top:110px}.pl3{top:24px}
-  .tgrid{grid-template-columns:1fr}
-  .tgroup.gym{grid-row:auto}
   .team{grid-template-columns:1fr}
   .team a{border-right:0;margin-right:0;border-top:1px solid var(--line);padding-right:0}
   .team a:first-child{border-top:0}
@@ -499,6 +514,13 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   .cta .btn{width:100%}
   .f-grid{grid-template-columns:1fr}
   .hero-tools{gap:12px}
+  .adev{max-width:300px}
+  .chip{font-size:.74rem;padding:6px 10px 6px 6px;gap:7px}
+  .chip span{display:none}
+  .chip .dot{width:24px;height:24px}
+  .chip .dot .ic{width:13px;height:13px}
+  .c1{left:-6%;top:18%}.c2{right:-5%;top:40%}.c3{left:-6%;bottom:16%}.c4{left:24%;right:auto;bottom:-3%}
+  .state{font-size:.74rem;padding:5px 10px}
   .hero-tools span{padding:10px 12px;font-size:.84rem}
   .hero-grid{gap:44px}
   .oss-label{display:none}
@@ -549,8 +571,6 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   <symbol id="i-coin" viewBox="0 0 24 24"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1"/><path d="M12 7v10"/></symbol>
   <symbol id="i-chef" viewBox="0 0 24 24"><path d="M12 3c1.918 0 3.52 1.35 3.91 3.151a4 4 0 0 1 2.09 7.723l0 7.126h-12v-7.126a4 4 0 1 1 2.092 -7.723a4 4 0 0 1 3.908 -3.151z"/><path d="M6.161 17.009l11.839 -.009"/></symbol>
   <symbol id="i-barbell" viewBox="0 0 24 24"><path d="M2 12h1"/><path d="M6 8h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2"/><path d="M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1z"/><path d="M9 12h6"/><path d="M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1z"/><path d="M18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2"/><path d="M22 12h-1"/></symbol>
-  <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M11.414 10l-7.383 7.418a2.091 2.091 0 0 0 0 2.967a2.11 2.11 0 0 0 2.976 0l7.407 -7.385"/><path d="M18.121 15.293l2.586 -2.586a1 1 0 0 0 0 -1.414l-7.586 -7.586a1 1 0 0 0 -1.414 0l-2.586 2.586a1 1 0 0 0 0 1.414l7.586 7.586a1 1 0 0 0 1.414 0z"/></symbol>
-  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M19.875 12c.621 0 1.125 .512 1.125 1.143v5.714c0 .631 -.504 1.143 -1.125 1.143h-15.875a1 1 0 0 1 -1 -1v-5.857c0 -.631 .504 -1.143 1.125 -1.143h15.75z"/><path d="M9 12v2"/><path d="M6 12v3"/><path d="M12 12v3"/><path d="M18 12v3"/><path d="M15 12v2"/><path d="M3 3v4"/><path d="M3 5h18"/><path d="M21 3v4"/></symbol>
   <symbol id="i-table" viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"/><path d="M3 10h18"/><path d="M10 3v18"/></symbol>
 </svg>
 
@@ -564,7 +584,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     </a>
     <nav aria-label="Main">
       <ul class="nav-links">
-        <li><a href="#free-tools">Free tools</a></li>
+        <li><a href="/tools/">Free tools</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -580,7 +600,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
     </button>
   </div>
   <nav class="mob" id="mob" aria-label="Mobile">
-    <a href="#free-tools">Free tools</a>
+    <a href="/tools/">Free tools</a>
     <a href="#services">Services</a>
     <a href="#how">How it works</a>
     <a href="#faq">FAQ</a>
@@ -613,10 +633,29 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<div class="wrap bridge">
-  <p class="eyebrow">For businesses</p>
-  <h2>AI automation, built for you</h2>
-</div>
+<section class="bridge" aria-labelledby="biz-title">
+  <div class="wrap bridge-grid">
+    <div>
+      <p class="eyebrow">For businesses</p>
+      <h2 id="biz-title">AI automation, built for you</h2>
+      <p class="sub">We set up proven open-source AI and build custom automation for clinics, estate agents, online shops and busy teams.</p>
+      <a class="btn btn-primary" href="#book">Book a free automation audit <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+      <figure class="adev" id="adev">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="lens" id="lens">
+          <canvas id="listen" aria-hidden="true"></canvas>
+          <img loading="lazy" src="/3d-rendered-robot-mascot-removebg-preview.webp" srcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" sizes="(max-width: 768px) 160px, 370px" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset">
+        </div>
+        <p class="state" aria-hidden="true"><i></i><span id="stateText">Ready for calls</span></p>
+        <div class="chip c1" data-depth="40"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>Call comes in</b><span>9:42 pm, new caller</span></div></div>
+        <div class="chip c2" data-depth="65"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></span><div><b>AI agent answers</b><span>Books a slot</span></div></div>
+        <div class="chip c3" data-depth="50"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><div><b>CRM updated</b><span>Lead and notes saved</span></div></div>
+        <div class="chip c4" data-depth="30"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span><div><b>WhatsApp sent</b><span>Booking confirmed</span></div></div>
+        <figcaption>Example flow. One call, handled end to end.</figcaption>
+      </figure>
+  </div>
+</section>
 
 <section class="rail" aria-label="Channels the AI agent works with">
   <div class="wrap">
@@ -827,55 +866,6 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       <p class="status" id="bStatus" role="status" aria-live="polite"></p>
       <p class="note">This opens WhatsApp or your email app with your answers filled in. Nothing is stored on this site. You can also write to <a href="mailto:hello@bingemind.com">hello@bingemind.com</a>.</p>
     </form>
-  </div>
-</section>
-
-<section class="sec tools-sec" id="free-tools" aria-labelledby="tools-title">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2 id="tools-title">Free tools</h2>
-      <p>Free browser tools we built and keep free. No sign-up, and your data stays on your device.</p>
-    </div>
-    <div class="tgrid">
-      <div class="tgroup rv" style="--d:0">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg>Fun and print</h3>
-        <ul>
-          <li><a href="/newspaper-front-page-maker/"><strong>Newspaper front page maker</strong><small>Make a front page with your photo and print it.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/newspaper-clipping-maker/"><strong>Old newspaper clipping maker</strong><small>Make a torn, yellowed clipping with your photo.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:0">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Work and data</h3>
-        <ul>
-          <li><a href="/markdown-to-pdf/"><strong>Markdown to PDF</strong><small>Convert Markdown to a clean PDF in your browser.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/json-diff/"><strong>JSON diff checker</strong><small>Compare two JSON files and see what changed.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/text-diff/"><strong>Text diff checker</strong><small>Compare two texts line by line.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:1">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-coin"/></svg>Shop and office</h3>
-        <ul>
-          <li><a href="/cash-drawer-counter/"><strong>Cash drawer counter</strong><small>Count your drawer and see the deposit at shift end.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/column-to-comma/"><strong>Column to comma</strong><small>Turn a column of values into a comma list.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/dpi-changer/"><strong>DPI changer</strong><small>Change the DPI of an image for print.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:2">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-ruler"/></svg>Measure and print</h3>
-        <ul>
-          <li><a href="/online-ruler/"><strong>Online ruler</strong><small>A true-size ruler in cm, mm and inches.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/poster-tiler/"><strong>Print a poster on multiple pages</strong><small>Split any image into a multi-page PDF poster.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-      <div class="tgroup rv" style="--d:3">
-        <h3><svg class="ic" aria-hidden="true"><use href="#i-hammer"/></svg>Home, trades and gym</h3>
-        <ul>
-          <li><a href="/board-and-batten-calculator/"><strong>Board and batten calculator</strong><small>Exact gaps, batten marks and boards to buy.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-          <li><a href="/barbell-plate-calculator/"><strong>Barbell plate calculator</strong><small>See which plates to load on each side.</small><svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="tools-more rv"><a class="btn btn-primary mag" href="/tools/">See all free tools <svg class="ic ic-move" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
@@ -1166,7 +1156,7 @@ window.bmMotion=function(){
 </script>
 
 <script>
-/* hero-core.js (voice sphere) loads after the page has loaded and the browser is idle, so it never delays the first paint. */
+/* hero-core.js (voice sphere and glass lens) loads after the page has loaded and the browser is idle, so it never delays the first paint. */
 (function(){
   var done=false;
   function boot(){if(done)return;done=true;var s=document.createElement('script');s.src='/js/hero-core.js';s.onload=function(){if(window.bmHero)window.bmHero();};document.head.appendChild(s);}
@@ -1182,7 +1172,19 @@ addEventListener('DOMContentLoaded',function(){
 
   /* Voice card sphere. Runs from the loader above once hero-core.js has loaded (after the first paint). */
   window.bmHero=function(){
-    if(!window.BMSphere)return;
+    if(!window.BMSphere||!window.BMLens)return;
+    /* The agent visual is below the first screen: start it when it scrolls into view */
+    var device=document.getElementById('adev'),stateText=document.getElementById('stateText');
+    var vo=new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting)return;vo.disconnect();
+      var sphere=BMSphere(document.getElementById('listen'),{ink:'--dots',accent:'--accent',mode:'call',radius:.42,count:900,alpha:.45,size:1.2,tilt:.4});
+      var states=['Listening','Answering','Saving to CRM','Sending WhatsApp'];
+      BMLens(device,document.getElementById('lens'),device.querySelectorAll('.chip'),{interval:1700,tilt:8,onStep:function(i){
+        device.classList.add('listening');stateText.textContent=states[i];sphere.pulse(i<2?1.5:.8);
+        if(i===3){setTimeout(function(){device.classList.remove('listening');stateText.textContent='Ready for calls';sphere.calm();},1500);}
+      }});
+    },{rootMargin:'100px 0px'});
+    vo.observe(device);
     /* Voice card: the same sphere, flattened into a voice band */
     BMSphere(document.getElementById('voiceBand'),{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
   };
