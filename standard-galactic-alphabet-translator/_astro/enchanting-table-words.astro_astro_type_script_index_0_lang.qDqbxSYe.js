@@ -1,0 +1,1 @@
+import{l as e,n as t}from"./render.CYiACIvQ.js";document.getElementById(`random`).addEventListener(`click`,()=>{let n=3+Math.floor(Math.random()*3),r=Array.from({length:n},()=>e[Math.floor(Math.random()*e.length)]).join(` `);document.getElementById(`random-english`).textContent=r,t(document.getElementById(`random-glyphs`),r)});

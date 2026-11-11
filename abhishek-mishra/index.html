@@ -139,6 +139,18 @@ footer.site a{display:inline-block;padding:10px 0;min-height:44px}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
      crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
 </head>
 <body>
 <header class="site"><div class="in">

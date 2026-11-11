@@ -1,0 +1,1 @@
+# AdSense is off. Set "adsense" in src/site.config.ts and rebuild; this file is then generated.
