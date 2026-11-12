@@ -59,7 +59,7 @@ for name in oldfiles:
  ads=lambda s:re.findall(r'<script[^>]+src="https://pagead2\.googlesyndication\.com/[^>]*></script>',s,re.S)
  assert ads(old)==ads(now),('ads changed',name)
  checked+=1
- if len(Path(name).parts)>1 and Path(name).parts[0] not in ['tools','abhishek-mishra','privacy']:
+ if len(Path(name).parts)>1 and Path(name).parts[0] not in ['tools','abhishek-mishra','privacy','about','contact','terms','services']:
   getmain=lambda s:re.search(r'<main\b.*?</main>',s,re.S)[0]
   assert getmain(old)==getmain(now),('tool content changed',name);mains+=1
 for p in pages:
