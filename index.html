@@ -594,7 +594,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
       </div>
       <p class="state" aria-hidden="true"><i></i><span id="stateText">Ready to help</span></p>
       <div class="chip c1" data-depth="40"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><div><b>Make a PDF</b><span>Images, Markdown, posters</span></div></div>
-      <div class="chip c2" data-depth="65"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-browser"/></svg></span><div><b>Runs in your browser</b><span>Nothing to install</span></div></div>
+      <div class="chip c2" data-depth="65"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-browser"/></svg></span><div><b>No install</b><span>Runs in your browser</span></div></div>
       <div class="chip c3" data-depth="50"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><div><b>Files stay with you</b><span>No sign-up needed</span></div></div>
       <div class="chip c4" data-depth="30"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><div><b>Work it out</b><span>Offsets, pan sizes and more</span></div></div>
       <figcaption>Small tools. Each one does one job.</figcaption>
@@ -615,7 +615,7 @@ window.bmHero=function(){
     if(!window.BMSphere||!window.BMLens)return;
     var device=document.getElementById('device'),stateText=document.getElementById('stateText');
     var sphere=BMSphere(document.getElementById('listen'),{ink:'--dots',accent:'--accent',mode:'call',radius:.42,count:900,alpha:.45,size:1.2,tilt:.4});
-    var states=['Making a PDF','In your browser','Private by default','Worked out'];
+    var states=['PDF ready','Ready to use','Nothing uploaded','Answer ready'];
     BMLens(device,document.getElementById('lens'),device.querySelectorAll('.chip'),{interval:1700,tilt:8,onStep:function(i){
       device.classList.add('listening');stateText.textContent=states[i];sphere.pulse(i<2?1.5:.8);
       if(i===3){setTimeout(function(){device.classList.remove('listening');stateText.textContent='Ready to help';sphere.calm();},1500);}
