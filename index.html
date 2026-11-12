@@ -141,9 +141,9 @@ ul,ol{list-style:none;margin:0;padding:0}
 .for{margin-top:12px;font-weight:600;color:var(--ink);max-width:40ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
-/* Hero visual placement: visual left, copy right on desktop */
-.device{grid-column:1;grid-row:1}
-.hero-copy{grid-column:2;grid-row:1}
+/* Hero visual placement: copy left, robot right on desktop */
+.hero-copy{grid-column:1;grid-row:1}
+.device{grid-column:2;grid-row:1}
 @media (prefers-reduced-motion:no-preference){
   .mesh{animation:drift 22s ease-in-out infinite alternate}
   .device.listening .ring{animation:breathe 2.4s ease-in-out infinite}
@@ -448,7 +448,7 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
 }
 
 /* Responsive */
-@media (max-width:960px){
+@media (max-width:899px){
   .hero-grid{grid-template-columns:1fr;min-height:0;gap:56px}
   .hero-copy,.device{grid-column:auto;grid-row:auto}
   .device{max-width:440px}
@@ -585,7 +585,48 @@ footer{padding:72px 0 96px;margin-top:112px;border-top:1px solid var(--line)}
   </nav>
 </header>
 
-<main id="main"><section id="home" class="home-intro"><div class="wrap"><h1 id="hero-title">Free tools that run in your browser</h1><p class="lede">Make a PDF, print something useful or work out an answer. No sign-up. Your files stay on your device.</p><a class="btn btn-primary" href="/tools/">Browse all tools <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></section><section class="home-tools" aria-labelledby="popular-tools"><div class="wrap"><h2 id="popular-tools">Popular tools</h2><ul class="tool-list"><li><a href="/newspaper-front-page-maker/"><strong>Newspaper front page maker</strong><p>A birthday or anniversary front page with your photo and headlines.</p><span>PNG, PDF or print &rarr;</span></a></li><li><a href="/funny-award-certificate/"><strong>Funny award certificate maker</strong><p>Kind, funny award certificates for work, school and family.</p><span>PDF, PNG or print &rarr;</span></a></li><li><a href="/banner-letter-maker/"><strong>Banner letter maker</strong><p>One big letter on each page, ready to hang as a banner.</p><span>Print a PDF &rarr;</span></a></li><li><a href="/rolling-offset-calculator/"><strong>Rolling offset calculator</strong><p>True offset, travel and cut length for pipe and conduit.</p><span>Copy or print &rarr;</span></a></li><li><a href="/cake-pan-converter/"><strong>Cake pan size converter</strong><p>Work out how much to scale a recipe for a different cake pan.</p><span>Scale a recipe &rarr;</span></a></li><li><a href="/image-to-pdf/"><strong>Image to PDF converter</strong><p>Join photos, scans and screenshots into one PDF.</p><span>Save a PDF &rarr;</span></a></li><li><a href="/markdown-to-pdf/"><strong>Markdown to PDF converter</strong><p>Make a PDF from Markdown, with tables and code blocks.</p><span>Save a PDF &rarr;</span></a></li><li><a href="/poster-tiler/"><strong>Poster tiler for multi-page prints</strong><p>Split one picture over many pages to print as a big poster.</p><span>Print a PDF &rarr;</span></a></li></ul></div></section><section class="home-business" id="for-businesses"><div class="wrap"><span id="device"></span><span id="lens"></span><span id="listen"></span><span id="stateText"></span><span id="biz-title"></span><span id="motionBtn"></span><span id="story"></span><span id="story-title"></span><span id="beats"></span><span id="progBar"></span><span id="clip"></span><span id="clipVideo"></span><span id="services"></span><span id="services-title"></span><span id="voiceBand"></span><span id="open-source"></span><span id="hybrid-title"></span><span id="osLead"></span><span id="layers"></span><span id="how"></span><span id="how-title"></span><span id="howList"></span><span id="dialPr"></span><span id="dialN"></span><span id="dialL"></span><span id="who"></span><span id="who-title"></span><span id="book"></span><span id="book-title"></span><span id="bookForm"></span><span id="f-name"></span><span id="bName"></span><span id="bNameErr"></span><span id="bType"></span><span id="f-time"></span><span id="bTimeHint"></span><span id="bTime"></span><span id="bTimeErr"></span><span id="bMail"></span><span id="bStatus"></span><span id="team"></span><span id="team-title"></span><span id="faq"></span><span id="faq-title"></span><span id="contact"></span><span id="contact-title"></span><h2>For businesses</h2><p>We also build AI voice agents and workflows for businesses.</p><a href="/services/">See our business services &rarr;</a></div></section></main>
+<main id="main"><section class="hero" id="home" aria-labelledby="hero-title"><div class="mesh" aria-hidden="true"></div><div class="wrap hero-grid"><div class="hero-copy"><h1 id="hero-title">Free tools that run in your browser</h1><p class="lede">Make a PDF, print something useful or work out an answer. No sign-up. Your files stay on your device.</p><div class="hero-ctas"><a class="btn btn-primary" href="/tools/">Browse all tools <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+    <figure class="device" id="device">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="lens" id="lens">
+        <canvas id="listen" aria-hidden="true"></canvas>
+        <img src="/3d-rendered-robot-mascot-removebg-preview.webp" srcset="/img/mascot-240.webp 240w, /3d-rendered-robot-mascot-removebg-preview.webp 433w" sizes="(max-width: 768px) 160px, 370px" width="433" height="577" alt="The Bingemind AI agent, a friendly robot wearing a headset" fetchpriority="high">
+      </div>
+      <p class="state" aria-hidden="true"><i></i><span id="stateText">Ready for calls</span></p>
+      <div class="chip c1" data-depth="40"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>Call comes in</b><span>9:42 pm, new caller</span></div></div>
+      <div class="chip c2" data-depth="65"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></span><div><b>AI agent answers</b><span>Books a slot</span></div></div>
+      <div class="chip c3" data-depth="50"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><div><b>CRM updated</b><span>Lead and notes saved</span></div></div>
+      <div class="chip c4" data-depth="30"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span><div><b>WhatsApp sent</b><span>Booking confirmed</span></div></div>
+      <figcaption>Example flow. One call, handled end to end.</figcaption>
+    </figure>
+</div></section>
+<script>
+/* hero-core.js (voice sphere and glass lens) loads after the page has loaded and the browser is idle, so it never delays the first paint. */
+(function(){
+  var done=false;
+  function boot(){if(done)return;done=true;var s=document.createElement('script');s.src='/js/hero-core.js';s.onload=function(){if(window.bmHero)window.bmHero();};document.head.appendChild(s);}
+  function idle(){if('requestIdleCallback' in window){requestIdleCallback(boot,{timeout:1500});}else{setTimeout(boot,300);}}
+  if(document.readyState==='complete'){idle();}else{addEventListener('load',idle);}
+})();
+</script>
+<script>
+/* Hero object: builds the voice sphere and the call-flow lens (from f9b9536). hero-core.js calls this after load. */
+window.bmHero=function(){
+    if(!window.BMSphere||!window.BMLens)return;
+    var device=document.getElementById('device'),stateText=document.getElementById('stateText');
+    var sphere=BMSphere(document.getElementById('listen'),{ink:'--dots',accent:'--accent',mode:'call',radius:.42,count:900,alpha:.45,size:1.2,tilt:.4});
+    var states=['Listening','Answering','Saving to CRM','Sending WhatsApp'];
+    BMLens(device,document.getElementById('lens'),device.querySelectorAll('.chip'),{interval:1700,tilt:8,onStep:function(i){
+      device.classList.add('listening');stateText.textContent=states[i];sphere.pulse(i<2?1.5:.8);
+      if(i===3){setTimeout(function(){device.classList.remove('listening');stateText.textContent='Ready for calls';sphere.calm();},1500);}
+    }});
+    /* Voice card: the same sphere, flattened into a voice band */
+    BMSphere(document.getElementById('voiceBand'),{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
+};
+/* Pause the hero loops when the hero is off screen */
+new IntersectionObserver(function(es){document.getElementById('home').classList.toggle('paused',!es[0].isIntersecting);}).observe(document.getElementById('home'));
+</script>
+<section class="home-tools" aria-labelledby="popular-tools"><div class="wrap"><h2 id="popular-tools">Popular tools</h2><ul class="tool-list"><li><a href="/newspaper-front-page-maker/"><strong>Newspaper front page maker</strong><p>A birthday or anniversary front page with your photo and headlines.</p><span>PNG, PDF or print &rarr;</span></a></li><li><a href="/funny-award-certificate/"><strong>Funny award certificate maker</strong><p>Kind, funny award certificates for work, school and family.</p><span>PDF, PNG or print &rarr;</span></a></li><li><a href="/banner-letter-maker/"><strong>Banner letter maker</strong><p>One big letter on each page, ready to hang as a banner.</p><span>Print a PDF &rarr;</span></a></li><li><a href="/rolling-offset-calculator/"><strong>Rolling offset calculator</strong><p>True offset, travel and cut length for pipe and conduit.</p><span>Copy or print &rarr;</span></a></li><li><a href="/cake-pan-converter/"><strong>Cake pan size converter</strong><p>Work out how much to scale a recipe for a different cake pan.</p><span>Scale a recipe &rarr;</span></a></li><li><a href="/image-to-pdf/"><strong>Image to PDF converter</strong><p>Join photos, scans and screenshots into one PDF.</p><span>Save a PDF &rarr;</span></a></li><li><a href="/markdown-to-pdf/"><strong>Markdown to PDF converter</strong><p>Make a PDF from Markdown, with tables and code blocks.</p><span>Save a PDF &rarr;</span></a></li><li><a href="/poster-tiler/"><strong>Poster tiler for multi-page prints</strong><p>Split one picture over many pages to print as a big poster.</p><span>Print a PDF &rarr;</span></a></li></ul></div></section><section class="home-business" id="for-businesses"><div class="wrap"><span id="device"></span><span id="lens"></span><span id="listen"></span><span id="stateText"></span><span id="biz-title"></span><span id="motionBtn"></span><span id="story"></span><span id="story-title"></span><span id="beats"></span><span id="progBar"></span><span id="clip"></span><span id="clipVideo"></span><span id="services"></span><span id="services-title"></span><span id="voiceBand"></span><span id="open-source"></span><span id="hybrid-title"></span><span id="osLead"></span><span id="layers"></span><span id="how"></span><span id="how-title"></span><span id="howList"></span><span id="dialPr"></span><span id="dialN"></span><span id="dialL"></span><span id="who"></span><span id="who-title"></span><span id="book"></span><span id="book-title"></span><span id="bookForm"></span><span id="f-name"></span><span id="bName"></span><span id="bNameErr"></span><span id="bType"></span><span id="f-time"></span><span id="bTimeHint"></span><span id="bTime"></span><span id="bTimeErr"></span><span id="bMail"></span><span id="bStatus"></span><span id="team"></span><span id="team-title"></span><span id="faq"></span><span id="faq-title"></span><span id="contact"></span><span id="contact-title"></span><h2>For businesses</h2><p>We also build AI voice agents and workflows for businesses.</p><a href="/services/">See our business services &rarr;</a></div></section></main>
 <footer class="home-footer"><div class="wrap"><div class="foot-top"><a class="brand" href="/"><img src="/bingemindlogo-128.webp" alt="" width="34" height="34">Bingemind</a><a href="/tools/">Free tools</a><a href="/services/">For businesses</a></div><p>&copy; 2026 Bingemind. Made by <a href="/abhishek-mishra/">Abhishek Mishra</a>. Made with love by Bingemind.</p></div><!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Bingemind site"><a href="/about/">About</a><span aria-hidden="true">·</span><a href="/contact/">Contact</a><span aria-hidden="true">·</span><a href="/privacy/">Privacy</a><span aria-hidden="true">·</span><a href="/terms/">Terms</a><span aria-hidden="true">·</span><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
 <script>
 (function(){var root=document.documentElement,btn=document.getElementById('themeBtn'),menu=document.getElementById('menuBtn'),mob=document.getElementById('mob');function label(){var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme')}btn.addEventListener('click',function(){root.dataset.theme=btn.getAttribute('aria-label').includes('dark')?'dark':'light';try{localStorage.setItem('bm-theme',root.dataset.theme)}catch(e){}label()});label();function close(){mob.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu')}menu.addEventListener('click',function(){var open=menu.getAttribute('aria-expanded')!=='true';mob.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});mob.addEventListener('click',function(e){if(e.target.closest('a'))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mob.classList.contains('open')){close();menu.focus()}})})();
