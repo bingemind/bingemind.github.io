@@ -621,7 +621,7 @@ window.bmHero=function(){
       if(i===3){setTimeout(function(){device.classList.remove('listening');stateText.textContent='Ready to help';sphere.calm();},1500);}
     }});
     /* Voice card: the same sphere, flattened into a voice band */
-    BMSphere(document.getElementById('voiceBand'),{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
+    var band=document.getElementById('voiceBand');if(band&&band.getContext)BMSphere(band,{ink:'--muted',accent:'--accent',mode:'band',radius:.42,count:700,alpha:.75,size:1.15,tilt:0,speed:.004,accentEvery:9});
 };
 /* Pause the hero loops when the hero is off screen */
 new IntersectionObserver(function(es){document.getElementById('home').classList.toggle('paused',!es[0].isIntersecting);}).observe(document.getElementById('home'));

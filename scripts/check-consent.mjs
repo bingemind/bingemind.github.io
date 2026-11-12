@@ -6,7 +6,7 @@ const home = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 const defaults = home.match(/<!-- bm-consent-default v1 -->\s*<script>(.*?)<\/script>/s)[1];
 const script = await readFile(new URL('../js/consent.js', import.meta.url), 'utf8');
 assert.ok(Buffer.byteLength(script) < 3000);
-function setup({ choice, analytics = 'on', hostname = 'bingemind.com', blocked = false } = {}) {
+function setup({ choice, analytics = 'on', hostname = 'bingemind.com', blocked = false, tz = 'Europe/London' } = {}) {
   const stored = new Map(choice ? [['bm-analytics-consent', choice]] : []);
   const events = {}, windowEvents = {}, boxEvents = {}, scripts = [], cookies = [];
   let focused, scrolled = false;
@@ -24,7 +24,8 @@ function setup({ choice, analytics = 'on', hostname = 'bingemind.com', blocked =
     set cookie(value) { cookies.push(value); }
   };
   const localStorage = { getItem(key) { if (blocked) throw Error('blocked'); return stored.get(key) || null; }, setItem(key, value) { if (blocked) throw Error('blocked'); stored.set(key, value); } };
-  const context = vm.createContext({ document, localStorage, location: { hostname }, addEventListener(name, fn) { windowEvents[name] = fn; } });
+  const Intl = { DateTimeFormat() { return { resolvedOptions() { return { timeZone: tz }; } }; } };
+  const context = vm.createContext({ document, localStorage, Intl, location: { hostname }, addEventListener(name, fn) { windowEvents[name] = fn; } });
   context.window = context;
   vm.runInContext(defaults, context);
   vm.runInContext(script, context);
@@ -68,4 +69,7 @@ check('blocked storage: defaults safe; buttons still work for the current page',
 check('local preview does not load GA even after accepting', () => { const s = setup({ hostname: '127.0.0.1' });s.choose('accepted');assert.equal(s.scripts.length, 0); });
 check('Galactic pages retain no analytics after saved acceptance', () => { const s = setup({ analytics: 'off', choice: 'accepted' });assert.equal(s.scripts.length, 0);assert.equal(s.context.bmAnalyticsAllowed, false);assert.equal(s.cookies.length, 0); });
 check('cross-tab choices apply without reloading', () => { const s = setup();s.sync('accepted');assert.equal(s.scripts.length, 1);s.sync('rejected');assert.equal(s.context.bmAnalyticsAllowed, false);s.sync(null);assert.equal(s.box.hidden, false); });
+check('outside Europe: no banner, analytics on by default', () => { const s = setup({ tz: 'Asia/Kolkata' });assert.equal(s.box.hidden, true);assert.equal(s.scripts.length, 1);assert.equal(s.context.bmAnalyticsAllowed, true); });
+check('outside Europe: Cookie settings opt out sticks', () => { const s = setup({ tz: 'America/New_York' });s.reopen();assert.equal(s.box.hidden, false);s.choose('rejected');assert.equal(s.context.bmAnalyticsAllowed, false);const t = setup({ tz: 'America/New_York', choice: 'rejected' });assert.equal(t.scripts.length, 0); });
+check('unknown or European time zone: opt in, banner shown', () => { for (const tz of ['', 'Etc/UTC', 'Europe/Zurich', 'Atlantic/Canary', 'Africa/Ceuta']) { const s = setup({ tz });assert.equal(s.box.hidden, false);assert.equal(s.scripts.length, 0); } });
 console.log(`${count} consent checks passed; ${Buffer.byteLength(script)} bytes.`);
