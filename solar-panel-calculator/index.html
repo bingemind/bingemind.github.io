@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Solar Panel Calculator: Size, Cost, Savings, Payback</title>
+<meta name="description" content="From your electricity bill, see the solar system size, number of panels, cost, yearly savings and payback time. Sun hours for 58 countries.">
+<link rel="canonical" href="https://bingemind.com/solar-panel-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Solar Panel Calculator: Size, Cost, Savings, Payback">
+<meta property="og:description" content="System size, panels, cost, savings and payback from your bill.">
+<meta property="og:url" content="https://bingemind.com/solar-panel-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Solar Panel Calculator","url":"https://bingemind.com/solar-panel-calculator/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"From your electricity bill, see the solar system size, number of panels, cost, yearly savings and payback time. Sun hours for 58 countries."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Solar Panel Calculator","item":"https://bingemind.com/solar-panel-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many solar panels do I need?","acceptedAnswer":{"@type":"Answer","text":"Divide your yearly electricity use in kWh by the yearly output of one panel. A 420 W panel in a place with 4.5 peak sun hours makes about 550 kWh a year, so a home using 10,000 kWh needs about 19 panels."}},{"@type":"Question","name":"How do I calculate solar system size?","acceptedAnswer":{"@type":"Answer","text":"Divide yearly kWh by peak sun hours × 365 × 0.8. For 10,000 kWh a year and 4.5 sun hours, that is about 7.6 kW."}},{"@type":"Question","name":"How long do solar panels take to pay for themselves?","acceptedAnswer":{"@type":"Answer","text":"Commonly 4 to 12 years depending on the country, electricity price, incentives and how much of the power you use yourself. Divide the net cost by the first-year savings for a quick estimate."}},{"@type":"Question","name":"How much roof space do solar panels need?","acceptedAnswer":{"@type":"Answer","text":"About 2 square meters (21 square feet) per panel. A 6 kW system of 15 panels needs roughly 30 m² or 320 sq ft, plus edge clearances."}},{"@type":"Question","name":"What are peak sun hours?","acceptedAnswer":{"@type":"Answer","text":"A measure of daily solar energy: one peak sun hour equals 1 kWh of sunlight per square meter. Most inhabited places get between 2.5 and 6.5 a day on average."}},{"@type":"Question","name":"Do solar panels work on cloudy days?","acceptedAnswer":{"@type":"Answer","text":"Yes, at reduced output, typically 10% to 25% of a clear day. The yearly average sun hours already include cloudy days."}},{"@type":"Question","name":"Is there still a US federal solar tax credit?","acceptedAnswer":{"@type":"Answer","text":"No. Under the 2025 tax law (Public Law 119-21) the 30% residential clean energy credit is not allowed for expenditures made after 31 December 2025. State, local and utility incentives may still apply, so enter those if you qualify."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Solar Panel Calculator</p>
+      <span class="eyebrow rise d1">Home solar · sun hours for 58 countries</span>
+      <h1 class="lift"><span class="shine">Solar Panel Calculator</span></h1>
+      <p class="lede lift">Enter your monthly electricity bill. The calculator estimates the system size and number of panels you need, the roof space they take, what they cost and how many years they take to pay for themselves.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sized from your bill</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sun hours by country</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Payback and 25-year savings</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Panel count and roof area</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: system size (kW) = yearly kWh ÷ (peak sun hours × 365 × 0.8).</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your electricity</h2>
+        <p class="sub">Starting values are typical for your country. Use the price per kWh from your own bill for a better estimate.</p>
+        <div class="fields"><div class="grid-2"><div class="field" data-f="bill"><label for="f-bill">Monthly electricity bill</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-bill" inputmode="decimal" autocomplete="off" value="155"></div></div><div class="field" data-f="price"><label for="f-price">Electricity price <span class="hint">(per kWh)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="0.18"></div></div></div><div class="grid-2"><div class="field" data-f="sun"><label for="f-sun">Peak sun hours <span class="hint">(yearly average)</span></label><div class="affix"><input class="input" id="f-sun" inputmode="decimal" autocomplete="off" value="4.5"><span class="post" aria-hidden="true">hours a day</span></div></div><div class="field" data-f="offset"><label for="f-offset">Share of bill to cover</label><div class="affix"><input class="input" id="f-offset" inputmode="decimal" autocomplete="off" value="100"><span class="post" aria-hidden="true">%</span></div></div></div><details class="adv" open><summary>Panels, cost and incentives</summary><div class="grid-2"><div class="field" data-f="watt"><label for="f-watt">Panel size</label><div class="affix"><input class="input" id="f-watt" inputmode="decimal" autocomplete="off" value="420"><span class="post" aria-hidden="true">W</span></div></div><div class="field" data-f="cost"><label for="f-cost">Installed cost <span class="hint">(per watt)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-cost" inputmode="decimal" autocomplete="off" value="2.9"></div></div></div><div class="grid-2"><div class="field" data-f="incent"><label for="f-incent">Rebate or tax credit <span class="hint">(of system cost; US federal credit ended for spending after 2025)</span></label><div class="affix"><input class="input" id="f-incent" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="rise"><label for="f-rise">Electricity price rise</label><div class="affix"><input class="input" id="f-rise" inputmode="decimal" autocomplete="off" value="3"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="field" data-f="pr"><label for="f-pr">System efficiency <span class="hint">(losses from heat, wiring, inverter, shade)</span></label><div class="affix"><input class="input" id="f-pr" inputmode="decimal" autocomplete="off" value="80"><span class="post" aria-hidden="true">%</span></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">System size you need</h2><div class="big" id="big">7.98 <small>kW</small></div></div><div class="hint">19 panels of 420 W</div></div><dl class="kv"><dt>Your electricity use</dt><dd>861 kWh a month</dd><dt>Solar output</dt><dd>10,486 kWh a year</dd><dt>Roof area needed</dt><dd>399 sq ft</dd><dt>Cost before incentives</dt><dd>$23,142</dd><dt>Cost after incentives</dt><dd class="strong">$23,142</dd><dt>First-year savings</dt><dd>$1,887</dd><dt>Payback time</dt><dd class="strong">10.8 years</dd><dt>25-year net savings</dt><dd class="strong">$41,203</dd><dt>CO₂ avoided, rough guide</dt><dd>4.19 tonnes a year</dd></dl><figure class="chart"><figcaption>Savings minus cost over 25 years <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Savings minus cost over 25 years"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">-40K</text><line x1="64" x2="628" y1="170.4" y2="170.4" class="gl"/><text x="56" y="174.4" text-anchor="end">-20K</text><line x1="64" x2="628" y1="130.8" y2="130.8" class="gl"/><text x="56" y="134.8" text-anchor="end">0</text><line x1="64" x2="628" y1="91.2" y2="91.2" class="gl"/><text x="56" y="95.2" text-anchor="end">20K</text><line x1="64" x2="628" y1="51.6" y2="51.6" class="gl"/><text x="56" y="55.6" text-anchor="end">40K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">60K</text><text x="64.0" y="232" text-anchor="middle">Now</text><text x="154.2" y="232" text-anchor="middle">Yr 4</text><text x="244.5" y="232" text-anchor="middle">Yr 8</text><text x="334.7" y="232" text-anchor="middle">Yr 12</text><text x="425.0" y="232" text-anchor="middle">Yr 16</text><text x="515.2" y="232" text-anchor="middle">Yr 20</text><text x="605.4" y="232" text-anchor="middle">Yr 24</text><text x="628.0" y="232" text-anchor="middle">Yr 25</text><path d="M64,130.8 L64.0,176.6 L86.6,172.9 L109.1,169.1 L131.7,165.1 L154.2,161.1 L176.8,157.0 L199.4,152.8 L221.9,148.4 L244.5,144.0 L267.0,139.4 L289.6,134.8 L312.2,130.0 L334.7,125.1 L357.3,120.1 L379.8,115.0 L402.4,109.7 L425.0,104.3 L447.5,98.7 L470.1,93.1 L492.6,87.3 L515.2,81.3 L537.8,75.2 L560.3,68.9 L582.9,62.5 L605.4,56.0 L628.0,49.2 L628,130.8 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,176.6 86.6,172.9 109.1,169.1 131.7,165.1 154.2,161.1 176.8,157.0 199.4,152.8 221.9,148.4 244.5,144.0 267.0,139.4 289.6,134.8 312.2,130.0 334.7,125.1 357.3,120.1 379.8,115.0 402.4,109.7 425.0,104.3 447.5,98.7 470.1,93.1 492.6,87.3 515.2,81.3 537.8,75.2 560.3,68.9 582.9,62.5 605.4,56.0 628.0,49.2" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Net position</span><span class="v">$41,203</span><span class="s">at Yr 25</span></li></ul></figure><p class="note">Assumes you use or get full credit for every kWh the panels make. If your utility pays less for exported power, payback takes longer.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How solar system size is calculated</span></h2>
+        <div class="formula">Yearly use (kWh) = monthly bill ÷ price per kWh × 12<br>System size (kW) = yearly use ÷ (peak sun hours × 365 × system efficiency)<br>Number of panels = system size × 1,000 ÷ panel watts, rounded up</div>
+<p>Example: a 150 bill at 0.18 per kWh is 833 kWh a month, or 10,000 kWh a year. With 4.5 peak sun hours and 80% efficiency, each kW of panels makes 4.5 × 365 × 0.8 = 1,314 kWh a year. You need 10,000 ÷ 1,314 = 7.6 kW, which is 19 panels of 420 W.</p>
+<h3>What peak sun hours means</h3>
+<p>One peak sun hour is one hour of sunlight at 1,000 watts per square meter. It is a measure of total daily solar energy, not hours of daylight. The value depends on latitude and climate, and the calculator starts with a national average.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Peak sun hours and typical costs by country</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Country</th><th>Average peak sun hours</th><th>Typical installed cost per watt (US$)</th></tr></thead><tbody>
+<tr><td>United States</td><td>3.5 (Northwest) to 6 (Southwest)</td><td>2.5 to 3.3</td></tr>
+<tr><td>Australia</td><td>4.5 to 5.5</td><td>0.7 to 1.2 after rebates</td></tr>
+<tr><td>United Kingdom</td><td>2.5 to 3</td><td>1.4 to 1.9</td></tr>
+<tr><td>Germany</td><td>2.7 to 3.3</td><td>1.4 to 1.8</td></tr>
+<tr><td>India</td><td>4.5 to 6</td><td>0.5 to 0.7</td></tr>
+<tr><td>Spain</td><td>4.5 to 5.5</td><td>1.0 to 1.4</td></tr>
+<tr><td>South Africa</td><td>5 to 6</td><td>0.9 to 1.3</td></tr>
+<tr><td>UAE and Saudi Arabia</td><td>5.5 to 6.5</td><td>0.8 to 1.2</td></tr>
+<tr><td>Canada</td><td>3 to 4.5</td><td>1.8 to 2.4</td></tr>
+</tbody></table></div>
+<p>These are broad ranges for home systems and move with exchange rates and local labour costs. Use a quote from an installer for the real figure. For sun hours at your exact address, free tools such as PVWatts (US) and PVGIS (Europe, Africa, Asia) use satellite data.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What decides the payback time</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Your electricity price.</b> The higher it is, the more each solar kWh saves. Payback is fastest where power is expensive, such as Germany, the UK, Australia and California.</li>
+<li><b>How much solar power you use yourself.</b> Power used at home saves the full retail price. Power exported is often paid at a lower feed-in or export rate.</li>
+<li><b>Incentives.</b> Enter any rebate or tax credit as a percentage. Examples include Australia's small-scale technology certificates, India's PM Surya Ghar subsidy, and 0% VAT on home installations in the UK. The US federal residential clean energy credit is not allowed for expenditures made after 31 December 2025, though some state and utility rebates remain.</li>
+<li><b>Electricity price rises.</b> If grid prices go up, your savings grow each year.</li>
+<li><b>Roof direction and shade.</b> A roof facing the equator at a moderate tilt gives the most. East or west faces produce roughly 15% to 20% less, and shade can cut output sharply.</li>
+</ul>
+<p>Typical home payback is about 4 to 7 years in Australia and India, 6 to 10 in much of Europe, and 7 to 12 in the US. Panels usually carry a 25-year performance warranty.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Batteries, net metering and panel life</span></h2>
+      <div class="prose">
+        <p><b>Net metering</b> credits exported power at or near the retail rate, so the grid acts like a free battery. Where it applies, the calculator's savings are close to reality. Where export rates are low, you gain more by shifting use to daylight hours or adding a battery.</p>
+<p><b>Batteries</b> let you use solar power in the evening and provide backup, but they add substantially to the cost and usually lengthen the payback. They make most sense with low export rates, time-of-use tariffs or unreliable grids.</p>
+<p><b>Degradation.</b> Panels lose around 0.5% of output a year, which the 25-year figures include. Inverters often need replacing once, after 10 to 15 years.</p>
+<p><b>Roof space.</b> A modern 420 W panel is about 1.95 m² (21 sq ft). The result shows the area for panels alone; allow extra for setbacks, vents and walkways.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: monthly electricity bill $155; electricity price $0.18; peak sun hours 4.5 hours a day; share of bill to cover 100%; panel size 420 W; installed cost $2.90; rebate or tax credit 0%; electricity price rise 3% a year; system efficiency 80%. Result: system size you need <b>7.98 kW</b>; your electricity use 861 kWh a month; solar output 10,486 kWh a year; roof area needed 399 sq ft.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: monthly electricity bill £59.00; electricity price £0.26; peak sun hours 2.8 hours a day; share of bill to cover 100%; panel size 420 W; installed cost £1.30; rebate or tax credit 0%; electricity price rise 3% a year; system efficiency 80%. Result: system size you need <b>3.36 kW</b>; your electricity use 227 kWh a month; solar output 2,747 kWh a year; roof area needed 168 sq ft.</p>
+<h3>Australia (AUD)</h3><p>Starting values typical for Australia: monthly electricity bill $165; electricity price $0.33; peak sun hours 5 hours a day; share of bill to cover 100%; panel size 420 W; installed cost $1.50; rebate or tax credit 0%; electricity price rise 3% a year; system efficiency 80%. Result: system size you need <b>4.2 kW</b>; your electricity use 500 kWh a month; solar output 6,132 kWh a year; roof area needed 20 m².</p>
+<h3>India (INR)</h3><p>Starting values typical for India: monthly electricity bill ₹948; electricity price ₹7.90; peak sun hours 5.2 hours a day; share of bill to cover 100%; panel size 420 W; installed cost ₹48.00; rebate or tax credit 0%; electricity price rise 3% a year; system efficiency 80%. Result: system size you need <b>1.26 kW</b>; your electricity use 120 kWh a month; solar output 1,913 kWh a year; roof area needed 6 m².</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Solar questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How many solar panels do I need?</summary><p>Divide your yearly electricity use in kWh by the yearly output of one panel. A 420 W panel in a place with 4.5 peak sun hours makes about 550 kWh a year, so a home using 10,000 kWh needs about 19 panels.</p></details>
+        <details><summary>How do I calculate solar system size?</summary><p>Divide yearly kWh by peak sun hours × 365 × 0.8. For 10,000 kWh a year and 4.5 sun hours, that is about 7.6 kW.</p></details>
+        <details><summary>How long do solar panels take to pay for themselves?</summary><p>Commonly 4 to 12 years depending on the country, electricity price, incentives and how much of the power you use yourself. Divide the net cost by the first-year savings for a quick estimate.</p></details>
+        <details><summary>How much roof space do solar panels need?</summary><p>About 2 square meters (21 square feet) per panel. A 6 kW system of 15 panels needs roughly 30 m² or 320 sq ft, plus edge clearances.</p></details>
+        <details><summary>What are peak sun hours?</summary><p>A measure of daily solar energy: one peak sun hour equals 1 kWh of sunlight per square meter. Most inhabited places get between 2.5 and 6.5 a day on average.</p></details>
+        <details><summary>Do solar panels work on cloudy days?</summary><p>Yes, at reduced output, typically 10% to 25% of a clear day. The yearly average sun hours already include cloudy days.</p></details>
+        <details><summary>Is there still a US federal solar tax credit?</summary><p>No. Under the 2025 tax law (Public Law 119-21) the 30% residential clean energy credit is not allowed for expenditures made after 31 December 2025. State, local and utility incentives may still apply, so enter those if you qualify.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/concrete-calculator/"><b>Concrete Calculator</b><span>Volume, bags and cost for slabs, footings and columns.</span></a><a href="https://bingemind.com/square-footage-calculator/"><b>Square Footage Calculator</b><span>Area of any room in square feet or meters.</span></a><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/compound-interest-calculator/"><b>Compound Interest Calculator</b><span>Future value with monthly deposits, inflation and a growth chart.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> This is a first estimate from national averages. Real output depends on your roof’s direction, tilt and shade, and real savings on your tariff and export rate. Get quotes from accredited installers before you buy. Your numbers stay in this browser.</p>
+      <p>Sources: Solar resource data: <a href="https://pvwatts.nrel.gov/">NREL PVWatts</a>, <a href="https://re.jrc.ec.europa.eu/pvg_tools/en/">EU PVGIS</a> and <a href="https://globalsolaratlas.info/">Global Solar Atlas (World Bank)</a>. US tax credit: <a href="https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb">IRS FAQ on the 2025 changes to section 25D</a>. UK VAT relief: <a href="https://www.gov.uk/guidance/vat-on-energy-saving-materials-and-heating-equipment-notice-7086">GOV.UK</a>. India: <a href="https://pmsuryaghar.gov.in/">PM Surya Ghar</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

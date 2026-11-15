@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Loan Calculator: Payment, Interest, APR and Schedule</title>
+<meta name="description" content="Monthly, biweekly or weekly loan payments with total interest, true APR including fees, extra payment savings and a full amortization schedule.">
+<link rel="canonical" href="https://bingemind.com/loan-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Loan Calculator: Payment, Interest, APR and Schedule">
+<meta property="og:description" content="Payment, total interest, true APR with fees and a full schedule.">
+<meta property="og:url" content="https://bingemind.com/loan-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Loan Calculator","url":"https://bingemind.com/loan-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Monthly, biweekly or weekly loan payments with total interest, true APR including fees, extra payment savings and a full amortization schedule."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Loan Calculator","item":"https://bingemind.com/loan-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate a loan payment?","acceptedAnswer":{"@type":"Answer","text":"Multiply the amount borrowed by the periodic rate and divide by 1 minus (1 + rate) to the power of minus the number of payments. For 20,000 at 10% over 5 years the monthly payment is 424.94."}},{"@type":"Question","name":"What is the difference between interest rate and APR?","acceptedAnswer":{"@type":"Answer","text":"The interest rate is charged on the balance. APR adds the lender’s fees, so it shows the full yearly cost. A 10% loan with a 3% upfront fee over 5 years has an APR of about 11.3%."}},{"@type":"Question","name":"Is EMI the same as a monthly payment?","acceptedAnswer":{"@type":"Answer","text":"Yes. EMI, or equated monthly instalment, is the term used in India and some other countries for a fixed monthly loan payment. It uses the same amortization formula."}},{"@type":"Question","name":"Does paying extra reduce the interest?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as the lender applies the extra to principal. The balance falls faster, so less interest is charged each period and the loan ends early. Ask whether there is an early repayment fee first."}},{"@type":"Question","name":"Should I choose a longer term for a lower payment?","acceptedAnswer":{"@type":"Answer","text":"Only if you need the lower payment. A longer term costs more in total. If you take the longer term for safety, you can still pay extra when money allows and finish early."}},{"@type":"Question","name":"Can I use this for a student or business loan?","acceptedAnswer":{"@type":"Answer","text":"Yes, for any loan with a fixed rate and level payments. It does not model interest-only periods, grace periods or income-driven repayment plans."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Loan Calculator</p>
+      <span class="eyebrow rise d1">Personal, student and business loans · any currency</span>
+      <h1 class="lift"><span class="shine">Loan Calculator</span></h1>
+      <p class="lede lift">Enter the amount, rate and term to see your payment and the total interest. Add the lender’s fee to see the true APR, and add an extra amount per payment to see how much sooner you finish.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monthly, biweekly or weekly</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>True APR with fees</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Extra payment savings</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Schedule as CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: payment = P × r ÷ (1 − (1 + r)^−n).</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your loan</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="field" data-f="amount"><label for="f-amount">Loan amount</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-amount" inputmode="decimal" autocomplete="off" value="20000"></div></div><div class="grid-2"><div class="field" data-f="rate"><label for="f-rate">Interest rate</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="11.8"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="years"><label for="f-years">Loan term</label><div class="affix"><input class="input" id="f-years" inputmode="decimal" autocomplete="off" value="5"><span class="post" aria-hidden="true">years</span></div></div></div><div class="field" data-f="freq"><span class="lbl" id="f-freq-l">Payments</span><div class="seg" id="f-freq" aria-labelledby="f-freq-l"><button type="button" data-value="12" aria-checked="true">Monthly</button><button type="button" data-value="26" aria-checked="false">Biweekly</button><button type="button" data-value="52" aria-checked="false">Weekly</button></div></div><details class="adv"><summary>Fees and extra payments</summary><div class="grid-2"><div class="field" data-f="fee"><label for="f-fee">Upfront fee <span class="hint">(origination or processing)</span></label><div class="affix"><input class="input" id="f-fee" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">% of loan</span></div></div><div class="field" data-f="extra"><label for="f-extra">Extra per payment</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-extra" inputmode="decimal" autocomplete="off" value="0"></div></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Monthly payment</h2><div class="big" id="big">$442.87</div></div><div class="hint">Monthly for 5 years</div></div><div class="stackbar" aria-hidden="true"><span style="width:75.27%;background:var(--reg)"></span><span style="width:24.73%;background:var(--gold)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Principal</span><span class="v">$20,000.00</span><span class="s">75%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Interest</span><span class="v">$6,572.22</span><span class="s">25%</span></li></ul><dl class="kv"><dt>Total interest</dt><dd class="strong">$6,572.22</dd><dt>Total of payments</dt><dd>$26,572.22</dd><dt>Number of payments</dt><dd>60</dd><dt>Paid off</dt><dd>Nov 2031</dd></dl><figure class="chart"><figcaption>Balance by year <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Balance by year"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="160.5" y2="160.5" class="gl"/><text x="56" y="164.5" text-anchor="end">5K</text><line x1="64" x2="628" y1="111.0" y2="111.0" class="gl"/><text x="56" y="115.0" text-anchor="end">10K</text><line x1="64" x2="628" y1="61.5" y2="61.5" class="gl"/><text x="56" y="65.5" text-anchor="end">15K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">20K</text><text x="64.0" y="232" text-anchor="middle">Start</text><text x="176.8" y="232" text-anchor="middle">Yr 1</text><text x="289.6" y="232" text-anchor="middle">Yr 2</text><text x="402.4" y="232" text-anchor="middle">Yr 3</text><text x="515.2" y="232" text-anchor="middle">Yr 4</text><text x="628.0" y="232" text-anchor="middle">Yr 5</text><path d="M64,210 L64.0,12.0 L176.8,42.9 L289.6,77.6 L402.4,116.7 L515.2,160.6 L628.0,210.0 L628,210 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,12.0 176.8,42.9 289.6,77.6 402.4,116.7 515.2,160.6 628.0,210.0" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Balance</span><span class="v">$0</span><span class="s">at Yr 5</span></li></ul></figure><details class="adv tbl-det"><summary>Yearly amortization schedule</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Year</th><th>Interest</th><th>Principal</th><th>Balance</th></tr></thead><tbody><tr><td>1</td><td>$2,194.86</td><td>$3,119.58</td><td>$16,880.42</td></tr><tr><td>2</td><td>$1,806.17</td><td>$3,508.27</td><td>$13,372.14</td></tr><tr><td>3</td><td>$1,369.06</td><td>$3,945.39</td><td>$9,426.76</td></tr><tr><td>4</td><td>$877.48</td><td>$4,436.97</td><td>$4,989.79</td></tr><tr><td>5</td><td>$324.65</td><td>$4,989.79</td><td>$0.00</td></tr></tbody></table></div></details><details class="adv tbl-det"><summary>Compare loan terms at this rate</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Years</th><th>Monthly payment</th><th>Total interest</th></tr></thead><tbody><tr><td>1</td><td>$1,775.11</td><td>$1,301</td></tr><tr><td>2</td><td>$939.60</td><td>$2,550</td></tr><tr><td>3</td><td>$662.38</td><td>$3,846</td></tr><tr><td>4</td><td>$524.71</td><td>$5,186</td></tr><tr><td>5</td><td>$442.87</td><td>$6,572</td></tr><tr><td>7</td><td>$350.92</td><td>$9,477</td></tr><tr><td>10</td><td>$284.63</td><td>$14,156</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How loan payments are calculated</span></h2>
+        <p>Most personal, car, student and business loans are <b>amortizing</b>: you pay the same amount every period, and each payment covers the interest for that period plus some of the balance.</p>
+<div class="formula">Payment = P × r ÷ (1 − (1 + r)<sup>−n</sup>)<br>P = amount borrowed · r = yearly rate ÷ payments per year · n = number of payments</div>
+<p>Example: 20,000 at 10% for 5 years with monthly payments. r = 0.10 ÷ 12 = 0.008333 and n = 60, so the payment is 424.94. Over five years you pay 25,496.45, of which 5,496.45 is interest.</p>
+<h3>Interest rate and APR are not the same</h3>
+<p>The interest rate is what the lender charges on the balance. The <b>APR</b> also counts fees you pay to get the loan. If a lender takes a 3% origination fee out of a 20,000 loan, you receive 19,400 but repay as if you borrowed 20,000. This calculator finds the rate that makes your payments match the money you actually received. That figure is the one to compare between lenders.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">How the term changes what you pay</span></h2>
+      <div class="prose">
+        <p>A longer term lowers the payment but raises the total interest, because you owe the money for longer. For 20,000 at 10%:</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Term</th><th>Monthly payment</th><th>Total interest</th></tr></thead><tbody>
+<tr><td>2 years</td><td>922.90</td><td>2,149.56</td></tr>
+<tr><td>3 years</td><td>645.34</td><td>3,232.37</td></tr>
+<tr><td>5 years</td><td>424.94</td><td>5,496.45</td></tr>
+<tr><td>7 years</td><td>332.02</td><td>7,889.99</td></tr>
+</tbody></table></div>
+<p>Going from 3 to 7 years almost halves the payment and more than doubles the interest. The "Compare loan terms" table in the result does this for your own numbers.</p>
+<h3>Biweekly and weekly payments</h3>
+<p>If you are paid every two weeks, matching the loan to your pay cycle makes budgeting easier. Paying every two weeks also means 26 payments a year, so slightly more principal goes in earlier and a little less interest builds up.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Ways to pay less for a loan</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Compare APR, not the headline rate.</b> A lower rate with a high fee can cost more than a higher rate with no fee.</li>
+<li><b>Pay a little extra.</b> Extra money goes straight to the balance. Even a small amount each payment cuts months off. Check that your lender has no early repayment charge.</li>
+<li><b>Choose the shortest term you can afford comfortably.</b> Leave room in your budget for emergencies, because a missed payment costs more than the interest you save.</li>
+<li><b>Improve your credit before you apply.</b> Paying down card balances and correcting errors on your credit report can move you into a cheaper rate band.</li>
+<li><b>Be careful with add-ons.</b> Payment protection insurance and similar products are often financed into the loan, so you pay interest on them too.</li>
+</ul>
+<h3>Fixed and variable rates</h3>
+<p>A fixed rate keeps the same payment for the whole term. A variable or floating rate follows a benchmark, so the payment can rise or fall. To stress-test a variable loan, run the calculator again with the rate 2 points higher and make sure you could still pay.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What lenders call this around the world</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Country</th><th>Common name</th><th>Cost measure to compare</th></tr></thead><tbody>
+<tr><td>United States</td><td>Personal loan, installment loan</td><td>APR (Truth in Lending Act)</td></tr>
+<tr><td>United Kingdom and EU</td><td>Personal loan</td><td>APR / APRC, representative APR in adverts</td></tr>
+<tr><td>Canada</td><td>Personal loan, line of credit</td><td>APR including fees</td></tr>
+<tr><td>Australia</td><td>Personal loan</td><td>Comparison rate</td></tr>
+<tr><td>India</td><td>Personal loan, payment called EMI</td><td>APR in the Key Fact Statement</td></tr>
+</tbody></table></div>
+<p>EMI means equated monthly instalment. It is exactly the monthly payment this calculator shows.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: loan amount $20,000; interest rate 11.8% a year; loan term 5 years; payments Monthly; upfront fee 0% of loan. Result: monthly payment <b>$442.87</b>; total interest $6,572.22; total of payments $26,572.22; number of payments 60.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: loan amount £16,000; interest rate 9.9% a year; loan term 5 years; payments Monthly; upfront fee 0% of loan. Result: monthly payment <b>£339.17</b>; total interest £4,349.96; total of payments £20,349.96; number of payments 60.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: loan amount ₹4,40,000; interest rate 13.9% a year; loan term 5 years; payments Monthly; upfront fee 0% of loan. Result: monthly payment <b>₹10,215.23</b>; total interest ₹1,72,914.01; total of payments ₹6,12,914.01; number of payments 60.</p>
+<h3>United Arab Emirates (AED)</h3><p>Starting values typical for United Arab Emirates: loan amount AED 66,000; interest rate 10% a year; loan term 5 years; payments Monthly; upfront fee 0% of loan. Result: monthly payment <b>AED 1,402.30</b>; total interest AED 18,138.30; total of payments AED 84,138.30; number of payments 60.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Loan questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate a loan payment?</summary><p>Multiply the amount borrowed by the periodic rate and divide by 1 minus (1 + rate) to the power of minus the number of payments. For 20,000 at 10% over 5 years the monthly payment is 424.94.</p></details>
+        <details><summary>What is the difference between interest rate and APR?</summary><p>The interest rate is charged on the balance. APR adds the lender’s fees, so it shows the full yearly cost. A 10% loan with a 3% upfront fee over 5 years has an APR of about 11.3%.</p></details>
+        <details><summary>Is EMI the same as a monthly payment?</summary><p>Yes. EMI, or equated monthly instalment, is the term used in India and some other countries for a fixed monthly loan payment. It uses the same amortization formula.</p></details>
+        <details><summary>Does paying extra reduce the interest?</summary><p>Yes, as long as the lender applies the extra to principal. The balance falls faster, so less interest is charged each period and the loan ends early. Ask whether there is an early repayment fee first.</p></details>
+        <details><summary>Should I choose a longer term for a lower payment?</summary><p>Only if you need the lower payment. A longer term costs more in total. If you take the longer term for safety, you can still pay extra when money allows and finish early.</p></details>
+        <details><summary>Can I use this for a student or business loan?</summary><p>Yes, for any loan with a fixed rate and level payments. It does not model interest-only periods, grace periods or income-driven repayment plans.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/auto-loan-calculator/"><b>Auto Loan Calculator</b><span>Car payment with tax, fees and trade-in, plus a term comparison.</span></a><a href="https://bingemind.com/debt-payoff-calculator/"><b>Debt Payoff Calculator</b><span>Snowball vs avalanche, your debt-free date and the payoff order.</span></a><a href="https://bingemind.com/mortgage-calculator/"><b>Mortgage Calculator</b><span>Monthly payment with tax, insurance and PMI, plus amortization and extra payments.</span></a><a href="https://bingemind.com/compound-interest-calculator/"><b>Compound Interest Calculator</b><span>Future value with monthly deposits, inflation and a growth chart.</span></a><a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-Home Pay Calculator</b><span>Net pay after tax in the US, UK, Canada, Australia and India.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Results use the standard amortization formula with equal periods. Lenders may round differently, charge interest daily, or add fees and insurance that change the figures. Read your loan agreement before you sign. Your numbers stay in this browser.</p>
+      <p>Sources: APR definition: <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/">CFPB</a>. UK APR rules: <a href="https://www.handbook.fca.org.uk/handbook/CONC/App/1/">FCA CONC App 1</a>. India Key Fact Statement: <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12663">Reserve Bank of India</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

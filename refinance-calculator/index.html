@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Refinance Calculator: Break-Even and Lifetime Savings</title>
+<meta name="description" content="Compare your mortgage with a new rate and term. See the monthly saving, break-even month after closing costs and lifetime savings or extra cost.">
+<link rel="canonical" href="https://bingemind.com/refinance-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Refinance Calculator: Break-Even and Lifetime Savings">
+<meta property="og:description" content="Monthly saving, break-even month and lifetime cost of refinancing.">
+<meta property="og:url" content="https://bingemind.com/refinance-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Refinance Calculator","url":"https://bingemind.com/refinance-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Compare your mortgage with a new rate and term. See the monthly saving, break-even month after closing costs and lifetime savings or extra cost."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Refinance Calculator","item":"https://bingemind.com/refinance-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate the break-even point on a refinance?","acceptedAnswer":{"@type":"Answer","text":"Divide the total closing costs by the monthly saving. With 5,000 in costs and a saving of 247.85 a month, you break even after about 21 months."}},{"@type":"Question","name":"Is it worth refinancing for a 1% lower rate?","acceptedAnswer":{"@type":"Answer","text":"Often yes, if you will keep the loan beyond the break-even month and you do not stretch the term so far that total interest rises. Check the lifetime savings line in the result."}},{"@type":"Question","name":"Why does my lower payment cost more overall?","acceptedAnswer":{"@type":"Answer","text":"Because the new loan runs for more years than you had left. Spreading the balance over a longer time lowers each payment but adds more months of interest."}},{"@type":"Question","name":"Should I roll closing costs into the new loan?","acceptedAnswer":{"@type":"Answer","text":"It saves cash today, but you pay interest on the costs for the life of the loan. Paying upfront is cheaper in total if you can afford it."}},{"@type":"Question","name":"What is the difference between refinancing and remortgaging?","acceptedAnswer":{"@type":"Answer","text":"They mean the same thing. Remortgage is the UK term for replacing your mortgage with a new one, either with a new lender or as a product transfer with your current lender."}},{"@type":"Question","name":"How soon can I refinance?","acceptedAnswer":{"@type":"Answer","text":"There is usually no legal minimum, but lenders often want six months of payments, and fixed-rate deals outside the US can carry early repayment charges until the fixed period ends."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Refinance Calculator</p>
+      <span class="eyebrow rise d1">Mortgage refinance and remortgage · any currency</span>
+      <h1 class="lift"><span class="shine">Refinance Calculator</span></h1>
+      <p class="lede lift">Enter your current balance and rate and the new offer. You see the change in payment, how many months it takes to earn back the costs, and whether the new loan really costs less in total.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Break-even month</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lifetime cost, not just payment</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Costs paid or rolled in</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Works for remortgages</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: break-even months = closing costs ÷ monthly saving.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Current loan and new offer</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="field" data-f="bal"><label for="f-bal">Current loan balance</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-bal" inputmode="decimal" autocomplete="off" value="280000"></div></div><div class="grid-2"><div class="field" data-f="cur"><label for="f-cur">Current rate</label><div class="affix"><input class="input" id="f-cur" inputmode="decimal" autocomplete="off" value="7.3"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="left"><label for="f-left">Years left on the loan</label><div class="affix"><input class="input" id="f-left" inputmode="decimal" autocomplete="off" value="27"><span class="post" aria-hidden="true">years</span></div></div></div><div class="grid-2"><div class="field" data-f="nrate"><label for="f-nrate">New rate</label><div class="affix"><input class="input" id="f-nrate" inputmode="decimal" autocomplete="off" value="6.3"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="nterm"><label for="f-nterm">New term</label><select class="input" id="f-nterm"><option value="10">10 years</option><option value="15">15 years</option><option value="20">20 years</option><option value="25">25 years</option><option value="30" selected>30 years</option></select></div></div><div class="grid-2"><div class="field" data-f="costs"><label for="f-costs">Closing costs and fees</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-costs" inputmode="decimal" autocomplete="off" value="5000"></div></div><div class="field" data-f="roll"><label for="f-roll">Pay the costs</label><select class="input" id="f-roll"><option value="cash" selected>Upfront in cash</option><option value="loan">Add to the new loan</option></select></div></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Monthly savings</h2><div class="big" id="big">$247.85</div></div><div class="hint">7.3% → 6.3%</div></div><dl class="kv"><dt>Current payment</dt><dd>$1,980.97</dd><dt>New payment</dt><dd>$1,733.12</dd><dt>Break-even point</dt><dd class="strong">1 year 9 months</dd><dt>Interest left on current loan</dt><dd>$361,834</dd><dt>Interest on new loan</dt><dd>$343,925</dd><dt>Lifetime savings</dt><dd class="strong">$12,910</dd></dl><figure class="chart"><figcaption>Total paid from today <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Total paid from today"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="160.5" y2="160.5" class="gl"/><text x="56" y="164.5" text-anchor="end">200K</text><line x1="64" x2="628" y1="111.0" y2="111.0" class="gl"/><text x="56" y="115.0" text-anchor="end">400K</text><line x1="64" x2="628" y1="61.5" y2="61.5" class="gl"/><text x="56" y="65.5" text-anchor="end">600K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">800K</text><text x="64.0" y="232" text-anchor="middle">Now</text><text x="158.0" y="232" text-anchor="middle">Yr 5</text><text x="252.0" y="232" text-anchor="middle">Yr 10</text><text x="346.0" y="232" text-anchor="middle">Yr 15</text><text x="440.0" y="232" text-anchor="middle">Yr 20</text><text x="534.0" y="232" text-anchor="middle">Yr 25</text><text x="628.0" y="232" text-anchor="middle">Yr 30</text><polyline points="64.0,210.0 82.8,204.1 101.6,198.2 120.4,192.3 139.2,186.5 158.0,180.6 176.8,174.7 195.6,168.8 214.4,162.9 233.2,157.0 252.0,151.2 270.8,145.3 289.6,139.4 308.4,133.5 327.2,127.6 346.0,121.7 364.8,115.9 383.6,110.0 402.4,104.1 421.2,98.2 440.0,92.3 458.8,86.4 477.6,80.6 496.4,74.7 515.2,68.8 534.0,62.9 552.8,57.0 571.6,51.1 590.4,51.1 609.2,51.1 628.0,51.1" fill="none" stroke="var(--ot)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><polyline points="64.0,208.8 82.8,203.6 101.6,198.5 120.4,193.3 139.2,188.2 158.0,183.0 176.8,177.9 195.6,172.7 214.4,167.6 233.2,162.4 252.0,157.3 270.8,152.1 289.6,147.0 308.4,141.8 327.2,136.7 346.0,131.6 364.8,126.4 383.6,121.3 402.4,116.1 421.2,111.0 440.0,105.8 458.8,100.7 477.6,95.5 496.4,90.4 515.2,85.2 534.0,80.1 552.8,74.9 571.6,69.8 590.4,64.6 609.2,59.5 628.0,54.3" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--ot)"></i>Keep current loan</span><span class="v">$641,834</span><span class="s">at Yr 30</span></li><li><span class="k"><i style="background:var(--reg)"></i>Refinance</span><span class="v">$628,925</span><span class="s">at Yr 30</span></li></ul></figure><p class="note">If you keep the home at least 21 months, the lower payment pays back the costs.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to tell if refinancing is worth it</span></h2>
+        <p>Refinancing replaces your loan with a new one. It costs money upfront, so it only pays if you keep the loan long enough.</p>
+<div class="formula">Monthly saving = current payment − new payment<br>Break-even months = closing costs ÷ monthly saving</div>
+<p>Example: 280,000 left at 7.3% with 27 years to go is 1,980.97 a month. A new 30-year loan at 6.3% is 1,733.12, a saving of 247.85 a month. With 5,000 in costs, you break even after 21 months.</p>
+<h3>The trap: a lower payment that costs more</h3>
+<p>If you restart a 30-year term, you make payments for longer. A lower monthly payment can still add up to more interest in total. The result always shows lifetime savings or extra cost, and warns you when the payment falls but the total rises. Choosing a new term close to the years you have left avoids this.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">When refinancing usually makes sense</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>You can cut the rate by about 0.75 to 1 point or more</b> and will stay past the break-even month.</li>
+<li><b>You want a shorter term.</b> Moving from 30 to 15 years raises the payment but removes a large amount of interest.</li>
+<li><b>Your fixed period is ending</b> (UK, Canada, Australia, Ireland). Moving to a new deal instead of the lender's standard variable rate is the normal way to keep costs down.</li>
+<li><b>You can drop mortgage insurance</b> because your home has gained value and you now have 20% equity.</li>
+<li><b>You are switching from a variable to a fixed rate</b> for certainty.</li>
+</ul>
+<h3>When it usually does not</h3>
+<ul>
+<li>You plan to move before the break-even month.</li>
+<li>You are far into your current loan, so most of each payment already goes to principal.</li>
+<li>There is a large early repayment charge on your current deal.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What refinancing costs</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Country</th><th>Typical costs</th></tr></thead><tbody>
+<tr><td>United States</td><td>2% to 6% of the loan: origination, appraisal, title insurance, recording fees</td></tr>
+<tr><td>United Kingdom</td><td>Product fee (often around 1,000), valuation and legal fees (often free), early repayment charge of 1% to 5% if you leave a fixed deal early</td></tr>
+<tr><td>Canada</td><td>Prepayment penalty: three months' interest or the interest rate differential, plus legal and appraisal fees</td></tr>
+<tr><td>Australia</td><td>Discharge and application fees, plus break costs on a fixed loan</td></tr>
+<tr><td>India</td><td>Processing fee of about 0.25% to 1% on a balance transfer; no prepayment penalty on floating-rate home loans to individuals</td></tr>
+</tbody></table></div>
+<p>Enter the total of all of these as closing costs. If you add them to the loan, choose "Add to the new loan" so the interest on them is counted.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Cash-out refinancing and points</span></h2>
+      <div class="prose">
+        <p><b>Cash-out refinancing</b> means borrowing more than you owe and taking the difference in cash. To model it, raise the balance by the cash you take. Remember you are converting home equity into debt.</p>
+<p><b>Discount points</b> are fees paid upfront for a lower rate, usually 1% of the loan for about 0.25 points off the rate. Add the cost of points to closing costs and enter the lower rate. If the break-even month is later than you expect to keep the loan, skip the points.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: current loan balance $280,000; current rate 7.3%; years left on the loan 27 years; new rate 6.3%; new term 30 years; closing costs and fees $5,000; pay the costs Upfront in cash. Result: monthly savings <b>$247.85</b>; current payment $1,980.97; new payment $1,733.12; break-even point 1 year 9 months.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: current loan balance £220,000; current rate 5.4%; years left on the loan 27 years; new rate 4.4%; new term 30 years; closing costs and fees £4,000; pay the costs Upfront in cash. Result: monthly savings <b>£189.85</b>; current payment £1,291.52; new payment £1,101.67; break-even point 1 year 10 months.</p>
+<h3>Canada (CAD)</h3><p>Starting values typical for Canada: current loan balance $390,000; current rate 5.4%; years left on the loan 27 years; new rate 4.4%; new term 30 years; closing costs and fees $6,900; pay the costs Upfront in cash. Result: monthly savings <b>$336.55</b>; current payment $2,289.52; new payment $1,952.97; break-even point 1 year 9 months.</p>
+<h3>Australia (AUD)</h3><p>Starting values typical for Australia: current loan balance $430,000; current rate 6.9%; years left on the loan 27 years; new rate 5.9%; new term 30 years; closing costs and fees $7,600; pay the costs Upfront in cash. Result: monthly savings <b>$379.14</b>; current payment $2,929.63; new payment $2,550.49; break-even point 1 year 9 months.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Refinancing questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate the break-even point on a refinance?</summary><p>Divide the total closing costs by the monthly saving. With 5,000 in costs and a saving of 247.85 a month, you break even after about 21 months.</p></details>
+        <details><summary>Is it worth refinancing for a 1% lower rate?</summary><p>Often yes, if you will keep the loan beyond the break-even month and you do not stretch the term so far that total interest rises. Check the lifetime savings line in the result.</p></details>
+        <details><summary>Why does my lower payment cost more overall?</summary><p>Because the new loan runs for more years than you had left. Spreading the balance over a longer time lowers each payment but adds more months of interest.</p></details>
+        <details><summary>Should I roll closing costs into the new loan?</summary><p>It saves cash today, but you pay interest on the costs for the life of the loan. Paying upfront is cheaper in total if you can afford it.</p></details>
+        <details><summary>What is the difference between refinancing and remortgaging?</summary><p>They mean the same thing. Remortgage is the UK term for replacing your mortgage with a new one, either with a new lender or as a product transfer with your current lender.</p></details>
+        <details><summary>How soon can I refinance?</summary><p>There is usually no legal minimum, but lenders often want six months of payments, and fixed-rate deals outside the US can carry early repayment charges until the fixed period ends.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/mortgage-calculator/"><b>Mortgage Calculator</b><span>Monthly payment with tax, insurance and PMI, plus amortization and extra payments.</span></a><a href="https://bingemind.com/home-affordability-calculator/"><b>Home Affordability Calculator</b><span>The home price, loan and payment your income supports.</span></a><a href="https://bingemind.com/rent-vs-buy-calculator/"><b>Rent vs Buy Calculator</b><span>Compare wealth from buying with renting and investing, year by year.</span></a><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> The comparison assumes both loans are held for their full terms at a fixed rate, and it does not include tax effects. Ask your lender for the exact payoff figure and fees. Your numbers stay in this browser.</p>
+      <p>Sources: Refinance costs and break-even: <a href="https://www.consumerfinance.gov/owning-a-home/explore/should-i-refinance/">CFPB</a> and <a href="https://www.federalreserve.gov/pubs/refinancings/">Federal Reserve consumer guide</a>. UK remortgaging: <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home/remortgaging-to-cut-costs">MoneyHelper</a>. Canada prepayment penalties: <a href="https://www.canada.ca/en/financial-consumer-agency/services/mortgages/reduce-prepayment-penalties.html">FCAC</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

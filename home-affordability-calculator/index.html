@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Home Affordability Calculator: How Much House Can I Afford?</title>
+<meta name="description" content="See the home price your income supports using 28/36 debt-to-income rules or UK income multiples, with tax, insurance and the monthly payment.">
+<link rel="canonical" href="https://bingemind.com/home-affordability-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Home Affordability Calculator: How Much House Can I Afford?">
+<meta property="og:description" content="The home price, loan and payment your income supports.">
+<meta property="og:url" content="https://bingemind.com/home-affordability-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Home Affordability Calculator","url":"https://bingemind.com/home-affordability-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"See the home price your income supports using 28/36 debt-to-income rules or UK income multiples, with tax, insurance and the monthly payment."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Home Affordability Calculator","item":"https://bingemind.com/home-affordability-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much house can I afford on my salary?","acceptedAnswer":{"@type":"Answer","text":"Under the 28/36 rule, your housing payment can be up to 28% of gross monthly income. On 100,000 a year with 500 of other monthly debts, 60,000 saved and a 6.3% rate, that supports a home of roughly 364,000."}},{"@type":"Question","name":"What is the 28/36 rule?","acceptedAnswer":{"@type":"Answer","text":"A US lending guideline: spend no more than 28% of gross monthly income on housing and no more than 36% on all debts including housing."}},{"@type":"Question","name":"How many times my salary can I borrow in the UK?","acceptedAnswer":{"@type":"Answer","text":"Most UK lenders offer up to about 4.5 times household income, and some go higher for high earners or certain professions. The lender also checks your outgoings."}},{"@type":"Question","name":"Does the calculator include property tax and insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both are subtracted from your limit before the loan is worked out, because lenders count them as part of the housing payment."}},{"@type":"Question","name":"How does my down payment affect what I can afford?","acceptedAnswer":{"@type":"Answer","text":"It adds directly to the price you can pay, and a deposit of 20% or more avoids mortgage insurance in the US and Canada and usually earns a lower rate."}},{"@type":"Question","name":"Why is the amount lower in Canada or Australia than the rate suggests?","acceptedAnswer":{"@type":"Answer","text":"Lenders there must test you at a higher rate than you actually pay. Enter the stress-test rate to see the lender’s limit, and your real rate to see the actual payment."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Home Affordability Calculator</p>
+      <span class="eyebrow rise d1">House buying · lender rules by country</span>
+      <h1 class="lift"><span class="shine">Home Affordability Calculator</span></h1>
+      <p class="lede lift">Enter your income, debts and savings. The calculator applies the test lenders use in your country and shows the price you can afford, the loan behind it and the full monthly payment.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>28/36 and other DTI rules</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>UK income multiples</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tax and insurance included</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rate sensitivity table</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: a common rule is a housing payment up to 28% of gross monthly income.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your income and savings</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="grid-2"><div class="field" data-f="income"><label for="f-income">Household income before tax <span class="hint">(a year)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-income" inputmode="decimal" autocomplete="off" value="100000"></div></div><div class="field" data-f="debts"><label for="f-debts">Other debt payments <span class="hint">(a month)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-debts" inputmode="decimal" autocomplete="off" value="500"></div></div></div><div class="grid-2"><div class="field" data-f="down"><label for="f-down">Down payment saved</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-down" inputmode="decimal" autocomplete="off" value="60000"></div></div><div class="field" data-f="rate"><label for="f-rate">Interest rate</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="6.3"><span class="post" aria-hidden="true">%</span></div></div></div><div class="field" data-f="method"><label for="f-method">Lender test</label><select class="input" id="f-method"><option value="dti" selected>Debt-to-income ratios (US, Canada, Australia, India)</option><option value="mult">Income multiple (UK, Ireland)</option></select></div><div class="grid-2"><div class="field" data-f="front"><label for="f-front">Housing cost limit</label><div class="affix"><input class="input" id="f-front" inputmode="decimal" autocomplete="off" value="28"><span class="post" aria-hidden="true">% of income</span></div></div><div class="field" data-f="back"><label for="f-back">All debts limit</label><div class="affix"><input class="input" id="f-back" inputmode="decimal" autocomplete="off" value="36"><span class="post" aria-hidden="true">% of income</span></div></div></div><div class="field" data-f="mult" hidden><label for="f-mult">Income multiple</label><div class="affix"><input class="input" id="f-mult" inputmode="decimal" autocomplete="off" value="4.5"><span class="post" aria-hidden="true">× income</span></div></div><details class="adv"><summary>Term, taxes and insurance</summary><div class="grid-2"><div class="field" data-f="term"><label for="f-term">Loan term</label><select class="input" id="f-term"><option value="15">15 years</option><option value="20">20 years</option><option value="25">25 years</option><option value="30" selected>30 years</option><option value="35">35 years</option></select></div><div class="field" data-f="tax"><label for="f-tax">Property tax</label><div class="affix"><input class="input" id="f-tax" inputmode="decimal" autocomplete="off" value="1"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="grid-2"><div class="field" data-f="ins"><label for="f-ins">Home insurance <span class="hint">(a year)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-ins" inputmode="decimal" autocomplete="off" value="1800"></div></div><div class="field" data-f="hoa"><label for="f-hoa">HOA or service charge <span class="hint">(a month)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-hoa" inputmode="decimal" autocomplete="off" value="0"></div></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">You could afford about</h2><div class="big" id="big">$363,761</div></div><div class="hint">limited by housing limit (28%)</div></div><div class="stackbar" aria-hidden="true"><span style="width:80.58%;background:var(--reg)"></span><span style="width:12.99%;background:var(--gold)"></span><span style="width:6.43%;background:var(--ot)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Principal and interest</span><span class="v">$1,880.20</span><span class="s">81%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Property tax</span><span class="v">$303.13</span><span class="s">13%</span></li><li><span class="k"><i style="background:var(--ot)"></i>Insurance</span><span class="v">$150.00</span><span class="s">6%</span></li></ul><dl class="kv"><dt>Loan amount</dt><dd>$303,761</dd><dt>Down payment</dt><dd>$60,000</dd><dt>Monthly housing payment</dt><dd class="strong">$2,333.33</dd><dt>Housing cost / income</dt><dd>28%</dd><dt>All debts / income</dt><dd>34%</dd><dt>Down payment share</dt><dd>16.5%</dd></dl><details class="adv tbl-det" open><summary>If the rate changes</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Rate</th><th>Home price</th><th>Monthly payment</th></tr></thead><tbody><tr><td>5.3%</td><td>$394,044</td><td>$2,333</td></tr><tr><td>5.8%</td><td>$378,367</td><td>$2,333</td></tr><tr><td>6.3%</td><td>$363,761</td><td>$2,333</td></tr><tr><td>6.8%</td><td>$350,147</td><td>$2,333</td></tr><tr><td>7.3%</td><td>$337,451</td><td>$2,333</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How lenders decide how much you can borrow</span></h2>
+        <p>Lenders in different countries use two main approaches. Pick the one that matches yours under "Lender test" (it is set for your country automatically).</p>
+<h3>Debt-to-income ratios</h3>
+<div class="formula">Housing payment ≤ income × housing limit<br>Housing payment + other debts ≤ income × all-debts limit</div>
+<p>The classic US version is the <b>28/36 rule</b>: housing costs up to 28% of gross monthly income, and housing plus all other debt payments up to 36%. The calculator takes the lower of the two limits, subtracts insurance, HOA dues and property tax, and converts what is left into a loan at your rate and term.</p>
+<h3>Income multiples</h3>
+<div class="formula">Maximum loan = household income × multiple</div>
+<p>UK lenders typically lend up to about 4.5 times income, and Irish rules allow 4 times for first-time buyers and 3.5 times for others. The home price is then the loan plus your deposit.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Lender limits by country</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Country</th><th>Usual test</th><th>Notes</th></tr></thead><tbody>
+<tr><td>United States</td><td>28% housing, 36% all debts</td><td>Qualified mortgages often go to 43% or higher with strong credit; FHA allows more</td></tr>
+<tr><td>Canada</td><td>GDS about 39%, TDS about 44%</td><td>Tested at the higher of 5.25% or your rate plus 2%. Enter that rate to see your stress-tested limit</td></tr>
+<tr><td>United Kingdom</td><td>About 4.5 × income</td><td>Plus an affordability check on your spending</td></tr>
+<tr><td>Ireland</td><td>4 × (first-time), 3.5 × (others)</td><td>Central Bank of Ireland limits; minimum 10% deposit</td></tr>
+<tr><td>Australia</td><td>Serviceability at your rate + 3%</td><td>Enter the buffered rate; lenders also look at living expenses</td></tr>
+<tr><td>India</td><td>EMIs up to 40% to 50% of net income</td><td>Loan-to-value capped at 75% to 90% depending on loan size</td></tr>
+</tbody></table></div>
+<p>The limits are editable. If your lender has told you a different ratio, type it in.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Affordable for the bank is not always comfortable for you</span></h2>
+      <div class="prose">
+        <p>The lender's limit is the most you can borrow. Many households are more comfortable below it.</p>
+<ul>
+<li><b>Budget on take-home pay.</b> Ratios use income before tax. Check the payment against what actually reaches your account.</li>
+<li><b>Keep an emergency fund</b> of three to six months of expenses after paying the deposit and fees.</li>
+<li><b>Add the costs that are not in the payment:</b> utilities, repairs (about 1% of the home's value a year), furniture and commuting.</li>
+<li><b>Allow for closing costs:</b> typically 2% to 5% in the US, plus stamp duty or land transfer tax in the UK, Australia, Canada and India.</li>
+<li><b>Test a higher rate.</b> The table in the result shows how the affordable price moves when the rate changes by half a point or a point.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">How to afford more house, safely</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Pay down monthly debts.</b> Clearing a 400 a month car payment can raise the loan you qualify for by tens of thousands.</li>
+<li><b>Save a larger deposit.</b> It adds to the price directly and can remove mortgage insurance or unlock a better rate.</li>
+<li><b>Improve your credit score</b> before applying, to get a lower rate.</li>
+<li><b>Look at first-time buyer schemes:</b> FHA and state programmes (US), First Home Savings Account (Canada), Lifetime ISA (UK), First Home Guarantee (Australia) and PMAY (India).</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: household income before tax $100,000; other debt payments $500; down payment saved $60,000; interest rate 6.3%; lender test Debt-to-income ratios (US, Canada, Australia, India); housing cost limit 28% of income; all debts limit 36% of income; loan term 30 years; property tax 1% a year; home insurance $1,800. Result: you could afford about <b>$363,761</b>; loan amount $303,761; down payment $60,000; monthly housing payment $2,333.33.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: household income before tax £79,000; other debt payments £400; down payment saved £47,000; interest rate 4.4%; lender test Income multiple (UK, Ireland); income multiple 4.5 × income; loan term 25 years; property tax 0% a year; home insurance £1,400. Result: you could afford about <b>£402,500</b>; loan amount £355,500; down payment £47,000; monthly housing payment £2,072.53.</p>
+<h3>Canada (CAD)</h3><p>Starting values typical for Canada: household income before tax $140,000; other debt payments $690; down payment saved $83,000; interest rate 4.4%; lender test Debt-to-income ratios (US, Canada, Australia, India); housing cost limit 32% of income; all debts limit 40% of income; loan term 25 years; property tax 0.8% a year; home insurance $2,500. Result: you could afford about <b>$647,546</b>; loan amount $564,546; down payment $83,000; monthly housing payment $3,733.33.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: household income before tax ₹22,00,000; other debt payments ₹11,000; down payment saved ₹13,00,000; interest rate 8.4%; lender test Debt-to-income ratios (US, Canada, Australia, India); housing cost limit 40% of income; all debts limit 50% of income; loan term 20 years; property tax 0.1% a year; home insurance ₹40,000. Result: you could afford about <b>₹93,35,023</b>; loan amount ₹80,35,023; down payment ₹13,00,000; monthly housing payment ₹73,333.33.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Affordability questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How much house can I afford on my salary?</summary><p>Under the 28/36 rule, your housing payment can be up to 28% of gross monthly income. On 100,000 a year with 500 of other monthly debts, 60,000 saved and a 6.3% rate, that supports a home of roughly 364,000.</p></details>
+        <details><summary>What is the 28/36 rule?</summary><p>A US lending guideline: spend no more than 28% of gross monthly income on housing and no more than 36% on all debts including housing.</p></details>
+        <details><summary>How many times my salary can I borrow in the UK?</summary><p>Most UK lenders offer up to about 4.5 times household income, and some go higher for high earners or certain professions. The lender also checks your outgoings.</p></details>
+        <details><summary>Does the calculator include property tax and insurance?</summary><p>Yes. Both are subtracted from your limit before the loan is worked out, because lenders count them as part of the housing payment.</p></details>
+        <details><summary>How does my down payment affect what I can afford?</summary><p>It adds directly to the price you can pay, and a deposit of 20% or more avoids mortgage insurance in the US and Canada and usually earns a lower rate.</p></details>
+        <details><summary>Why is the amount lower in Canada or Australia than the rate suggests?</summary><p>Lenders there must test you at a higher rate than you actually pay. Enter the stress-test rate to see the lender’s limit, and your real rate to see the actual payment.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/mortgage-calculator/"><b>Mortgage Calculator</b><span>Monthly payment with tax, insurance and PMI, plus amortization and extra payments.</span></a><a href="https://bingemind.com/rent-vs-buy-calculator/"><b>Rent vs Buy Calculator</b><span>Compare wealth from buying with renting and investing, year by year.</span></a><a href="https://bingemind.com/refinance-calculator/"><b>Refinance Calculator</b><span>Monthly saving, break-even month and lifetime cost of refinancing.</span></a><a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-Home Pay Calculator</b><span>Net pay after tax in the US, UK, Canada, Australia and India.</span></a><a href="https://bingemind.com/debt-payoff-calculator/"><b>Debt Payoff Calculator</b><span>Snowball vs avalanche, your debt-free date and the payoff order.</span></a><a href="https://bingemind.com/concrete-calculator/"><b>Concrete Calculator</b><span>Volume, bags and cost for slabs, footings and columns.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Lenders also look at credit history, employment, living costs and the property itself, so the amount you are approved for may be higher or lower. This is a planning estimate, not a loan offer. Your numbers stay in this browser.</p>
+      <p>Sources: Debt-to-income: <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-en-1791/">CFPB</a>. Canada: <a href="https://www.canada.ca/en/financial-consumer-agency/services/mortgages/preapproval-qualify-mortgage.html">FCAC</a>. Ireland: <a href="https://www.centralbank.ie/consumer-hub/explainers/what-are-the-mortgage-measures">Central Bank of Ireland mortgage measures</a>. Australia: <a href="https://www.apra.gov.au/">APRA serviceability buffer</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

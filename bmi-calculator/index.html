@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>BMI Calculator: kg and cm or lb and ft, With Asian Cut-Offs</title>
+<meta name="description" content="Check your BMI in metric or imperial units, see your category and healthy weight range, with WHO and Asian cut-off points. Free and private.">
+<link rel="canonical" href="https://bingemind.com/bmi-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="BMI Calculator: kg and cm or lb and ft, With Asian Cut-Offs">
+<meta property="og:description" content="BMI, category and healthy weight range, with WHO and Asian cut-offs.">
+<meta property="og:url" content="https://bingemind.com/bmi-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"BMI Calculator","url":"https://bingemind.com/bmi-calculator/","inLanguage":"en","applicationCategory":"HealthApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Check your BMI in metric or imperial units, see your category and healthy weight range, with WHO and Asian cut-off points. Free and private."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"BMI Calculator","item":"https://bingemind.com/bmi-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my BMI?","acceptedAnswer":{"@type":"Answer","text":"Divide your weight in kilograms by your height in metres squared. In imperial units, multiply your weight in pounds by 703 and divide by your height in inches squared."}},{"@type":"Question","name":"What is a healthy BMI?","acceptedAnswer":{"@type":"Answer","text":"For most adults, 18.5 to 24.9. For people of Asian background, many health bodies treat 18.5 to 22.9 as the healthy range."}},{"@type":"Question","name":"Is BMI accurate?","acceptedAnswer":{"@type":"Answer","text":"It is a useful screening measure for most adults, but it cannot tell muscle from fat or show where fat is carried. Doctors combine it with waist size, blood pressure and blood tests."}},{"@type":"Question","name":"Is BMI different for men and women?","acceptedAnswer":{"@type":"Answer","text":"The formula and the adult categories are the same. Women generally have more body fat than men at the same BMI, which is one reason BMI is only a screening tool."}},{"@type":"Question","name":"Can I use this BMI calculator for children?","acceptedAnswer":{"@type":"Answer","text":"No. Children and teenagers aged 2 to 19 are assessed with BMI-for-age percentile charts that take age and sex into account."}},{"@type":"Question","name":"Why does the calculator show a different category for Asian cut-offs?","acceptedAnswer":{"@type":"Answer","text":"Health risks rise at a lower BMI in Asian populations, so overweight starts at 23 and obesity at 27.5 on that scale, compared with 25 and 30 on the standard one."}},{"@type":"Question","name":"What is BMI prime?","acceptedAnswer":{"@type":"Answer","text":"Your BMI divided by the upper limit of the healthy range. A value of 1.0 is exactly at the limit, so 1.1 means you are 10% above it."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / BMI Calculator</p>
+      <span class="eyebrow rise d1">Adults 20+ · metric or imperial · WHO and Asian cut-offs</span>
+      <h1 class="lift"><span class="shine">BMI Calculator</span></h1>
+      <p class="lede lift">Enter your height and weight in the units you use. You get your BMI, the category it falls in, the healthy weight range for your height, and how much you would need to gain or lose to reach it.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>kg and cm, or lb and ft</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Healthy weight range</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Asian cut-off option</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Nothing stored or sent</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: BMI = weight in kg ÷ (height in m)².</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your height and weight</h2>
+        <p class="sub">Results update as you type. Your details never leave this page.</p>
+        <div class="fields"><div class="field" data-f="units"><span class="lbl" id="f-units-l">Units</span><div class="seg" id="f-units" aria-labelledby="f-units-l"><button type="button" data-value="metric" aria-checked="false">cm and kg</button><button type="button" data-value="imperial" aria-checked="true">ft, in and lb</button></div></div><div class="field" data-f="cm" hidden><label for="f-cm">Height</label><div class="affix"><input class="input" id="f-cm" inputmode="decimal" autocomplete="off" value="170"><span class="post" aria-hidden="true">cm</span></div></div><div class="grid-2"><div class="field" data-f="ft"><label for="f-ft">Height</label><div class="affix"><input class="input" id="f-ft" inputmode="decimal" autocomplete="off" value="5"><span class="post" aria-hidden="true">ft</span></div></div><div class="field" data-f="inch"><label for="f-inch">and</label><div class="affix"><input class="input" id="f-inch" inputmode="decimal" autocomplete="off" value="7"><span class="post" aria-hidden="true">in</span></div></div></div><div class="field" data-f="kg" hidden><label for="f-kg">Weight</label><div class="affix"><input class="input" id="f-kg" inputmode="decimal" autocomplete="off" value="70"><span class="post" aria-hidden="true">kg</span></div></div><div class="field" data-f="lb"><label for="f-lb">Weight</label><div class="affix"><input class="input" id="f-lb" inputmode="decimal" autocomplete="off" value="154"><span class="post" aria-hidden="true">lb</span></div></div><div class="field" data-f="scale"><label for="f-scale">Cut-off points</label><select class="input" id="f-scale"><option value="who" selected>WHO standard (25 and 30)</option><option value="asian">Asian populations (23 and 27.5)</option></select></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Your BMI</h2><div class="big" id="big">24.1 <small>Healthy weight</small></div></div></div><p class="res-sub">You are inside the healthy range.</p><dl class="kv"><dt>Healthy weight for your height</dt><dd class="strong">118.1 lb to 159.6 lb</dd><dt>BMI prime (BMI ÷ upper healthy limit)</dt><dd>0.96</dd><dt>Ponderal index</dt><dd>14.2</dd></dl><details class="adv tbl-det" open><summary>BMI categories used</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Category</th><th>BMI</th><th>Weight at your height</th></tr></thead><tbody><tr><td>Underweight</td><td>below 18.5</td><td>below 118.1 lb</td></tr><tr><td>Healthy weight</td><td>18.5 to 24.9</td><td>118.1 lb to 159.6 lb</td></tr><tr><td>Overweight</td><td>25 to 29.9</td><td>159.6 lb to 191.5 lb</td></tr><tr><td>Obesity</td><td>30 and above</td><td>191.5 lb and above</td></tr></tbody></table></div></details><p class="note">BMI is a screening measure for adults aged 20 and over. It does not separate muscle from fat, so athletes, pregnant women, older adults and children need a different assessment.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How BMI is calculated</span></h2>
+        <div class="formula">Metric: BMI = weight (kg) ÷ height (m)²<br>Imperial: BMI = 703 × weight (lb) ÷ height (in)²</div>
+<p>Example: 70 kg and 1.70 m gives 70 ÷ (1.70 × 1.70) = 24.2. In imperial units, 154 lb and 5 ft 7 in (67 in) gives 703 × 154 ÷ 4,489 = 24.1.</p>
+<h3>Standard categories (World Health Organization)</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>BMI</th><th>Category</th></tr></thead><tbody>
+<tr><td>Below 18.5</td><td>Underweight</td></tr>
+<tr><td>18.5 to 24.9</td><td>Healthy weight</td></tr>
+<tr><td>25.0 to 29.9</td><td>Overweight</td></tr>
+<tr><td>30.0 and above</td><td>Obesity (class 1 from 30, class 2 from 35, class 3 from 40)</td></tr>
+</tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Why Asian cut-off points are lower</span></h2>
+      <div class="prose">
+        <p>Research reviewed by a WHO expert consultation found that people of South Asian, East Asian and South-East Asian background tend to develop type 2 diabetes and heart disease at a lower BMI than people of European background, partly because of a higher share of body fat at the same BMI.</p>
+<p>For that reason several countries use lower action points:</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Category</th><th>WHO standard</th><th>Asian action points</th></tr></thead><tbody>
+<tr><td>Healthy weight</td><td>18.5 to 24.9</td><td>18.5 to 22.9</td></tr>
+<tr><td>Overweight (increased risk)</td><td>25 to 29.9</td><td>23 to 27.4</td></tr>
+<tr><td>Obesity (high risk)</td><td>30 and above</td><td>27.5 and above</td></tr>
+</tbody></table></div>
+<p>The calculator selects the Asian points automatically for countries where health authorities use them, such as India and Singapore, and you can switch between the two at any time. In the UK, NICE also advises the lower thresholds for people with South Asian, Chinese, other Asian, Middle Eastern, Black African or African-Caribbean family backgrounds.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What BMI can and cannot tell you</span></h2>
+      <div class="prose">
+        <p>BMI is quick and needs only a scale and a tape measure, which is why doctors use it as a first screen. It has clear limits:</p>
+<ul>
+<li><b>It does not separate fat from muscle.</b> A muscular athlete can have a BMI over 25 with low body fat.</li>
+<li><b>It does not show where fat is carried.</b> Fat around the waist carries more risk than fat on the hips.</li>
+<li><b>Older adults</b> lose muscle with age, so BMI can understate body fat.</li>
+<li><b>Pregnancy:</b> BMI is not used during pregnancy.</li>
+<li><b>Children and teenagers</b> need age- and sex-specific growth charts, not adult categories.</li>
+</ul>
+<h3>Add a waist measurement</h3>
+<p>A simple companion check is the waist-to-height ratio: keep your waist below half your height. For a person 170 cm tall, that is a waist under 85 cm. Measure midway between the bottom of your ribs and the top of your hips, after breathing out.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">BMI chart: weight for each category by height</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Height</th><th>Healthy weight (BMI 18.5 to 24.9)</th><th>Overweight from</th><th>Obesity from</th></tr></thead><tbody>
+<tr><td>150 cm (4 ft 11)</td><td>42 to 56 kg (92 to 123 lb)</td><td>56 kg</td><td>68 kg</td></tr>
+<tr><td>160 cm (5 ft 3)</td><td>47 to 64 kg (104 to 141 lb)</td><td>64 kg</td><td>77 kg</td></tr>
+<tr><td>170 cm (5 ft 7)</td><td>53 to 72 kg (118 to 159 lb)</td><td>72 kg</td><td>87 kg</td></tr>
+<tr><td>180 cm (5 ft 11)</td><td>60 to 81 kg (132 to 178 lb)</td><td>81 kg</td><td>97 kg</td></tr>
+<tr><td>190 cm (6 ft 3)</td><td>67 to 90 kg (147 to 198 lb)</td><td>90 kg</td><td>108 kg</td></tr>
+</tbody></table></div>
+<p>If your BMI is outside the healthy range, or you are worried about your weight, speak to a doctor or registered dietitian. Small, steady changes in eating and activity work better than fast ones. The <a href="https://bingemind.com/calorie-calculator/">calorie calculator</a> estimates how much energy you use each day.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: height 5 ft; and 7 in; weight 154 lb; cut-off points WHO standard (25 and 30). Result: your bmi <b>24.1 Healthy weight</b>; healthy weight for your height 118.1 lb to 159.6 lb; bMI prime (BMI ÷ upper healthy limit) 0.96; ponderal index 14.2.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: height 5 ft; and 7 in; weight 154 lb; cut-off points WHO standard (25 and 30). Result: your bmi <b>24.1 Healthy weight</b>; healthy weight for your height 118.1 lb to 159.6 lb; bMI prime (BMI ÷ upper healthy limit) 0.96; ponderal index 14.2.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: height 170 cm; weight 70 kg; cut-off points Asian populations (23 and 27.5). Result: your bmi <b>24.2 Overweight</b>; healthy weight for your height 53.5 kg to 66.5 kg; bMI prime (BMI ÷ upper healthy limit) 1.05; ponderal index 14.2.</p>
+<h3>Japan (JPY)</h3><p>Starting values typical for Japan: height 170 cm; weight 70 kg; cut-off points Asian populations (23 and 27.5). Result: your bmi <b>24.2 Overweight</b>; healthy weight for your height 53.5 kg to 66.5 kg; bMI prime (BMI ÷ upper healthy limit) 1.05; ponderal index 14.2.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">BMI questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate my BMI?</summary><p>Divide your weight in kilograms by your height in metres squared. In imperial units, multiply your weight in pounds by 703 and divide by your height in inches squared.</p></details>
+        <details><summary>What is a healthy BMI?</summary><p>For most adults, 18.5 to 24.9. For people of Asian background, many health bodies treat 18.5 to 22.9 as the healthy range.</p></details>
+        <details><summary>Is BMI accurate?</summary><p>It is a useful screening measure for most adults, but it cannot tell muscle from fat or show where fat is carried. Doctors combine it with waist size, blood pressure and blood tests.</p></details>
+        <details><summary>Is BMI different for men and women?</summary><p>The formula and the adult categories are the same. Women generally have more body fat than men at the same BMI, which is one reason BMI is only a screening tool.</p></details>
+        <details><summary>Can I use this BMI calculator for children?</summary><p>No. Children and teenagers aged 2 to 19 are assessed with BMI-for-age percentile charts that take age and sex into account.</p></details>
+        <details><summary>Why does the calculator show a different category for Asian cut-offs?</summary><p>Health risks rise at a lower BMI in Asian populations, so overweight starts at 23 and obesity at 27.5 on that scale, compared with 25 and 30 on the standard one.</p></details>
+        <details><summary>What is BMI prime?</summary><p>Your BMI divided by the upper limit of the healthy range. A value of 1.0 is exactly at the limit, so 1.1 means you are 10% above it.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/calorie-calculator/"><b>Calorie Calculator</b><span>BMR, maintenance calories, goal targets and macros.</span></a><a href="https://bingemind.com/age-calculator/"><b>Age Calculator</b><span>Exact age in years, months and days, with next-birthday countdown.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> BMI is a screening measure, not a diagnosis. It does not replace advice from a doctor or dietitian, and it is not suitable for children, pregnant women or very muscular people. Your numbers stay in this browser.</p>
+      <p>Sources: Categories: <a href="https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations">World Health Organization</a> and <a href="https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html">CDC adult BMI categories</a>. Asian action points: <a href="https://pubmed.ncbi.nlm.nih.gov/14726171/">WHO expert consultation, The Lancet 2004</a>. UK thresholds by ethnicity: <a href="https://www.nice.org.uk/guidance/ng246">NICE guideline NG246</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

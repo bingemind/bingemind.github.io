@@ -1,3 +1,4 @@
+// Shared file: identical copy in every calculator folder. The master is tools-build/shared/kit.js in the MicroTools project; edit it there and re-run tools/build_bingemind.py.
 // Micro-tool kit: shared behaviour (theme, reveal-on-scroll, count-up, tabs, toast,
 import { initRegion } from './region.js';
 // copy/share/print/CSV helpers). No dependencies.

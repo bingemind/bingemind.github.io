@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Sales Tax and VAT Calculator: Add or Remove Tax</title>
+<meta name="description" content="Add or remove sales tax, VAT or GST. All 50 US states, every Canadian province, and VAT and GST rates for more than 50 countries.">
+<link rel="canonical" href="https://bingemind.com/sales-tax-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Sales Tax and VAT Calculator: Add or Remove Tax">
+<meta property="og:description" content="Add or remove sales tax, VAT or GST, with rates for 58 countries.">
+<meta property="og:url" content="https://bingemind.com/sales-tax-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Sales Tax and VAT Calculator","url":"https://bingemind.com/sales-tax-calculator/","inLanguage":"en","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Add or remove sales tax, VAT or GST. All 50 US states, every Canadian province, and VAT and GST rates for more than 50 countries."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Sales Tax and VAT Calculator","item":"https://bingemind.com/sales-tax-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate sales tax?","acceptedAnswer":{"@type":"Answer","text":"Multiply the price by the tax rate as a decimal. For a 50.00 item at 8% tax, the tax is 50 × 0.08 = 4.00 and the total is 54.00."}},{"@type":"Question","name":"How do I remove VAT from a price?","acceptedAnswer":{"@type":"Answer","text":"Divide the total by 1 plus the VAT rate. With 20% VAT, divide by 1.2. A 60.00 total is 50.00 before VAT with 10.00 of VAT."}},{"@type":"Question","name":"How do I work out the sales tax from a total?","acceptedAnswer":{"@type":"Answer","text":"Divide the total by 1 plus the rate to get the pre-tax price, then subtract that from the total. For 107.25 at 7.25%, the price is 100.00 and the tax is 7.25."}},{"@type":"Question","name":"Which US states have no sales tax?","acceptedAnswer":{"@type":"Answer","text":"Alaska, Delaware, Montana, New Hampshire and Oregon have no state sales tax. Local taxes can still apply in parts of Alaska."}},{"@type":"Question","name":"What is the difference between sales tax and VAT?","acceptedAnswer":{"@type":"Answer","text":"Sales tax is charged once, at the final sale to the customer. VAT is charged at each stage of production, and businesses reclaim the VAT they paid, so the final consumer bears it. VAT is normally included in the displayed price."}},{"@type":"Question","name":"What is the GST rate in India in 2026?","acceptedAnswer":{"@type":"Answer","text":"After the September 2025 reform, most goods and services fall into a 5% or 18% slab, with 40% on certain luxury and sin goods and 0% on essentials."}},{"@type":"Question","name":"What is HST in Canada?","acceptedAnswer":{"@type":"Answer","text":"Harmonized Sales Tax combines the 5% federal GST with the provincial sales tax into one rate: 13% in Ontario, 14% in Nova Scotia and 15% in New Brunswick, Newfoundland and Labrador and Prince Edward Island."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Sales Tax and VAT Calculator</p>
+      <span class="eyebrow rise d1">Sales tax · VAT · GST · 58 countries</span>
+      <h1 class="lift"><span class="shine">Sales Tax and VAT Calculator</span></h1>
+      <p class="lede lift">Type an amount and choose whether tax is already included. The rate for your country, US state or Canadian province is filled in for you, and you can change it for reduced rates or local taxes.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>50 US states + local tax</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>All Canadian provinces</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>VAT and GST for 50+ countries</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Add or remove tax</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: total = price × (1 + rate ÷ 100). Price before tax = total ÷ (1 + rate ÷ 100).</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your amount</h2>
+        <p class="sub">Results update as you type. Change the country in the page header to load its tax rates.</p>
+        <div class="fields"><div class="field" data-f="amount"><label for="f-amount">Amount</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-amount" inputmode="decimal" autocomplete="off" value="100"></div></div><div class="field" data-f="mode"><span class="lbl" id="f-mode-l">The amount is</span><div class="seg" id="f-mode" aria-labelledby="f-mode-l"><button type="button" data-value="add" aria-checked="true">Before tax (add tax)</button><button type="button" data-value="remove" aria-checked="false">Tax included (remove tax)</button></div></div><div class="field" data-f="state"><label for="f-state">State</label><select class="input" id="f-state"><option value="AL">Alabama (4%)</option><option value="AK">Alaska (0%)</option><option value="AZ">Arizona (5.6%)</option><option value="AR">Arkansas (6.5%)</option><option value="CA" selected>California (7.25%)</option><option value="CO">Colorado (2.9%)</option><option value="CT">Connecticut (6.35%)</option><option value="DE">Delaware (0%)</option><option value="DC">District of Columbia (6%)</option><option value="FL">Florida (6%)</option><option value="GA">Georgia (4%)</option><option value="HI">Hawaii (4%)</option><option value="ID">Idaho (6%)</option><option value="IL">Illinois (6.25%)</option><option value="IN">Indiana (7%)</option><option value="IA">Iowa (6%)</option><option value="KS">Kansas (6.5%)</option><option value="KY">Kentucky (6%)</option><option value="LA">Louisiana (5%)</option><option value="ME">Maine (5.5%)</option><option value="MD">Maryland (6%)</option><option value="MA">Massachusetts (6.25%)</option><option value="MI">Michigan (6%)</option><option value="MN">Minnesota (6.875%)</option><option value="MS">Mississippi (7%)</option><option value="MO">Missouri (4.225%)</option><option value="MT">Montana (0%)</option><option value="NE">Nebraska (5.5%)</option><option value="NV">Nevada (6.85%)</option><option value="NH">New Hampshire (0%)</option><option value="NJ">New Jersey (6.625%)</option><option value="NM">New Mexico (4.875%)</option><option value="NY">New York (4%)</option><option value="NC">North Carolina (4.75%)</option><option value="ND">North Dakota (5%)</option><option value="OH">Ohio (5.75%)</option><option value="OK">Oklahoma (4.5%)</option><option value="OR">Oregon (0%)</option><option value="PA">Pennsylvania (6%)</option><option value="RI">Rhode Island (7%)</option><option value="SC">South Carolina (6%)</option><option value="SD">South Dakota (4.2%)</option><option value="TN">Tennessee (7%)</option><option value="TX">Texas (6.25%)</option><option value="UT">Utah (6.1%)</option><option value="VT">Vermont (6%)</option><option value="VA">Virginia (5.3%)</option><option value="WA">Washington (6.5%)</option><option value="WV">West Virginia (6%)</option><option value="WI">Wisconsin (5%)</option><option value="WY">Wyoming (4%)</option></select></div><div class="field" data-f="local"><label for="f-local">Local city or county tax <span class="hint">(added to the state rate)</span></label><div class="affix"><input class="input" id="f-local" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="prov" hidden><label for="f-prov">Province or territory</label><select class="input" id="f-prov"><option value="AB">Alberta (5%)</option><option value="BC">British Columbia (12%)</option><option value="MB">Manitoba (12%)</option><option value="NB">New Brunswick (15%)</option><option value="NL">Newfoundland and Labrador (15%)</option><option value="NS">Nova Scotia (14%)</option><option value="ON" selected>Ontario (13%)</option><option value="PE">Prince Edward Island (15%)</option><option value="QC">Quebec (14.975%)</option><option value="SK">Saskatchewan (11%)</option><option value="NT">Northwest Territories (5%)</option><option value="NU">Nunavut (5%)</option><option value="YT">Yukon (5%)</option></select></div><div class="field" data-f="rate" hidden><label for="f-rate">Tax rate <span class="hint">(standard rate for your country, edit for reduced rates)</span></label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="qty"><label for="f-qty">Quantity</label><input class="input" id="f-qty" inputmode="decimal" autocomplete="off" value="1"></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Total with tax</h2><div class="big" id="big">$107.25</div></div><div class="hint">7.25% sales tax</div></div><div class="stackbar" aria-hidden="true"><span style="width:93.24%;background:var(--reg)"></span><span style="width:6.76%;background:var(--gold)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Price before tax</span><span class="v">$100.00</span><span class="s">93%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Tax (7.25%)</span><span class="v">$7.25</span><span class="s">7%</span></li></ul><dl class="kv"><dt>Price before tax</dt><dd>$100.00</dd><dt>Tax</dt><dd class="strong">$7.25</dd><dt>Total with tax</dt><dd>$107.25</dd><dt>Tax rate used</dt><dd>7.25%</dd></dl><p class="note">State rate shown. Most places add city, county or district tax: enter it as local tax. Alaska, Delaware, Montana, New Hampshire and Oregon have no state sales tax.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to add and remove sales tax or VAT</span></h2>
+        <div class="formula">Add tax: total = price × (1 + rate ÷ 100)<br>Remove tax: price before tax = total ÷ (1 + rate ÷ 100)<br>Tax amount = total − price before tax</div>
+<p><b>Adding tax.</b> A 100.00 item with 7.25% tax costs 100 × 1.0725 = 107.25.</p>
+<p><b>Removing tax.</b> A 120.00 total that includes 20% VAT has a net price of 120 ÷ 1.20 = 100.00, and 20.00 of VAT.</p>
+<p>A common mistake when removing tax is to take the percentage off the total. 20% of 120 is 24, not 20. Always divide by 1 plus the rate.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Sales tax in the United States</span></h2>
+      <div class="prose">
+        <p>There is no national sales tax. Each state sets its own rate, and cities, counties and special districts add theirs. This calculator fills in the state rate, and you add the local rate.</p>
+<ul>
+<li><b>No state sales tax:</b> Alaska, Delaware, Montana, New Hampshire and Oregon. Some Alaskan towns charge a local tax.</li>
+<li><b>Highest state rates:</b> California at 7.25%, then Indiana, Mississippi, Rhode Island and Tennessee at 7%.</li>
+<li><b>Highest combined rates:</b> parts of Louisiana, Tennessee, Arkansas, Washington and Alabama exceed 9% to 10% once local taxes are added.</li>
+<li><b>Exemptions:</b> many states do not tax groceries or prescription medicines, and several hold sales tax holidays.</li>
+</ul>
+<p>Prices in US shops are shown before tax, so the till total is higher than the shelf price.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">VAT and GST around the world</span></h2>
+      <div class="prose">
+        <p>Most other countries use a value added tax or goods and services tax that is already included in the displayed price. Standard rates as of November 2026:</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Country</th><th>Tax</th><th>Standard rate</th><th>Common reduced rates</th></tr></thead><tbody>
+<tr><td>United Kingdom</td><td>VAT</td><td>20%</td><td>5%, 0%</td></tr>
+<tr><td>Germany</td><td>MwSt</td><td>19%</td><td>7%</td></tr>
+<tr><td>France</td><td>TVA</td><td>20%</td><td>10%, 5.5%, 2.1%</td></tr>
+<tr><td>Ireland</td><td>VAT</td><td>23%</td><td>13.5%, 9%, 0%</td></tr>
+<tr><td>Spain</td><td>IVA</td><td>21%</td><td>10%, 4%</td></tr>
+<tr><td>Italy</td><td>IVA</td><td>22%</td><td>10%, 5%, 4%</td></tr>
+<tr><td>Netherlands</td><td>BTW</td><td>21%</td><td>9%</td></tr>
+<tr><td>Australia</td><td>GST</td><td>10%</td><td>GST-free basics</td></tr>
+<tr><td>New Zealand</td><td>GST</td><td>15%</td><td>none</td></tr>
+<tr><td>Canada</td><td>GST/HST</td><td>5% federal</td><td>5% to 15% with provincial tax</td></tr>
+<tr><td>India</td><td>GST</td><td>18%</td><td>5%, 0%, and 40% on luxury and sin goods</td></tr>
+<tr><td>Singapore</td><td>GST</td><td>9%</td><td>none</td></tr>
+<tr><td>United Arab Emirates</td><td>VAT</td><td>5%</td><td>0%</td></tr>
+<tr><td>South Africa</td><td>VAT</td><td>15%</td><td>0%</td></tr>
+<tr><td>Japan</td><td>Consumption tax</td><td>10%</td><td>8% on food</td></tr>
+</tbody></table></div>
+<p>Rates change. Check your tax authority before you invoice or file a return.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">For businesses: invoices and reverse calculations</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Pricing:</b> decide whether your prices are quoted net (business customers) or gross (consumers), and say which on quotes.</li>
+<li><b>Working back from a receipt:</b> use "Tax included" to split a total into net and tax for your books.</li>
+<li><b>Registration thresholds:</b> small businesses below a turnover limit often do not have to register, for example 90,000 pounds in the UK.</li>
+<li><b>Cross-border sales:</b> in the EU, sales to consumers in other member states are taxed at the customer's country rate once you pass the 10,000 euro threshold. US sellers can owe sales tax in states where they pass an economic nexus threshold.</li>
+<li><b>Canada:</b> HST provinces charge one combined rate. British Columbia, Manitoba, Saskatchewan and Quebec charge GST plus a separate provincial tax.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: amount $100; the amount is Before tax (add tax); state California (7.25%); local city or county tax 0%; quantity 1. Result: total with tax <b>$107.25</b>; price before tax $100.00; tax $7.25; total with tax $107.25.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: amount £79.00; the amount is Before tax (add tax); tax rate 20%; quantity 1. Result: total with tax <b>£94.80</b>; price before tax £79.00; tax £15.80; total with tax £94.80.</p>
+<h3>Canada (CAD)</h3><p>Starting values typical for Canada: amount $140; the amount is Before tax (add tax); province or territory Ontario (13%); quantity 1. Result: total with tax <b>$158.20</b>; price before tax $140.00; tax $18.20; total with tax $158.20.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: amount ₹2,200; the amount is Before tax (add tax); tax rate 18%; quantity 1. Result: total with tax <b>₹2,596.00</b>; price before tax ₹2,200.00; tax ₹396.00; total with tax ₹2,596.00.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Sales tax and VAT questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate sales tax?</summary><p>Multiply the price by the tax rate as a decimal. For a 50.00 item at 8% tax, the tax is 50 × 0.08 = 4.00 and the total is 54.00.</p></details>
+        <details><summary>How do I remove VAT from a price?</summary><p>Divide the total by 1 plus the VAT rate. With 20% VAT, divide by 1.2. A 60.00 total is 50.00 before VAT with 10.00 of VAT.</p></details>
+        <details><summary>How do I work out the sales tax from a total?</summary><p>Divide the total by 1 plus the rate to get the pre-tax price, then subtract that from the total. For 107.25 at 7.25%, the price is 100.00 and the tax is 7.25.</p></details>
+        <details><summary>Which US states have no sales tax?</summary><p>Alaska, Delaware, Montana, New Hampshire and Oregon have no state sales tax. Local taxes can still apply in parts of Alaska.</p></details>
+        <details><summary>What is the difference between sales tax and VAT?</summary><p>Sales tax is charged once, at the final sale to the customer. VAT is charged at each stage of production, and businesses reclaim the VAT they paid, so the final consumer bears it. VAT is normally included in the displayed price.</p></details>
+        <details><summary>What is the GST rate in India in 2026?</summary><p>After the September 2025 reform, most goods and services fall into a 5% or 18% slab, with 40% on certain luxury and sin goods and 0% on essentials.</p></details>
+        <details><summary>What is HST in Canada?</summary><p>Harmonized Sales Tax combines the 5% federal GST with the provincial sales tax into one rate: 13% in Ontario, 14% in Nova Scotia and 15% in New Brunswick, Newfoundland and Labrador and Prince Edward Island.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/profit-margin-calculator/"><b>Profit Margin Calculator</b><span>Margin, markup, selling price, net profit and break-even units.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/invoice-generator/"><b>Free Invoice Generator</b><span>Make a professional invoice and save it as PDF, in any currency.</span></a><a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-Home Pay Calculator</b><span>Net pay after tax in the US, UK, Canada, Australia and India.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Rates are standard national, state or provincial rates checked in November 2026. Local taxes, reduced rates and exemptions vary by product and place. Confirm the rate with your tax authority before filing or invoicing. Your numbers stay in this browser.</p>
+      <p>Sources: US state rates: <a href="https://taxfoundation.org/data/all/state/sales-tax-rates/">Tax Foundation</a>. UK VAT: <a href="https://www.gov.uk/vat-rates">GOV.UK</a>. EU rates: <a href="https://europa.eu/youreurope/business/taxation/vat/vat-rules-rates/index_en.htm">European Commission</a>. Canada: <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html">Canada Revenue Agency</a>. Australia: <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst">ATO</a>. India: <a href="https://www.gst.gov.in/">GST portal</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

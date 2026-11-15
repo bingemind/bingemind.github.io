@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Compound Interest Calculator With Monthly Contributions</title>
+<meta name="description" content="See how savings grow with monthly deposits, any compounding frequency and inflation. Growth chart, yearly table and CSV. Free, any currency.">
+<link rel="canonical" href="https://bingemind.com/compound-interest-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Compound Interest Calculator With Monthly Contributions">
+<meta property="og:description" content="Future value with monthly deposits, inflation and a growth chart.">
+<meta property="og:url" content="https://bingemind.com/compound-interest-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Compound Interest Calculator","url":"https://bingemind.com/compound-interest-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"See how savings grow with monthly deposits, any compounding frequency and inflation. Growth chart, yearly table and CSV. Free, any currency."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Compound Interest Calculator","item":"https://bingemind.com/compound-interest-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is compound interest?","acceptedAnswer":{"@type":"Answer","text":"It is interest calculated on both the original amount and the interest already added. Because the balance keeps growing, the interest earned each period grows too."}},{"@type":"Question","name":"How do I calculate compound interest?","acceptedAnswer":{"@type":"Answer","text":"Use A = P × (1 + r ÷ n) to the power of n × t. For 10,000 at 7% compounded monthly for 20 years, the result is about 40,387."}},{"@type":"Question","name":"How much will 500 a month be worth in 20 years?","acceptedAnswer":{"@type":"Answer","text":"At 7% a year compounded monthly, 500 a month grows to about 260,463 after 20 years. You contribute 120,000 and interest adds about 140,463."}},{"@type":"Question","name":"What is the difference between APR and APY?","acceptedAnswer":{"@type":"Answer","text":"APR is the stated yearly rate without compounding. APY, called AER in the UK, includes compounding, so it is the rate you actually earn in a year. 6% compounded monthly is an APY of 6.168%."}},{"@type":"Question","name":"Does daily compounding make a big difference?","acceptedAnswer":{"@type":"Answer","text":"Not much. On 10,000 at 6% for 10 years, daily compounding earns about 26 more than monthly compounding. The rate and the time matter far more."}},{"@type":"Question","name":"What is the rule of 72?","acceptedAnswer":{"@type":"Answer","text":"A shortcut for doubling time: divide 72 by the yearly interest rate. At 9%, money doubles in about 8 years."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Compound Interest Calculator</p>
+      <span class="eyebrow rise d1">Savings and investing · any currency</span>
+      <h1 class="lift"><span class="shine">Compound Interest Calculator</span></h1>
+      <p class="lede lift">See how savings or an investment grows when interest earns interest. Add a monthly contribution, choose how often interest compounds, and check what the final amount is worth after inflation.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Monthly contributions</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Daily to yearly compounding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Inflation-adjusted value</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Yearly table as CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: A = P × (1 + r ÷ n)^(n × t).</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your savings</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="grid-2"><div class="field" data-f="start"><label for="f-start">Starting amount</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-start" inputmode="decimal" autocomplete="off" value="10000"></div></div><div class="field" data-f="monthly"><label for="f-monthly">Monthly contribution</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-monthly" inputmode="decimal" autocomplete="off" value="500"></div></div></div><div class="grid-2"><div class="field" data-f="rate"><label for="f-rate">Interest rate</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="7"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="years"><label for="f-years">Years</label><div class="affix"><input class="input" id="f-years" inputmode="decimal" autocomplete="off" value="20"><span class="post" aria-hidden="true">years</span></div></div></div><div class="field" data-f="comp"><label for="f-comp">Compounding</label><select class="input" id="f-comp"><option value="1">Yearly</option><option value="2">Twice a year</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select></div><details class="adv"><summary>Inflation, contribution increases and timing</summary><div class="grid-2"><div class="field" data-f="grow"><label for="f-grow">Raise contributions each year by</label><div class="affix"><input class="input" id="f-grow" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="infl"><label for="f-infl">Inflation</label><div class="affix"><input class="input" id="f-infl" inputmode="decimal" autocomplete="off" value="3"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="field" data-f="when"><label for="f-when">Contributions made</label><select class="input" id="f-when"><option value="end" selected>End of each month</option><option value="start">Start of each month</option></select></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Future value</h2><div class="big" id="big">$300,851</div></div><div class="hint">after 20 years</div></div><div class="stackbar" aria-hidden="true"><span style="width:3.32%;background:var(--reg)"></span><span style="width:39.89%;background:var(--gold)"></span><span style="width:56.79%;background:var(--ot)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Starting amount</span><span class="v">$10,000.00</span><span class="s">3%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Contributions</span><span class="v">$120,000.00</span><span class="s">40%</span></li><li><span class="k"><i style="background:var(--ot)"></i>Interest earned</span><span class="v">$170,850.72</span><span class="s">57%</span></li></ul><dl class="kv"><dt>Total you put in</dt><dd>$130,000</dd><dt>Interest earned</dt><dd class="strong">$170,851</dd><dt>Worth in today’s money (3% inflation)</dt><dd>$166,574</dd><dt>Effective yearly rate (APY)</dt><dd>7.23%</dd><dt>Money doubles about every</dt><dd>9.9 years</dd></dl><figure class="chart"><figcaption>Growth by year <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Growth by year"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="160.5" y2="160.5" class="gl"/><text x="56" y="164.5" text-anchor="end">100K</text><line x1="64" x2="628" y1="111.0" y2="111.0" class="gl"/><text x="56" y="115.0" text-anchor="end">200K</text><line x1="64" x2="628" y1="61.5" y2="61.5" class="gl"/><text x="56" y="65.5" text-anchor="end">300K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">400K</text><text x="64.0" y="232" text-anchor="middle">Now</text><text x="148.6" y="232" text-anchor="middle">Yr 3</text><text x="233.2" y="232" text-anchor="middle">Yr 6</text><text x="317.8" y="232" text-anchor="middle">Yr 9</text><text x="402.4" y="232" text-anchor="middle">Yr 12</text><text x="487.0" y="232" text-anchor="middle">Yr 15</text><text x="571.6" y="232" text-anchor="middle">Yr 18</text><text x="628.0" y="232" text-anchor="middle">Yr 20</text><path d="M64,210 L64.0,205.0 L92.2,201.6 L120.4,198.0 L148.6,194.0 L176.8,189.8 L205.0,185.3 L233.2,180.4 L261.4,175.2 L289.6,169.6 L317.8,163.6 L346.0,157.2 L374.2,150.3 L402.4,142.9 L430.6,135.0 L458.8,126.5 L487.0,117.4 L515.2,107.7 L543.4,97.2 L571.6,86.0 L599.8,74.0 L628.0,61.1 L628,210 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,205.0 92.2,201.6 120.4,198.0 148.6,194.0 176.8,189.8 205.0,185.3 233.2,180.4 261.4,175.2 289.6,169.6 317.8,163.6 346.0,157.2 374.2,150.3 402.4,142.9 430.6,135.0 458.8,126.5 487.0,117.4 515.2,107.7 543.4,97.2 571.6,86.0 599.8,74.0 628.0,61.1" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><polyline points="64.0,205.0 92.2,202.1 120.4,199.1 148.6,196.1 176.8,193.2 205.0,190.2 233.2,187.2 261.4,184.3 289.6,181.3 317.8,178.3 346.0,175.3 374.2,172.4 402.4,169.4 430.6,166.4 458.8,163.5 487.0,160.5 515.2,157.5 543.4,154.6 571.6,151.6 599.8,148.6 628.0,145.7" fill="none" stroke="var(--gold)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Balance</span><span class="v">$300,851</span><span class="s">at Yr 20</span></li><li><span class="k"><i style="background:var(--gold)"></i>Money put in</span><span class="v">$130,000</span><span class="s">at Yr 20</span></li></ul></figure><details class="adv tbl-det"><summary>Year-by-year growth</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Year</th><th>Contributions</th><th>Interest</th><th>Balance</th></tr></thead><tbody><tr><td>1</td><td>$6,000</td><td>$919</td><td>$16,919</td></tr><tr><td>2</td><td>$6,000</td><td>$1,419</td><td>$24,339</td></tr><tr><td>3</td><td>$6,000</td><td>$1,956</td><td>$32,294</td></tr><tr><td>4</td><td>$6,000</td><td>$2,531</td><td>$40,825</td></tr><tr><td>5</td><td>$6,000</td><td>$3,148</td><td>$49,973</td></tr><tr><td>6</td><td>$6,000</td><td>$3,809</td><td>$59,782</td></tr><tr><td>7</td><td>$6,000</td><td>$4,518</td><td>$70,299</td></tr><tr><td>8</td><td>$6,000</td><td>$5,278</td><td>$81,578</td></tr><tr><td>9</td><td>$6,000</td><td>$6,094</td><td>$93,671</td></tr><tr><td>10</td><td>$6,000</td><td>$6,968</td><td>$106,639</td></tr><tr><td>11</td><td>$6,000</td><td>$7,905</td><td>$120,544</td></tr><tr><td>12</td><td>$6,000</td><td>$8,910</td><td>$135,455</td></tr><tr><td>13</td><td>$6,000</td><td>$9,988</td><td>$151,443</td></tr><tr><td>14</td><td>$6,000</td><td>$11,144</td><td>$168,587</td></tr><tr><td>15</td><td>$6,000</td><td>$12,383</td><td>$186,971</td></tr><tr><td>16</td><td>$6,000</td><td>$13,712</td><td>$206,683</td></tr><tr><td>17</td><td>$6,000</td><td>$15,137</td><td>$227,820</td></tr><tr><td>18</td><td>$6,000</td><td>$16,665</td><td>$250,486</td></tr><tr><td>19</td><td>$6,000</td><td>$18,304</td><td>$274,790</td></tr><tr><td>20</td><td>$6,000</td><td>$20,061</td><td>$300,851</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">The compound interest formula</span></h2>
+        <p>With compound interest, each period's interest is added to the balance, so the next period's interest is calculated on a larger amount.</p>
+<div class="formula">A = P × (1 + r ÷ n)<sup>n × t</sup><br>A = future value · P = starting amount · r = yearly rate as a decimal · n = times compounded a year · t = years</div>
+<p>Example: 10,000 at 7% compounded monthly for 20 years. A = 10,000 × (1 + 0.07 ÷ 12)<sup>240</sup> = 40,387. With no extra deposits, the money quadruples.</p>
+<h3>Adding regular contributions</h3>
+<div class="formula">Future value of deposits = D × ((1 + i)<sup>m</sup> − 1) ÷ i<br>D = monthly deposit · i = monthly rate · m = number of months</div>
+<p>Adding 500 a month to the same example gives 260,463 from deposits, for a total of 300,851. You put in 130,000 and interest adds 170,851. This calculator runs the sum month by month, so it also handles yearly increases in your deposit and deposits made at the start of the month.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Why starting early matters more than the amount</span></h2>
+      <div class="prose">
+        <p>Time is the strongest input. Compare two savers who both earn 7% a year:</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>Saves</th><th>Total put in</th><th>Value at 65</th></tr></thead><tbody>
+<tr><td>Starts at 25</td><td>300 a month for 40 years</td><td>144,000</td><td>about 787,000</td></tr>
+<tr><td>Starts at 35</td><td>300 a month for 30 years</td><td>108,000</td><td>about 366,000</td></tr>
+<tr><td>Starts at 45</td><td>300 a month for 20 years</td><td>72,000</td><td>about 156,000</td></tr>
+</tbody></table></div>
+<p>Ten extra years of saving more than doubles the result, although the extra money put in is only 36,000.</p>
+<h3>The rule of 72</h3>
+<p>Divide 72 by the yearly rate to estimate how many years it takes money to double. At 6% it is about 12 years, at 8% about 9 years. The result above shows the exact doubling time for your rate.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Compounding frequency, APR and APY</span></h2>
+      <div class="prose">
+        <p>The more often interest compounds, the more you earn, but the difference is small once you go past monthly.</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Compounding</th><th>10,000 at 6% after 10 years</th><th>Effective yearly rate</th></tr></thead><tbody>
+<tr><td>Yearly</td><td>17,908.48</td><td>6.000%</td></tr>
+<tr><td>Quarterly</td><td>18,140.18</td><td>6.136%</td></tr>
+<tr><td>Monthly</td><td>18,193.97</td><td>6.168%</td></tr>
+<tr><td>Daily</td><td>18,220.29</td><td>6.183%</td></tr>
+</tbody></table></div>
+<p>The effective yearly rate is called <b>APY</b> in the US and <b>AER</b> in the UK and Ireland. It lets you compare accounts that compound on different schedules.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Inflation, tax and realistic returns</span></h2>
+      <div class="prose">
+        <p>A future balance buys less than the same amount today. The result shows the value in today's money using the inflation rate you enter, which starts at a typical figure for your country.</p>
+<ul>
+<li><b>Savings accounts and fixed deposits</b> pay a known rate, often close to inflation.</li>
+<li><b>Share market index funds</b> have returned roughly 7% to 10% a year over long periods before inflation, with large swings from year to year. Past returns do not guarantee future ones.</li>
+<li><b>Tax</b> reduces growth unless the money is in a tax-sheltered account such as a 401(k) or IRA (US), ISA (UK), TFSA or RRSP (Canada), superannuation (Australia) or PPF and NPS (India).</li>
+<li><b>Fees</b> compound too. A 1% yearly fee can take a fifth of the final balance over 30 years. Enter your return after fees.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: starting amount $10,000; monthly contribution $500; interest rate 7% a year; years 20 years; compounding Monthly; raise contributions each year by 0%; inflation 3% a year; contributions made End of each month. Result: future value <b>$300,851</b>; total you put in $130,000; interest earned $170,851; worth in today’s money (3% inflation) $166,574.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: starting amount £7,900; monthly contribution £400; interest rate 7% a year; years 20 years; compounding Monthly; raise contributions each year by 0%; inflation 3.5% a year; contributions made End of each month. Result: future value <b>£240,277</b>; total you put in £103,900; interest earned £136,377; worth in today’s money (3.5% inflation) £120,755.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: starting amount ₹2,20,000; monthly contribution ₹11,000; interest rate 7% a year; years 20 years; compounding Monthly; raise contributions each year by 0%; inflation 4.5% a year; contributions made End of each month. Result: future value <b>₹66,18,716</b>; total you put in ₹28,60,000; interest earned ₹37,58,716; worth in today’s money (4.5% inflation) ₹27,44,403.</p>
+<h3>Japan (JPY)</h3><p>Starting values typical for Japan: starting amount ￥1,100,000; monthly contribution ￥56,000; interest rate 7% a year; years 20 years; compounding Monthly; raise contributions each year by 0%; inflation 2% a year; contributions made End of each month. Result: future value <b>￥33,614,506</b>; total you put in ￥14,540,000; interest earned ￥19,074,506; worth in today’s money (2% inflation) ￥22,621,599.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Compound interest questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>What is compound interest?</summary><p>It is interest calculated on both the original amount and the interest already added. Because the balance keeps growing, the interest earned each period grows too.</p></details>
+        <details><summary>How do I calculate compound interest?</summary><p>Use A = P × (1 + r ÷ n) to the power of n × t. For 10,000 at 7% compounded monthly for 20 years, the result is about 40,387.</p></details>
+        <details><summary>How much will 500 a month be worth in 20 years?</summary><p>At 7% a year compounded monthly, 500 a month grows to about 260,463 after 20 years. You contribute 120,000 and interest adds about 140,463.</p></details>
+        <details><summary>What is the difference between APR and APY?</summary><p>APR is the stated yearly rate without compounding. APY, called AER in the UK, includes compounding, so it is the rate you actually earn in a year. 6% compounded monthly is an APY of 6.168%.</p></details>
+        <details><summary>Does daily compounding make a big difference?</summary><p>Not much. On 10,000 at 6% for 10 years, daily compounding earns about 26 more than monthly compounding. The rate and the time matter far more.</p></details>
+        <details><summary>What is the rule of 72?</summary><p>A shortcut for doubling time: divide 72 by the yearly interest rate. At 9%, money doubles in about 8 years.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/retirement-calculator/"><b>Retirement Calculator</b><span>Savings at retirement, the nest egg you need and the monthly gap.</span></a><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/mortgage-calculator/"><b>Mortgage Calculator</b><span>Monthly payment with tax, insurance and PMI, plus amortization and extra payments.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> This assumes a constant rate of return and regular deposits. Real investments rise and fall, and tax and fees reduce returns. It is not financial advice. Your numbers stay in this browser.</p>
+      <p>Sources: Compound interest explained: <a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator">US SEC Investor.gov</a>. AER definition: <a href="https://www.moneyhelper.org.uk/en/savings/how-to-save/cash-savings-at-a-glance">MoneyHelper</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

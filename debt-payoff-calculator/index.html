@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Debt Payoff Calculator: Snowball vs Avalanche</title>
+<meta name="description" content="List your debts and see your debt-free date, total interest and payoff order. Compare snowball and avalanche methods. Free, any currency.">
+<link rel="canonical" href="https://bingemind.com/debt-payoff-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Debt Payoff Calculator: Snowball vs Avalanche">
+<meta property="og:description" content="Snowball vs avalanche, your debt-free date and the payoff order.">
+<meta property="og:url" content="https://bingemind.com/debt-payoff-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Debt Payoff Calculator","url":"https://bingemind.com/debt-payoff-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"List your debts and see your debt-free date, total interest and payoff order. Compare snowball and avalanche methods. Free, any currency."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Debt Payoff Calculator","item":"https://bingemind.com/debt-payoff-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the snowball or avalanche method better?","acceptedAnswer":{"@type":"Answer","text":"Avalanche, paying the highest rate first, always costs the least interest. Snowball, paying the smallest balance first, gives quicker wins. The best method is the one you will stick to, and this calculator shows the cost difference between them."}},{"@type":"Question","name":"How do I work out my debt-free date?","acceptedAnswer":{"@type":"Answer","text":"Add interest to each balance monthly, subtract your payments, and repeat until every balance reaches zero. The calculator does this for all your debts together and shows the month you finish."}},{"@type":"Question","name":"How much faster will I be debt-free if I pay extra?","acceptedAnswer":{"@type":"Answer","text":"It depends on your rates, but the effect is large. Try the extra payment field: on typical card debt, an extra 100 a month can cut the payoff time by more than half."}},{"@type":"Question","name":"Should I pay off debt or save first?","acceptedAnswer":{"@type":"Answer","text":"Build a small emergency fund first, then pay down any debt charging more than you could earn on savings. Card interest of 20% or more outweighs almost any savings return."}},{"@type":"Question","name":"Does paying off debt improve my credit score?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. Lower balances reduce your credit utilisation, and a record of on-time payments is the biggest factor in most scoring models."}},{"@type":"Question","name":"What happens to a payment when a debt is cleared?","acceptedAnswer":{"@type":"Answer","text":"It rolls over to the next debt in the plan. That is why progress speeds up over time: the amount going to the target debt keeps growing."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Debt Payoff Calculator</p>
+      <span class="eyebrow rise d1">Credit cards and loans · any currency</span>
+      <h1 class="lift"><span class="shine">Debt Payoff Calculator</span></h1>
+      <p class="lede lift">List each debt with its balance, rate and minimum payment. Add what you can pay on top. You get a debt-free date, the total interest, the order to pay them in, and a comparison of the two main methods.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Snowball, avalanche or your order</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 15 debts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Debt-free date</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Payoff order as CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: pay the minimum on every debt and put all extra money on the one with the highest rate.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your debts</h2>
+        <p class="sub">The example uses typical figures for your country. Replace them with your own balances, rates and minimum payments.</p>
+        <div class="fields"><div class="field list" data-f="debts"><span class="lbl">Your debts</span><div class="rows" id="list-debts"><div class="room list-row" data-row="0">
+    <div class="room-top"><b class="row-n">Debt 1</b><button type="button" class="del" data-del="0" aria-label="Remove Debt 1">×</button></div>
+    <div class="list-grid"><div class="field" data-f="debts.name"><label for="debts-0-name">Name</label><input class="input" id="debts-0-name" value="Credit card" maxlength="30" autocomplete="off"></div><div class="field" data-f="debts.bal"><label for="debts-0-bal">Balance</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-0-bal" inputmode="decimal" autocomplete="off" value="6000"></div></div><div class="field" data-f="debts.apr"><label for="debts-0-apr">Rate</label><div class="affix"><input class="input" id="debts-0-apr" inputmode="decimal" autocomplete="off" value="21.3"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="debts.min"><label for="debts-0-min">Minimum</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-0-min" inputmode="decimal" autocomplete="off" value="180"></div></div></div>
+  </div><div class="room list-row" data-row="1">
+    <div class="room-top"><b class="row-n">Debt 2</b><button type="button" class="del" data-del="1" aria-label="Remove Debt 2">×</button></div>
+    <div class="list-grid"><div class="field" data-f="debts.name"><label for="debts-1-name">Name</label><input class="input" id="debts-1-name" value="Car loan" maxlength="30" autocomplete="off"></div><div class="field" data-f="debts.bal"><label for="debts-1-bal">Balance</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-1-bal" inputmode="decimal" autocomplete="off" value="12000"></div></div><div class="field" data-f="debts.apr"><label for="debts-1-apr">Rate</label><div class="affix"><input class="input" id="debts-1-apr" inputmode="decimal" autocomplete="off" value="7.8"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="debts.min"><label for="debts-1-min">Minimum</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-1-min" inputmode="decimal" autocomplete="off" value="350"></div></div></div>
+  </div><div class="room list-row" data-row="2">
+    <div class="room-top"><b class="row-n">Debt 3</b><button type="button" class="del" data-del="2" aria-label="Remove Debt 3">×</button></div>
+    <div class="list-grid"><div class="field" data-f="debts.name"><label for="debts-2-name">Name</label><input class="input" id="debts-2-name" value="Personal loan" maxlength="30" autocomplete="off"></div><div class="field" data-f="debts.bal"><label for="debts-2-bal">Balance</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-2-bal" inputmode="decimal" autocomplete="off" value="4000"></div></div><div class="field" data-f="debts.apr"><label for="debts-2-apr">Rate</label><div class="affix"><input class="input" id="debts-2-apr" inputmode="decimal" autocomplete="off" value="11.8"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="debts.min"><label for="debts-2-min">Minimum</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="debts-2-min" inputmode="decimal" autocomplete="off" value="140"></div></div></div>
+  </div></div>
+  <div class="mini-actions"><button class="btn" type="button" data-add="debts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add a debt</button></div></div><div class="field" data-f="extra"><label for="f-extra">Extra you can pay each month <span class="hint">(on top of the minimums)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-extra" inputmode="decimal" autocomplete="off" value="200"></div></div><div class="field" data-f="method"><span class="lbl" id="f-method-l">Method</span><div class="seg" id="f-method" aria-labelledby="f-method-l"><button type="button" data-value="avalanche" aria-checked="true">Avalanche: highest rate</button><button type="button" data-value="snowball" aria-checked="false">Snowball: smallest balance</button><button type="button" data-value="custom" aria-checked="false">Your order: as listed</button></div></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Debt-free in</h2><div class="big" id="big">2 years 5 months</div></div><div class="hint">Apr 2029</div></div><dl class="kv"><dt>Total debt</dt><dd>$22,000</dd><dt>Monthly budget</dt><dd>$870.00</dd><dt>Total interest</dt><dd class="strong">$3,151.91</dd><dt>Total you will pay</dt><dd>$25,152</dd><dt>Snowball method would take</dt><dd>2 years 6 months</dd><dt>Snowball interest</dt><dd>$3,488.11</dd><dt>Minimums only would take</dt><dd>4 years 3 months</dd><dt>Interest saved vs minimums only</dt><dd class="strong">$2,350.96</dd></dl><figure class="chart"><figcaption>Total debt over time <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Total debt over time"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="144.0" y2="144.0" class="gl"/><text x="56" y="148.0" text-anchor="end">10K</text><line x1="64" x2="628" y1="78.0" y2="78.0" class="gl"/><text x="56" y="82.0" text-anchor="end">20K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">30K</text><text x="64.0" y="232" text-anchor="middle">Now</text><text x="161.2" y="232" text-anchor="middle">Mo 5</text><text x="258.5" y="232" text-anchor="middle">Mo 10</text><text x="355.7" y="232" text-anchor="middle">Mo 15</text><text x="453.0" y="232" text-anchor="middle">Mo 20</text><text x="550.2" y="232" text-anchor="middle">Mo 25</text><text x="628.0" y="232" text-anchor="middle">Mo 29</text><path d="M64,210 L64.0,64.8 L83.4,69.1 L102.9,73.4 L122.3,77.7 L141.8,82.2 L161.2,86.6 L180.7,91.2 L200.1,95.7 L219.6,100.4 L239.0,105.1 L258.5,109.8 L277.9,114.6 L297.4,119.5 L316.8,124.4 L336.3,129.3 L355.7,134.4 L375.2,139.5 L394.6,144.6 L414.1,149.9 L433.5,155.2 L453.0,160.5 L472.4,165.9 L491.9,171.3 L511.3,176.8 L530.8,182.3 L550.2,187.9 L569.7,193.5 L589.1,199.1 L608.6,204.8 L628.0,210.0 L628,210 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,64.8 83.4,69.1 102.9,73.4 122.3,77.7 141.8,82.2 161.2,86.6 180.7,91.2 200.1,95.7 219.6,100.4 239.0,105.1 258.5,109.8 277.9,114.6 297.4,119.5 316.8,124.4 336.3,129.3 355.7,134.4 375.2,139.5 394.6,144.6 414.1,149.9 433.5,155.2 453.0,160.5 472.4,165.9 491.9,171.3 511.3,176.8 530.8,182.3 550.2,187.9 569.7,193.5 589.1,199.1 608.6,204.8 628.0,210.0" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Debt left</span><span class="v">$0</span><span class="s">at Mo 29</span></li></ul></figure><details class="adv tbl-det" open><summary>Payoff order</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Debt</th><th>Balance</th><th>Rate</th><th>Paid off in</th><th>Interest paid</th></tr></thead><tbody><tr><td>Credit card</td><td>$6,000</td><td>21.3%</td><td>1 year 7 months</td><td>$1,103.60</td></tr><tr><td>Personal loan</td><td>$4,000</td><td>11.8%</td><td>1 year 11 months</td><td>$608.89</td></tr><tr><td>Car loan</td><td>$12,000</td><td>7.8%</td><td>2 years 5 months</td><td>$1,439.41</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How the payoff plan works</span></h2>
+        <p>Each month, interest is added to every balance. You pay the minimum on every debt, then put all the extra money on one target debt. When a debt is cleared, its payment is not spent: it rolls onto the next target. Your total monthly budget stays the same until everything is paid.</p>
+<h3>Two ways to choose the target</h3>
+<ul>
+<li><b>Avalanche:</b> highest interest rate first. This always costs the least interest.</li>
+<li><b>Snowball:</b> smallest balance first. You clear individual debts sooner, which many people find keeps them going.</li>
+</ul>
+<ul><li><b>Your order:</b> the debts are paid in the order you list them. Use it when a debt matters more than its rate suggests, such as one owed to family or one with a promotional rate about to end.</li></ul>
+<p>The result compares your choice with the main alternative, so you can see what the motivation of the snowball costs you in interest. Often the difference is small. The table lists the month each debt is cleared and the interest paid on it.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Why minimum payments keep you in debt</span></h2>
+      <div class="prose">
+        <p>Card issuers usually set the minimum at around 1% to 3% of the balance plus interest. As the balance falls, so does the minimum, so the debt shrinks very slowly.</p>
+<p>A 5,000 card balance at 24% with a 2.5% minimum takes more than 20 years to clear if you only ever pay the minimum, and costs more in interest than the original debt. Fixing the payment at the first month's amount instead, about 125, clears it in under 7 years. Adding 100 on top brings it down to about 2 and a half years.</p>
+<p>The line "Minimums only would take" in the result shows your own version of this, using your current minimums as fixed payments.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Ways to speed things up</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Balance transfer cards:</b> a 0% promotional rate lets every payment reduce the balance. Count the transfer fee, typically 3% to 5%, and plan to clear the debt before the offer ends.</li>
+<li><b>Debt consolidation loan:</b> one loan at a lower fixed rate replaces several cards. It only helps if the new rate is lower and you stop using the cards.</li>
+<li><b>Ask for a lower rate:</b> lenders sometimes agree, particularly for customers with a good payment record.</li>
+<li><b>Put windfalls on the target debt:</b> tax refunds, bonuses and sales of unused things.</li>
+<li><b>Keep a small emergency fund</b> so an unexpected bill does not go straight back on a card.</li>
+</ul>
+<h3>If you cannot keep up</h3>
+<p>If the minimums alone are more than you can pay, contact your lenders early and get free, regulated debt advice: a non-profit credit counsellor (US, Canada), StepChange or National Debtline (UK), the National Debt Helpline (Australia), or MABS (Ireland). Avoid companies that charge upfront fees to "settle" your debt.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Which debts to include</span></h2>
+      <div class="prose">
+        <p>Include credit cards, store cards, personal loans, car loans, student loans, overdrafts and buy-now-pay-later balances. Most people leave their mortgage out, because its rate is low and the term is long. Use the <a href="https://bingemind.com/mortgage-calculator/">mortgage calculator</a> to test extra payments on that.</p>
+<p>Some debts deserve to jump the queue whatever their rate: anything in arrears, tax debts, and loans with a guarantor or secured on something you need.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: 3 debts totalling $22,000; extra you can pay each month $200; method Avalanche: highest rate. Result: debt-free in <b>2 years 5 months</b>; total debt $22,000; monthly budget $870.00; total interest $3,151.91.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: 3 debts totalling £17,400; extra you can pay each month £160; method Avalanche: highest rate. Result: debt-free in <b>2 years 5 months</b>; total debt £17,400; monthly budget £690.00; total interest £1,989.36.</p>
+<h3>Canada (CAD)</h3><p>Starting values typical for Canada: 3 debts totalling $30,800; extra you can pay each month $280; method Avalanche: highest rate. Result: debt-free in <b>2 years 5 months</b>; total debt $30,800; monthly budget $1,200.00; total interest $3,552.56.</p>
+<h3>South Africa (ZAR)</h3><p>Starting values typical for South Africa: 3 debts totalling R 178 000; extra you can pay each month R 1 600; method Avalanche: highest rate. Result: debt-free in <b>2 years 8 months</b>; total debt R 178 000; monthly budget R 7 000,00; total interest R 39 827,57.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Debt payoff questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>Is the snowball or avalanche method better?</summary><p>Avalanche, paying the highest rate first, always costs the least interest. Snowball, paying the smallest balance first, gives quicker wins. The best method is the one you will stick to, and this calculator shows the cost difference between them.</p></details>
+        <details><summary>How do I work out my debt-free date?</summary><p>Add interest to each balance monthly, subtract your payments, and repeat until every balance reaches zero. The calculator does this for all your debts together and shows the month you finish.</p></details>
+        <details><summary>How much faster will I be debt-free if I pay extra?</summary><p>It depends on your rates, but the effect is large. Try the extra payment field: on typical card debt, an extra 100 a month can cut the payoff time by more than half.</p></details>
+        <details><summary>Should I pay off debt or save first?</summary><p>Build a small emergency fund first, then pay down any debt charging more than you could earn on savings. Card interest of 20% or more outweighs almost any savings return.</p></details>
+        <details><summary>Does paying off debt improve my credit score?</summary><p>Usually yes. Lower balances reduce your credit utilisation, and a record of on-time payments is the biggest factor in most scoring models.</p></details>
+        <details><summary>What happens to a payment when a debt is cleared?</summary><p>It rolls over to the next debt in the plan. That is why progress speeds up over time: the amount going to the target debt keeps growing.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/auto-loan-calculator/"><b>Auto Loan Calculator</b><span>Car payment with tax, fees and trade-in, plus a term comparison.</span></a><a href="https://bingemind.com/compound-interest-calculator/"><b>Compound Interest Calculator</b><span>Future value with monthly deposits, inflation and a growth chart.</span></a><a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-Home Pay Calculator</b><span>Net pay after tax in the US, UK, Canada, Australia and India.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> The plan assumes fixed rates, monthly interest and no new borrowing. Card issuers calculate interest daily and may change rates, so real dates can differ slightly. This is not debt advice. Your numbers stay in this browser.</p>
+      <p>Sources: Paying down credit cards: <a href="https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-out-of-debt-en-1929/">CFPB</a>. Free UK debt advice: <a href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/use-our-debt-advice-locator">MoneyHelper</a>. Australia: <a href="https://moneysmart.gov.au/managing-debt">Moneysmart</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

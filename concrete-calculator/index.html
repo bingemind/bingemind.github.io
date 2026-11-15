@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Concrete Calculator: Cubic Yards, m³ and Bags</title>
+<meta name="description" content="Concrete for slabs, footings and post holes in cubic yards or cubic meters, with waste, 40-80 lb or 20-40 kg bag counts and ready-mix cost.">
+<link rel="canonical" href="https://bingemind.com/concrete-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Concrete Calculator: Cubic Yards, m³ and Bags">
+<meta property="og:description" content="Volume, bags and cost for slabs, footings and columns.">
+<meta property="og:url" content="https://bingemind.com/concrete-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Concrete Calculator","url":"https://bingemind.com/concrete-calculator/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Concrete for slabs, footings and post holes in cubic yards or cubic meters, with waste, 40-80 lb or 20-40 kg bag counts and ready-mix cost."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Concrete Calculator","item":"https://bingemind.com/concrete-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate how much concrete I need?","acceptedAnswer":{"@type":"Answer","text":"Multiply length by width by thickness, all in the same unit. In feet, divide by 27 for cubic yards. A 20 by 10 ft slab 4 inches thick is 20 × 10 × 0.333 ÷ 27 = 2.47 cubic yards."}},{"@type":"Question","name":"How many 80 lb bags of concrete are in a cubic yard?","acceptedAnswer":{"@type":"Answer","text":"About 45. Each 80 lb bag makes roughly 0.60 cubic feet, and a cubic yard is 27 cubic feet."}},{"@type":"Question","name":"How many bags of concrete do I need for a 10 by 10 slab?","acceptedAnswer":{"@type":"Answer","text":"A 10 by 10 ft slab 4 inches thick is 1.23 cubic yards. That is 56 bags of 80 lb, or 62 with 10% waste."}},{"@type":"Question","name":"How many 20 kg bags make a cubic meter?","acceptedAnswer":{"@type":"Answer","text":"Roughly 107 to 110 bags of 20 kg pre-mixed concrete, depending on the brand."}},{"@type":"Question","name":"How thick should a concrete slab be?","acceptedAnswer":{"@type":"Answer","text":"4 inches (100 mm) for patios and paths, 4 to 5 inches for car driveways, and 5 to 6 inches for heavier vehicles. Follow your local building code."}},{"@type":"Question","name":"How much does a cubic yard of concrete weigh?","acceptedAnswer":{"@type":"Answer","text":"About 4,050 lb, or roughly 2 US tons. A cubic meter weighs about 2,400 kg."}},{"@type":"Question","name":"How much extra concrete should I order?","acceptedAnswer":{"@type":"Answer","text":"5% to 10% more than the measured volume. Use 10% for uneven ground, trenches and hand-dug holes."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Concrete Calculator</p>
+      <span class="eyebrow rise d1">Slabs · footings · columns · imperial or metric</span>
+      <h1 class="lift"><span class="shine">Concrete Calculator</span></h1>
+      <p class="lede lift">Enter the size of your slab, footing or post hole. You get the concrete volume in cubic yards and cubic meters with waste included, how many bags that is, the weight, and the ready-mix cost.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cubic yards and m³</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bags in lb or kg</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Waste allowance</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ready-mix cost</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: cubic yards = length (ft) × width (ft) × thickness (in) ÷ 12 ÷ 27.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your pour</h2>
+        <p class="sub">Results update as you type. Switch units at any time.</p>
+        <div class="fields"><div class="field" data-f="units"><span class="lbl" id="f-units-l">Units</span><div class="seg" id="f-units" aria-labelledby="f-units-l"><button type="button" data-value="imperial" aria-checked="true">Feet and inches</button><button type="button" data-value="metric" aria-checked="false">Meters and cm</button></div></div><div class="field" data-f="shape"><label for="f-shape">Shape</label><select class="input" id="f-shape"><option value="slab" selected>Slab, patio or driveway</option><option value="footing">Footing or wall</option><option value="column">Round column or post hole</option></select></div><div class="grid-2"><div class="field" data-f="len"><label for="f-len">Length</label><div class="affix"><input class="input" id="f-len" inputmode="decimal" autocomplete="off" value="20"><span class="post" aria-hidden="true" data-suf='{&quot;imperial&quot;:&quot;ft&quot;,&quot;metric&quot;:&quot;m&quot;}'>ft</span></div></div><div class="field" data-f="wid"><label for="f-wid">Width</label><div class="affix"><input class="input" id="f-wid" inputmode="decimal" autocomplete="off" value="10"><span class="post" aria-hidden="true" data-suf='{&quot;imperial&quot;:&quot;ft&quot;,&quot;metric&quot;:&quot;m&quot;}'>ft</span></div></div></div><div class="field" data-f="thick"><label for="f-thick">Thickness or depth</label><div class="affix"><input class="input" id="f-thick" inputmode="decimal" autocomplete="off" value="4"><span class="post" aria-hidden="true" data-suf='{&quot;imperial&quot;:&quot;in&quot;,&quot;metric&quot;:&quot;cm&quot;}'>in</span></div></div><div class="grid-2"><div class="field" data-f="dia" hidden><label for="f-dia">Diameter</label><div class="affix"><input class="input" id="f-dia" inputmode="decimal" autocomplete="off" value="12"><span class="post" aria-hidden="true" data-suf='{&quot;imperial&quot;:&quot;in&quot;,&quot;metric&quot;:&quot;cm&quot;}'>in</span></div></div><div class="field" data-f="height" hidden><label for="f-height">Height or depth</label><div class="affix"><input class="input" id="f-height" inputmode="decimal" autocomplete="off" value="4"><span class="post" aria-hidden="true" data-suf='{&quot;imperial&quot;:&quot;ft&quot;,&quot;metric&quot;:&quot;m&quot;}'>ft</span></div></div></div><div class="grid-2"><div class="field" data-f="qty"><label for="f-qty">How many</label><input class="input" id="f-qty" inputmode="decimal" autocomplete="off" value="1"></div><div class="field" data-f="waste"><label for="f-waste">Extra for waste</label><div class="affix"><input class="input" id="f-waste" inputmode="decimal" autocomplete="off" value="10"><span class="post" aria-hidden="true">%</span></div></div></div><div class="field" data-f="price"><label for="f-price">Ready-mix price <span class="hint">(per cubic yard or cubic meter, optional)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="170"></div></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Concrete needed</h2><div class="big" id="big">2.72 <small>cubic yards</small></div></div><div class="hint">includes 10% waste</div></div><dl class="kv"><dt>Cubic yards</dt><dd>2.72</dd><dt>Cubic meters</dt><dd>2.08</dd><dt>Cubic feet</dt><dd>73.3</dd><dt>Without waste</dt><dd>2.47</dd><dt>Weight of concrete</dt><dd>10,987 lb</dd><dt>Ready-mix cost</dt><dd class="strong">$462</dd></dl><details class="adv tbl-det" open><summary>Pre-mixed bags to buy instead</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Bag size</th><th>Bags</th></tr></thead><tbody><tr><td>40 lb bags</td><td>245</td></tr><tr><td>60 lb bags</td><td>163</td></tr><tr><td>80 lb bags</td><td>123</td></tr></tbody></table></div></details><p class="note">For this volume, order ready-mix. Mixing this many bags by hand is slow and the pour may set unevenly.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to calculate concrete</span></h2>
+        <p>Concrete is ordered by volume. Work out the volume of the shape, then add a little for waste.</p>
+<div class="formula">Slab or footing: volume = length × width × thickness<br>Round column or hole: volume = 3.1416 × (diameter ÷ 2)² × height<br>Cubic yards = cubic feet ÷ 27 · Cubic meters = cubic yards × 0.7646</div>
+<p><b>Imperial example.</b> A 20 ft × 10 ft patio, 4 inches thick: 20 × 10 × (4 ÷ 12) = 66.7 cubic feet, which is 2.47 cubic yards. With 10% waste, order 2.72 cubic yards.</p>
+<p><b>Metric example.</b> A 6 m × 3 m slab, 10 cm thick: 6 × 3 × 0.10 = 1.8 m³. With 10% waste, order 1.98 m³, which most suppliers round to 2 m³.</p>
+<p>Keep units consistent: convert inches to feet (divide by 12) or centimeters to meters (divide by 100) before multiplying. The calculator does this for you.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">How many bags of concrete do I need?</span></h2>
+      <div class="prose">
+        <p>Pre-mixed bags are sold by weight. Each makes a fixed volume once water is added:</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Bag</th><th>Makes about</th><th>Bags per cubic yard or m³</th></tr></thead><tbody>
+<tr><td>40 lb</td><td>0.30 cu ft</td><td>90 per cubic yard</td></tr>
+<tr><td>60 lb</td><td>0.45 cu ft</td><td>60 per cubic yard</td></tr>
+<tr><td>80 lb</td><td>0.60 cu ft</td><td>45 per cubic yard</td></tr>
+<tr><td>20 kg</td><td>about 9.4 litres</td><td>about 107 per m³</td></tr>
+<tr><td>25 kg</td><td>about 11.7 litres</td><td>about 86 per m³</td></tr>
+<tr><td>40 kg</td><td>about 18.8 litres</td><td>about 54 per m³</td></tr>
+</tbody></table></div>
+<p>Yields vary a little by brand, so check the bag. As a rule, bags suit jobs under about 1 cubic yard (0.75 m³), such as fence posts, steps and small pads. Above that, a ready-mix delivery is usually cheaper and gives a better finish, because the whole pour sets together.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Recommended thickness</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Use</th><th>Typical thickness</th></tr></thead><tbody>
+<tr><td>Paths, patios, shed bases</td><td>4 in (100 mm)</td></tr>
+<tr><td>Driveways for cars</td><td>4 to 5 in (100 to 125 mm)</td></tr>
+<tr><td>Driveways for trucks or RVs, garage floors</td><td>5 to 6 in (125 to 150 mm)</td></tr>
+<tr><td>Footings for a single-storey wall</td><td>8 to 12 in deep (200 to 300 mm), below the frost line</td></tr>
+<tr><td>Fence post holes</td><td>Diameter 3 times the post width, depth one third of the post length</td></tr>
+</tbody></table></div>
+<p>Local building codes set the real minimums, especially for footings, frost depth and reinforcement. Check with your building department before you pour anything structural.</p>
+<h3>Why add waste</h3>
+<p>Ground is never perfectly level, forms bow slightly, and some concrete stays in the mixer, pump or wheelbarrow. Add 5% for a formed slab on a well-prepared base and 10% for uneven ground or hand-dug footings. Running short in the middle of a pour leaves a weak cold joint, so a little extra is cheap insurance.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Ordering and pouring tips</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Ready-mix is sold by the cubic yard</b> in the US and <b>by the cubic meter</b> almost everywhere else. Many suppliers have a minimum load and charge a short-load fee below it.</li>
+<li><b>Strength:</b> 3,000 to 4,000 psi (20 to 30 MPa, or C20 to C30) suits most home slabs and driveways. Ask for air-entrained concrete where it freezes.</li>
+<li><b>Base:</b> 4 in (100 mm) of compacted gravel under a slab improves drainage and reduces cracking.</li>
+<li><b>Reinforcement:</b> wire mesh or rebar holds cracks together. Use the <a href="https://bingemind.com/rebar-weight-calculator/">rebar weight calculator</a> for the steel.</li>
+<li><b>Control joints:</b> cut or tool joints at spacings of about 24 to 30 times the slab thickness, so 8 to 10 ft for a 4 in slab.</li>
+<li><b>Curing:</b> keep the surface damp for at least 7 days. Concrete reaches most of its design strength at 28 days.</li>
+<li><b>Weight:</b> concrete weighs about 150 lb per cubic foot, or 2,400 kg per m³. Check what your vehicle and trailer can carry before collecting bags.</li>
+</ul>
+<p>For the surface area of an irregular slab, measure it with the <a href="https://bingemind.com/square-footage-calculator/">square footage calculator</a> first.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: shape Slab, patio or driveway; length 20 ft; width 10 ft; thickness or depth 4 in; how many 1; extra for waste 10%; ready-mix price $170. Result: concrete needed <b>2.72 cubic yards</b>; cubic yards 2.72; cubic meters 2.08; cubic feet 73.3.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: shape Slab, patio or driveway; length 6 m; width 3 m; thickness or depth 10 cm; how many 1; extra for waste 10%; ready-mix price £170. Result: concrete needed <b>1.98 m³</b>; cubic yards 2.59; cubic meters 1.98; cubic feet 69.9.</p>
+<h3>Australia (AUD)</h3><p>Starting values typical for Australia: shape Slab, patio or driveway; length 6 m; width 3 m; thickness or depth 10 cm; how many 1; extra for waste 10%; ready-mix price $330. Result: concrete needed <b>1.98 m³</b>; cubic yards 2.59; cubic meters 1.98; cubic feet 69.9.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: shape Slab, patio or driveway; length 6 m; width 3 m; thickness or depth 10 cm; how many 1; extra for waste 10%; ready-mix price ₹4,800. Result: concrete needed <b>1.98 m³</b>; cubic yards 2.59; cubic meters 1.98; cubic feet 69.9.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Concrete questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate how much concrete I need?</summary><p>Multiply length by width by thickness, all in the same unit. In feet, divide by 27 for cubic yards. A 20 by 10 ft slab 4 inches thick is 20 × 10 × 0.333 ÷ 27 = 2.47 cubic yards.</p></details>
+        <details><summary>How many 80 lb bags of concrete are in a cubic yard?</summary><p>About 45. Each 80 lb bag makes roughly 0.60 cubic feet, and a cubic yard is 27 cubic feet.</p></details>
+        <details><summary>How many bags of concrete do I need for a 10 by 10 slab?</summary><p>A 10 by 10 ft slab 4 inches thick is 1.23 cubic yards. That is 56 bags of 80 lb, or 62 with 10% waste.</p></details>
+        <details><summary>How many 20 kg bags make a cubic meter?</summary><p>Roughly 107 to 110 bags of 20 kg pre-mixed concrete, depending on the brand.</p></details>
+        <details><summary>How thick should a concrete slab be?</summary><p>4 inches (100 mm) for patios and paths, 4 to 5 inches for car driveways, and 5 to 6 inches for heavier vehicles. Follow your local building code.</p></details>
+        <details><summary>How much does a cubic yard of concrete weigh?</summary><p>About 4,050 lb, or roughly 2 US tons. A cubic meter weighs about 2,400 kg.</p></details>
+        <details><summary>How much extra concrete should I order?</summary><p>5% to 10% more than the measured volume. Use 10% for uneven ground, trenches and hand-dug holes.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/square-footage-calculator/"><b>Square Footage Calculator</b><span>Area of any room in square feet or meters.</span></a><a href="https://bingemind.com/solar-panel-calculator/"><b>Solar Panel Calculator</b><span>System size, panels, cost, savings and payback from your bill.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Volumes are calculated from the dimensions you enter. Bag yields and prices vary by product and supplier. Structural work must follow local building codes and may need an engineer. Your numbers stay in this browser.</p>
+      <p>Sources: Unit conversions: <a href="https://www.nist.gov/pml/special-publication-811">NIST Special Publication 811</a>. Slab and joint guidance: <a href="https://www.cement.org/cement-concrete/">Portland Cement Association</a> and <a href="https://www.concrete.org/">American Concrete Institute</a>. Bag yields from manufacturers’ data sheets for ASTM C387 pre-mixed concrete. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

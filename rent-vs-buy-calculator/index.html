@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Rent vs Buy Calculator: Should I Rent or Buy a Home?</title>
+<meta name="description" content="Compare your wealth from buying a home with renting and investing the difference, year by year, with every cost included and the break-even year.">
+<link rel="canonical" href="https://bingemind.com/rent-vs-buy-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Rent vs Buy Calculator: Should I Rent or Buy a Home?">
+<meta property="og:description" content="Compare wealth from buying with renting and investing, year by year.">
+<meta property="og:url" content="https://bingemind.com/rent-vs-buy-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Rent vs Buy Calculator","url":"https://bingemind.com/rent-vs-buy-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Compare your wealth from buying a home with renting and investing the difference, year by year, with every cost included and the break-even year."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Rent vs Buy Calculator","item":"https://bingemind.com/rent-vs-buy-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it better to rent or buy a home?","acceptedAnswer":{"@type":"Answer","text":"It depends mainly on how long you stay, the price compared with local rents, and the mortgage rate. Buying usually wins for stays longer than about five to seven years, and renting for shorter ones. Enter your own numbers to see your break-even year."}},{"@type":"Question","name":"What is the 5% rule for rent vs buy?","acceptedAnswer":{"@type":"Answer","text":"A rough test: multiply the home price by 5% and divide by 12. If you can rent a similar home for less than that each month, renting is likely the cheaper choice. The 5% stands for property tax, maintenance and the cost of capital."}},{"@type":"Question","name":"What is a good price-to-rent ratio?","acceptedAnswer":{"@type":"Answer","text":"Divide the price by one year of rent. Under about 15 favours buying, 15 to 20 is a close call, and over 20 favours renting."}},{"@type":"Question","name":"Is renting throwing money away?","acceptedAnswer":{"@type":"Answer","text":"No. Rent buys a place to live, just as mortgage interest, property tax, insurance and repairs do for an owner. Only the principal part of a mortgage payment builds equity."}},{"@type":"Question","name":"Does the calculator include tax relief on mortgage interest?","acceptedAnswer":{"@type":"Answer","text":"No. Tax treatment differs by country and by household, and in the US most people now take the standard deduction. If you do get relief, buying is slightly better than shown."}},{"@type":"Question","name":"What return should I assume on investments?","acceptedAnswer":{"@type":"Answer","text":"A long-run figure of 5% to 7% a year for a diversified portfolio is common. Use a lower figure if you would keep the money in savings."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Rent vs Buy Calculator</p>
+      <span class="eyebrow rise d1">Housing decision · any currency</span>
+      <h1 class="lift"><span class="shine">Rent vs Buy Calculator</span></h1>
+      <p class="lede lift">Buying builds equity. Renting leaves your deposit free to invest. This calculator follows both paths month by month and shows which leaves you better off, and after how many years buying starts to win.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Counts every ownership cost</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Invests the difference</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Break-even year</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Year-by-year table</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: compare the total cost of owning (interest, taxes, upkeep, fees) with rent over the years you will stay.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>The home and the rent</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="grid-2"><div class="field" data-f="price"><label for="f-price">Home price</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="400000"></div></div><div class="field" data-f="rent"><label for="f-rent">Monthly rent for a similar home</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-rent" inputmode="decimal" autocomplete="off" value="2200"></div></div></div><div class="grid-2"><div class="field" data-f="years"><label for="f-years">How long you will stay</label><div class="affix"><input class="input" id="f-years" inputmode="decimal" autocomplete="off" value="7"><span class="post" aria-hidden="true">years</span></div></div><div class="field" data-f="down"><label for="f-down">Down payment</label><div class="affix"><input class="input" id="f-down" inputmode="decimal" autocomplete="off" value="20"><span class="post" aria-hidden="true">%</span></div></div></div><div class="grid-2"><div class="field" data-f="rate"><label for="f-rate">Mortgage rate</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="6.3"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="term"><label for="f-term">Mortgage term</label><select class="input" id="f-term"><option value="15">15 years</option><option value="20">20 years</option><option value="25">25 years</option><option value="30" selected>30 years</option><option value="35">35 years</option></select></div></div><details class="adv" open><summary>Growth rates and ownership costs</summary><div class="grid-2"><div class="field" data-f="appr"><label for="f-appr">Home price growth</label><div class="affix"><input class="input" id="f-appr" inputmode="decimal" autocomplete="off" value="3"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="rentUp"><label for="f-rentUp">Rent increase</label><div class="affix"><input class="input" id="f-rentUp" inputmode="decimal" autocomplete="off" value="3"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="grid-2"><div class="field" data-f="inv"><label for="f-inv">Return on invested savings</label><div class="affix"><input class="input" id="f-inv" inputmode="decimal" autocomplete="off" value="6"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="tax"><label for="f-tax">Property tax</label><div class="affix"><input class="input" id="f-tax" inputmode="decimal" autocomplete="off" value="1"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="grid-2"><div class="field" data-f="maint"><label for="f-maint">Maintenance</label><div class="affix"><input class="input" id="f-maint" inputmode="decimal" autocomplete="off" value="1"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="ins"><label for="f-ins">Home insurance <span class="hint">(a year)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-ins" inputmode="decimal" autocomplete="off" value="1800"></div></div></div><div class="grid-2"><div class="field" data-f="buyCost"><label for="f-buyCost">Buying costs <span class="hint">(fees, stamp duty)</span></label><div class="affix"><input class="input" id="f-buyCost" inputmode="decimal" autocomplete="off" value="3"><span class="post" aria-hidden="true">% of price</span></div></div><div class="field" data-f="sellCost"><label for="f-sellCost">Selling costs</label><div class="affix"><input class="input" id="f-sellCost" inputmode="decimal" autocomplete="off" value="6"><span class="post" aria-hidden="true">% of price</span></div></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Renting comes out ahead by</h2><div class="big" id="big">$13,257</div></div><div class="hint">after 7 years</div></div><dl class="kv"><dt>Your wealth if you buy</dt><dd>$174,077</dd><dt>Your wealth if you rent</dt><dd>$187,334</dd><dt>Buying starts to win after</dt><dd class="strong">10 years</dd><dt>Mortgage payment</dt><dd>$1,980.71</dd><dt>Rent in year 1</dt><dd>$2,200.00</dd></dl><figure class="chart"><figcaption>Wealth after selling, by year <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Wealth after selling, by year"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="144.0" y2="144.0" class="gl"/><text x="56" y="148.0" text-anchor="end">100K</text><line x1="64" x2="628" y1="78.0" y2="78.0" class="gl"/><text x="56" y="82.0" text-anchor="end">200K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">300K</text><text x="64.0" y="232" text-anchor="middle">Yr 1</text><text x="189.3" y="232" text-anchor="middle">Yr 3</text><text x="314.7" y="232" text-anchor="middle">Yr 5</text><text x="440.0" y="232" text-anchor="middle">Yr 7</text><text x="565.3" y="232" text-anchor="middle">Yr 9</text><text x="628.0" y="232" text-anchor="middle">Yr 10</text><polyline points="64.0,163.1 126.7,152.9 189.3,142.2 252.0,131.1 314.7,119.6 377.3,107.6 440.0,95.1 502.7,82.1 565.3,68.7 628.0,54.6" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><polyline points="64.0,140.7 126.7,132.0 189.3,123.1 252.0,114.1 314.7,105.0 377.3,95.7 440.0,86.4 502.7,76.9 565.3,67.2 628.0,57.5" fill="none" stroke="var(--gold)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Buy</span><span class="v">$235,404</span><span class="s">at Yr 10</span></li><li><span class="k"><i style="background:var(--gold)"></i>Rent and invest</span><span class="v">$231,022</span><span class="s">at Yr 10</span></li></ul></figure><details class="adv tbl-det"><summary>Year-by-year comparison</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Year</th><th>Wealth if buying</th><th>Wealth if renting</th><th>Difference</th></tr></thead><tbody><tr><td>1</td><td>$70,995</td><td>$104,995</td><td>-$34,000</td></tr><tr><td>2</td><td>$86,568</td><td>$118,206</td><td>-$31,637</td></tr><tr><td>3</td><td>$102,747</td><td>$131,629</td><td>-$28,881</td></tr><tr><td>4</td><td>$119,559</td><td>$145,259</td><td>-$25,700</td></tr><tr><td>5</td><td>$137,030</td><td>$159,091</td><td>-$22,061</td></tr><tr><td>6</td><td>$155,193</td><td>$173,118</td><td>-$17,926</td></tr><tr><td>7</td><td>$174,077</td><td>$187,334</td><td>-$13,257</td></tr><tr><td>8</td><td>$193,717</td><td>$201,730</td><td>-$8,013</td></tr><tr><td>9</td><td>$214,147</td><td>$216,296</td><td>-$2,149</td></tr><tr><td>10</td><td>$235,404</td><td>$231,022</td><td>$4,382</td></tr></tbody></table></div></details><p class="note">Wealth if you buy = home value after selling costs − mortgage left + any monthly savings invested. Renting assumes you invest the down payment and buying costs instead.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How the comparison works</span></h2>
+        <p>A fair comparison looks at <b>net worth</b>, not at monthly payments alone.</p>
+<h3>If you buy</h3>
+<p>You pay the deposit and buying costs, then the mortgage, property tax, insurance and maintenance each month. At the end you sell: your wealth is the home's value, minus selling costs, minus the mortgage still owed.</p>
+<h3>If you rent</h3>
+<p>You keep the deposit and buying costs and invest them. Each month you pay rent, which rises every year.</p>
+<h3>Investing the difference</h3>
+<p>Whichever option costs less in a given month, the saving is invested at the return you enter. This matters: in the early years renting is usually cheaper month to month, and in later years owning often is, because rent rises and a fixed mortgage payment does not.</p>
+<div class="formula">Wealth if buying = home value × (1 − selling costs) − mortgage balance + invested savings<br>Wealth if renting = invested deposit and buying costs + invested monthly savings</div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Why how long you stay decides it</span></h2>
+      <div class="prose">
+        <p>Buying and selling a home is expensive. Fees, taxes and agent commission often total 8% to 10% of the price over a round trip. In the first years those costs are larger than the equity you build, so renting usually wins for short stays.</p>
+<p>The result shows the year buying starts to win. In many markets that is somewhere between 4 and 8 years, but it depends heavily on:</p>
+<ul>
+<li><b>The price-to-rent ratio.</b> Divide the home price by a year of rent. Below about 15, buying tends to win sooner. Above 20, renting is often the better deal.</li>
+<li><b>Home price growth compared with investment returns.</b> Try a lower growth figure to see how sensitive your result is.</li>
+<li><b>The mortgage rate.</b> Higher rates push the break-even year later.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Costs of owning that people forget</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Maintenance and repairs:</b> about 1% of the home's value a year on average, and more for older homes.</li>
+<li><b>Property tax or council tax:</b> owners pay it directly. In the UK, tenants usually pay council tax too, so set it to 0 if it is the same either way.</li>
+<li><b>Insurance:</b> buildings cover is the owner's cost.</li>
+<li><b>Buying costs:</b> legal fees, surveys, lender fees, and stamp duty or land transfer tax where they apply. These can be several percent of the price.</li>
+<li><b>Selling costs:</b> agent commission is around 5% to 6% in the US and 1% to 3% in the UK, Australia and India, plus legal fees.</li>
+<li><b>The deposit's lost return:</b> money in the house is not earning in the market. The calculator counts this by investing it on the rent side.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What the numbers cannot tell you</span></h2>
+      <div class="prose">
+        <p>Some reasons to buy or rent are not financial:</p>
+<ul>
+<li><b>Stability:</b> an owner cannot be asked to leave, and a fixed-rate payment does not rise with rents.</li>
+<li><b>Flexibility:</b> a renter can move for a job in weeks, and is not exposed to a fall in local prices.</li>
+<li><b>Forced saving:</b> a mortgage makes you build equity every month. Renting only wins on paper if you actually invest the difference.</li>
+<li><b>Control:</b> owners can renovate, keep pets and stay as long as they like.</li>
+</ul>
+<p>Use the calculator to see what the choice costs or earns you, then weigh that against what matters to your household.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: home price $400,000; monthly rent for a similar home $2,200; how long you will stay 7 years; down payment 20%; mortgage rate 6.3%; mortgage term 30 years; home price growth 3% a year; rent increase 3% a year; return on invested savings 6% a year; property tax 1% a year; maintenance 1% a year; home insurance $1,800; buying costs 3% of price; selling costs 6% of price. Result: renting comes out ahead by <b>$13,257</b>; your wealth if you buy $174,077; your wealth if you rent $187,334; buying starts to win after 10 years.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: home price £320,000; monthly rent for a similar home £1,700; how long you will stay 7 years; down payment 20%; mortgage rate 4.4%; mortgage term 25 years; home price growth 3% a year; rent increase 3% a year; return on invested savings 6% a year; property tax 0% a year; maintenance 1% a year; home insurance £1,400; buying costs 3% of price; selling costs 6% of price. Result: buying comes out ahead by <b>£52,414</b>; your wealth if you buy £165,744; your wealth if you rent £113,330; buying starts to win after 3 years.</p>
+<h3>Germany (EUR)</h3><p>Starting values typical for Germany: home price 370.000 €; monthly rent for a similar home 2.000 €; how long you will stay 7 years; down payment 20%; mortgage rate 3,7%; mortgage term 30 years; home price growth 3% a year; rent increase 3% a year; return on invested savings 6% a year; property tax 0,3% a year; maintenance 1% a year; home insurance 1.700 €; buying costs 3% of price; selling costs 6% of price. Result: buying comes out ahead by <b>70.483 €</b>; your wealth if you buy 198.442 €; your wealth if you rent 127.959 €; buying starts to win after 3 years.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: home price ₹88,00,000; monthly rent for a similar home ₹48,000; how long you will stay 7 years; down payment 20%; mortgage rate 8.4%; mortgage term 20 years; home price growth 3% a year; rent increase 3% a year; return on invested savings 6% a year; property tax 0.1% a year; maintenance 1% a year; home insurance ₹40,000; buying costs 3% of price; selling costs 6% of price. Result: renting comes out ahead by <b>₹7,56,409</b>; your wealth if you buy ₹44,27,575; your wealth if you rent ₹51,83,984; buying starts to win after 14 years.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Rent or buy questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>Is it better to rent or buy a home?</summary><p>It depends mainly on how long you stay, the price compared with local rents, and the mortgage rate. Buying usually wins for stays longer than about five to seven years, and renting for shorter ones. Enter your own numbers to see your break-even year.</p></details>
+        <details><summary>What is the 5% rule for rent vs buy?</summary><p>A rough test: multiply the home price by 5% and divide by 12. If you can rent a similar home for less than that each month, renting is likely the cheaper choice. The 5% stands for property tax, maintenance and the cost of capital.</p></details>
+        <details><summary>What is a good price-to-rent ratio?</summary><p>Divide the price by one year of rent. Under about 15 favours buying, 15 to 20 is a close call, and over 20 favours renting.</p></details>
+        <details><summary>Is renting throwing money away?</summary><p>No. Rent buys a place to live, just as mortgage interest, property tax, insurance and repairs do for an owner. Only the principal part of a mortgage payment builds equity.</p></details>
+        <details><summary>Does the calculator include tax relief on mortgage interest?</summary><p>No. Tax treatment differs by country and by household, and in the US most people now take the standard deduction. If you do get relief, buying is slightly better than shown.</p></details>
+        <details><summary>What return should I assume on investments?</summary><p>A long-run figure of 5% to 7% a year for a diversified portfolio is common. Use a lower figure if you would keep the money in savings.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/mortgage-calculator/"><b>Mortgage Calculator</b><span>Monthly payment with tax, insurance and PMI, plus amortization and extra payments.</span></a><a href="https://bingemind.com/home-affordability-calculator/"><b>Home Affordability Calculator</b><span>The home price, loan and payment your income supports.</span></a><a href="https://bingemind.com/compound-interest-calculator/"><b>Compound Interest Calculator</b><span>Future value with monthly deposits, inflation and a growth chart.</span></a><a href="https://bingemind.com/refinance-calculator/"><b>Refinance Calculator</b><span>Monthly saving, break-even month and lifetime cost of refinancing.</span></a><a href="https://bingemind.com/solar-panel-calculator/"><b>Solar Panel Calculator</b><span>System size, panels, cost, savings and payback from your bill.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> The comparison assumes steady growth rates and that all savings are invested, and it leaves out income tax effects. Housing markets and investments can fall as well as rise. Your numbers stay in this browser.</p>
+      <p>Sources: Renting and buying costs: <a href="https://www.consumerfinance.gov/owning-a-home/">CFPB Buying a House</a> and <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home/should-you-rent-or-buy">MoneyHelper</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

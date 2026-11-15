@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Age Calculator: Exact Age in Years, Months and Days</title>
+<meta name="description" content="Find your exact age in years, months and days, plus total weeks, days and hours, the weekday you were born and a countdown to your next birthday.">
+<link rel="canonical" href="https://bingemind.com/age-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Age Calculator: Exact Age in Years, Months and Days">
+<meta property="og:description" content="Exact age in years, months and days, with next-birthday countdown.">
+<meta property="og:url" content="https://bingemind.com/age-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Age Calculator","url":"https://bingemind.com/age-calculator/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Find your exact age in years, months and days, plus total weeks, days and hours, the weekday you were born and a countdown to your next birthday."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Age Calculator","item":"https://bingemind.com/age-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my exact age?","acceptedAnswer":{"@type":"Answer","text":"Count the full years since your date of birth, then the full months since your last birthday, then the remaining days. The calculator does this for any two dates."}},{"@type":"Question","name":"How do I calculate age from date of birth in days?","acceptedAnswer":{"@type":"Answer","text":"Count every day between the date of birth and today, including leap days. The calculator shows this as \"In days\"."}},{"@type":"Question","name":"How old will I be on a future date?","acceptedAnswer":{"@type":"Answer","text":"Change the second date to the date you want. The age and next-birthday countdown update for that day."}},{"@type":"Question","name":"How is age calculated for someone born on 29 February?","acceptedAnswer":{"@type":"Answer","text":"They gain a year on 29 February in leap years. In other years the birthday is treated as 1 March in many legal systems, including the UK, and as 28 February in some others."}},{"@type":"Question","name":"What is Korean age?","acceptedAnswer":{"@type":"Answer","text":"In the traditional Korean system you are 1 at birth and add a year every 1 January. Since June 2023 South Korea uses international age for legal and official purposes."}},{"@type":"Question","name":"Does the calculator include the day of birth?","acceptedAnswer":{"@type":"Answer","text":"It counts completed days, so the day of birth is day zero. A baby born yesterday is 1 day old today."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Age Calculator</p>
+      <span class="eyebrow rise d1">Exact age · any date · leap years handled</span>
+      <h1 class="lift"><span class="shine">Age Calculator</span></h1>
+      <p class="lede lift">Pick a date of birth. You get the exact age in years, months and days, the same age in weeks, days and hours, the day of the week of the birth, and how long until the next birthday.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Years, months and days</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Age on any date</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Next birthday countdown</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Leap years handled</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: subtract the birth year from the current year, and take off one if the birthday has not happened yet this year.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Dates</h2>
+        <p class="sub">Change the second date to find an age on any day, past or future. Dates show in your country’s format.</p>
+        <div class="fields"><div class="field" data-f="dob"><label for="f-dob">Date of birth</label><input class="input" type="date" id="f-dob" value="1995-06-15"></div><div class="field" data-f="on"><label for="f-on">Age on this date</label><input class="input" type="date" id="f-on" value="2026-11-15"></div></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Age</h2><div class="big" id="big">31 years, 5 months, 0 days</div></div></div><dl class="kv"><dt>In months</dt><dd>377</dd><dt>In weeks</dt><dd>1,639</dd><dt>In days</dt><dd class="strong">11,476</dd><dt>In hours</dt><dd>275,424</dd><dt>In minutes</dt><dd>16,525,440</dd><dt>Born on a</dt><dd>Thursday</dd><dt>Next birthday</dt><dd>Tue, Jun 15, 2027 (in 212 days)</dd><dt>You will turn</dt><dd>32</dd><dt>Korean age (traditional)</dt><dd>32</dd></dl></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How age is calculated</span></h2>
+        <p>Age is counted in completed calendar units, the way it is on passports and official forms.</p>
+<ol>
+<li>Count the whole years from the date of birth up to the last birthday.</li>
+<li>Count the whole months since that birthday.</li>
+<li>Count the days left over.</li>
+</ol>
+<p>Example: born 15 June 1995, age on 15 November 2026. The last birthday was 15 June 2026, which makes 31 years. From 15 June to 15 November is 5 whole months, with 0 days left over. The age is 31 years, 5 months and 0 days.</p>
+<p>Total days are counted exactly between the two dates, so leap days are included. Weeks, hours and minutes are derived from that total.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Leap years and month lengths</span></h2>
+      <div class="prose">
+        <p>Months have 28 to 31 days, so "one month" is not a fixed length. The calculator always moves by calendar month: one month after 31 January is the last day of February.</p>
+<p><b>Born on 29 February?</b> In years that are not leap years, your birthday is treated as 1 March for the countdown, which is the legal rule in the UK and several other places. Some jurisdictions use 28 February instead.</p>
+<p>A year is a leap year if it divides by 4, except century years, which must divide by 400. So 2000 and 2024 were leap years, 1900 was not, and 2100 will not be.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Different ways of counting age</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>International age:</b> you are 0 at birth and gain a year on each birthday. This is what the calculator shows and what almost every country uses officially.</li>
+<li><b>Korean traditional age:</b> you are 1 at birth and everyone gains a year on 1 January. South Korea moved to international age for official purposes in June 2023, but the traditional count is still used socially. The result shows it for reference.</li>
+<li><b>East Asian reckoning</b> in parts of China and Vietnam works in a similar way to the Korean traditional count, tied to the lunar new year.</li>
+<li><b>Age for school entry or sports</b> is often fixed on a cut-off date, such as 1 September or 31 December. Put that date in the second field to check eligibility.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">What people use an age calculator for</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Forms and applications</b> that ask for age in years and months, such as school admissions, visas and insurance.</li>
+<li><b>Eligibility checks:</b> minimum ages for driving, voting, pensions and competitions on a given date.</li>
+<li><b>Babies and children:</b> age in weeks and months for health checks and vaccination schedules.</li>
+<li><b>Milestones:</b> your 10,000th day comes at about 27 years and 4 months, and your billionth second at about 31 years and 8 months.</li>
+<li><b>Time between any two dates:</b> the calculator works for anniversaries, service length and project durations too.</li>
+</ul>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Age questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate my exact age?</summary><p>Count the full years since your date of birth, then the full months since your last birthday, then the remaining days. The calculator does this for any two dates.</p></details>
+        <details><summary>How do I calculate age from date of birth in days?</summary><p>Count every day between the date of birth and today, including leap days. The calculator shows this as "In days".</p></details>
+        <details><summary>How old will I be on a future date?</summary><p>Change the second date to the date you want. The age and next-birthday countdown update for that day.</p></details>
+        <details><summary>How is age calculated for someone born on 29 February?</summary><p>They gain a year on 29 February in leap years. In other years the birthday is treated as 1 March in many legal systems, including the UK, and as 28 February in some others.</p></details>
+        <details><summary>What is Korean age?</summary><p>In the traditional Korean system you are 1 at birth and add a year every 1 January. Since June 2023 South Korea uses international age for legal and official purposes.</p></details>
+        <details><summary>Does the calculator include the day of birth?</summary><p>It counts completed days, so the day of birth is day zero. A baby born yesterday is 1 day old today.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/bmi-calculator/"><b>BMI Calculator</b><span>BMI, category and healthy weight range, with WHO and Asian cut-offs.</span></a><a href="https://bingemind.com/calorie-calculator/"><b>Calorie Calculator</b><span>BMR, maintenance calories, goal targets and macros.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/retirement-calculator/"><b>Retirement Calculator</b><span>Savings at retirement, the nest egg you need and the monthly gap.</span></a><a href="https://bingemind.com/time-card-calculator/"><b>Time Card Calculator</b><span>Hours worked from clock-in and clock-out times.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Ages follow the calendar-date method. Rules for legal age, such as leap-day birthdays and the exact moment a person reaches an age, differ between countries. Your numbers stay in this browser.</p>
+      <p>Sources: Leap year rule: <a href="https://www.rmg.co.uk/stories/topics/which-years-are-leap-years-can-you-have-leap-seconds">Royal Museums Greenwich</a>. Korean age change: <a href="https://www.korea.net/NewsFocus/policies/view?articleId=234764">Korea.net</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Free Invoice Generator: PDF Invoice in Any Currency</title>
+<meta name="description" content="Make a professional invoice with VAT, GST or sales tax and save it as a PDF. No sign-up, no watermark, 58 currencies, details kept in your browser.">
+<link rel="canonical" href="https://bingemind.com/invoice-generator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Free Invoice Generator: PDF Invoice in Any Currency">
+<meta property="og:description" content="Make a professional invoice and save it as PDF, in any currency.">
+<meta property="og:url" content="https://bingemind.com/invoice-generator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Free Invoice Generator","url":"https://bingemind.com/invoice-generator/","inLanguage":"en","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Make a professional invoice with VAT, GST or sales tax and save it as a PDF. No sign-up, no watermark, 58 currencies, details kept in your browser."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Free Invoice Generator","item":"https://bingemind.com/invoice-generator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I make an invoice for free?","acceptedAnswer":{"@type":"Answer","text":"Fill in your details, the client and each item above, then press Save as PDF / Print and choose Save as PDF. There is no sign-up, watermark or limit."}},{"@type":"Question","name":"What should an invoice number look like?","acceptedAnswer":{"@type":"Answer","text":"Any unique, sequential format works, such as INV-0001, 2026-001 or a client prefix like ACME-012. Do not skip or reuse numbers."}},{"@type":"Question","name":"Do I need to charge VAT or GST?","acceptedAnswer":{"@type":"Answer","text":"Only if you are registered, which is usually required once your turnover passes a threshold, for example 90,000 pounds in the UK, 75,000 dollars in Australia or 30,000 dollars in Canada. If you are not registered, set the tax rate to 0."}},{"@type":"Question","name":"How do I save the invoice as a PDF?","acceptedAnswer":{"@type":"Answer","text":"Press Save as PDF / Print. In the print window, choose Save as PDF (or Microsoft Print to PDF on Windows) as the destination. Only the invoice prints, without the page around it."}},{"@type":"Question","name":"Can I use a different currency?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick the country in the page header and the currency, number format and default tax rate change to match. 58 countries and currencies are supported."}},{"@type":"Question","name":"What is the difference between an invoice and a receipt?","acceptedAnswer":{"@type":"Answer","text":"An invoice asks for payment. A receipt confirms payment has been received. Tick Mark as paid to add a PAID stamp, then save it again as your receipt."}},{"@type":"Question","name":"Can I add my logo?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose a PNG, JPG or WebP file. It is resized in your browser, shown at the top of the invoice and kept for your next invoice. It is never uploaded."}},{"@type":"Question","name":"Is my information stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"Only in your own browser, so the form is filled in when you come back. Nothing is sent to a server."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Free Invoice Generator</p>
+      <span class="eyebrow rise d1">No sign-up · 58 currencies · VAT, GST and sales tax</span>
+      <h1 class="lift"><span class="shine">Free Invoice Generator</span></h1>
+      <p class="lede lift">Type your business and client details and add the work you did. The invoice builds itself as you type, with tax for your country worked out. Save it as a PDF from the Print button.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No account or watermark</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Your logo on the invoice</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>VAT, GST or sales tax</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Save as PDF or CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it, you can write an invoice in any word processor: include your details, the client, an invoice number, the date, each item, tax and the total.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Invoice details</h2>
+        <p class="sub">The currency and tax rate follow the country in the page header. Everything saves in this browser as you type.</p>
+        <div class="fields">
+          <div class="field"><label for="logo">Logo <span class="hint">(optional, PNG or JPG, stays in your browser)</span></label><div class="logo-row"><input class="input" type="file" id="logo" accept="image/png,image/jpeg,image/webp"><button class="btn small" type="button" id="noLogo" hidden>Remove logo</button></div></div>
+          <div class="grid-2"><div class="field"><label for="from">From (your business)</label><textarea class="input" id="from" rows="4" maxlength="2000"></textarea></div><div class="field"><label for="to">Bill to (client)</label><textarea class="input" id="to" rows="4" maxlength="2000"></textarea></div></div>
+          <div class="grid-2"><div class="field"><label for="number">Invoice number</label><input class="input" id="number" type="text" maxlength="40"></div><div class="field"><label for="date">Invoice date</label><input class="input" id="date" type="date"></div></div>
+          <div class="field"><label for="due">Due date</label><input class="input" id="due" type="date"></div>
+          <div class="field"><span class="lbl">Items</span><div class="inv-row inv-hdr" aria-hidden="true"><span>Description</span><span>Qty</span><span>Unit price</span><span></span></div><div id="items" class="inv-items"></div>
+          <div class="mini-actions"><button class="btn" type="button" id="addItem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add item</button></div></div>
+          <div class="grid-2"><div class="field"><label for="taxName">Tax name</label><input class="input" id="taxName" type="text" maxlength="30"></div><div class="field"><label for="taxRate">Tax rate %</label><input class="input" id="taxRate" type="text" inputmode="decimal"></div></div>
+          <div class="grid-2"><div class="field"><label for="discount">Discount %</label><input class="input" id="discount" type="text" inputmode="decimal"></div><div class="field"><label for="shipping">Shipping or other charges</label><input class="input" id="shipping" type="text" inputmode="decimal"></div></div>
+          <div class="field"><label for="payment">Payment details</label><textarea class="input" id="payment" rows="2" maxlength="2000"></textarea></div>
+          <div class="field"><label for="notes">Notes or terms</label><textarea class="input" id="notes" rows="2" maxlength="2000"></textarea></div>
+        </div>
+        <div class="mini-actions"><label class="check"><input type="checkbox" id="paid"> Mark as paid</label><button class="btn small" type="button" id="newInv">Start next invoice</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div class="result-top no-print"><div><h2 id="resTitle">Total due</h2><div class="big" id="grand">—</div></div></div>
+        <article class="invoice" id="invoice" aria-label="Invoice preview"></article>
+        <div class="actions">
+          <button class="btn primary" type="button" id="printInv">Save as PDF / Print</button>
+          <button class="btn" type="button" id="csvInv">CSV</button>
+          <button class="btn" type="button" id="copyInv">Copy text</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to make and send an invoice</span></h2>
+        <ol>
+<li><b>Add your logo and details:</b> upload a logo if you have one, then your business name, address and contact. Add your tax number (VAT, GST, ABN or EIN) on a line here if you are registered.</li>
+<li><b>Add the client:</b> name, company and address.</li>
+<li><b>Check the number and dates.</b> Use a unique, sequential invoice number. "Start next invoice" adds one for you and keeps your business details.</li>
+<li><b>List each item</b> with quantity and unit price. Amounts and the subtotal are calculated for you.</li>
+<li><b>Tax:</b> the standard VAT or GST rate for your country is filled in. Change it to 0 if you are not registered, or to a reduced rate if one applies. In the US, enter the sales tax rate where the customer is, if you have to collect it.</li>
+<li><b>Save as PDF:</b> press "Save as PDF / Print" and choose "Save as PDF" as the printer. Only the invoice is printed.</li>
+</ol>
+<div class="formula">Line amount = quantity × unit price<br>Tax = (subtotal − discount) × tax rate<br>Total = subtotal − discount + tax + shipping</div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">What an invoice must include</span></h2>
+      <div class="prose">
+        <p>Rules differ by country, but a valid invoice almost always shows:</p>
+<ul>
+<li>The word "Invoice" and a unique, sequential invoice number</li>
+<li>Your name or business name, address and contact details</li>
+<li>The customer's name and address</li>
+<li>The invoice date and, for many tax systems, the date of supply</li>
+<li>A description, quantity and price for each item</li>
+<li>The total, and the tax charged with the rate</li>
+<li>Payment terms and how to pay</li>
+</ul>
+<h3>Extra requirements by country</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Country</th><th>If you are registered for tax, also show</th></tr></thead><tbody>
+<tr><td>United Kingdom</td><td>Your VAT number, the VAT rate and amount for each rate, and the total excluding VAT</td></tr>
+<tr><td>EU countries</td><td>Your VAT number, and the customer's VAT number for reverse-charge sales to businesses</td></tr>
+<tr><td>Australia</td><td>The words "Tax invoice", your ABN, and the GST amount (or that the price includes GST) for sales of 82.50 dollars or more</td></tr>
+<tr><td>New Zealand</td><td>Your GST number and the GST amount</td></tr>
+<tr><td>India</td><td>Your GSTIN, the customer's GSTIN for B2B, the HSN or SAC code and CGST/SGST or IGST split</td></tr>
+<tr><td>Canada</td><td>Your GST/HST registration number for sales of 30 dollars or more</td></tr>
+<tr><td>United States</td><td>No federal invoice rules; show sales tax separately if you collect it</td></tr>
+</tbody></table></div>
+<p>Add any extra fields, such as a tax number or purchase order number, as lines in the "From" or "Notes" boxes.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Getting paid on time</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Set clear terms.</b> "Due within 14 days" or "Net 30" with an actual due date works better than "upon receipt".</li>
+<li><b>Make paying easy.</b> Put full bank details or a payment link on the invoice.</li>
+<li><b>Invoice promptly,</b> as soon as the work is delivered.</li>
+<li><b>Know your rights on late payment.</b> In the UK, businesses can claim statutory interest of 8% above the Bank of England base rate plus a fixed fee. EU rules set a 30 to 60 day limit for business-to-business payment. Check the rules where you trade.</li>
+<li><b>Keep copies.</b> Most tax authorities expect you to keep invoices for 5 to 7 years. Save each PDF and the CSV in a folder.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Privacy</span></h2>
+      <div class="prose">
+        <p>The invoice is built in your browser. Nothing you type is uploaded, and there is no account. Your details are kept in this browser's local storage so they are filled in next time; clear your browser's site data to remove them.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Invoice questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I make an invoice for free?</summary><p>Fill in your details, the client and each item above, then press Save as PDF / Print and choose Save as PDF. There is no sign-up, watermark or limit.</p></details>
+        <details><summary>What should an invoice number look like?</summary><p>Any unique, sequential format works, such as INV-0001, 2026-001 or a client prefix like ACME-012. Do not skip or reuse numbers.</p></details>
+        <details><summary>Do I need to charge VAT or GST?</summary><p>Only if you are registered, which is usually required once your turnover passes a threshold, for example 90,000 pounds in the UK, 75,000 dollars in Australia or 30,000 dollars in Canada. If you are not registered, set the tax rate to 0.</p></details>
+        <details><summary>How do I save the invoice as a PDF?</summary><p>Press Save as PDF / Print. In the print window, choose Save as PDF (or Microsoft Print to PDF on Windows) as the destination. Only the invoice prints, without the page around it.</p></details>
+        <details><summary>Can I use a different currency?</summary><p>Yes. Pick the country in the page header and the currency, number format and default tax rate change to match. 58 countries and currencies are supported.</p></details>
+        <details><summary>What is the difference between an invoice and a receipt?</summary><p>An invoice asks for payment. A receipt confirms payment has been received. Tick Mark as paid to add a PAID stamp, then save it again as your receipt.</p></details>
+        <details><summary>Can I add my logo?</summary><p>Yes. Choose a PNG, JPG or WebP file. It is resized in your browser, shown at the top of the invoice and kept for your next invoice. It is never uploaded.</p></details>
+        <details><summary>Is my information stored anywhere?</summary><p>Only in your own browser, so the form is filled in when you come back. Nothing is sent to a server.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/sales-tax-calculator/"><b>Sales Tax and VAT Calculator</b><span>Add or remove sales tax, VAT or GST, with rates for 58 countries.</span></a><a href="https://bingemind.com/profit-margin-calculator/"><b>Profit Margin Calculator</b><span>Margin, markup, selling price, net profit and break-even units.</span></a><a href="https://bingemind.com/word-counter/"><b>Word Counter</b><span>Words, characters, reading time, keywords and platform limits.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/password-generator/"><b>Password Generator</b><span>Random passwords and passphrases with strength and crack time.</span></a><a href="https://bingemind.com/hourly-to-salary-calculator/"><b>Hourly to Salary Calculator</b><span>Convert an hourly wage to a yearly salary.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> This tool helps you lay out an invoice. It does not check that your invoice meets the tax rules in your country, so confirm the requirements with your tax authority or accountant. Your numbers stay in this browser.</p>
+      <p>Sources: UK invoice rules: <a href="https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include">GOV.UK</a>. Australia tax invoices: <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices">ATO</a>. EU invoicing: <a href="https://europa.eu/youreurope/business/taxation/vat/vat-invoicing-rules/index_en.htm">Your Europe</a>. Canada: <a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-documents.html">CRA</a>. India: <a href="https://cbic-gst.gov.in/">CBIC GST</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

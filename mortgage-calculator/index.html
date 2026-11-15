@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Mortgage Calculator With Taxes, Insurance and PMI</title>
+<meta name="description" content="Full monthly mortgage payment with property tax, insurance, PMI and HOA, an amortization schedule and extra payment savings. Works in 58 countries.">
+<link rel="canonical" href="https://bingemind.com/mortgage-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Mortgage Calculator With Taxes, Insurance and PMI">
+<meta property="og:description" content="Monthly payment with tax, insurance and PMI, plus amortization and extra payments.">
+<meta property="og:url" content="https://bingemind.com/mortgage-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Mortgage Calculator","url":"https://bingemind.com/mortgage-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Full monthly mortgage payment with property tax, insurance, PMI and HOA, an amortization schedule and extra payment savings. Works in 58 countries."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://bingemind.com/mortgage-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is a monthly mortgage payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Multiply the loan amount by the monthly rate, then divide by 1 minus (1 + monthly rate) to the power of minus the number of payments. A 300,000 loan at 6% for 30 years is 1,798.65 a month in principal and interest. Add property tax, insurance, PMI and HOA dues for the full payment."}},{"@type":"Question","name":"What is PMI and when does it stop?","acceptedAnswer":{"@type":"Answer","text":"Private mortgage insurance protects a US lender when you put down less than 20%. It usually costs 0.3% to 1.5% of the loan a year. On conventional loans it must stop automatically when your balance is scheduled to reach 78% of the original value, and you can ask to remove it at 80%."}},{"@type":"Question","name":"How much do extra payments save on a mortgage?","acceptedAnswer":{"@type":"Answer","text":"Extra payments reduce principal directly, so they cut the interest charged on that money for the rest of the loan. On a 320,000, 30-year loan at 6.3%, an extra 200 a month saves about 100,000 in interest and six and a half years."}},{"@type":"Question","name":"Why is my Canadian mortgage payment different from a US calculator?","acceptedAnswer":{"@type":"Answer","text":"Canadian fixed-rate mortgages compound semi-annually by law, so the monthly rate is (1 + rate ÷ 2) to the power of 1/6, minus 1. That gives a slightly lower payment than dividing the rate by 12. Choose Twice a year under Interest compounds."}},{"@type":"Question","name":"Should I choose a 15-year or 30-year mortgage?","acceptedAnswer":{"@type":"Answer","text":"A 15-year loan has a higher payment but usually a lower rate and far less total interest. A 30-year loan keeps the payment low and leaves room in your budget. Many people take the 30-year loan and make extra payments when they can."}},{"@type":"Question","name":"Does this calculator include closing costs?","acceptedAnswer":{"@type":"Answer","text":"No. Closing costs, stamp duty, land transfer tax and legal fees are paid once at purchase. Budget roughly 2% to 6% of the price on top of the down payment, depending on your country."}},{"@type":"Question","name":"Is the default interest rate a real quote?","acceptedAnswer":{"@type":"Answer","text":"No. The starting rate is a typical figure for your country in late 2026 so the example looks sensible. Replace it with the rate from your lender, because your credit, deposit and loan type change it."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Mortgage Calculator</p>
+      <span class="eyebrow rise d1">Home loans · 58 countries and currencies</span>
+      <h1 class="lift"><span class="shine">Mortgage Calculator</span></h1>
+      <p class="lede lift">Enter the price, down payment and rate. You get the full monthly payment, including property tax, insurance, mortgage insurance and HOA, plus a year-by-year schedule and what an extra payment each month saves you.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Taxes, insurance, PMI</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Extra payment savings</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Canada semi-annual rates</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Amortization CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: monthly payment = P × r ÷ (1 − (1 + r)^−n), where r is the yearly rate ÷ 12 and n is the number of months.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your mortgage</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="field" data-f="price"><label for="f-price">Home price</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="400000"></div></div><div class="grid-2"><div class="field" data-f="down"><label for="f-down">Down payment</label><div class="affix"><input class="input" id="f-down" inputmode="decimal" autocomplete="off" value="20"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="rate"><label for="f-rate">Interest rate</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="6.3"><span class="post" aria-hidden="true">% a year</span></div></div></div><div class="grid-2"><div class="field" data-f="term"><label for="f-term">Loan term</label><select class="input" id="f-term"><option value="5">5 years</option><option value="10">10 years</option><option value="15">15 years</option><option value="20">20 years</option><option value="25">25 years</option><option value="30" selected>30 years</option><option value="35">35 years</option><option value="40">40 years</option></select></div><div class="field" data-f="comp"><label for="f-comp">Interest compounds</label><select class="input" id="f-comp"><option value="12" selected>Monthly (most countries)</option><option value="2">Twice a year (Canada fixed)</option></select></div></div><details class="adv" open><summary>Taxes, insurance and extra payments</summary><div class="grid-2"><div class="field" data-f="tax"><label for="f-tax">Property tax <span class="hint">(of home price)</span></label><div class="affix"><input class="input" id="f-tax" inputmode="decimal" autocomplete="off" value="1"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="ins"><label for="f-ins">Home insurance <span class="hint">(a year)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-ins" inputmode="decimal" autocomplete="off" value="1800"></div></div></div><div class="grid-2"><div class="field" data-f="pmi"><label for="f-pmi">Mortgage insurance <span class="hint">(PMI below 20% down)</span></label><div class="affix"><input class="input" id="f-pmi" inputmode="decimal" autocomplete="off" value="0.5"><span class="post" aria-hidden="true">% a year</span></div></div><div class="field" data-f="hoa"><label for="f-hoa">HOA or service charge <span class="hint">(a month)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-hoa" inputmode="decimal" autocomplete="off" value="0"></div></div></div><div class="field" data-f="extra"><label for="f-extra">Extra payment each month <span class="hint">(optional)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-extra" inputmode="decimal" autocomplete="off" value="0"></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Monthly payment</h2><div class="big" id="big">$2,464.05</div></div><div class="hint">30-year loan at 6.3%</div></div><div class="stackbar" aria-hidden="true"><span style="width:80.38%;background:var(--reg)"></span><span style="width:13.53%;background:var(--gold)"></span><span style="width:6.09%;background:var(--ot)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Principal and interest</span><span class="v">$1,980.71</span><span class="s">80%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Property tax</span><span class="v">$333.33</span><span class="s">14%</span></li><li><span class="k"><i style="background:var(--ot)"></i>Home insurance</span><span class="v">$150.00</span><span class="s">6%</span></li></ul><dl class="kv"><dt>Loan amount</dt><dd>$320,000.00</dd><dt>Down payment</dt><dd>$80,000.00</dd><dt>Total interest</dt><dd class="strong">$393,057</dd><dt>Total of loan payments</dt><dd>$713,057</dd><dt>Loan paid off</dt><dd>Nov 2056</dd></dl><figure class="chart"><figcaption>Loan balance by year <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Loan balance by year"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="160.5" y2="160.5" class="gl"/><text x="56" y="164.5" text-anchor="end">100K</text><line x1="64" x2="628" y1="111.0" y2="111.0" class="gl"/><text x="56" y="115.0" text-anchor="end">200K</text><line x1="64" x2="628" y1="61.5" y2="61.5" class="gl"/><text x="56" y="65.5" text-anchor="end">300K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">400K</text><text x="64.0" y="232" text-anchor="middle">Yr 1</text><text x="161.2" y="232" text-anchor="middle">Yr 6</text><text x="258.5" y="232" text-anchor="middle">Yr 11</text><text x="355.7" y="232" text-anchor="middle">Yr 16</text><text x="453.0" y="232" text-anchor="middle">Yr 21</text><text x="550.2" y="232" text-anchor="middle">Yr 26</text><text x="628.0" y="232" text-anchor="middle">Yr 30</text><path d="M64,210 L64.0,53.4 L83.4,55.4 L102.9,57.5 L122.3,59.7 L141.8,62.1 L161.2,64.6 L180.7,67.3 L200.1,70.1 L219.6,73.2 L239.0,76.4 L258.5,79.8 L277.9,83.5 L297.4,87.4 L316.8,91.6 L336.3,96.0 L355.7,100.7 L375.2,105.8 L394.6,111.1 L414.1,116.8 L433.5,122.9 L453.0,129.3 L472.4,136.2 L491.9,143.5 L511.3,151.3 L530.8,159.6 L550.2,168.5 L569.7,177.9 L589.1,187.9 L608.6,198.6 L628.0,210.0 L628,210 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,53.4 83.4,55.4 102.9,57.5 122.3,59.7 141.8,62.1 161.2,64.6 180.7,67.3 200.1,70.1 219.6,73.2 239.0,76.4 258.5,79.8 277.9,83.5 297.4,87.4 316.8,91.6 336.3,96.0 355.7,100.7 375.2,105.8 394.6,111.1 414.1,116.8 433.5,122.9 453.0,129.3 472.4,136.2 491.9,143.5 511.3,151.3 530.8,159.6 550.2,168.5 569.7,177.9 589.1,187.9 608.6,198.6 628.0,210.0" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><polyline points="64.0,200.1 83.4,190.3 102.9,180.6 122.3,171.0 141.8,161.6 161.2,152.4 180.7,143.3 200.1,134.4 219.6,125.7 239.0,117.1 258.5,108.8 277.9,100.7 297.4,92.9 316.8,85.3 336.3,77.9 355.7,70.9 375.2,64.1 394.6,57.7 414.1,51.7 433.5,46.0 453.0,40.7 472.4,35.8 491.9,31.3 511.3,27.4 530.8,23.9 550.2,21.0 569.7,18.6 589.1,16.9 608.6,15.8 628.0,15.4" fill="none" stroke="var(--gold)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Loan balance</span><span class="v">$0</span><span class="s">at Yr 30</span></li><li><span class="k"><i style="background:var(--gold)"></i>Interest paid so far</span><span class="v">$393,057</span><span class="s">at Yr 30</span></li></ul></figure><details class="adv tbl-det"><summary>Yearly amortization schedule</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Year</th><th>Interest</th><th>Principal</th><th>Balance</th></tr></thead><tbody><tr><td>1</td><td>$20,054</td><td>$3,715</td><td>$316,285</td></tr><tr><td>2</td><td>$19,813</td><td>$3,955</td><td>$312,330</td></tr><tr><td>3</td><td>$19,557</td><td>$4,212</td><td>$308,118</td></tr><tr><td>4</td><td>$19,283</td><td>$4,485</td><td>$303,633</td></tr><tr><td>5</td><td>$18,993</td><td>$4,776</td><td>$298,857</td></tr><tr><td>6</td><td>$18,683</td><td>$5,086</td><td>$293,771</td></tr><tr><td>7</td><td>$18,353</td><td>$5,416</td><td>$288,355</td></tr><tr><td>8</td><td>$18,002</td><td>$5,767</td><td>$282,589</td></tr><tr><td>9</td><td>$17,628</td><td>$6,141</td><td>$276,448</td></tr><tr><td>10</td><td>$17,230</td><td>$6,539</td><td>$269,909</td></tr><tr><td>11</td><td>$16,805</td><td>$6,963</td><td>$262,946</td></tr><tr><td>12</td><td>$16,354</td><td>$7,415</td><td>$255,531</td></tr><tr><td>13</td><td>$15,873</td><td>$7,895</td><td>$247,636</td></tr><tr><td>14</td><td>$15,361</td><td>$8,408</td><td>$239,228</td></tr><tr><td>15</td><td>$14,816</td><td>$8,953</td><td>$230,275</td></tr><tr><td>16</td><td>$14,235</td><td>$9,533</td><td>$220,742</td></tr><tr><td>17</td><td>$13,617</td><td>$10,152</td><td>$210,590</td></tr><tr><td>18</td><td>$12,959</td><td>$10,810</td><td>$199,780</td></tr><tr><td>19</td><td>$12,258</td><td>$11,511</td><td>$188,269</td></tr><tr><td>20</td><td>$11,511</td><td>$12,258</td><td>$176,012</td></tr><tr><td>21</td><td>$10,716</td><td>$13,052</td><td>$162,959</td></tr><tr><td>22</td><td>$9,870</td><td>$13,899</td><td>$149,060</td></tr><tr><td>23</td><td>$8,968</td><td>$14,800</td><td>$134,260</td></tr><tr><td>24</td><td>$8,008</td><td>$15,760</td><td>$118,500</td></tr><tr><td>25</td><td>$6,986</td><td>$16,782</td><td>$101,718</td></tr><tr><td>26</td><td>$5,898</td><td>$17,870</td><td>$83,847</td></tr><tr><td>27</td><td>$4,739</td><td>$19,029</td><td>$64,818</td></tr><tr><td>28</td><td>$3,505</td><td>$20,263</td><td>$44,555</td></tr><tr><td>29</td><td>$2,191</td><td>$21,578</td><td>$22,977</td></tr><tr><td>30</td><td>$792</td><td>$22,977</td><td>$0</td></tr></tbody></table></div></details><p class="note">Tip: add an extra monthly payment above to see how much interest and time you save.</p></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How the mortgage payment is calculated</span></h2>
+        <p>Lenders use the standard amortization formula. Each month the same payment covers that month's interest first, and the rest reduces the balance. Early payments are mostly interest; late payments are mostly principal.</p>
+<div class="formula">Monthly principal and interest = P × r ÷ (1 − (1 + r)<sup>−n</sup>)<br>P = loan amount (price − down payment)<br>r = monthly rate = yearly rate ÷ 12<br>n = number of monthly payments (years × 12)</div>
+<p>Your real monthly cost is more than principal and interest. This calculator adds:</p>
+<ul>
+<li><b>Property tax</b>, entered as a yearly percentage of the price and divided by 12. In the US most lenders collect it through an escrow account.</li>
+<li><b>Home insurance</b>, the yearly premium divided by 12.</li>
+<li><b>Mortgage insurance (PMI)</b> when you put down less than 20% on a US conventional loan. It is charged on the loan amount and, by law, stops automatically when the balance reaches 78% of the original price. The calculator shows when that happens.</li>
+<li><b>HOA dues or service charges</b> for condos, townhouses and leasehold flats.</li>
+</ul>
+<h3>Canadian mortgages compound twice a year</h3>
+<p>In Canada, fixed-rate mortgages must state interest compounded semi-annually, not in advance. That makes the effective monthly rate slightly lower than the quoted rate divided by 12. Pick <b>Twice a year</b> under "Interest compounds" (it is chosen for you when your country is Canada). A 5% rate then works out to a monthly rate of 0.412%, not 0.417%.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">How much house the payment buys</span></h2>
+      <div class="prose">
+        <p>The table shows principal and interest only, per 100,000 borrowed, so you can scale it to any currency. Add tax and insurance on top.</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Rate</th><th>15 years</th><th>25 years</th><th>30 years</th></tr></thead><tbody>
+<tr><td>3%</td><td>690.58</td><td>474.21</td><td>421.60</td></tr>
+<tr><td>4%</td><td>739.69</td><td>527.84</td><td>477.42</td></tr>
+<tr><td>5%</td><td>790.79</td><td>584.59</td><td>536.82</td></tr>
+<tr><td>6%</td><td>843.86</td><td>644.30</td><td>599.55</td></tr>
+<tr><td>7%</td><td>898.83</td><td>706.78</td><td>665.30</td></tr>
+<tr><td>8%</td><td>955.65</td><td>771.82</td><td>733.76</td></tr>
+</tbody></table></div>
+<p>Example: a 300,000 loan at 6% for 30 years is 3 × 599.55 = 1,798.65 a month before tax and insurance.</p>
+<h3>Rules of thumb lenders use</h3>
+<ul>
+<li><b>US (28/36 rule):</b> housing costs up to 28% of gross monthly income and all debts up to 36%. Many lenders allow more with strong credit.</li>
+<li><b>UK:</b> lenders usually cap the loan at about 4.5 times household income and stress-test the payment at a higher rate.</li>
+<li><b>Canada:</b> you must qualify at the higher of 5.25% or your rate plus 2% (the minimum qualifying rate), with gross debt service around 39% and total debt service around 44%.</li>
+<li><b>Australia:</b> lenders test your payment at your rate plus a 3% serviceability buffer.</li>
+<li><b>India:</b> banks usually keep the EMI under 40% to 50% of net monthly income.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Extra payments: the fastest way to save</span></h2>
+      <div class="prose">
+        <p>Because interest is charged on the remaining balance, every extra amount you pay goes straight to principal and cuts all the interest that balance would have charged later. On a 30-year loan the effect is large.</p>
+<h3>Worked example</h3>
+<p>A 320,000 loan at 6.3% for 30 years costs 1,980.71 a month in principal and interest and about 393,000 in interest over the full term. Paying 200 extra a month clears it about six and a half years sooner and saves about 100,000 in interest. Enter the same numbers above and set the extra payment to see the exact figures for your loan.</p>
+<h3>Other ways to pay less interest</h3>
+<ul>
+<li><b>Biweekly payments:</b> paying half the monthly payment every two weeks adds up to 13 monthly payments a year. Enter one twelfth of your payment as an extra monthly amount to model it.</li>
+<li><b>Shorter term:</b> a 15-year loan usually has a lower rate and costs far less interest, but the payment is higher.</li>
+<li><b>Bigger down payment:</b> 20% down avoids PMI in the US and gets better rates in most countries.</li>
+<li><b>Lump sums:</b> many lenders let you prepay 10% to 20% a year without a penalty. Check your loan terms for early repayment charges first, especially in the UK and Canada.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Mortgage terms by country</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Country</th><th>Usual term</th><th>Typical rate type</th><th>What to watch</th></tr></thead><tbody>
+<tr><td>United States</td><td>30 years</td><td>Fixed for the whole term</td><td>PMI below 20% down, property tax escrow</td></tr>
+<tr><td>Canada</td><td>25-year amortization</td><td>5-year fixed term, renewed</td><td>Semi-annual compounding, stress test, CMHC insurance</td></tr>
+<tr><td>United Kingdom</td><td>25 to 35 years</td><td>2- or 5-year fixed, then variable</td><td>Stamp Duty, early repayment charges</td></tr>
+<tr><td>Australia</td><td>30 years</td><td>Variable or short fixed</td><td>Lenders Mortgage Insurance under 20% deposit, offset accounts</td></tr>
+<tr><td>Germany</td><td>Repay over 25 to 35 years</td><td>Fixed for 10 to 15 years</td><td>Prepayment limits, land transfer tax</td></tr>
+<tr><td>India</td><td>20 years</td><td>Floating, linked to the repo rate</td><td>No prepayment penalty on floating home loans for individuals</td></tr>
+</tbody></table></div>
+<p>Where the rate resets after a few years, enter today's rate to see the payment during the fixed period, then try a higher rate to see what renewal could cost.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: home price $400,000; down payment 20%; interest rate 6.3% a year; loan term 30 years; interest compounds Monthly (most countries); property tax 1% a year; home insurance $1,800; mortgage insurance 0.5% a year. Result: monthly payment <b>$2,464.05</b>; loan amount $320,000.00; down payment $80,000.00; total interest $393,057.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: home price £320,000; down payment 20%; interest rate 4.4% a year; loan term 25 years; interest compounds Monthly (most countries); property tax 0% a year; home insurance £1,400; mortgage insurance 0% a year. Result: monthly payment <b>£1,525.11</b>; loan amount £256,000.00; down payment £64,000.00; total interest £166,532.</p>
+<h3>Canada (CAD)</h3><p>Starting values typical for Canada: home price $550,000; down payment 20%; interest rate 4.4% a year; loan term 25 years; interest compounds Twice a year (Canada fixed); property tax 0.8% a year; home insurance $2,500; mortgage insurance 0% a year. Result: monthly payment <b>$2,985.88</b>; loan amount $440,000.00; down payment $110,000.00; total interest $283,264.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: home price ₹88,00,000; down payment 20%; interest rate 8.4% a year; loan term 20 years; interest compounds Monthly (most countries); property tax 0.1% a year; home insurance ₹40,000; mortgage insurance 0% a year. Result: monthly payment <b>₹64,716.58</b>; loan amount ₹70,40,000.00; down payment ₹17,60,000.00; total interest ₹75,15,980.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Mortgage questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How is a monthly mortgage payment calculated?</summary><p>Multiply the loan amount by the monthly rate, then divide by 1 minus (1 + monthly rate) to the power of minus the number of payments. A 300,000 loan at 6% for 30 years is 1,798.65 a month in principal and interest. Add property tax, insurance, PMI and HOA dues for the full payment.</p></details>
+        <details><summary>What is PMI and when does it stop?</summary><p>Private mortgage insurance protects a US lender when you put down less than 20%. It usually costs 0.3% to 1.5% of the loan a year. On conventional loans it must stop automatically when your balance is scheduled to reach 78% of the original value, and you can ask to remove it at 80%.</p></details>
+        <details><summary>How much do extra payments save on a mortgage?</summary><p>Extra payments reduce principal directly, so they cut the interest charged on that money for the rest of the loan. On a 320,000, 30-year loan at 6.3%, an extra 200 a month saves about 100,000 in interest and six and a half years.</p></details>
+        <details><summary>Why is my Canadian mortgage payment different from a US calculator?</summary><p>Canadian fixed-rate mortgages compound semi-annually by law, so the monthly rate is (1 + rate ÷ 2) to the power of 1/6, minus 1. That gives a slightly lower payment than dividing the rate by 12. Choose Twice a year under Interest compounds.</p></details>
+        <details><summary>Should I choose a 15-year or 30-year mortgage?</summary><p>A 15-year loan has a higher payment but usually a lower rate and far less total interest. A 30-year loan keeps the payment low and leaves room in your budget. Many people take the 30-year loan and make extra payments when they can.</p></details>
+        <details><summary>Does this calculator include closing costs?</summary><p>No. Closing costs, stamp duty, land transfer tax and legal fees are paid once at purchase. Budget roughly 2% to 6% of the price on top of the down payment, depending on your country.</p></details>
+        <details><summary>Is the default interest rate a real quote?</summary><p>No. The starting rate is a typical figure for your country in late 2026 so the example looks sensible. Replace it with the rate from your lender, because your credit, deposit and loan type change it.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/home-affordability-calculator/"><b>Home Affordability Calculator</b><span>The home price, loan and payment your income supports.</span></a><a href="https://bingemind.com/refinance-calculator/"><b>Refinance Calculator</b><span>Monthly saving, break-even month and lifetime cost of refinancing.</span></a><a href="https://bingemind.com/rent-vs-buy-calculator/"><b>Rent vs Buy Calculator</b><span>Compare wealth from buying with renting and investing, year by year.</span></a><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/compound-interest-calculator/"><b>Compound Interest Calculator</b><span>Future value with monthly deposits, inflation and a growth chart.</span></a><a href="https://bingemind.com/solar-panel-calculator/"><b>Solar Panel Calculator</b><span>System size, panels, cost, savings and payback from your bill.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Payments use the standard amortization formula and are rounded to the cent. Your lender’s figures may differ because of fees, the exact first payment date, rate changes and local rules. Check your loan estimate before you commit. Your numbers stay in this browser.</p>
+      <p>Sources: PMI cancellation rules: <a href="https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/">CFPB</a>. Canadian compounding: <a href="https://laws-lois.justice.gc.ca/eng/acts/I-15/page-1.html">Interest Act, section 6</a>. Canadian stress test: <a href="https://www.osfi-bsif.gc.ca/en/supervision/financial-institutions/banks/minimum-qualifying-rate-uninsured-mortgages">OSFI minimum qualifying rate</a>. UK affordability: <a href="https://www.fca.org.uk/firms/mortgages-home-finance">FCA mortgage rules</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

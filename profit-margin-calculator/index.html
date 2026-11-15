@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Profit Margin Calculator: Margin, Markup and Price</title>
+<meta name="description" content="Find margin and markup from cost and price, or the price for a target margin. Includes discounts, fixed costs, net profit and break-even units.">
+<link rel="canonical" href="https://bingemind.com/profit-margin-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Profit Margin Calculator: Margin, Markup and Price">
+<meta property="og:description" content="Margin, markup, selling price, net profit and break-even units.">
+<meta property="og:url" content="https://bingemind.com/profit-margin-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Profit Margin Calculator","url":"https://bingemind.com/profit-margin-calculator/","inLanguage":"en","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Find margin and markup from cost and price, or the price for a target margin. Includes discounts, fixed costs, net profit and break-even units."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Profit Margin Calculator","item":"https://bingemind.com/profit-margin-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate profit margin?","acceptedAnswer":{"@type":"Answer","text":"Subtract cost from the selling price, divide by the selling price and multiply by 100. An item that costs 60 and sells for 100 has a 40% margin."}},{"@type":"Question","name":"What is the difference between margin and markup?","acceptedAnswer":{"@type":"Answer","text":"Both use the same profit, but margin divides it by the selling price and markup divides it by the cost. A 50% markup equals a 33.3% margin, and a 50% margin equals a 100% markup."}},{"@type":"Question","name":"How do I price a product for a 30% margin?","acceptedAnswer":{"@type":"Answer","text":"Divide the cost by 0.70. An item costing 35 needs a price of 50 to give a 30% margin. Adding 30% to the cost would give only a 23.1% margin."}},{"@type":"Question","name":"What is a good profit margin?","acceptedAnswer":{"@type":"Answer","text":"It depends on the industry. A net margin around 10% is often described as healthy, 20% as high and 5% as low, but supermarkets run on 1% to 3% and software firms much more."}},{"@type":"Question","name":"How do I calculate break-even units?","acceptedAnswer":{"@type":"Answer","text":"Divide your fixed costs by the profit on each item. With 2,000 of monthly fixed costs and 40 profit per item, break-even is 50 items a month."}},{"@type":"Question","name":"Should I include VAT or sales tax in the price?","acceptedAnswer":{"@type":"Answer","text":"No. Calculate margin on the price before tax, since the tax is passed on to the government."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Profit Margin Calculator</p>
+      <span class="eyebrow rise d1">Pricing for shops, freelancers and online sellers</span>
+      <h1 class="lift"><span class="shine">Profit Margin Calculator</span></h1>
+      <p class="lede lift">Enter what an item costs you and what you sell it for, or the margin you want. You get margin and markup side by side, the selling price, and with your sales volume and overheads, net profit and break-even.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Margin and markup together</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Price from a target margin</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Discount impact</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Break-even units</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: margin = (price − cost) ÷ price × 100. Markup = (price − cost) ÷ cost × 100.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your product</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="field" data-f="mode"><label for="f-mode">I know</label><select class="input" id="f-mode"><option value="price" selected>Cost and selling price</option><option value="margin">Cost and the margin I want</option><option value="markup">Cost and the markup I want</option></select></div><div class="field" data-f="cost"><label for="f-cost">Cost per item</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-cost" inputmode="decimal" autocomplete="off" value="60"></div></div><div class="field" data-f="price"><label for="f-price">Selling price</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="100"></div></div><div class="field" data-f="margin" hidden><label for="f-margin">Target margin</label><div class="affix"><input class="input" id="f-margin" inputmode="decimal" autocomplete="off" value="40"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="markup" hidden><label for="f-markup">Target markup</label><div class="affix"><input class="input" id="f-markup" inputmode="decimal" autocomplete="off" value="50"><span class="post" aria-hidden="true">%</span></div></div><details class="adv" open><summary>Volume and overheads</summary><div class="grid-2"><div class="field" data-f="qty"><label for="f-qty">Units sold <span class="hint">(per month)</span></label><input class="input" id="f-qty" inputmode="decimal" autocomplete="off" value="100"></div><div class="field" data-f="fixed"><label for="f-fixed">Fixed costs <span class="hint">(per month)</span></label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-fixed" inputmode="decimal" autocomplete="off" value="2000"></div></div></div><div class="field" data-f="disc"><label for="f-disc">Discount given</label><div class="affix"><input class="input" id="f-disc" inputmode="decimal" autocomplete="off" value="0"><span class="post" aria-hidden="true">%</span></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Profit margin</h2><div class="big" id="big">40%</div></div><div class="hint">markup 66.7%</div></div><div class="stackbar" aria-hidden="true"><span style="width:60.00%;background:var(--reg)"></span><span style="width:40.00%;background:var(--gold)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Cost</span><span class="v">$60.00</span><span class="s">60%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Profit</span><span class="v">$40.00</span><span class="s">40%</span></li></ul><dl class="kv"><dt>Selling price after discount</dt><dd>$100.00</dd><dt>Profit per item</dt><dd class="strong">$40.00</dd><dt>Margin (profit ÷ price)</dt><dd>40%</dd><dt>Markup (profit ÷ cost)</dt><dd>66.67%</dd><dt>Revenue</dt><dd>$10,000</dd><dt>Gross profit</dt><dd>$4,000</dd><dt>Net profit after fixed costs</dt><dd class="strong">$2,000</dd><dt>Net margin</dt><dd>20%</dd><dt>Break-even units</dt><dd>50</dd></dl><details class="adv tbl-det" open><summary>Margin to markup, with the price for your cost</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Margin</th><th>Markup</th><th>Selling price</th></tr></thead><tbody><tr><td>10%</td><td>11.11%</td><td>$66.67</td></tr><tr><td>20%</td><td>25%</td><td>$75.00</td></tr><tr><td>25%</td><td>33.33%</td><td>$80.00</td></tr><tr><td>30%</td><td>42.86%</td><td>$85.71</td></tr><tr><td>40%</td><td>66.67%</td><td>$100.00</td></tr><tr><td>50%</td><td>100%</td><td>$120.00</td></tr><tr><td>60%</td><td>150%</td><td>$150.00</td></tr><tr><td>75%</td><td>300%</td><td>$240.00</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">Margin and markup formulas</span></h2>
+        <div class="formula">Profit = selling price − cost<br>Margin = profit ÷ selling price × 100<br>Markup = profit ÷ cost × 100<br>Price for a target margin = cost ÷ (1 − margin ÷ 100)<br>Price for a target markup = cost × (1 + markup ÷ 100)</div>
+<p>Example: an item costs 60 and sells for 100. Profit is 40. Margin is 40 ÷ 100 = 40%. Markup is 40 ÷ 60 = 66.7%.</p>
+<h3>The mistake that costs sellers money</h3>
+<p>Margin and markup are not interchangeable. If you want a 40% margin and add 40% to your cost, you price the item at 84 and earn a margin of only 28.6%. To get a 40% margin you need a 66.7% markup. The table in the result converts between the two for your own cost.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Margin to markup conversion</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Margin</th><th>Markup</th><th>Multiply cost by</th></tr></thead><tbody>
+<tr><td>10%</td><td>11.1%</td><td>1.111</td></tr>
+<tr><td>20%</td><td>25%</td><td>1.25</td></tr>
+<tr><td>25%</td><td>33.3%</td><td>1.333</td></tr>
+<tr><td>30%</td><td>42.9%</td><td>1.429</td></tr>
+<tr><td>40%</td><td>66.7%</td><td>1.667</td></tr>
+<tr><td>50%</td><td>100%</td><td>2</td></tr>
+<tr><td>60%</td><td>150%</td><td>2.5</td></tr>
+<tr><td>75%</td><td>300%</td><td>4</td></tr>
+</tbody></table></div>
+<div class="formula">Markup = margin ÷ (100 − margin) × 100<br>Margin = markup ÷ (100 + markup) × 100</div>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Gross margin, net margin and break-even</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Gross margin</b> covers only the direct cost of the item: materials, stock, packaging, payment and marketplace fees, shipping you pay.</li>
+<li><b>Net margin</b> also subtracts overheads such as rent, salaries, software and advertising. Enter them as fixed costs to see it.</li>
+<li><b>Break-even units</b> = fixed costs ÷ profit per item. With 2,000 of fixed costs and 40 profit per item, you need to sell 50 items a month before you earn anything.</li>
+</ul>
+<h3>What discounts really cost</h3>
+<p>A discount comes straight out of profit, not out of cost. On an item with a 40% margin, a 10% discount cuts profit per item by a quarter, so you need to sell a third more units to make the same money. A 20% discount halves the profit and you need to sell twice as many. Enter a discount above to see the effect on your product.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Typical margins by type of business</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Business</th><th>Typical gross margin</th><th>Typical net margin</th></tr></thead><tbody>
+<tr><td>Grocery and supermarkets</td><td>20% to 30%</td><td>1% to 3%</td></tr>
+<tr><td>Restaurants</td><td>60% to 70% on food</td><td>3% to 9%</td></tr>
+<tr><td>Clothing retail</td><td>45% to 60%</td><td>4% to 13%</td></tr>
+<tr><td>Online retail</td><td>30% to 50%</td><td>5% to 10%</td></tr>
+<tr><td>Software and SaaS</td><td>70% to 85%</td><td>10% to 25%</td></tr>
+<tr><td>Consulting and agencies</td><td>40% to 60%</td><td>10% to 20%</td></tr>
+</tbody></table></div>
+<p>These are broad ranges that vary by country and year. Use them as a sense check, and compare yourself with direct competitors where you can.</p>
+<h3>Remember sales tax and VAT</h3>
+<p>Work out margin on prices <b>before</b> VAT, GST or sales tax, because that tax is collected for the government and is not your revenue. Use the <a href="https://bingemind.com/sales-tax-calculator/">sales tax and VAT calculator</a> to strip tax from a shelf price first.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: i know Cost and selling price; cost per item $60.00; selling price $100; units sold 100; fixed costs $2,000; discount given 0%. Result: profit margin <b>40%</b>; selling price after discount $100.00; profit per item $40.00; margin (profit ÷ price) 40%.</p>
+<h3>Germany (EUR)</h3><p>Starting values typical for Germany: i know Cost and selling price; cost per item 55,00 €; selling price 92,00 €; units sold 100; fixed costs 1.800 €; discount given 0%. Result: profit margin <b>40,22%</b>; selling price after discount 92,00 €; profit per item 37,00 €; margin (profit ÷ price) 40,22%.</p>
+<h3>India (INR)</h3><p>Starting values typical for India: i know Cost and selling price; cost per item ₹1,300; selling price ₹2,200; units sold 100; fixed costs ₹44,000; discount given 0%. Result: profit margin <b>40.91%</b>; selling price after discount ₹2,200.00; profit per item ₹900.00; margin (profit ÷ price) 40.91%.</p>
+<h3>Brazil (BRL)</h3><p>Starting values typical for Brazil: i know Cost and selling price; cost per item R$ 160; selling price R$ 270; units sold 100; fixed costs R$ 5.400; discount given 0%. Result: profit margin <b>40,74%</b>; selling price after discount R$ 270,00; profit per item R$ 110,00; margin (profit ÷ price) 40,74%.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Margin and markup questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate profit margin?</summary><p>Subtract cost from the selling price, divide by the selling price and multiply by 100. An item that costs 60 and sells for 100 has a 40% margin.</p></details>
+        <details><summary>What is the difference between margin and markup?</summary><p>Both use the same profit, but margin divides it by the selling price and markup divides it by the cost. A 50% markup equals a 33.3% margin, and a 50% margin equals a 100% markup.</p></details>
+        <details><summary>How do I price a product for a 30% margin?</summary><p>Divide the cost by 0.70. An item costing 35 needs a price of 50 to give a 30% margin. Adding 30% to the cost would give only a 23.1% margin.</p></details>
+        <details><summary>What is a good profit margin?</summary><p>It depends on the industry. A net margin around 10% is often described as healthy, 20% as high and 5% as low, but supermarkets run on 1% to 3% and software firms much more.</p></details>
+        <details><summary>How do I calculate break-even units?</summary><p>Divide your fixed costs by the profit on each item. With 2,000 of monthly fixed costs and 40 profit per item, break-even is 50 items a month.</p></details>
+        <details><summary>Should I include VAT or sales tax in the price?</summary><p>No. Calculate margin on the price before tax, since the tax is passed on to the government.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/sales-tax-calculator/"><b>Sales Tax and VAT Calculator</b><span>Add or remove sales tax, VAT or GST, with rates for 58 countries.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/invoice-generator/"><b>Free Invoice Generator</b><span>Make a professional invoice and save it as PDF, in any currency.</span></a><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/hourly-to-salary-calculator/"><b>Hourly to Salary Calculator</b><span>Convert an hourly wage to a yearly salary.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Results depend on the costs you enter. Include every direct cost, such as fees, shipping and packaging, for a true margin. Industry ranges are general guidance only. Your numbers stay in this browser.</p>
+      <p>Sources: Pricing and break-even: <a href="https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs">US Small Business Administration</a> and <a href="https://business.gov.au/finance/financial-tools-and-templates/break-even-analysis">business.gov.au break-even analysis</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

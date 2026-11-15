@@ -1,3 +1,4 @@
+// Shared file: identical copy in every calculator folder. The master is tools-build/shared/region.js in the MicroTools project; edit it there and re-run tools/build_bingemind.py.
 // Region: country, currency, number format and default units. No network, no dependencies.
 // Every tool imports this through kit.js, so money() and number parsing follow the visitor's country.
 

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Word Counter: Words, Characters and Reading Time</title>
+<meta name="description" content="Count words, characters, sentences and paragraphs in any language, including Chinese and Japanese. Reading time, keywords and platform limits.">
+<link rel="canonical" href="https://bingemind.com/word-counter/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Word Counter: Words, Characters and Reading Time">
+<meta property="og:description" content="Words, characters, reading time, keywords and platform limits.">
+<meta property="og:url" content="https://bingemind.com/word-counter/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Word Counter","url":"https://bingemind.com/word-counter/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Count words, characters, sentences and paragraphs in any language, including Chinese and Japanese. Reading time, keywords and platform limits."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Word Counter","item":"https://bingemind.com/word-counter/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I count words in my text?","acceptedAnswer":{"@type":"Answer","text":"Paste or type the text into the box. The word count updates instantly, along with characters, sentences, paragraphs and reading time."}},{"@type":"Question","name":"Do spaces count as characters?","acceptedAnswer":{"@type":"Answer","text":"Yes, in most limits, including X posts, SMS and UCAS statements. The counter shows characters both with and without spaces."}},{"@type":"Question","name":"How long does it take to read 1,000 words?","acceptedAnswer":{"@type":"Answer","text":"About 4 minutes at an average silent reading speed of 238 words a minute, and about 7 minutes to say out loud at 150 words a minute."}},{"@type":"Question","name":"How many words is a 5-minute speech?","acceptedAnswer":{"@type":"Answer","text":"About 650 to 750 words at a natural speaking pace of 130 to 150 words a minute."}},{"@type":"Question","name":"Does the word counter work for Chinese and Japanese?","acceptedAnswer":{"@type":"Answer","text":"Yes. It uses your browser’s language-aware word segmentation, so text without spaces between words is counted properly."}},{"@type":"Question","name":"Are hyphenated words counted as one word?","acceptedAnswer":{"@type":"Answer","text":"Yes. \"Well-known\" and \"e-mail\" count as one word each, which matches how Microsoft Word and Google Docs count."}},{"@type":"Question","name":"Is my text stored or uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Counting happens in your browser. The text is only kept in your own browser’s storage until you clear it."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Word Counter</p>
+      <span class="eyebrow rise d1">Any language · nothing uploaded</span>
+      <h1 class="lift"><span class="shine">Word Counter</span></h1>
+      <p class="lede lift">Type or paste your text. Words, characters, sentences, reading time and the most used keywords update as you write, and a table shows how much room you have left on X, in an SEO title, on LinkedIn or in an essay.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Works in every language</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Reading and speaking time</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Keyword density</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Text never leaves your device</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it, most word processors show a word count in their status bar or Tools menu.</p></noscript>
+    <div class="tool" id="calc">
+      <div class="card lift">
+        <h2><label for="text">Your text</label></h2>
+        <p class="sub">Counts update as you type. Your text is saved in this browser only.</p>
+        <textarea class="input wc-area" id="text" rows="14" spellcheck="true" placeholder="Start typing or paste your text here…"></textarea>
+        <div class="mini-actions wc-tools">
+          <button class="btn small" type="button" id="caseSent">Sentence case</button>
+          <button class="btn small" type="button" id="caseTitle">Title Case</button>
+          <button class="btn small" type="button" id="caseUp">UPPERCASE</button>
+          <button class="btn small" type="button" id="caseLow">lowercase</button>
+          <button class="btn small" type="button" id="trim">Remove extra spaces</button>
+          <button class="btn small" type="button" id="clear">Clear</button>
+        </div>
+      </div>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div class="result-top"><div><h2 id="resTitle">Words</h2><div class="big" id="words">0</div></div><div class="hint" aria-live="polite">Reading time <b id="read">0 sec</b></div></div>
+        <ul class="legend wc-stats">
+          <li><span class="k">Characters</span><span class="v" id="chars">0</span></li><li><span class="k">Characters without spaces</span><span class="v" id="noSpace">0</span></li><li><span class="k">Sentences</span><span class="v" id="sentences">0</span></li><li><span class="k">Paragraphs</span><span class="v" id="paragraphs">0</span></li><li><span class="k">Unique words</span><span class="v" id="unique">0</span></li><li><span class="k">Speaking time</span><span class="v" id="speak">0 sec</span></li><li><span class="k">Average word length</span><span class="v" id="avgWord">0 letters</span></li><li><span class="k">Average sentence length</span><span class="v" id="avgSent">0 words</span></li><li><span class="k">Reading ease (Flesch)</span><span class="v" id="flesch">—</span></li>
+        </ul>
+        <details class="adv tbl-det" open><summary>Top keywords</summary><ul class="legend" id="top"></ul></details>
+        <details class="adv tbl-det"><summary>Room left on common limits</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Where</th><th>Limit</th><th>You have</th></tr></thead><tbody id="limits"></tbody></table></div></details>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyStats">Copy counts</button>
+          <button class="btn" type="button" id="copyText">Copy text</button>
+          <button class="btn" type="button" id="saveTxt">Save as .txt</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How words and characters are counted</span></h2>
+        <ul>
+<li><b>Words</b> are runs of letters or numbers. "Don't", "e-mail" and "2026" each count as one word. For languages written without spaces, such as Chinese, Japanese and Thai, the counter uses your browser's built-in language rules to find word boundaries.</li>
+<li><b>Characters</b> include letters, numbers, spaces, punctuation and line breaks. Emoji count as one character each.</li>
+<li><b>Sentences</b> end with a full stop, question mark or exclamation mark (including the Chinese and Japanese forms).</li>
+<li><b>Paragraphs</b> are blocks of text separated by a blank line.</li>
+<li><b>Reading time</b> uses 238 words a minute, the average silent reading speed for adults reading English non-fiction. <b>Speaking time</b> uses 150 words a minute, a comfortable presentation pace. For Chinese and Japanese, times are based on characters.</li>
+<li><b>Keyword density</b> = times a word appears ÷ total words × 100. Common words such as "the" and "and" are left out.</li>
+</ul>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Word counts for common types of writing</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Type of writing</th><th>Typical length</th></tr></thead><tbody>
+<tr><td>Tweet / X post</td><td>Up to 280 characters</td></tr>
+<tr><td>Meta description (SEO)</td><td>About 150 to 160 characters</td></tr>
+<tr><td>Title tag (SEO)</td><td>About 50 to 60 characters</td></tr>
+<tr><td>Short story</td><td>1,000 to 7,500 words</td></tr>
+<tr><td>Blog post</td><td>1,000 to 2,500 words</td></tr>
+<tr><td>Common App college essay</td><td>250 to 650 words</td></tr>
+<tr><td>UCAS personal statement</td><td>Up to 4,000 characters</td></tr>
+<tr><td>Cover letter</td><td>250 to 400 words</td></tr>
+<tr><td>Undergraduate dissertation</td><td>8,000 to 12,000 words</td></tr>
+<tr><td>Novel</td><td>70,000 to 100,000 words</td></tr>
+</tbody></table></div>
+<h3>How many pages is that?</h3>
+<p>At 12-point font with single spacing, a page holds about 500 words. Double-spaced, about 250. So 1,000 words is roughly 2 single-spaced or 4 double-spaced pages.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Writing within a limit</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Cut filler words:</b> "very", "really", "just", "actually", "in order to" (use "to"), "due to the fact that" (use "because").</li>
+<li><b>Prefer active verbs:</b> "We decided" is shorter and clearer than "A decision was made by us".</li>
+<li><b>One idea per sentence.</b> If the average sentence length shown above is over 25 words, splitting a few long sentences helps readers.</li>
+<li><b>Watch repeated keywords.</b> In web writing, a keyword density above about 2% to 3% can read as repetitive. Write for people first.</li>
+<li><b>Reading ease:</b> a Flesch score of 60 to 70 suits most audiences. Shorter words and sentences raise it.</li>
+</ul>
+<h3>Characters versus words</h3>
+<p>Social networks, SMS and SEO tags limit characters, because they display text in a fixed space. Schools, publishers and application forms usually limit words. Some, such as UCAS, count characters including spaces, so check which one applies.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Privacy</span></h2>
+      <div class="prose">
+        <p>Your text is counted inside your browser. It is not uploaded, logged or sent anywhere. The last text you typed is kept in this browser's local storage so it is still there if you reload the page; press Clear to remove it.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Word count questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I count words in my text?</summary><p>Paste or type the text into the box. The word count updates instantly, along with characters, sentences, paragraphs and reading time.</p></details>
+        <details><summary>Do spaces count as characters?</summary><p>Yes, in most limits, including X posts, SMS and UCAS statements. The counter shows characters both with and without spaces.</p></details>
+        <details><summary>How long does it take to read 1,000 words?</summary><p>About 4 minutes at an average silent reading speed of 238 words a minute, and about 7 minutes to say out loud at 150 words a minute.</p></details>
+        <details><summary>How many words is a 5-minute speech?</summary><p>About 650 to 750 words at a natural speaking pace of 130 to 150 words a minute.</p></details>
+        <details><summary>Does the word counter work for Chinese and Japanese?</summary><p>Yes. It uses your browser’s language-aware word segmentation, so text without spaces between words is counted properly.</p></details>
+        <details><summary>Are hyphenated words counted as one word?</summary><p>Yes. "Well-known" and "e-mail" count as one word each, which matches how Microsoft Word and Google Docs count.</p></details>
+        <details><summary>Is my text stored or uploaded?</summary><p>No. Counting happens in your browser. The text is only kept in your own browser’s storage until you clear it.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/password-generator/"><b>Password Generator</b><span>Random passwords and passphrases with strength and crack time.</span></a><a href="https://bingemind.com/invoice-generator/"><b>Free Invoice Generator</b><span>Make a professional invoice and save it as PDF, in any currency.</span></a><a href="https://bingemind.com/age-calculator/"><b>Age Calculator</b><span>Exact age in years, months and days, with next-birthday countdown.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Different programs count edge cases, such as URLs, numbers with commas and some punctuation, slightly differently. Reading speed is an average and varies by reader and text. Your numbers stay in this browser.</p>
+      <p>Sources: Average reading speed: <a href="https://doi.org/10.1016/j.jml.2019.104047">Brysbaert, Journal of Memory and Language, 2019</a>. Readability formula: Flesch, “A new readability yardstick”, Journal of Applied Psychology, 1948. X character limit: <a href="https://help.x.com/en/using-x/how-to-post">X Help Center</a>. UCAS limit: <a href="https://www.ucas.com/undergraduate/applying-to-university/writing-personal-statement">UCAS</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

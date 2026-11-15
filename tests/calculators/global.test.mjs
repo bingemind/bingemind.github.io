@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calculateGlobal, modeFor } from '../../take-home-pay-calculator/global.js';
-import { parseNum } from '../../overtime-calculator/region.js';
+import { parseNum } from '../../mortgage-calculator/region.js';
 import { calculate, RULES } from '../../overtime-calculator/engine.js';
 
 const g = (o) => calculateGlobal({ frequency: 'annual', pensionPct: 0, ...o });

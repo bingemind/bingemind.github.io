@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Auto Loan Calculator: Car Payment With Tax and Trade-In</title>
+<meta name="description" content="Work out your car payment with sales tax, fees, down payment and trade-in. Compare 36 to 84 month loans and see total interest. Free, any currency.">
+<link rel="canonical" href="https://bingemind.com/auto-loan-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Auto Loan Calculator: Car Payment With Tax and Trade-In">
+<meta property="og:description" content="Car payment with tax, fees and trade-in, plus a term comparison.">
+<meta property="og:url" content="https://bingemind.com/auto-loan-calculator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./calc.js"><link rel="modulepreload" href="./render.js"><link rel="modulepreload" href="./geo.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Auto Loan Calculator","url":"https://bingemind.com/auto-loan-calculator/","inLanguage":"en","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Work out your car payment with sales tax, fees, down payment and trade-in. Compare 36 to 84 month loans and see total interest. Free, any currency."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Auto Loan Calculator","item":"https://bingemind.com/auto-loan-calculator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate a monthly car payment?","acceptedAnswer":{"@type":"Answer","text":"Subtract your down payment and trade-in from the price, add tax and fees if you finance them, then apply the loan formula with the APR divided by 12 and the number of months. 33,050 financed at 7.8% for 60 months is 666.98 a month."}},{"@type":"Question","name":"Is a 72 or 84 month car loan a bad idea?","acceptedAnswer":{"@type":"Answer","text":"It lowers the payment but costs much more interest, and you are likely to owe more than the car is worth for several years. If you need 84 months to afford the payment, a cheaper car is usually the safer choice."}},{"@type":"Question","name":"How much should I put down on a car?","acceptedAnswer":{"@type":"Answer","text":"Aim for at least 20% on a new car and 10% on a used one. That offsets first-year depreciation, so you do not owe more than the car is worth."}},{"@type":"Question","name":"Is sales tax charged before or after the trade-in?","acceptedAnswer":{"@type":"Answer","text":"In most US states the trade-in value is subtracted before sales tax is calculated. California, Hawaii, Maryland and Virginia are among the states that tax the full price, so check your state."}},{"@type":"Question","name":"What is negative equity?","acceptedAnswer":{"@type":"Answer","text":"It means you owe more on your loan than the car is worth. When you trade the car in, that shortfall is added to your next loan. Enter it as the amount still owed on the trade-in."}},{"@type":"Question","name":"Should I finance through the dealer or my bank?","acceptedAnswer":{"@type":"Answer","text":"Compare both. Get a pre-approval from a bank or credit union first, then ask the dealer to beat that APR. Compare the APR and the total cost, not just the monthly payment."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Auto Loan Calculator</p>
+      <span class="eyebrow rise d1">Car finance · new and used · any currency</span>
+      <h1 class="lift"><span class="shine">Auto Loan Calculator</span></h1>
+      <p class="lede lift">Enter the price, your down payment and trade-in. You get the monthly payment with tax and fees included, the total interest, and a side-by-side comparison of loan lengths so you can pick the cheapest one you can afford.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sales tax and fees</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Trade-in and negative equity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Compare 36 to 84 months</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Schedule as CSV</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it: payment = amount financed × r ÷ (1 − (1 + r)^−n), with r the APR ÷ 12.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your car loan</h2>
+        <p class="sub">Results update as you type. The example uses typical figures for your country, so replace them with your own.</p>
+        <div class="fields"><div class="field" data-f="price"><label for="f-price">Vehicle price</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-price" inputmode="decimal" autocomplete="off" value="35000"></div></div><div class="grid-2"><div class="field" data-f="down"><label for="f-down">Down payment</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-down" inputmode="decimal" autocomplete="off" value="5000"></div></div><div class="field" data-f="trade"><label for="f-trade">Trade-in value</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-trade" inputmode="decimal" autocomplete="off" value="0"></div></div></div><div class="grid-2"><div class="field" data-f="rate"><label for="f-rate">Interest rate (APR)</label><div class="affix"><input class="input" id="f-rate" inputmode="decimal" autocomplete="off" value="7.8"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="term"><label for="f-term">Loan term</label><select class="input" id="f-term"><option value="24">24 months (2 yr)</option><option value="36">36 months (3 yr)</option><option value="48">48 months (4 yr)</option><option value="60" selected>60 months (5 yr)</option><option value="72">72 months (6 yr)</option><option value="84">84 months (7 yr)</option><option value="96">96 months (8 yr)</option></select></div></div><details class="adv"><summary>Sales tax, fees and trade-in payoff</summary><div class="grid-2"><div class="field" data-f="tax"><label for="f-tax">Sales tax <span class="hint">(0 if tax is in the price)</span></label><div class="affix"><input class="input" id="f-tax" inputmode="decimal" autocomplete="off" value="7"><span class="post" aria-hidden="true">%</span></div></div><div class="field" data-f="fees"><label for="f-fees">Dealer and registration fees</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-fees" inputmode="decimal" autocomplete="off" value="600"></div></div></div><div class="grid-2"><div class="field" data-f="owed"><label for="f-owed">Still owed on trade-in</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="f-owed" inputmode="decimal" autocomplete="off" value="0"></div></div><div class="field" data-f="wrap"><label for="f-wrap">Tax and fees</label><select class="input" id="f-wrap"><option value="loan" selected>Add to the loan</option><option value="cash">Pay upfront</option></select></div></div></details></div>
+        <div class="mini-actions"><button class="btn small" type="button" data-reset>Reset example</button></div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div id="out"><div class="result-top"><div><h2 id="resTitle">Monthly payment</h2><div class="big" id="big">$666.98</div></div><div class="hint">60 months at 7.8%</div></div><div class="stackbar" aria-hidden="true"><span style="width:82.59%;background:var(--reg)"></span><span style="width:17.41%;background:var(--gold)"></span></div><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Principal</span><span class="v">$33,050.00</span><span class="s">83%</span></li><li><span class="k"><i style="background:var(--gold)"></i>Interest</span><span class="v">$6,968.55</span><span class="s">17%</span></li></ul><dl class="kv"><dt>Amount financed</dt><dd class="strong">$33,050.00</dd><dt>Total interest</dt><dd class="strong">$6,968.55</dd><dt>Sales tax</dt><dd>$2,450.00</dd><dt>Paid upfront</dt><dd>$5,000.00</dd><dt>Total cost of the car</dt><dd>$45,019</dd><dt>Paid off</dt><dd>Nov 2031</dd></dl><figure class="chart"><figcaption>Loan balance by year <span class="hint" id="chartHelp">Hover, tap or use arrow keys for values</span></figcaption><svg viewBox="0 0 640 240" role="img" aria-label="Loan balance by year"><line x1="64" x2="628" y1="210.0" y2="210.0" class="gl"/><text x="56" y="214.0" text-anchor="end">0</text><line x1="64" x2="628" y1="160.5" y2="160.5" class="gl"/><text x="56" y="164.5" text-anchor="end">10K</text><line x1="64" x2="628" y1="111.0" y2="111.0" class="gl"/><text x="56" y="115.0" text-anchor="end">20K</text><line x1="64" x2="628" y1="61.5" y2="61.5" class="gl"/><text x="56" y="65.5" text-anchor="end">30K</text><line x1="64" x2="628" y1="12.0" y2="12.0" class="gl"/><text x="56" y="16.0" text-anchor="end">40K</text><text x="64.0" y="232" text-anchor="middle">Start</text><text x="176.8" y="232" text-anchor="middle">Yr 1</text><text x="289.6" y="232" text-anchor="middle">Yr 2</text><text x="402.4" y="232" text-anchor="middle">Yr 3</text><text x="515.2" y="232" text-anchor="middle">Yr 4</text><text x="628.0" y="232" text-anchor="middle">Yr 5</text><path d="M64,210 L64.0,46.4 L176.8,74.2 L289.6,104.3 L402.4,136.9 L515.2,172.0 L628.0,210.0 L628,210 Z" fill="var(--reg)" opacity=".12"/><polyline points="64.0,46.4 176.8,74.2 289.6,104.3 402.4,136.9 515.2,172.0 628.0,210.0" fill="none" stroke="var(--reg)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><ul class="legend"><li><span class="k"><i style="background:var(--reg)"></i>Balance</span><span class="v">$0</span><span class="s">at Yr 5</span></li></ul></figure><details class="adv tbl-det"><summary>Yearly amortization schedule</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Year</th><th>Interest</th><th>Principal</th><th>Balance</th></tr></thead><tbody><tr><td>1</td><td>$2,379.66</td><td>$5,624.05</td><td>$27,425.95</td></tr><tr><td>2</td><td>$1,924.96</td><td>$6,078.75</td><td>$21,347.20</td></tr><tr><td>3</td><td>$1,433.49</td><td>$6,570.22</td><td>$14,776.98</td></tr><tr><td>4</td><td>$902.29</td><td>$7,101.42</td><td>$7,675.57</td></tr><tr><td>5</td><td>$328.14</td><td>$7,675.57</td><td>$0.00</td></tr></tbody></table></div></details><details class="adv tbl-det" open><summary>Compare loan lengths</summary><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Months</th><th>Monthly</th><th>Total interest</th></tr></thead><tbody><tr><td>36</td><td>$1,032.62</td><td>$4,124</td></tr><tr><td>48</td><td>$803.75</td><td>$5,530</td></tr><tr><td>60</td><td>$666.98</td><td>$6,969</td></tr><tr><td>72</td><td>$576.25</td><td>$8,440</td></tr><tr><td>84</td><td>$511.84</td><td>$9,944</td></tr></tbody></table></div></details></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How a car payment is calculated</span></h2>
+        <p>First work out the amount you finance, then apply the standard loan formula.</p>
+<div class="formula">Amount financed = price − down payment − trade-in + amount still owed on the trade-in + tax and fees (if added to the loan)<br>Monthly payment = financed × r ÷ (1 − (1 + r)<sup>−n</sup>), where r = APR ÷ 12</div>
+<p>Example: a 35,000 car, 5,000 down, 7% sales tax (2,450) and 600 in fees, financed over 60 months at 7.8%. The amount financed is 33,050 and the payment is 666.98 a month. Total interest is about 6,969.</p>
+<h3>Sales tax and the trade-in credit</h3>
+<p>In most US states, sales tax is charged on the price minus your trade-in, which is how this calculator works it out. A few states tax the full price. Outside the US, tax such as VAT or GST is usually already in the advertised price, so the tax field starts at 0 for those countries.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Loan length: the choice that costs the most</span></h2>
+      <div class="prose">
+        <p>Dealers often quote a payment, not a price. Stretching the loan makes any car look affordable, but the interest grows quickly and the car loses value faster than you pay it off.</p>
+<div class="tbl-wrap"><table class="tbl rate-table"><thead><tr><th>Term</th><th>Payment on 30,000 at 7%</th><th>Total interest</th></tr></thead><tbody>
+<tr><td>36 months</td><td>926.31</td><td>3,347</td></tr>
+<tr><td>48 months</td><td>718.39</td><td>4,483</td></tr>
+<tr><td>60 months</td><td>594.04</td><td>5,642</td></tr>
+<tr><td>72 months</td><td>511.47</td><td>6,826</td></tr>
+<tr><td>84 months</td><td>452.78</td><td>8,034</td></tr>
+</tbody></table></div>
+<p>The 84-month loan costs more than twice the interest of the 36-month loan. A common guideline is the <b>20/4/10 rule</b>: put 20% down, finance for no more than 4 years, and keep all car costs under 10% of your gross income.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Trade-ins, negative equity and other traps</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Negative equity:</b> if you owe more on your current car than it is worth, the difference is rolled into the new loan. Enter it under "Still owed on trade-in". You then pay interest on a car you no longer own.</li>
+<li><b>Dealer add-ons:</b> extended warranties, paint protection and gap insurance are often added to the loan. Price them separately and decide on each one.</li>
+<li><b>0% offers:</b> these usually need excellent credit and may replace a cash rebate. Compare the rebate with the interest you would save.</li>
+<li><b>Balloon and PCP deals (common in the UK and Australia):</b> the monthly figure is low because a large final payment is left at the end. This calculator models a standard loan, so use it to compare against the total cost of those deals.</li>
+<li><b>Get pre-approved:</b> a quote from your bank or credit union before you visit the dealer gives you a rate to beat.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">The full cost of owning a car</span></h2>
+      <div class="prose">
+        <p>The loan is only part of it. Budget for insurance, fuel or charging, servicing, tyres, registration and parking. New cars typically lose 15% to 20% of their value in the first year and around half within five years, which is why a nearly new car is often the cheapest way to drive.</p>
+<p>Use the "Total cost of the car" line in the result to compare two cars or two offers on the same basis: it adds what you pay upfront, every loan payment and the value of your trade-in.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Worked examples from around the world</span></h2>
+      <div class="prose">
+        <p>The calculator loads typical figures for the country you choose, in its currency and units. Here are the starting results for four countries, worked out by the same formulas you use above. Replace any number with your own.</p>
+<h3>United States (USD)</h3><p>Starting values typical for United States: vehicle price $35,000; down payment $5,000; interest rate (apr) 7.8%; loan term 60 months (5 yr); sales tax 7%; dealer and registration fees $600; tax and fees Add to the loan. Result: monthly payment <b>$666.98</b>; amount financed $33,050.00; total interest $6,968.55; sales tax $2,450.00.</p>
+<h3>United Kingdom (GBP)</h3><p>Starting values typical for United Kingdom: vehicle price £28,000; down payment £4,000; interest rate (apr) 5.9%; loan term 60 months (5 yr); sales tax 0%; dealer and registration fees £470; tax and fees Add to the loan. Result: monthly payment <b>£471.94</b>; amount financed £24,470.00; total interest £3,846.20; sales tax £0.00.</p>
+<h3>Australia (AUD)</h3><p>Starting values typical for Australia: vehicle price $53,000; down payment $7,600; interest rate (apr) 7.4%; loan term 60 months (5 yr); sales tax 0%; dealer and registration fees $910; tax and fees Add to the loan. Result: monthly payment <b>$925.76</b>; amount financed $46,310.00; total interest $9,235.50; sales tax $0.00.</p>
+<h3>Germany (EUR)</h3><p>Starting values typical for Germany: vehicle price 32.000 €; down payment 4.600 €; interest rate (apr) 5,2%; loan term 60 months (5 yr); sales tax 0%; dealer and registration fees 550 €; tax and fees Add to the loan. Result: monthly payment <b>530,02 €</b>; amount financed 27.950,00 €; total interest 3.850,95 €; sales tax 0,00 €.</p>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Car loan questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate a monthly car payment?</summary><p>Subtract your down payment and trade-in from the price, add tax and fees if you finance them, then apply the loan formula with the APR divided by 12 and the number of months. 33,050 financed at 7.8% for 60 months is 666.98 a month.</p></details>
+        <details><summary>Is a 72 or 84 month car loan a bad idea?</summary><p>It lowers the payment but costs much more interest, and you are likely to owe more than the car is worth for several years. If you need 84 months to afford the payment, a cheaper car is usually the safer choice.</p></details>
+        <details><summary>How much should I put down on a car?</summary><p>Aim for at least 20% on a new car and 10% on a used one. That offsets first-year depreciation, so you do not owe more than the car is worth.</p></details>
+        <details><summary>Is sales tax charged before or after the trade-in?</summary><p>In most US states the trade-in value is subtracted before sales tax is calculated. California, Hawaii, Maryland and Virginia are among the states that tax the full price, so check your state.</p></details>
+        <details><summary>What is negative equity?</summary><p>It means you owe more on your loan than the car is worth. When you trade the car in, that shortfall is added to your next loan. Enter it as the amount still owed on the trade-in.</p></details>
+        <details><summary>Should I finance through the dealer or my bank?</summary><p>Compare both. Get a pre-approval from a bank or credit union first, then ask the dealer to beat that APR. Compare the APR and the total cost, not just the monthly payment.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/loan-calculator/"><b>Loan Calculator</b><span>Payment, total interest, true APR with fees and a full schedule.</span></a><a href="https://bingemind.com/debt-payoff-calculator/"><b>Debt Payoff Calculator</b><span>Snowball vs avalanche, your debt-free date and the payoff order.</span></a><a href="https://bingemind.com/sales-tax-calculator/"><b>Sales Tax and VAT Calculator</b><span>Add or remove sales tax, VAT or GST, with rates for 58 countries.</span></a><a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-Home Pay Calculator</b><span>Net pay after tax in the US, UK, Canada, Australia and India.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Tax rules on vehicles vary by state and country, and lenders may add fees or use a different first payment date. Treat the result as a planning figure and check the finance agreement. Your numbers stay in this browser.</p>
+      <p>Sources: Car loan guidance: <a href="https://www.consumerfinance.gov/consumer-tools/auto-loans/">CFPB auto loans</a> and <a href="https://consumer.ftc.gov/articles/financing-or-leasing-car">FTC</a>. UK car finance: <a href="https://www.moneyhelper.org.uk/en/everyday-money/buying-and-running-a-car/car-finance-explained">MoneyHelper</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

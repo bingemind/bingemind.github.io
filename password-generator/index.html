@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Strong Password and Passphrase Generator</title>
+<meta name="description" content="Generate strong random passwords and passphrases on your device with cryptographic randomness. See strength in bits and crack time. Nothing is sent.">
+<link rel="canonical" href="https://bingemind.com/password-generator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Strong Password and Passphrase Generator">
+<meta property="og:description" content="Random passwords and passphrases with strength and crack time.">
+<meta property="og:url" content="https://bingemind.com/password-generator/">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Password Generator","url":"https://bingemind.com/password-generator/","inLanguage":"en","applicationCategory":"SecurityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-15","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Generate strong random passwords and passphrases on your device with cryptographic randomness. See strength in bits and crack time. Nothing is sent."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Password Generator","item":"https://bingemind.com/password-generator/"}]}]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this password generator safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Passwords are created in your browser using its cryptographic random generator and are never sent, logged or stored. You can even disconnect from the internet after the page loads and it still works."}},{"@type":"Question","name":"How long should a password be?","acceptedAnswer":{"@type":"Answer","text":"At least 12 characters for everyday accounts and 16 or more for important ones such as email and banking. With a password manager there is no reason not to use 20 or more."}},{"@type":"Question","name":"What makes a password strong?","acceptedAnswer":{"@type":"Answer","text":"Length and randomness. A long password chosen at random from a large set of characters, used on only one account, is strong. Patterns, names, dates and dictionary words make it weak."}},{"@type":"Question","name":"Are passphrases secure?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the words are chosen at random. Five random words from a 1,296-word list give about 52 bits, six give about 62, and seven or more are recommended for important accounts."}},{"@type":"Question","name":"What is password entropy?","acceptedAnswer":{"@type":"Answer","text":"A measure of how unpredictable a password is, in bits. Each bit doubles the number of guesses needed. 80 bits or more is considered strong for most uses."}},{"@type":"Question","name":"Should I change my passwords regularly?","acceptedAnswer":{"@type":"Answer","text":"Current NIST and NCSC guidance says no, unless there is a reason to think a password has been exposed. Forced changes tend to produce weaker, predictable passwords."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to the tool</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Password Generator</p>
+      <span class="eyebrow rise d1">Generated on your device · nothing sent</span>
+      <h1 class="lift"><span class="shine">Password Generator</span></h1>
+      <p class="lede lift">Create a random password or an easy-to-type passphrase. Everything is generated in your browser with cryptographic randomness, and you see how strong it is and how long it would take to crack.</p>
+      <ul class="trust rise d4"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cryptographically random</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Passwords never leave your device</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Passphrase mode</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Strength in bits</li></ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-15">15 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This tool needs JavaScript. Without it, use your password manager’s built-in generator.</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Settings</h2>
+        <p class="sub">A new password is made every time you change a setting.</p>
+        <div class="fields">
+          <div class="field"><span class="lbl" id="modeL">Type</span><div class="seg" role="radiogroup" aria-labelledby="modeL"><button type="button" role="radio" data-mode="password" aria-checked="true">Random password</button><button type="button" role="radio" data-mode="phrase" aria-checked="false">Passphrase</button></div></div>
+          <div id="pwOpts" class="fields">
+            <div class="field"><label for="len">Length: <b id="lenOut">16</b> characters</label><input class="range" type="range" id="len" min="6" max="64" value="16"></div>
+            <div class="checks"><label class="check"><input type="checkbox" id="lower" checked> Lowercase a–z</label><label class="check"><input type="checkbox" id="upper" checked> Uppercase A–Z</label><label class="check"><input type="checkbox" id="digits" checked> Numbers 0–9</label><label class="check"><input type="checkbox" id="symbols" checked> Symbols !@#$%</label><label class="check"><input type="checkbox" id="noAmbig"> Avoid look-alikes (I, l, 1, O, 0)</label></div>
+          </div>
+          <div id="phOpts" class="fields" hidden>
+            <div class="field"><label for="nwords">Words: <b id="nwOut">5</b></label><input class="range" type="range" id="nwords" min="3" max="10" value="5"></div>
+            <div class="field"><label for="sep">Separator</label><select class="input" id="sep"><option value="-">Hyphen (-)</option><option value=" ">Space</option><option value=".">Dot (.)</option><option value="_">Underscore (_)</option><option value="">None</option></select></div>
+            <div class="checks"><label class="check"><input type="checkbox" id="cap" checked> Capitalise each word</label><label class="check"><input type="checkbox" id="digit" checked> Add a number</label></div>
+          </div>
+        </div>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <h2 id="resTitle">Your password</h2>
+        <output class="pw-out" id="pw" aria-live="polite"></output>
+        <div class="pw-meter" aria-hidden="true"><span id="meter"></span></div>
+        <dl class="kv">
+          <dt>Strength</dt><dd id="strength">—</dd>
+          <dt>Entropy</dt><dd><span id="bits">0</span> bits</dd>
+          <dt>Length</dt><dd id="length">—</dd>
+          <dt>Online attack (1,000 guesses a second)</dt><dd id="crackOnline">—</dd>
+          <dt>Offline attack (100 billion guesses a second)</dt><dd id="crackFast">—</dd>
+        </dl>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyPw">Copy password</button>
+          <button class="btn" type="button" id="regen">Generate new</button>
+        </div>
+        <details class="adv tbl-det"><summary>Five more to choose from</summary><ul class="pw-more" id="more"></ul></details>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How the passwords are made</span></h2>
+        <p>Each character or word is chosen with <code>crypto.getRandomValues</code>, the cryptographically secure random number generator built into every modern browser. It is the same source used for encryption keys. The generator uses rejection sampling, so every character is exactly equally likely, and when you pick several character types it guarantees at least one of each.</p>
+<p>Nothing is sent over the network, logged or stored. Only your settings are remembered in this browser.</p>
+<h3>What "bits of entropy" means</h3>
+<div class="formula">Random password: bits = length × log₂(number of possible characters)<br>Passphrase: bits = number of words × log₂(words in the list)</div>
+<p>A 16-character password using upper and lower case letters, numbers and 25 symbols draws from 87 characters: 16 × log₂(87) = 103 bits. Each extra bit doubles the number of guesses an attacker needs.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">How strong is strong enough?</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Entropy</th><th>Rating</th><th>Good for</th></tr></thead><tbody>
+<tr><td>Under 40 bits</td><td>Very weak</td><td>Nothing important</td></tr>
+<tr><td>40 to 59 bits</td><td>Weak</td><td>Low-value accounts with rate limits and 2FA</td></tr>
+<tr><td>60 to 79 bits</td><td>Good</td><td>Most website accounts</td></tr>
+<tr><td>80 to 99 bits</td><td>Strong</td><td>Email, banking, password manager vault</td></tr>
+<tr><td>100+ bits</td><td>Very strong</td><td>Encryption keys, Wi-Fi, files that could be attacked offline</td></tr>
+</tbody></table></div>
+<p>The crack times assume an attacker must try half of all possibilities on average. <b>Online attacks</b> against a live login are slow because sites limit attempts. <b>Offline attacks</b> on stolen password hashes can run at billions of guesses a second on graphics cards, which is why long, random passwords matter.</p>
+<p>These figures only hold for truly random passwords like the ones made here. A password you invent, such as a word with a number on the end, is far weaker than its length suggests, because attackers try those patterns first.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">Passwords or passphrases?</span></h2>
+      <div class="prose">
+        <p>A <b>passphrase</b> is several random words, such as <code>Blimp-Bless-Turf-Joy4-Poet</code>. It is easier to remember and type, especially on a phone or TV. This generator uses the EFF short word list of 1,296 common words, so each word adds 10.3 bits. Five words plus a digit give about 57 bits, six words about 62 bits, and eight words about 83 bits.</p>
+<p>A <b>random password</b> packs more strength into fewer characters, which is ideal when a password manager types it for you.</p>
+<h3>Good habits</h3>
+<ul>
+<li><b>Use a different password for every account.</b> Reused passwords are the main way accounts are taken over after another site is breached.</li>
+<li><b>Use a password manager.</b> Built-in managers in Apple, Google and Microsoft devices, or dedicated apps, remember everything so you only need one strong passphrase.</li>
+<li><b>Turn on two-factor authentication,</b> ideally an authenticator app or passkey rather than SMS.</li>
+<li><b>Prefer passkeys</b> where a site offers them. They cannot be phished or reused.</li>
+<li><b>Do not change strong passwords on a schedule.</b> Change them when there is a sign of compromise. This is current advice from NIST and the UK's NCSC.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2><span class="shine">When a site rejects your password</span></h2>
+      <div class="prose">
+        <ul>
+<li><b>Too long:</b> some older systems cap passwords at 16 or 20 characters. Lower the length.</li>
+<li><b>Symbol not allowed:</b> switch symbols off and add 3 or 4 characters of length to make up the strength.</li>
+<li><b>Must contain a symbol:</b> passphrases can use "." or "_" as the separator.</li>
+<li><b>Hard to read aloud or type on a TV:</b> tick "Avoid look-alikes" or use a passphrase.</li>
+</ul>
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Password questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>Is this password generator safe?</summary><p>Yes. Passwords are created in your browser using its cryptographic random generator and are never sent, logged or stored. You can even disconnect from the internet after the page loads and it still works.</p></details>
+        <details><summary>How long should a password be?</summary><p>At least 12 characters for everyday accounts and 16 or more for important ones such as email and banking. With a password manager there is no reason not to use 20 or more.</p></details>
+        <details><summary>What makes a password strong?</summary><p>Length and randomness. A long password chosen at random from a large set of characters, used on only one account, is strong. Patterns, names, dates and dictionary words make it weak.</p></details>
+        <details><summary>Are passphrases secure?</summary><p>Yes, if the words are chosen at random. Five random words from a 1,296-word list give about 52 bits, six give about 62, and seven or more are recommended for important accounts.</p></details>
+        <details><summary>What is password entropy?</summary><p>A measure of how unpredictable a password is, in bits. Each bit doubles the number of guesses needed. 80 bits or more is considered strong for most uses.</p></details>
+        <details><summary>Should I change my passwords regularly?</summary><p>Current NIST and NCSC guidance says no, unless there is a reason to think a password has been exposed. Forced changes tend to produce weaker, predictable passwords.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related"><a href="https://bingemind.com/word-counter/"><b>Word Counter</b><span>Words, characters, reading time, keywords and platform limits.</span></a><a href="https://bingemind.com/invoice-generator/"><b>Free Invoice Generator</b><span>Make a professional invoice and save it as PDF, in any currency.</span></a><a href="https://bingemind.com/percentage-calculator/"><b>Percentage Calculator</b><span>Seven percentage calculations with the working shown.</span></a><a href="https://bingemind.com/age-calculator/"><b>Age Calculator</b><span>Exact age in years, months and days, with next-birthday countdown.</span></a></div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Crack times are theoretical estimates for random passwords under the stated attack speeds. Real security also depends on how a website stores passwords and whether you use two-factor authentication. Your numbers stay in this browser.</p>
+      <p>Sources: Password guidance: <a href="https://pages.nist.gov/800-63-4/sp800-63b.html">NIST SP 800-63B</a> and <a href="https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/three-random-words">UK NCSC: three random words</a>. Word list: <a href="https://www.eff.org/dice">EFF dice-generated passphrases</a> (CC BY 3.0). Randomness: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues">MDN Crypto.getRandomValues</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>
