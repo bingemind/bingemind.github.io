@@ -1,0 +1,407 @@
+- generic [active] [ref=f8e1]:
+  - navigation "Bingemind" [ref=f8e3]:
+    - link "Bingemind" [ref=f8e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=f8e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=f8e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=f8e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=f8e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f8e9]:
+    - generic [ref=f8e10]:
+      - link "Cash Drawer Counter" [ref=f8e11] [cursor=pointer]:
+        - /url: /cash-drawer-counter/
+      - generic [ref=f8e13]:
+        - link "More free tools" [ref=f8e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=f8e15]:
+          - link "Tool" [ref=f8e16] [cursor=pointer]:
+            - /url: /cash-drawer-counter/
+          - link "About" [ref=f8e17] [cursor=pointer]:
+            - /url: /cash-drawer-counter/about/
+          - link "Contact" [ref=f8e18] [cursor=pointer]:
+            - /url: /cash-drawer-counter/contact/
+        - button "Switch color theme" [ref=f8e19]
+  - main [ref=f8e22]:
+    - generic [ref=f8e23]:
+      - paragraph [ref=f8e24]: Free, fast and private
+      - heading "Cash drawer counter" [level=1] [ref=f8e25]
+      - paragraph [ref=f8e26]: Cash drawer counter for shift end. Enter bills, coins and rolls, set your float, and see the deposit and which bills to pull. Free and private.
+      - region "Cash drawer counter" [ref=f8e28]:
+        - generic [ref=f8e29]:
+          - generic [ref=f8e30]:
+            - group "Bills" [ref=f8e31]:
+              - generic [ref=f8e33]:
+                - generic [ref=f8e34]:
+                  - generic [ref=f8e35]: $100 bills
+                  - button "One fewer $100 bills" [ref=f8e36]: −
+                  - textbox "$100 bills" [ref=f8e37]:
+                    - /placeholder: "0"
+                  - button "One more $100 bills" [ref=f8e38]: +
+                  - status [ref=f8e39]: $0.00
+                - generic [ref=f8e40]:
+                  - generic [ref=f8e41]: $50 bills
+                  - button "One fewer $50 bills" [ref=f8e42]: −
+                  - textbox "$50 bills" [ref=f8e43]:
+                    - /placeholder: "0"
+                  - button "One more $50 bills" [ref=f8e44]: +
+                  - status [ref=f8e45]: $0.00
+                - generic [ref=f8e46]:
+                  - generic [ref=f8e47]: $20 bills
+                  - button "One fewer $20 bills" [ref=f8e48]: −
+                  - textbox "$20 bills" [ref=f8e49]:
+                    - /placeholder: "0"
+                  - button "One more $20 bills" [ref=f8e50]: +
+                  - status [ref=f8e51]: $0.00
+                - generic [ref=f8e52]:
+                  - generic [ref=f8e53]: $10 bills
+                  - button "One fewer $10 bills" [ref=f8e54]: −
+                  - textbox "$10 bills" [ref=f8e55]:
+                    - /placeholder: "0"
+                  - button "One more $10 bills" [ref=f8e56]: +
+                  - status [ref=f8e57]: $0.00
+                - generic [ref=f8e58]:
+                  - generic [ref=f8e59]: $5 bills
+                  - button "One fewer $5 bills" [ref=f8e60]: −
+                  - textbox "$5 bills" [ref=f8e61]:
+                    - /placeholder: "0"
+                  - button "One more $5 bills" [ref=f8e62]: +
+                  - status [ref=f8e63]: $0.00
+                - generic [ref=f8e64]:
+                  - generic [ref=f8e65]: $2 bills
+                  - button "One fewer $2 bills" [ref=f8e66]: −
+                  - textbox "$2 bills" [ref=f8e67]:
+                    - /placeholder: "0"
+                  - button "One more $2 bills" [ref=f8e68]: +
+                  - status [ref=f8e69]: $0.00
+                - generic [ref=f8e70]:
+                  - generic [ref=f8e71]: $1 bills
+                  - button "One fewer $1 bills" [ref=f8e72]: −
+                  - textbox "$1 bills" [ref=f8e73]:
+                    - /placeholder: "0"
+                  - button "One more $1 bills" [ref=f8e74]: +
+                  - status [ref=f8e75]: $0.00
+            - group "Coins" [ref=f8e76]:
+              - generic [ref=f8e78]:
+                - generic [ref=f8e79]:
+                  - generic [ref=f8e80]: $1 coins
+                  - button "One fewer $1 coins" [ref=f8e81]: −
+                  - textbox "$1 coins" [ref=f8e82]:
+                    - /placeholder: "0"
+                  - button "One more $1 coins" [ref=f8e83]: +
+                  - status [ref=f8e84]: $0.00
+                - generic [ref=f8e85]:
+                  - generic [ref=f8e86]: Quarters
+                  - button "One fewer Quarters" [ref=f8e87]: −
+                  - textbox "Quarters" [ref=f8e88]:
+                    - /placeholder: "0"
+                  - button "One more Quarters" [ref=f8e89]: +
+                  - status [ref=f8e90]: $0.00
+                - generic [ref=f8e91]:
+                  - generic [ref=f8e92]: Dimes
+                  - button "One fewer Dimes" [ref=f8e93]: −
+                  - textbox "Dimes" [ref=f8e94]:
+                    - /placeholder: "0"
+                  - button "One more Dimes" [ref=f8e95]: +
+                  - status [ref=f8e96]: $0.00
+                - generic [ref=f8e97]:
+                  - generic [ref=f8e98]: Nickels
+                  - button "One fewer Nickels" [ref=f8e99]: −
+                  - textbox "Nickels" [ref=f8e100]:
+                    - /placeholder: "0"
+                  - button "One more Nickels" [ref=f8e101]: +
+                  - status [ref=f8e102]: $0.00
+                - generic [ref=f8e103]:
+                  - generic [ref=f8e104]: Pennies
+                  - button "One fewer Pennies" [ref=f8e105]: −
+                  - textbox "Pennies" [ref=f8e106]:
+                    - /placeholder: "0"
+                  - button "One more Pennies" [ref=f8e107]: +
+                  - status [ref=f8e108]: $0.00
+            - group "Rolls" [ref=f8e109]:
+              - generic [ref=f8e111]:
+                - generic [ref=f8e112]:
+                  - generic [ref=f8e113]: Quarter rolls ($10)
+                  - button "One fewer Quarter rolls ($10)" [ref=f8e114]: −
+                  - textbox "Quarter rolls ($10)" [ref=f8e115]:
+                    - /placeholder: "0"
+                  - button "One more Quarter rolls ($10)" [ref=f8e116]: +
+                  - status [ref=f8e117]: $0.00
+                - generic [ref=f8e118]:
+                  - generic [ref=f8e119]: Dime rolls ($5)
+                  - button "One fewer Dime rolls ($5)" [ref=f8e120]: −
+                  - textbox "Dime rolls ($5)" [ref=f8e121]:
+                    - /placeholder: "0"
+                  - button "One more Dime rolls ($5)" [ref=f8e122]: +
+                  - status [ref=f8e123]: $0.00
+                - generic [ref=f8e124]:
+                  - generic [ref=f8e125]: Nickel rolls ($2)
+                  - button "One fewer Nickel rolls ($2)" [ref=f8e126]: −
+                  - textbox "Nickel rolls ($2)" [ref=f8e127]:
+                    - /placeholder: "0"
+                  - button "One more Nickel rolls ($2)" [ref=f8e128]: +
+                  - status [ref=f8e129]: $0.00
+                - generic [ref=f8e130]:
+                  - generic [ref=f8e131]: Penny rolls ($0.50)
+                  - button "One fewer Penny rolls ($0.50)" [ref=f8e132]: −
+                  - textbox "Penny rolls ($0.50)" [ref=f8e133]:
+                    - /placeholder: "0"
+                  - button "One more Penny rolls ($0.50)" [ref=f8e134]: +
+                  - status [ref=f8e135]: $0.00
+            - group [ref=f8e136]:
+              - 'generic "More coins: half dollars (tap to open)" [ref=f8e137] [cursor=pointer]':
+                - text: "More coins: half dollars"
+                - generic [ref=f8e138]: (tap to open)
+          - generic [ref=f8e139]:
+            - generic [ref=f8e140]:
+              - paragraph [ref=f8e141]: Total in drawer
+              - paragraph [ref=f8e142]: $0.00
+            - generic [ref=f8e143]:
+              - generic [ref=f8e144]:
+                - generic [ref=f8e145]: Starting float
+                - generic [ref=f8e146]:
+                  - generic [aria-hidden]: $
+                  - textbox "Starting float" [ref=f8e147]:
+                    - /placeholder: e.g. 200
+                - paragraph [ref=f8e148]: Cash you leave for the next shift. Enter 0 if none.
+                - button "Use this count as my float" [ref=f8e149]
+              - generic [ref=f8e150]:
+                - generic [ref=f8e151]: Expected cash sales
+                - generic [ref=f8e152]:
+                  - generic [aria-hidden]: $
+                  - textbox "Expected cash sales" [ref=f8e153]:
+                    - /placeholder: optional
+                - paragraph [ref=f8e154]: Cash sales only, from your register report. Not card sales.
+              - generic [ref=f8e155]:
+                - generic [ref=f8e156]: Paid out of the drawer
+                - generic [ref=f8e157]:
+                  - generic [aria-hidden]: $
+                  - textbox "Paid out of the drawer" [ref=f8e158]:
+                    - /placeholder: optional
+                - paragraph [ref=f8e159]: Cash taken out for supplies, refunds or tips paid.
+              - group [ref=f8e160]:
+                - generic "Sheet details (optional)" [ref=f8e161] [cursor=pointer]:
+                  - text: Sheet details
+                  - generic [ref=f8e162]: (optional)
+            - generic [ref=f8e163]:
+              - generic [ref=f8e164]:
+                - generic [ref=f8e165]: Cash to deposit
+                - generic [ref=f8e166]: —
+              - paragraph [ref=f8e167]: Enter your starting float to see the deposit and what to leave.
+            - generic [ref=f8e168]:
+              - button "Copy summary" [ref=f8e169]
+              - button "Print" [ref=f8e170]
+              - button "Reset" [ref=f8e171]
+            - paragraph [ref=f8e172]:
+              - text: To save a PDF, press Print and choose Save as PDF. Need paper?
+              - link "Print a blank count sheet" [ref=f8e173] [cursor=pointer]:
+                - /url: /cash-drawer-counter/cash-register-count-sheet/
+              - text: .
+            - status [ref=f8e174]
+    - region [ref=f8e175]:
+      - article [ref=f8e176]:
+        - heading "How to count a cash drawer (fast)" [level=2] [ref=f8e177]
+        - paragraph [ref=f8e178]: The cash drawer counter on this page adds up the bills and coins in your register at the end of a shift. You type how many of each you have. The tool does the math, shows the total, and tells you how much to deposit. It also shows what to leave in the drawer and which bills and coins to take out.
+        - heading "Count the drawer in six steps" [level=2] [ref=f8e179]
+        - paragraph [ref=f8e180]:
+          - text: Want the quickest method? Read the guide on the
+          - link "fastest way to count a cash drawer" [ref=f8e181] [cursor=pointer]:
+            - /url: /cash-drawer-counter/fastest-way-to-count-a-cash-drawer/
+          - text: .
+        - list [ref=f8e182]:
+          - listitem [ref=f8e183]: Close the sale screen so no new sales come in while you count.
+          - listitem [ref=f8e184]: Take all cash out of the drawer, including the bills under the tray.
+          - listitem [ref=f8e185]: Sort it by type. Face all bills the same way and put the largest on top.
+          - listitem [ref=f8e186]: Count each type once and enter the number in its row. Start with the $100 bills and work down to the pennies.
+          - listitem [ref=f8e187]: Enter your starting float. The tool shows the cash to deposit, what to leave in the drawer, and what to take out.
+          - listitem [ref=f8e188]: Enter the expected cash sales from your register report. The tool shows if you are over or short.
+        - paragraph [ref=f8e189]: Press Enter after each row to jump to the next one. On a phone, the number keypad opens by itself. This is the same count that shops call a till count, a register balance or "cashing up".
+        - heading "What is a float?" [level=2] [ref=f8e190]
+        - paragraph [ref=f8e191]: A float is the cash you leave in the drawer so the next shift can make change. It is also called a bank, a till float, or a starting bank. Many shops use $100 to $300. The float is not sales money. You count it, then you leave it.
+        - paragraph [ref=f8e192]: Your deposit is the total in the drawer minus the float. If you count $1,250.00 and the float is $200.00, you deposit $1,050.00.
+        - heading "How the take-out list works" [level=2] [ref=f8e193]
+        - paragraph [ref=f8e194]: "The tool picks the float first, so the next shift can make change. It aims for a mix: about 40% in $20 bills, then $10 bills, $5 bills and $1 bills, with a few quarters, dimes, nickels and pennies. If the drawer lacks one kind, it fills the gap with what you have, largest first. It never leaves $100 or $50 bills in the drawer. Everything else goes in the deposit. The tool shows a green check when the bills it leaves add up to exactly your float."
+        - paragraph [ref=f8e195]: If the cash can make the float exactly, the tool finds a way to do it. If it cannot, the tool says how much is missing, so you can swap bills by hand. The deposit shown is always the value of the take-out list.
+        - heading "Tips to avoid counting errors" [level=2] [ref=f8e196]
+        - list [ref=f8e197]:
+          - listitem [ref=f8e198]: Count twice if the drawer is off by more than a few dollars. Count a different way the second time, for example by stack size.
+          - listitem [ref=f8e199]: Count coins in rolls or stacks of ten. Do not count them one by one.
+          - listitem [ref=f8e200]: Check for stuck bills. Two bills can stick together, especially when new.
+          - listitem [ref=f8e201]: Do not mix checks, gift cards or coupons with cash. Count them apart.
+          - listitem [ref=f8e202]: Enter the expected sales from the same time you stopped sales. A late sale causes a false shortage.
+          - listitem [ref=f8e203]: Have a second person watch or sign the count if your shop has a rule for it.
+        - heading "Worked example" [level=2] [ref=f8e204]
+        - paragraph [ref=f8e205]: "A cafe closes with this cash in the drawer: 2 $100 bills, 3 $50 bills, 20 $20 bills, 15 $10 bills, 30 $5 bills, 40 $1 bills, 20 quarters, 15 dimes, 10 nickels and 25 pennies."
+        - list [ref=f8e206]:
+          - listitem [ref=f8e207]: Bills add up to $1,090.00. Coins add up to $7.25. The total in the drawer is $1,097.25.
+          - listitem [ref=f8e208]: The float is $200.00. The tool leaves 8 $20 bills, 1 $10 bill, 3 $5 bills, 10 $1 bills, 13 quarters, 11 dimes, 10 nickels and 15 pennies in the drawer.
+          - listitem [ref=f8e209]: Cash to deposit is $897.25. You take out 2 $100 bills, 3 $50 bills, 12 $20 bills, 14 $10 bills, 27 $5 bills, 30 $1 bills, 7 quarters, 4 dimes and 10 pennies.
+          - listitem [ref=f8e210]: Expected cash sales from the register report are $890.00. The drawer is over by $7.25.
+        - heading "Common values at a glance" [level=2] [ref=f8e211]
+        - table [ref=f8e212]:
+          - rowgroup [ref=f8e213]:
+            - row [ref=f8e214]:
+              - columnheader "Item" [ref=f8e215]
+              - columnheader "Value" [ref=f8e216]
+          - rowgroup [ref=f8e217]:
+            - row [ref=f8e218]:
+              - cell "Roll of quarters (40 coins)" [ref=f8e219]
+              - cell "$10.00" [ref=f8e220]
+            - row [ref=f8e221]:
+              - cell "Roll of dimes (50 coins)" [ref=f8e222]
+              - cell "$5.00" [ref=f8e223]
+            - row [ref=f8e224]:
+              - cell "Roll of nickels (40 coins)" [ref=f8e225]
+              - cell "$2.00" [ref=f8e226]
+            - row [ref=f8e227]:
+              - cell "Roll of pennies (50 coins)" [ref=f8e228]
+              - cell "$0.50" [ref=f8e229]
+            - row [ref=f8e230]:
+              - cell "Strap of 100 $1 bills" [ref=f8e231]
+              - cell "$100.00" [ref=f8e232]
+            - row [ref=f8e233]:
+              - cell "Strap of 100 $20 bills" [ref=f8e234]
+              - cell "$2,000.00" [ref=f8e235]
+        - heading "Over and short" [level=2] [ref=f8e236]
+        - paragraph [ref=f8e237]:
+          - text: "Over means you have more cash than the register says. Short means less. A small difference is common, often from wrong change. A large or repeated difference needs a check of voids, refunds, tips, and paid-outs. The tool works out the cash the drawer should hold: the float plus cash sales, minus any paid-outs. It compares that with your count. Use cash sales only, not card sales. There is a worked example on the"
+          - link "over and short calculator" [ref=f8e238] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drawer-over-short-calculator/
+          - text: page.
+        - heading "How to close out a register" [level=2] [ref=f8e239]
+        - paragraph [ref=f8e240]:
+          - text: "To close out a register, or cash out a till, stop sales and print the end-of-shift report. Take the till out and count it once with this calculator. Enter the cash sales from the report. Leave the float in the drawer, put the deposit in a bag with the count sheet, and sign it. A cash drop during the shift works the same way: count what you take out and write it down. The"
+          - link "cash drop calculator" [ref=f8e241] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drop-calculator/
+          - text: page shows how.
+        - heading "Who uses a drawer count" [level=2] [ref=f8e242]
+        - paragraph [ref=f8e243]: Cashiers count at the end of every shift. Shift leads count when one cashier hands the drawer to the next. Owners of small shops and food trucks count to match the cash against the sales report before the bank run. The steps are the same for each of them, so one calculator fits all three.
+        - heading "Cash register count sheet" [level=2] [ref=f8e244]
+        - paragraph [ref=f8e245]:
+          - text: Some shops want a paper count sheet. There is a free
+          - link "cash register count sheet" [ref=f8e246] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-register-count-sheet/
+          - text: that you can print blank. It has opening and closing columns, an over and short section, and lines for the cashier and the checker to sign. It fits on one Letter page. You can also fill in this calculator and print the filled sheet, with the cashier name and register number if you add them under Sheet details.
+        - heading "Half dollars" [level=2] [ref=f8e247]
+        - paragraph [ref=f8e248]: Half dollars are under More coins, below the rolls. Most drawers have none, so the row stays closed until you open it.
+        - heading "Private and fast" [level=2] [ref=f8e249]
+        - paragraph [ref=f8e250]: Everything runs in your browser. Your counts are not sent anywhere. The tool saves your last float and your counts on your own device, so you do not need to type the float every night and a refresh does not lose a count. Use the Print button for a clean sheet, or Copy summary to paste it into an email or a text.
+    - region [ref=f8e251]:
+      - heading "Frequently asked questions" [level=2] [ref=f8e252]
+      - generic [ref=f8e253]:
+        - group [ref=f8e254]:
+          - generic "Is this an online cash drawer counter?" [ref=f8e255] [cursor=pointer]
+        - group [ref=f8e258]:
+          - generic "Is there a cash drawer counter app?" [ref=f8e259] [cursor=pointer]
+        - group [ref=f8e262]:
+          - generic "How do I count a cash drawer?" [ref=f8e263] [cursor=pointer]
+        - group [ref=f8e266]:
+          - generic "What is a cash drawer float?" [ref=f8e267] [cursor=pointer]
+        - group [ref=f8e270]:
+          - generic "How much should I leave in the drawer?" [ref=f8e271] [cursor=pointer]
+        - group [ref=f8e274]:
+          - generic "How do I know if the drawer is over or short?" [ref=f8e275] [cursor=pointer]
+        - group [ref=f8e278]:
+          - generic "What are coin rolls worth?" [ref=f8e279] [cursor=pointer]
+        - group [ref=f8e282]:
+          - generic "Does it work on my phone?" [ref=f8e283] [cursor=pointer]
+        - group [ref=f8e286]:
+          - generic "Is my count saved or sent anywhere?" [ref=f8e287] [cursor=pointer]
+        - group [ref=f8e290]:
+          - generic "Can I print or share the count?" [ref=f8e291] [cursor=pointer]
+        - group [ref=f8e294]:
+          - generic "What is a cash register count sheet?" [ref=f8e295] [cursor=pointer]
+    - navigation [ref=f8e298]:
+      - heading "More ways to count the drawer" [level=2] [ref=f8e299]
+      - list [ref=f8e300]:
+        - listitem [ref=f8e301]:
+          - link "Cash register count sheet (printable)" [ref=f8e302] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-register-count-sheet/
+        - listitem [ref=f8e303]:
+          - link "Cash drawer float calculator" [ref=f8e304] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drawer-float-calculator/
+        - listitem [ref=f8e305]:
+          - link "How much to leave in the cash drawer" [ref=f8e306] [cursor=pointer]:
+            - /url: /cash-drawer-counter/how-much-to-leave-in-cash-drawer/
+        - listitem [ref=f8e307]:
+          - link "Cash drawer over and short calculator" [ref=f8e308] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drawer-over-short-calculator/
+        - listitem [ref=f8e309]:
+          - link "Cash drop calculator" [ref=f8e310] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drop-calculator/
+        - listitem [ref=f8e311]:
+          - link "Count a drawer with coin rolls" [ref=f8e312] [cursor=pointer]:
+            - /url: /cash-drawer-counter/cash-drawer-count-with-rolls/
+        - listitem [ref=f8e313]:
+          - link "Coffee shop cash drawer count" [ref=f8e314] [cursor=pointer]:
+            - /url: /cash-drawer-counter/coffee-shop-cash-drawer-count/
+        - listitem [ref=f8e315]:
+          - link "Food truck cash drawer count" [ref=f8e316] [cursor=pointer]:
+            - /url: /cash-drawer-counter/food-truck-cash-drawer-count/
+        - listitem [ref=f8e317]:
+          - link "Close out register checklist" [ref=f8e318] [cursor=pointer]:
+            - /url: /cash-drawer-counter/close-out-register-checklist/
+        - listitem [ref=f8e319]:
+          - link "Bar cash drawer count" [ref=f8e320] [cursor=pointer]:
+            - /url: /cash-drawer-counter/bar-cash-drawer-count/
+        - listitem [ref=f8e321]:
+          - link "Fastest way to count a cash drawer" [ref=f8e322] [cursor=pointer]:
+            - /url: /cash-drawer-counter/fastest-way-to-count-a-cash-drawer/
+  - region [ref=f8e323]:
+    - heading "More free tools from Bingemind" [level=2] [ref=f8e324]
+    - list [ref=f8e325]:
+      - listitem [ref=f8e326]:
+        - link "Markdown to PDF" [ref=f8e327] [cursor=pointer]:
+          - /url: https://bingemind.com/markdown-to-pdf/
+      - listitem [ref=f8e328]:
+        - link "Column to comma converter" [ref=f8e329] [cursor=pointer]:
+          - /url: https://bingemind.com/column-to-comma/
+      - listitem [ref=f8e330]:
+        - link "DPI changer" [ref=f8e331] [cursor=pointer]:
+          - /url: https://bingemind.com/dpi-changer/
+      - listitem [ref=f8e332]:
+        - link "Hourly to salary calculator" [ref=f8e333] [cursor=pointer]:
+          - /url: https://bingemind.com/hourly-to-salary-calculator/
+      - listitem [ref=f8e334]:
+        - link "See all free tools" [ref=f8e335] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=f8e336]:
+    - generic [ref=f8e337]:
+      - paragraph [ref=f8e338]: © 2026 Cash Drawer Counter. Free to use.
+      - navigation "Footer" [ref=f8e339]:
+        - link "About" [ref=f8e340] [cursor=pointer]:
+          - /url: /cash-drawer-counter/about/
+        - link "Contact" [ref=f8e341] [cursor=pointer]:
+          - /url: /cash-drawer-counter/contact/
+        - link "Privacy Policy" [ref=f8e342] [cursor=pointer]:
+          - /url: /cash-drawer-counter/privacy/
+        - link "Terms" [ref=f8e343] [cursor=pointer]:
+          - /url: /cash-drawer-counter/terms/
+        - link "More free tools" [ref=f8e344] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=f8e345]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=f8e346] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=f8e347] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=f8e348]:
+      - link "About" [ref=f8e349] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=f8e350]: ·
+      - link "Contact" [ref=f8e351] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=f8e352]: ·
+      - link "Privacy" [ref=f8e353] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=f8e354]: ·
+      - link "Terms" [ref=f8e355] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=f8e356]: ·
+      - link "Cookie settings" [ref=f8e357] [cursor=pointer]:
+        - /url: "#bm-consent"

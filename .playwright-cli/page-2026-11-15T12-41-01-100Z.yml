@@ -1,0 +1,322 @@
+- generic [active] [ref=e1]:
+  - navigation "Bingemind" [ref=e3]:
+    - link "Bingemind" [ref=e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - link "Hourly to Salary Calculator" [ref=e11] [cursor=pointer]:
+        - /url: /hourly-to-salary-calculator/
+      - generic [ref=e13]:
+        - link "More free tools" [ref=e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=e15]:
+          - link "Tool" [ref=e16] [cursor=pointer]:
+            - /url: /hourly-to-salary-calculator/
+          - link "About" [ref=e17] [cursor=pointer]:
+            - /url: /hourly-to-salary-calculator/about/
+          - link "Contact" [ref=e18] [cursor=pointer]:
+            - /url: /hourly-to-salary-calculator/contact/
+        - button "Switch color theme" [ref=e19] [cursor=pointer]
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - heading "Hourly to Salary Calculator" [level=1] [ref=e24]
+      - paragraph [ref=e25]: Type your hourly rate and the hours you work. See your pay per day, week, two weeks, month and year. All numbers are before tax.
+      - region "Hourly to salary calculator" [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - group "Calculate" [ref=e30]:
+              - generic [ref=e32] [cursor=pointer]:
+                - radio "Hourly to salary" [checked] [ref=e33]
+                - text: Hourly to salary
+              - generic [ref=e34] [cursor=pointer]:
+                - radio "Salary to hourly" [ref=e35]
+                - text: Salary to hourly
+            - generic [ref=e36]:
+              - generic [ref=e37]: Hourly rate ($)
+              - generic [ref=e38]:
+                - generic [aria-hidden]: $
+                - textbox "Hourly rate ($)" [ref=e39]: "20"
+              - text: "!"
+            - text: "!"
+            - generic [ref=e40]:
+              - generic [ref=e41]: Hours per week
+              - textbox "Hours per week" [ref=e43]: "40"
+              - text: "!"
+            - generic [ref=e44]:
+              - generic [ref=e45]: Weeks worked per year
+              - textbox "Weeks worked per year" [ref=e46]: "52"
+              - paragraph [ref=e47]: Use fewer weeks if you take unpaid time off. Paid vacation still counts as weeks worked.
+              - text: "!"
+              - group "Weeks worked per year" [ref=e48]:
+                - generic [ref=e50] [cursor=pointer]:
+                  - radio "52 weeks (no unpaid time off)" [checked] [ref=e51]
+                  - generic [ref=e52]: 52 weeks (no unpaid time off)
+                - generic [ref=e53] [cursor=pointer]:
+                  - radio "50 weeks (2 weeks off)" [ref=e54]
+                  - generic [ref=e55]: 50 weeks (2 weeks off)
+                - generic [ref=e56] [cursor=pointer]:
+                  - radio "48 weeks (4 weeks off)" [ref=e57]
+                  - generic [ref=e58]: 48 weeks (4 weeks off)
+            - group [ref=e59]:
+              - generic "More options" [ref=e60] [cursor=pointer]
+              - text: "!"
+          - generic [ref=e61]:
+            - paragraph [ref=e62]: $41,600 a year$3,466.67 a month
+            - table [ref=e63]:
+              - rowgroup [ref=e64]:
+                - row [ref=e65]:
+                  - columnheader "Period" [ref=e66]
+                  - columnheader "Pay" [ref=e67]
+              - rowgroup [ref=e68]:
+                - row [ref=e69]:
+                  - rowheader "Daily (5 days a week)" [ref=e70]
+                  - cell "$160" [ref=e71]
+                - row [ref=e72]:
+                  - rowheader "Weekly" [ref=e73]
+                  - cell "$800" [ref=e74]
+                - row [ref=e75]:
+                  - rowheader "Every two weeks" [ref=e76]
+                  - cell "$1,600" [ref=e77]
+                - row [ref=e78]:
+                  - rowheader "Twice a month" [ref=e79]
+                  - cell "$1,733.33" [ref=e80]
+                - row [ref=e81]:
+                  - rowheader "Monthly" [ref=e82]
+                  - cell "$3,466.67" [ref=e83]
+                - row [ref=e84]:
+                  - rowheader "Annual" [ref=e85]
+                  - cell "$41,600" [ref=e86]
+            - paragraph [ref=e87]: Monthly is your yearly pay divided by 12. A month is a little more than 4 weeks, so it is not weekly pay × 4.
+            - paragraph [ref=e88]:
+              - strong [ref=e89]: These numbers are before tax. They show gross pay, not take-home pay.
+            - generic [ref=e90]:
+              - button "Copy summary" [ref=e91] [cursor=pointer]
+              - button "Print" [ref=e92] [cursor=pointer]
+              - button "Reset" [ref=e93] [cursor=pointer]
+            - paragraph [ref=e94]: Your numbers stay on this device. Nothing is uploaded.
+            - paragraph
+            - region [ref=e95]:
+              - heading "How we calculate" [level=2] [ref=e96]
+              - list [ref=e97]:
+                - listitem [ref=e98]: Weekly = $20 × 40 hours = $800
+                - listitem [ref=e99]: Annual = $800 × 52 weeks = $41,600
+                - listitem [ref=e100]: Monthly = $41,600 ÷ 12 = $3,466.67
+                - listitem [ref=e101]: Twice a month = $41,600 ÷ 24 = $1,733.33
+                - listitem [ref=e102]: Every two weeks = $800 × 2 = $1,600
+                - listitem [ref=e103]: Daily = $800 ÷ 5 days = $160
+    - region [ref=e104]:
+      - article [ref=e105]:
+        - heading "What does an hourly to salary calculator do?" [level=2] [ref=e106]
+        - paragraph [ref=e107]: An hourly to salary calculator turns an hourly rate into the pay you get for a day, a week, a month and a year. It helps you compare an hourly job with a salaried job, plan a budget, or check a freelance quote. This calculator uses your real hours and the weeks you actually work, and it shows the math.
+        - heading "How to use the hourly to salary calculator" [level=2] [ref=e108]
+        - list [ref=e109]:
+          - listitem [ref=e110]: Type your hourly rate in dollars.
+          - listitem [ref=e111]: Type the hours you work in a normal week.
+          - listitem [ref=e112]: Pick the weeks you work in a year. Use 50 or 48 if you take 2 or 4 unpaid weeks off.
+          - listitem [ref=e113]: Read your pay for each period. Change any number and the results change at once.
+          - listitem [ref=e114]: To go the other way, switch to Salary to hourly and type a yearly salary.
+          - listitem [ref=e115]: Press Copy summary to paste the numbers into a message or a note.
+        - heading "The formula" [level=2] [ref=e116]
+        - paragraph [ref=e117]: Yearly pay is your hourly rate times the hours you work each week, times the weeks you work each year.
+        - paragraph [ref=e118]:
+          - strong [ref=e119]: Yearly pay = hourly rate × hours per week × weeks per year
+        - paragraph [ref=e120]: A full-time year is often counted as 40 hours a week for 52 weeks, which is 2,080 hours. At $20 an hour, that is $20 × 2,080 = $41,600 a year.
+        - heading "$20 an hour is how much a year?" [level=2] [ref=e121]
+        - region "$20 an hour at different hours" [ref=e122]:
+          - table [ref=e123]:
+            - caption [ref=e124]: $20 an hour at different hours
+            - rowgroup [ref=e125]:
+              - row [ref=e126]:
+                - columnheader "Hours a week" [ref=e127]
+                - columnheader "Weekly" [ref=e128]
+                - columnheader "Monthly" [ref=e129]
+                - columnheader "Yearly" [ref=e130]
+                - columnheader "Use these numbers" [ref=e131]
+            - rowgroup [ref=e133]:
+              - row [ref=e134]:
+                - rowheader "20" [ref=e135]
+                - cell "$400" [ref=e136]
+                - cell "$1,733.33" [ref=e137]
+                - cell "$20,800" [ref=e138]
+                - cell [ref=e139]:
+                  - button "Use $20 an hour, 20 hours a week" [ref=e140] [cursor=pointer]: Use
+              - row [ref=e141]:
+                - rowheader "30" [ref=e142]
+                - cell "$600" [ref=e143]
+                - cell "$2,600" [ref=e144]
+                - cell "$31,200" [ref=e145]
+                - cell [ref=e146]:
+                  - button "Use $20 an hour, 30 hours a week" [ref=e147] [cursor=pointer]: Use
+              - row [ref=e148]:
+                - rowheader "32" [ref=e149]
+                - cell "$640" [ref=e150]
+                - cell "$2,773.33" [ref=e151]
+                - cell "$33,280" [ref=e152]
+                - cell [ref=e153]:
+                  - button "Use $20 an hour, 32 hours a week" [ref=e154] [cursor=pointer]: Use
+              - row [ref=e155]:
+                - rowheader "40" [ref=e156]
+                - cell "$800" [ref=e157]
+                - cell "$3,466.67" [ref=e158]
+                - cell "$41,600" [ref=e159]
+                - cell [ref=e160]:
+                  - button "Use $20 an hour, 40 hours a week" [ref=e161] [cursor=pointer]: Use
+              - row [ref=e162]:
+                - rowheader "50" [ref=e163]
+                - cell "$1,000" [ref=e164]
+                - cell "$4,333.33" [ref=e165]
+                - cell "$52,000" [ref=e166]
+                - cell [ref=e167]:
+                  - button "Use $20 an hour, 50 hours a week" [ref=e168] [cursor=pointer]: Use
+        - paragraph [ref=e169]: With 2 unpaid weeks off (50 weeks), 40 hours a week at $20 is $40,000 a year. With 4 weeks off (48 weeks), it is $38,400.
+        - heading "Why monthly pay is not weekly pay times 4" [level=2] [ref=e170]
+        - paragraph [ref=e171]: A year has 52 weeks but only 12 months, so an average month has about 4.33 weeks. If you multiply weekly pay by 4, you miss about one month of pay each year. That is why this calculator divides yearly pay by 12. At $800 a week, monthly pay is $41,600 ÷ 12 = $3,466.67, not $3,200.
+        - heading "Every two weeks or twice a month?" [level=2] [ref=e172]
+        - paragraph [ref=e173]: These sound alike but are different.
+        - list [ref=e174]:
+          - listitem [ref=e175]:
+            - strong [ref=e176]: Every two weeks
+            - text: (biweekly) means 26 paydays a year. Each one is two weeks of pay.
+          - listitem [ref=e177]:
+            - strong [ref=e178]: Twice a month
+            - text: (semimonthly) means 24 paydays a year, often on the 15th and the last day of the month. Each one is yearly pay divided by 24.
+        - paragraph [ref=e179]: At $41,600 a year, every two weeks is $1,600 and twice a month is $1,733.33.
+        - heading "Common hourly rates as yearly pay" [level=2] [ref=e180]
+        - region "Common hourly rates at 40 hours a week, 52 weeks a year" [ref=e181]:
+          - table [ref=e182]:
+            - caption [ref=e183]: Common hourly rates at 40 hours a week, 52 weeks a year
+            - rowgroup [ref=e184]:
+              - row [ref=e185]:
+                - columnheader "Hourly" [ref=e186]
+                - columnheader "Weekly" [ref=e187]
+                - columnheader "Monthly" [ref=e188]
+                - columnheader "Yearly" [ref=e189]
+                - columnheader "Use these numbers" [ref=e190]
+            - rowgroup [ref=e192]:
+              - row [ref=e193]:
+                - rowheader "$15" [ref=e194]
+                - cell "$600" [ref=e195]
+                - cell "$2,600" [ref=e196]
+                - cell "$31,200" [ref=e197]
+                - cell [ref=e198]:
+                  - button "Use $15 an hour, 40 hours a week" [ref=e199] [cursor=pointer]: Use
+              - row [ref=e200]:
+                - rowheader "$20" [ref=e201]
+                - cell "$800" [ref=e202]
+                - cell "$3,466.67" [ref=e203]
+                - cell "$41,600" [ref=e204]
+                - cell [ref=e205]:
+                  - button "Use $20 an hour, 40 hours a week" [ref=e206] [cursor=pointer]: Use
+              - row [ref=e207]:
+                - rowheader "$25" [ref=e208]
+                - cell "$1,000" [ref=e209]
+                - cell "$4,333.33" [ref=e210]
+                - cell "$52,000" [ref=e211]
+                - cell [ref=e212]:
+                  - button "Use $25 an hour, 40 hours a week" [ref=e213] [cursor=pointer]: Use
+              - row [ref=e214]:
+                - rowheader "$30" [ref=e215]
+                - cell "$1,200" [ref=e216]
+                - cell "$5,200" [ref=e217]
+                - cell "$62,400" [ref=e218]
+                - cell [ref=e219]:
+                  - button "Use $30 an hour, 40 hours a week" [ref=e220] [cursor=pointer]: Use
+              - row [ref=e221]:
+                - rowheader "$40" [ref=e222]
+                - cell "$1,600" [ref=e223]
+                - cell "$6,933.33" [ref=e224]
+                - cell "$83,200" [ref=e225]
+                - cell [ref=e226]:
+                  - button "Use $40 an hour, 40 hours a week" [ref=e227] [cursor=pointer]: Use
+              - row [ref=e228]:
+                - rowheader "$50" [ref=e229]
+                - cell "$2,000" [ref=e230]
+                - cell "$8,666.67" [ref=e231]
+                - cell "$104,000" [ref=e232]
+                - cell [ref=e233]:
+                  - button "Use $50 an hour, 40 hours a week" [ref=e234] [cursor=pointer]: Use
+        - heading "Unpaid time off and freelance work" [level=2] [ref=e235]
+        - paragraph [ref=e236]: If you are paid only for the hours you work, weeks off cut your yearly pay. Freelancers and contractors often take 2 to 4 unpaid weeks a year for holidays, sick days and gaps between projects. Use the 50 or 48 week buttons to see the effect. At $20 an hour and 40 hours a week, 2 unpaid weeks lower yearly pay from $41,600 to $40,000.
+        - paragraph [ref=e237]: If you have paid vacation, keep 52 weeks, because you are paid for those weeks.
+        - heading "Before tax" [level=2] [ref=e238]
+        - paragraph [ref=e239]: Every number on this page is gross pay, before tax and before any deductions. Your take-home pay will be lower. This calculator does not estimate tax.
+    - region [ref=e240]:
+      - heading "Frequently asked questions" [level=2] [ref=e241]
+      - generic [ref=e242]:
+        - group [ref=e243]:
+          - generic "How do I convert an hourly rate to a yearly salary?" [ref=e244] [cursor=pointer]
+        - group [ref=e247]:
+          - generic "$20 an hour is how much a year?" [ref=e248] [cursor=pointer]
+        - group [ref=e251]:
+          - generic "How much is 40 hours a week at $25 an hour?" [ref=e252] [cursor=pointer]
+        - group [ref=e255]:
+          - generic "How do I turn a salary into an hourly rate?" [ref=e256] [cursor=pointer]
+        - group [ref=e259]:
+          - generic "Does this calculator include taxes?" [ref=e260] [cursor=pointer]
+        - group [ref=e263]:
+          - generic "Why is monthly pay not weekly pay times 4?" [ref=e264] [cursor=pointer]
+        - group [ref=e267]:
+          - generic "Does it handle overtime?" [ref=e268] [cursor=pointer]
+  - region [ref=e271]:
+    - heading "What next" [level=2] [ref=e272]
+    - list [ref=e273]:
+      - listitem [ref=e274]:
+        - link "Mileage log maker" [ref=e275] [cursor=pointer]:
+          - /url: https://bingemind.com/mileage-log-maker/
+        - paragraph [ref=e276]: Track work trips if you drive for your job or your gig.
+      - listitem [ref=e277]:
+        - link "Cash drawer counter" [ref=e278] [cursor=pointer]:
+          - /url: https://bingemind.com/cash-drawer-counter/
+        - paragraph [ref=e279]: Count the cash in a till at the end of a shift.
+      - listitem [ref=e280]:
+        - link "Column to comma list converter" [ref=e281] [cursor=pointer]:
+          - /url: https://bingemind.com/column-to-comma/
+        - paragraph [ref=e282]: Turn a column of hours or amounts from a spreadsheet into one list.
+      - listitem [ref=e283]:
+        - link "See all free tools" [ref=e284] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=e285]:
+    - generic [ref=e286]:
+      - paragraph [ref=e287]: © 2026 Hourly to Salary Calculator. Free to use.
+      - navigation "Footer" [ref=e288]:
+        - link "About" [ref=e289] [cursor=pointer]:
+          - /url: /hourly-to-salary-calculator/about/
+        - link "Contact" [ref=e290] [cursor=pointer]:
+          - /url: /hourly-to-salary-calculator/contact/
+        - link "Privacy Policy" [ref=e291] [cursor=pointer]:
+          - /url: /hourly-to-salary-calculator/privacy/
+        - link "Terms" [ref=e292] [cursor=pointer]:
+          - /url: /hourly-to-salary-calculator/terms/
+        - link "More free tools" [ref=e293] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=e294]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=e295] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=e296] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=e297]:
+      - link "About" [ref=e298] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=e299]: ·
+      - link "Contact" [ref=e300] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=e301]: ·
+      - link "Privacy" [ref=e302] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=e303]: ·
+      - link "Terms" [ref=e304] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=e305]: ·
+      - link "Cookie settings" [ref=e306] [cursor=pointer]:
+        - /url: "#bm-consent"

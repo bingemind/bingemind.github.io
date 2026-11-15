@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - navigation "Bingemind" [ref=e3]:
+    - link "Bingemind" [ref=e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - link "DPI changer" [ref=e11] [cursor=pointer]:
+        - /url: /dpi-changer/
+      - generic [ref=e13]:
+        - link "More free tools" [ref=e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=e15]:
+          - link "About" [ref=e16] [cursor=pointer]:
+            - /url: /dpi-changer/about/
+          - link "Contact" [ref=e17] [cursor=pointer]:
+            - /url: /dpi-changer/contact/
+        - button "Switch color theme" [ref=e18]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Free, private, no quality loss
+      - heading "Change image DPI to 300" [level=1] [ref=e24]
+      - paragraph [ref=e25]: "Free image to DPI converter: set a JPEG or PNG to 300, 150, 72 or any DPI. Pixels stay untouched. Runs in your browser, so nothing is uploaded."
+      - region "DPI changer" [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]:
+          - paragraph [ref=e32]: Drop JPEG, PNG or WebP files here
+          - paragraph [ref=e33]: or
+          - button "Choose images" [ref=e34]
+          - generic [ref=e35]: Choose images
+          - paragraph [ref=e36]:
+            - text: Several files at once.
+            - generic [ref=e37]: You can also paste an image with Ctrl+V (Cmd+V on Mac).
+            - text: Your images never leave your device.
+        - group "Set DPI to" [ref=e38]:
+          - generic [ref=e40]:
+            - button "72" [ref=e41]
+            - button "96" [ref=e42]
+            - button "150" [ref=e43]
+            - button "300" [pressed] [ref=e44]
+            - button "600" [ref=e45]
+            - generic [ref=e46]:
+              - text: Custom
+              - spinbutton "Custom" [ref=e47]
+        - generic [ref=e48]:
+          - paragraph [ref=e49]: No files yet. Pixels stay exactly as they are. Only the DPI value in the file header changes.
+          - list
+        - status [ref=e50]
+    - region [ref=e51]:
+      - generic [ref=e52]:
+        - heading "Check the DPI of an image" [level=2] [ref=e53]
+        - paragraph [ref=e54]:
+          - text: "You can also use the tool just to look. Add a file and the row shows its DPI now, its size in pixels and how large it prints. Nothing changes unless you press Download. To set a new value, use it as an image to DPI converter: add the file, pick the DPI and download. See also how to"
+          - link "convert an image to DPI" [ref=e55] [cursor=pointer]:
+            - /url: /dpi-changer/convert-image-to-dpi/
+          - text: .
+    - region [ref=e56]:
+      - article [ref=e57]:
+        - heading "How to change image DPI to 300" [level=2] [ref=e58]
+        - paragraph [ref=e59]: To change image DPI to 300, drop your JPEG or PNG on the tool above, pick 300, and download the file. The tool only edits the small header of the file that stores the DPI value. It does not resize, re-compress or re-save the picture. The pixels stay the same, so the quality stays the same.
+        - list [ref=e60]:
+          - listitem [ref=e61]: Add one or more JPEG, PNG or WebP files, or paste an image.
+          - listitem [ref=e62]: Choose 72, 96, 150, 300 or 600, or type your own value.
+          - listitem [ref=e63]: Check the print size shown for each file.
+          - listitem [ref=e64]: Download each file, or all of them as one zip.
+        - heading "Convert 72 DPI to 300 DPI" [level=2] [ref=e65]
+        - paragraph [ref=e66]: Most exports from design apps and screenshots say 72 DPI. To convert 72 DPI to 300 DPI, add the file, keep 300 selected, and download it. The picture does not change. Only the label changes, so the print size gets smaller. A 2400 by 3000 pixel file prints at 33.3 by 41.7 inches at 72 DPI, and at 8 by 10 inches at 300 DPI. If you need a larger print at 300 DPI, you need more pixels.
+        - heading "What DPI means" [level=2] [ref=e67]
+        - paragraph [ref=e68]: DPI stands for dots per inch. It tells a printer how many pixels of the image to place in one inch of paper. A 3000 by 2000 pixel photo at 300 DPI prints at 10 by 6.7 inches. The same photo at 150 DPI prints at 20 by 13.3 inches. The pixels did not change. Only the printed size did.
+        - heading "Why print shops ask for 300 DPI" [level=2] [ref=e69]
+        - paragraph [ref=e70]: At 300 DPI, the dots are so small that the eye sees smooth lines and sharp text. Below about 150 DPI, edges start to look soft or blocky. Print shops, photo labs and print-on-demand sites such as Etsy printables and book printers use 300 DPI as a safe standard. Large posters viewed from far away can use less.
+        - heading "DPI is not the same as pixels" [level=2] [ref=e71]
+        - paragraph [ref=e72]: Pixels are the real detail in a picture. DPI is only a label that says how big to print those pixels. A file can say 72 DPI or 300 DPI and hold exactly the same picture. Screens ignore the DPI value. Print software and layout programs read it to set the size on the page.
+        - paragraph [ref=e73]: This is why a file that says 72 DPI is often rejected by a print service. The label is wrong for print, even if the picture is fine. Changing the label fixes that without any loss.
+        - heading "When changing DPI is not enough" [level=2] [ref=e74]
+        - paragraph [ref=e75]: Changing the DPI label does not add detail. If you need an 8 by 10 inch print at 300 DPI, the image must be at least 2400 by 3000 pixels. A small web image of 800 by 600 pixels will become 2.7 by 2 inches at 300 DPI. If you force it to print larger, it will look soft.
+        - paragraph [ref=e76]: "Do the math before you print: pixels divided by DPI gives inches. The tool shows this for you in inches and centimeters. If the print size is too small, you need a larger original. Upscaling programs can add pixels, but they guess the new detail and can change the look of the image."
+        - heading "DPI and PPI" [level=2] [ref=e77]
+        - paragraph [ref=e78]: You may also see PPI, which means pixels per inch. For image files the two terms mean the same thing in daily use. Photo apps say PPI. Print shops say DPI. Printers also use the word DPI for ink dots, which is a different number. For your image file, the value in the header is the one that counts.
+        - heading "How to check the DPI of an image" [level=2] [ref=e79]
+        - paragraph [ref=e80]: Add the file to the tool. The row shows the DPI it has now, the pixel size and the print size. You can also check on your computer. On a Mac, open the file in Preview and choose Tools, then Show Inspector. On Windows, right-click the file, choose Properties, then open the Details tab. Some files have no DPI value. The tool then shows "not set".
+        - heading "Common uses" [level=2] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83]: Etsy and print-on-demand listings that ask for 300 DPI files.
+          - listitem [ref=e84]: School and work forms that need a scan at a set DPI.
+          - listitem [ref=e85]: Photo prints, flyers, business cards and book covers.
+          - listitem [ref=e86]: Fixing a batch of images that all say 72 DPI.
+        - 'heading "Worked example: an Etsy printable" [level=2] [ref=e87]'
+        - paragraph [ref=e88]: You made a poster at 2400 by 3000 pixels. Your export says 72 DPI, and the shop wants 300 DPI. Drop the file in, pick 300, and download. The tool shows 8 by 10 inches (20.3 by 25.4 cm). That fits an 8 by 10 frame, and the file now passes the shop check. If the buyer wants 16 by 20 inches, the same file would only give 150 DPI at that size, so you need a larger original.
+        - heading "Common DPI values and print sizes" [level=2] [ref=e89]
+        - region "Print size table" [ref=e90]:
+          - table [ref=e91]:
+            - caption [ref=e92]: Print size in inches for common pixel sizes and DPI values
+            - rowgroup [ref=e93]:
+              - row [ref=e94]:
+                - columnheader "Pixels" [ref=e95]
+                - columnheader "At 72 DPI" [ref=e96]
+                - columnheader "At 150 DPI" [ref=e97]
+                - columnheader "At 300 DPI" [ref=e98]
+            - rowgroup [ref=e99]:
+              - row [ref=e100]:
+                - rowheader "1200 x 1800" [ref=e101]
+                - cell "16.7 x 25 in" [ref=e102]
+                - cell "8 x 12 in" [ref=e103]
+                - cell "4 x 6 in" [ref=e104]
+              - row [ref=e105]:
+                - rowheader "2400 x 3000" [ref=e106]
+                - cell "33.3 x 41.7 in" [ref=e107]
+                - cell "16 x 20 in" [ref=e108]
+                - cell "8 x 10 in" [ref=e109]
+              - row [ref=e110]:
+                - rowheader "3300 x 5100" [ref=e111]
+                - cell "45.8 x 70.8 in" [ref=e112]
+                - cell "22 x 34 in" [ref=e113]
+                - cell "11 x 17 in" [ref=e114]
+              - row [ref=e115]:
+                - rowheader "4000 x 6000" [ref=e116]
+                - cell "55.6 x 83.3 in" [ref=e117]
+                - cell "26.7 x 40 in" [ref=e118]
+                - cell "13.3 x 20 in" [ref=e119]
+        - heading "Which DPI to pick" [level=2] [ref=e120]
+        - list [ref=e121]:
+          - listitem [ref=e122]:
+            - strong [ref=e123]: "72:"
+            - text: screens and web pages. Printers do not use it.
+          - listitem [ref=e124]:
+            - strong [ref=e125]: "96:"
+            - text: Windows screens and some office programs.
+          - listitem [ref=e126]:
+            - strong [ref=e127]: "150:"
+            - text: large posters and banners seen from a distance.
+          - listitem [ref=e128]:
+            - strong [ref=e129]: "300:"
+            - text: photos, flyers, cards, books and most print shops.
+          - listitem [ref=e130]:
+            - strong [ref=e131]: "600:"
+            - text: fine line art, scans and small text.
+        - heading "Private by design" [level=2] [ref=e132]
+        - paragraph [ref=e133]:
+          - text: The tool runs in your browser. Your files are read in memory on your device and are never uploaded. You can turn off your network after the page loads and it still works. Read the
+          - link "Privacy Policy" [ref=e134] [cursor=pointer]:
+            - /url: /dpi-changer/privacy/
+          - text: for details.
+    - region [ref=e135]:
+      - heading "Guides for specific jobs" [level=2] [ref=e136]
+      - list [ref=e137]:
+        - listitem [ref=e138]:
+          - link "Convert image to DPI" [ref=e139] [cursor=pointer]:
+            - /url: /dpi-changer/convert-image-to-dpi/
+        - listitem [ref=e140]:
+          - link "Change DPI of many images at once" [ref=e141] [cursor=pointer]:
+            - /url: /dpi-changer/change-dpi-of-multiple-images/
+        - listitem [ref=e142]:
+          - link "Change PNG DPI" [ref=e143] [cursor=pointer]:
+            - /url: /dpi-changer/change-png-dpi/
+        - listitem [ref=e144]:
+          - link "Change JPG DPI" [ref=e145] [cursor=pointer]:
+            - /url: /dpi-changer/change-jpg-dpi/
+        - listitem [ref=e146]:
+          - link "DPI for Etsy printables" [ref=e147] [cursor=pointer]:
+            - /url: /dpi-changer/dpi-changer-for-etsy/
+        - listitem [ref=e148]:
+          - link "Convert 72 DPI to 300 DPI" [ref=e149] [cursor=pointer]:
+            - /url: /dpi-changer/72-dpi-to-300-dpi/
+        - listitem [ref=e150]:
+          - link "Check the DPI of an image" [ref=e151] [cursor=pointer]:
+            - /url: /dpi-changer/check-image-dpi/
+        - listitem [ref=e152]:
+          - link "Change DPI to 150" [ref=e153] [cursor=pointer]:
+            - /url: /dpi-changer/change-dpi-to-150/
+        - listitem [ref=e154]:
+          - link "Change DPI to 600" [ref=e155] [cursor=pointer]:
+            - /url: /dpi-changer/change-dpi-to-600/
+        - listitem [ref=e156]:
+          - link "Change DPI to 96" [ref=e157] [cursor=pointer]:
+            - /url: /dpi-changer/change-dpi-to-96/
+        - listitem [ref=e158]:
+          - link "Inches to pixels calculator" [ref=e159] [cursor=pointer]:
+            - /url: /dpi-changer/inches-to-pixels-at-300-dpi/
+    - region [ref=e160]:
+      - heading "Frequently asked questions" [level=2] [ref=e161]
+      - generic [ref=e162]:
+        - group [ref=e163]:
+          - generic "How do I convert an image to a DPI value?" [ref=e164] [cursor=pointer]
+        - group [ref=e167]:
+          - generic "Does changing DPI reduce image quality?" [ref=e168] [cursor=pointer]
+        - group [ref=e171]:
+          - generic "Will a 72 DPI image look better at 300 DPI?" [ref=e172] [cursor=pointer]
+        - group [ref=e175]:
+          - generic "Are my images uploaded to a server?" [ref=e176] [cursor=pointer]
+        - group [ref=e179]:
+          - generic "Which file types does it support?" [ref=e180] [cursor=pointer]
+        - group [ref=e183]:
+          - generic "Can I paste an image instead of choosing a file?" [ref=e184] [cursor=pointer]
+        - group [ref=e187]:
+          - generic "Can I change many files at once?" [ref=e188] [cursor=pointer]
+        - group [ref=e191]:
+          - generic "What DPI should I use for printing?" [ref=e192] [cursor=pointer]
+        - group [ref=e195]:
+          - generic "How do I check the new DPI?" [ref=e196] [cursor=pointer]
+        - group [ref=e199]:
+          - generic "Why does the print size change when I change DPI?" [ref=e200] [cursor=pointer]
+  - region [ref=e203]:
+    - heading "More free tools from Bingemind" [level=2] [ref=e204]
+    - list [ref=e205]:
+      - listitem [ref=e206]:
+        - link "Online ruler" [ref=e207] [cursor=pointer]:
+          - /url: https://bingemind.com/online-ruler/
+      - listitem [ref=e208]:
+        - link "Knitting increase calculator" [ref=e209] [cursor=pointer]:
+          - /url: https://bingemind.com/knitting-increase-calculator/
+      - listitem [ref=e210]:
+        - link "Poster tiler" [ref=e211] [cursor=pointer]:
+          - /url: https://bingemind.com/poster-tiler/
+      - listitem [ref=e212]:
+        - link "See all free tools" [ref=e213] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=e214]:
+    - generic [ref=e215]:
+      - paragraph [ref=e216]: © 2026 DPI Changer. Free to use.
+      - navigation "Footer" [ref=e217]:
+        - link "About" [ref=e218] [cursor=pointer]:
+          - /url: /dpi-changer/about/
+        - link "Contact" [ref=e219] [cursor=pointer]:
+          - /url: /dpi-changer/contact/
+        - link "Privacy Policy" [ref=e220] [cursor=pointer]:
+          - /url: /dpi-changer/privacy/
+        - link "Terms" [ref=e221] [cursor=pointer]:
+          - /url: /dpi-changer/terms/
+        - link "More free tools" [ref=e222] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=e223]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=e224] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=e225] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=e226]:
+      - link "About" [ref=e227] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=e228]: ·
+      - link "Contact" [ref=e229] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=e230]: ·
+      - link "Privacy" [ref=e231] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=e232]: ·
+      - link "Terms" [ref=e233] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=e234]: ·
+      - link "Cookie settings" [ref=e235] [cursor=pointer]:
+        - /url: "#bm-consent"

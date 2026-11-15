@@ -1,0 +1,437 @@
+- generic [active] [ref=f14e1]:
+  - navigation "Bingemind" [ref=f14e3]:
+    - link "Bingemind" [ref=f14e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=f14e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=f14e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=f14e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=f14e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f14e9]:
+    - generic [ref=f14e10]:
+      - link "Column to Comma," [ref=f14e11] [cursor=pointer]:
+        - /url: /column-to-comma/
+      - generic [ref=f14e13]:
+        - link "More free tools" [ref=f14e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=f14e15]:
+          - link "Tool" [ref=f14e16] [cursor=pointer]:
+            - /url: /column-to-comma/
+          - link "About" [ref=f14e17] [cursor=pointer]:
+            - /url: /column-to-comma/about/
+          - link "Contact" [ref=f14e18] [cursor=pointer]:
+            - /url: /column-to-comma/contact/
+        - button "Switch color theme" [ref=f14e19]
+  - main [ref=f14e22]:
+    - generic [ref=f14e23]:
+      - heading "Convert a column to a comma separated list" [level=1] [ref=f14e24]
+      - paragraph [ref=f14e25]: Paste your rows. A comma separated list, or a column to CSV row, appears as you type. Add quotes, remove duplicates, sort, then copy.
+      - region "Column to comma converter" [ref=f14e27]:
+        - generic [ref=f14e28]:
+          - group "Direction" [ref=f14e29]:
+            - generic [ref=f14e31]:
+              - generic [ref=f14e32] [cursor=pointer]:
+                - radio "Column to list" [checked] [ref=f14e33]
+                - generic [ref=f14e34]: Column to list
+              - generic [ref=f14e35] [cursor=pointer]:
+                - radio "List to column" [ref=f14e36]
+                - generic [ref=f14e37]: List to column
+          - group "Quick settings" [ref=f14e38]:
+            - generic [ref=f14e39]: "Quick:"
+            - button "Comma list" [ref=f14e40]
+            - button "SQL IN list" [ref=f14e41]
+            - button "JSON array" [ref=f14e42]
+            - button "CSV row" [ref=f14e43]
+        - generic [ref=f14e44]:
+          - generic [ref=f14e45]:
+            - generic [ref=f14e46]:
+              - generic [ref=f14e47]: Your column
+              - generic [ref=f14e48]:
+                - button "Paste" [ref=f14e49]
+                - button "Upload file" [ref=f14e50]
+                - button "Choose a .txt or .csv file" [ref=f14e51]
+                - button "Example" [ref=f14e52]
+                - button "Clear" [ref=f14e53]
+            - textbox "Your column" [ref=f14e54]:
+              - /placeholder: "One value per line, for example:\n1001\n1002\n1003"
+          - group [ref=f14e55]:
+            - generic "Options" [ref=f14e56] [cursor=pointer]
+            - heading "Options" [level=2] [ref=f14e59]
+            - generic [ref=f14e60]:
+              - generic [ref=f14e61]:
+                - text: Separator
+                - combobox "Separator" [ref=f14e62]:
+                  - option "Comma ," [selected]
+                  - option "Comma + space"
+                  - option "Semicolon ;"
+                  - option "Pipe |"
+                  - option "New line"
+                  - option "Tab"
+                  - option "Space"
+                  - option "Custom..."
+              - generic [ref=f14e63]:
+                - text: Custom text
+                - textbox "Custom text" [disabled] [ref=f14e64]:
+                  - /placeholder: " - "
+              - generic [ref=f14e65]:
+                - text: Quotes
+                - combobox "Quotes" [ref=f14e66]:
+                  - option "None" [selected]
+                  - option "Single 'a'"
+                  - option "Double \"a\""
+                  - 'option "Backtick `a`"'
+                  - option "Double, JSON style \"a\""
+              - generic [ref=f14e67]:
+                - text: Wrap list
+                - combobox "Wrap list" [ref=f14e68]:
+                  - option "None" [selected]
+                  - option "( ) parentheses"
+                  - option "[ ] brackets"
+                  - 'option "{ } braces"'
+              - generic [ref=f14e69]:
+                - text: Sort
+                - combobox "Sort" [ref=f14e70]:
+                  - option "Keep order" [selected]
+                  - option "A to Z"
+                  - option "Z to A"
+                  - option "Numbers, small first"
+                  - option "Numbers, large first"
+              - generic [ref=f14e71]:
+                - text: Letter case
+                - combobox "Letter case" [ref=f14e72]:
+                  - option "Keep as typed" [selected]
+                  - option "UPPER CASE"
+                  - option "lower case"
+                  - option "Title Case"
+              - generic [ref=f14e73]:
+                - text: Before each item
+                - textbox "Before each item" [ref=f14e74]:
+                  - /placeholder: <li>
+              - generic [ref=f14e75]:
+                - text: After each item
+                - textbox "After each item" [ref=f14e76]:
+                  - /placeholder: </li>
+              - generic [ref=f14e77]:
+                - text: Before the list
+                - textbox "Before the list" [ref=f14e78]:
+                  - /placeholder: <ul>\n
+              - generic [ref=f14e79]:
+                - text: After the list
+                - textbox "After the list" [ref=f14e80]:
+                  - /placeholder: \n</ul>
+            - generic [ref=f14e81]:
+              - generic [ref=f14e82] [cursor=pointer]:
+                - checkbox "Trim spaces" [checked] [ref=f14e83]
+                - text: Trim spaces
+              - generic [ref=f14e84] [cursor=pointer]:
+                - checkbox "Remove blank lines" [checked] [ref=f14e85]
+                - text: Remove blank lines
+              - generic [ref=f14e86] [cursor=pointer]:
+                - checkbox "Remove duplicates" [ref=f14e87]
+                - text: Remove duplicates
+              - generic [ref=f14e88]:
+                - checkbox "Ignore case for duplicates" [disabled] [ref=f14e89]
+                - text: Ignore case for duplicates
+              - generic [ref=f14e90]:
+                - checkbox "Do not quote numbers (good for SQL IN)" [disabled] [ref=f14e91]
+                - text: Do not quote numbers (good for SQL IN)
+              - generic [ref=f14e92] [cursor=pointer]:
+                - checkbox "Use only the first column when a row has tabs (Excel paste)" [ref=f14e93]
+                - text: Use only the first column when a row has tabs (Excel paste)
+            - generic [ref=f14e94]:
+              - button "Reset options" [ref=f14e95]
+              - status
+          - generic [ref=f14e96]:
+            - generic [ref=f14e97]:
+              - generic [ref=f14e98]: Your list
+              - button "Copy Ctrl+Enter" [disabled] [ref=f14e99]:
+                - generic [ref=f14e103]: Copy
+                - generic [ref=f14e104]: Ctrl+Enter
+            - textbox "Your list" [ref=f14e105]:
+              - /placeholder: Your list shows up here as you type.
+            - generic [ref=f14e106]:
+              - paragraph [ref=f14e107]
+              - button "Download .txt" [disabled] [ref=f14e108]
+            - status [ref=f14e109]
+      - paragraph [ref=f14e110]:
+        - text: Your text never leaves your browser.
+        - link "Read how we handle data" [ref=f14e111] [cursor=pointer]:
+          - /url: /column-to-comma/privacy/
+        - text: .
+    - region [ref=f14e112]:
+      - article [ref=f14e113]:
+        - heading "How to convert a column to a comma separated list" [level=2] [ref=f14e114]
+        - paragraph [ref=f14e115]: You have a column of values in Excel, Google Sheets or a SQL result. You need them in one line, with commas between them. This page does that. Paste the column into the left box and the list appears on the right. There is no button to press and nothing to install.
+        - list [ref=f14e116]:
+          - listitem [ref=f14e117]: Copy the cells. Select the column in your sheet and press Ctrl+C (Cmd+C on a Mac).
+          - listitem [ref=f14e118]:
+            - text: Click the left box and paste. You can also tap
+            - strong [ref=f14e119]: Paste
+            - text: .
+          - listitem [ref=f14e120]: Pick a separator and, if you need them, quotes.
+          - listitem [ref=f14e121]:
+            - text: Press
+            - strong [ref=f14e122]: Copy
+            - text: ", or hit Ctrl+Enter (Cmd+Enter on a Mac), and paste the list where you need it."
+        - 'heading "Worked example: build a SQL IN list" [level=2] [ref=f14e123]'
+        - paragraph [ref=f14e124]: "Say you have four customer IDs in a sheet and you want to look them up in a database. Paste these four rows:"
+        - code [ref=f14e126]: 1001 1002 1002 1004
+        - paragraph [ref=f14e127]:
+          - text: Click
+          - strong [ref=f14e128]: SQL IN list
+          - text: ", then tick"
+          - strong [ref=f14e129]: Remove duplicates
+          - text: ". You get this:"
+        - code [ref=f14e131]: (1001, 1002, 1004)
+        - paragraph [ref=f14e132]:
+          - text: Paste it after
+          - code [ref=f14e133]: WHERE id IN
+          - text: and run the query. For text values such as names or codes, the quotes stay on, so you get
+          - code [ref=f14e134]: ('AB-1', 'AB-2')
+          - text: . A name like O'Brien becomes
+          - code [ref=f14e135]: "'O''Brien'"
+          - text: ", which is the correct way to escape it in SQL."
+        - paragraph [ref=f14e136]: "One warning: Oracle allows at most 1,000 items inside one IN list. If your list is longer, split it into several lists."
+        - heading "Common settings" [level=2] [ref=f14e137]
+        - table [ref=f14e138]:
+          - rowgroup [ref=f14e139]:
+            - row [ref=f14e140]:
+              - columnheader "You want" [ref=f14e141]
+              - columnheader "Separator" [ref=f14e142]
+              - columnheader "Quotes" [ref=f14e143]
+              - columnheader "Result" [ref=f14e144]
+          - rowgroup [ref=f14e145]:
+            - row [ref=f14e146]:
+              - cell "Plain list" [ref=f14e147]
+              - cell "Comma" [ref=f14e148]
+              - cell "None" [ref=f14e149]
+              - cell [ref=f14e150]:
+                - code [ref=f14e151]: a,b,c
+            - row [ref=f14e152]:
+              - cell "Readable list" [ref=f14e153]
+              - cell "Comma and space" [ref=f14e154]
+              - cell "None" [ref=f14e155]
+              - cell [ref=f14e156]:
+                - code [ref=f14e157]: a, b, c
+            - row [ref=f14e158]:
+              - cell "SQL IN list" [ref=f14e159]
+              - cell "Comma and space" [ref=f14e160]
+              - cell "Single, wrap in ( )" [ref=f14e161]
+              - cell [ref=f14e162]:
+                - code [ref=f14e163]: ('a', 'b', 'c')
+            - row [ref=f14e164]:
+              - cell "JSON array" [ref=f14e165]
+              - cell "Comma and space" [ref=f14e166]
+              - cell "Double (JSON), wrap in [ ]" [ref=f14e167]
+              - cell [ref=f14e168]:
+                - code [ref=f14e169]: "[\"a\", \"b\", \"c\"]"
+            - row [ref=f14e170]:
+              - cell "CSV row" [ref=f14e171]
+              - cell "Comma" [ref=f14e172]
+              - cell "Double" [ref=f14e173]
+              - cell [ref=f14e174]:
+                - code [ref=f14e175]: "\"a\",\"b\",\"c\""
+            - row [ref=f14e176]:
+              - cell "Pipe list" [ref=f14e177]
+              - cell "Pipe" [ref=f14e178]
+              - cell "None" [ref=f14e179]
+              - cell [ref=f14e180]:
+                - code [ref=f14e181]: a|b|c
+        - heading "Convert a column to CSV" [level=2] [ref=f14e182]
+        - paragraph [ref=f14e183]:
+          - text: This tool also works as a column to CSV converter. It gives you one row of values with a comma between them. Use the Plain list or CSV row settings above. Pick Double quotes if a value can hold a comma. To convert a column to a CSV file, press Download .txt and rename it to .csv. There is a separate page for
+          - link "column to CSV online" [ref=f14e184] [cursor=pointer]:
+            - /url: /column-to-comma/column-to-csv-online/
+          - text: .
+        - heading "Column to comma in Excel and Google Sheets" [level=2] [ref=f14e185]
+        - paragraph [ref=f14e186]:
+          - text: Both programs have a built-in way to join cells. In Excel and Sheets,
+          - code [ref=f14e187]: =TEXTJOIN(",", TRUE, A1:A100)
+          - text: joins the range with commas and skips empty cells. It works well for a fixed range, but it cannot add quotes, drop duplicates or sort without extra formulas. This tool does all of that in one step, and you do not need to change your file.
+        - paragraph [ref=f14e188]: The tool also accepts text copied from a database client, a CSV file, an email or a web page. It handles Windows, Mac and Linux line breaks.
+        - heading "What each option does" [level=2] [ref=f14e189]
+        - list [ref=f14e190]:
+          - listitem [ref=f14e191]:
+            - strong [ref=f14e192]: Trim spaces
+            - text: removes spaces and tabs around each value. Cells copied from a sheet often carry them.
+          - listitem [ref=f14e193]:
+            - strong [ref=f14e194]: Remove blank lines
+            - text: drops empty rows, so you never get
+            - code [ref=f14e195]: a,,b
+            - text: .
+          - listitem [ref=f14e196]:
+            - strong [ref=f14e197]: Remove duplicates
+            - text: keeps the first copy of each value. Tick
+            - strong [ref=f14e198]: Ignore case for duplicates
+            - text: to treat Ab and ab as the same.
+          - listitem [ref=f14e199]:
+            - strong [ref=f14e200]: Sort
+            - text: orders values from A to Z or Z to A. Numbers inside text sort the natural way, so item2 comes before item10. The number options sort by value.
+          - listitem [ref=f14e201]:
+            - strong [ref=f14e202]: Letter case
+            - text: changes values to upper case, lower case or Title Case before duplicates are checked.
+          - listitem [ref=f14e203]:
+            - strong [ref=f14e204]: Before and after each item
+            - text: adds text around every value, such as
+            - code [ref=f14e205]: <li>
+            - text: and
+            - code [ref=f14e206]: </li>
+            - text: . The same pair of fields for the whole list adds text at the start and end.
+          - listitem [ref=f14e207]:
+            - strong [ref=f14e208]: Use only the first column
+            - text: keeps the first column when you copy several columns from Excel.
+          - listitem [ref=f14e209]:
+            - strong [ref=f14e210]: Do not quote numbers
+            - text: leaves 42 and 3.5 bare but quotes 007, so leading zeros survive.
+        - heading "Tips for clean results" [level=2] [ref=f14e211]
+        - paragraph [ref=f14e212]: If your values contain commas, such as "Smith, John", turn on double quotes so the next program reads each name as one value. Check the count under the output. It shows how many lines went in and how many items came out, so you can see that nothing was lost.
+        - heading "Convert a list back to a column" [level=2] [ref=f14e213]
+        - paragraph [ref=f14e214]:
+          - text: Switch to
+          - strong [ref=f14e215]: List to column
+          - text: to go the other way. Paste
+          - code [ref=f14e216]: "'a', 'b', 'c'"
+          - text: and you get three rows. The tool removes the quotes and brackets, and it keeps a comma that sits inside a quoted value. Leave
+          - strong [ref=f14e217]: Split on
+          - text: at Auto-detect to split on commas, semicolons, pipes or tabs.
+        - heading "When a comma separated list helps" [level=2] [ref=f14e218]
+        - list [ref=f14e219]:
+          - listitem [ref=f14e220]:
+            - strong [ref=f14e221]: Database queries.
+            - text: Fill an IN clause with IDs from a report instead of typing them one by one.
+          - listitem [ref=f14e222]:
+            - strong [ref=f14e223]: Email and marketing tools.
+            - text: Many forms ask for tags, addresses or keywords in one comma separated field.
+          - listitem [ref=f14e224]:
+            - strong [ref=f14e225]: Code.
+            - text: Turn a column of names into an array for Python, JavaScript or JSON.
+          - listitem [ref=f14e226]:
+            - strong [ref=f14e227]: Search and filters.
+            - text: Tools that filter by a list of SKUs or order numbers usually want one line.
+          - listitem [ref=f14e228]:
+            - strong [ref=f14e229]: Spreadsheet formulas.
+            - text: Paste a list of values into a function that expects them inline.
+        - paragraph [ref=f14e230]:
+          - text: "If a tool rejects your list, check three things: stray spaces, a trailing comma, and quotes of the wrong kind."
+          - strong [ref=f14e231]: Trim spaces
+          - text: and
+          - strong [ref=f14e232]: Remove blank lines
+          - text: are on by default, which fixes the first two. The Quotes menu fixes the third.
+        - heading "Large lists and privacy" [level=2] [ref=f14e233]
+        - paragraph [ref=f14e234]: The tool works on lists of 100,000 rows in well under a second. Everything runs in your browser, and your text is never uploaded.
+    - region [ref=f14e235]:
+      - heading "Frequently asked questions" [level=2] [ref=f14e236]
+      - generic [ref=f14e237]:
+        - group [ref=f14e238]:
+          - generic "How do I convert a column to a comma separated list?" [ref=f14e239] [cursor=pointer]
+        - group [ref=f14e242]:
+          - generic "How do I convert a column to CSV online?" [ref=f14e243] [cursor=pointer]
+        - group [ref=f14e246]:
+          - generic "How do I make a list for a SQL IN clause?" [ref=f14e247] [cursor=pointer]
+        - group [ref=f14e250]:
+          - generic "Can I turn a comma separated list back into rows?" [ref=f14e251] [cursor=pointer]
+        - group [ref=f14e254]:
+          - generic "How does it handle apostrophes such as O'Brien?" [ref=f14e255] [cursor=pointer]
+        - group [ref=f14e258]:
+          - generic "How do I keep leading zeros like 007?" [ref=f14e259] [cursor=pointer]
+        - group [ref=f14e262]:
+          - generic "Is there a limit on how many rows I can paste?" [ref=f14e263] [cursor=pointer]
+        - group [ref=f14e266]:
+          - generic "Is my data uploaded or saved?" [ref=f14e267] [cursor=pointer]
+        - group [ref=f14e270]:
+          - generic "Can I use a separator other than a comma?" [ref=f14e271] [cursor=pointer]
+        - group [ref=f14e274]:
+          - generic "Can I upload a file or download the result?" [ref=f14e275] [cursor=pointer]
+        - group [ref=f14e278]:
+          - generic "Can I paste several columns from Excel?" [ref=f14e279] [cursor=pointer]
+    - region [ref=f14e282]:
+      - heading "Popular conversions" [level=2] [ref=f14e283]
+      - list [ref=f14e284]:
+        - listitem [ref=f14e285]:
+          - link "Column to CSV online" [ref=f14e286] [cursor=pointer]:
+            - /url: /column-to-comma/column-to-csv-online/
+        - listitem [ref=f14e287]:
+          - link "SQL IN list generator" [ref=f14e288] [cursor=pointer]:
+            - /url: /column-to-comma/sql-in-list-generator/
+        - listitem [ref=f14e289]:
+          - link "List to column" [ref=f14e290] [cursor=pointer]:
+            - /url: /column-to-comma/list-to-column/
+        - listitem [ref=f14e291]:
+          - link "Excel column to comma list" [ref=f14e292] [cursor=pointer]:
+            - /url: /column-to-comma/excel-column-to-comma-separated-list/
+        - listitem [ref=f14e293]:
+          - link "Sheets column to comma list" [ref=f14e294] [cursor=pointer]:
+            - /url: /column-to-comma/google-sheets-column-to-comma/
+        - listitem [ref=f14e295]:
+          - link "Add single quotes to a list" [ref=f14e296] [cursor=pointer]:
+            - /url: /column-to-comma/add-single-quotes-to-list/
+        - listitem [ref=f14e297]:
+          - link "Remove duplicates from a list" [ref=f14e298] [cursor=pointer]:
+            - /url: /column-to-comma/remove-duplicates-from-list/
+        - listitem [ref=f14e299]:
+          - link "Newline to comma" [ref=f14e300] [cursor=pointer]:
+            - /url: /column-to-comma/newline-to-comma/
+        - listitem [ref=f14e301]:
+          - link "Column to JSON array" [ref=f14e302] [cursor=pointer]:
+            - /url: /column-to-comma/json-array-from-column/
+        - listitem [ref=f14e303]:
+          - link "Sort a list alphabetically" [ref=f14e304] [cursor=pointer]:
+            - /url: /column-to-comma/sort-list-alphabetically/
+        - listitem [ref=f14e305]:
+          - link "Column to HTML list" [ref=f14e306] [cursor=pointer]:
+            - /url: /column-to-comma/column-to-html-list/
+  - region [ref=f14e307]:
+    - heading "More free tools from Bingemind" [level=2] [ref=f14e308]
+    - list [ref=f14e309]:
+      - listitem [ref=f14e310]:
+        - link "JSON diff checker" [ref=f14e311] [cursor=pointer]:
+          - /url: https://bingemind.com/json-diff/
+      - listitem [ref=f14e312]:
+        - link "Text diff checker" [ref=f14e313] [cursor=pointer]:
+          - /url: https://bingemind.com/text-diff/
+      - listitem [ref=f14e314]:
+        - link "Markdown to PDF" [ref=f14e315] [cursor=pointer]:
+          - /url: https://bingemind.com/markdown-to-pdf/
+      - listitem [ref=f14e316]:
+        - link "See all free tools" [ref=f14e317] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=f14e318]:
+    - generic [ref=f14e319]:
+      - paragraph [ref=f14e320]: © 2026 Column to Comma. Free to use.
+      - navigation "Footer" [ref=f14e321]:
+        - link "About" [ref=f14e322] [cursor=pointer]:
+          - /url: /column-to-comma/about/
+        - link "Contact" [ref=f14e323] [cursor=pointer]:
+          - /url: /column-to-comma/contact/
+        - link "Privacy Policy" [ref=f14e324] [cursor=pointer]:
+          - /url: /column-to-comma/privacy/
+        - link "Terms" [ref=f14e325] [cursor=pointer]:
+          - /url: /column-to-comma/terms/
+        - link "More free tools" [ref=f14e326] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=f14e327]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=f14e328] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=f14e329] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=f14e330]:
+      - link "About" [ref=f14e331] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=f14e332]: ·
+      - link "Contact" [ref=f14e333] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=f14e334]: ·
+      - link "Privacy" [ref=f14e335] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=f14e336]: ·
+      - link "Terms" [ref=f14e337] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=f14e338]: ·
+      - link "Cookie settings" [ref=f14e339] [cursor=pointer]:
+        - /url: "#bm-consent"
