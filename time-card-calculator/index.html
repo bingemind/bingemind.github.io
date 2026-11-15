@@ -222,6 +222,84 @@
       <div class="chart-grid" id="chart"></div>
     </section>
 
+        <section class="section reveal">
+      <h2><span class="shine">Rounding, breaks and overnight shifts explained</span></h2>
+      <div class="prose">
+
+        <p>Most mistakes on a time card come from three places: minutes that are written as if they were decimals, unpaid breaks that are left in or taken out twice, and shifts that cross midnight. This guide covers each one so your total matches what payroll will pay.</p>
+        <h3>Minutes are not decimals</h3>
+        <p>An hour has 60 minutes, so 7:30 is 7.5 hours, not 7.30. A shift from 8:45 to 5:15 is 8 hours 30 minutes, which is 8.5 hours. To convert, divide the minutes by 60: 20 minutes is 0.33 hours, 40 minutes is 0.67 hours. Pay is then hours times rate, so 8.5 hours at $18.00 an hour is $153.00. The chart above shows every minute value so you do not have to divide each time.</p>
+        <h3>Unpaid lunch and other breaks</h3>
+        <p>Enter the length of any unpaid break and it is subtracted from that day. A 30-minute lunch on a 9-hour span leaves 8.5 paid hours. Short rest breaks of about 5 to 20 minutes are generally paid under US federal rules, so they stay in the total. Meal breaks of 30 minutes or more are generally unpaid only when the worker is fully relieved of duty. Rules differ by country and state, and your employer's policy decides what you are actually paid, so check your contract or handbook.</p>
+        <h3>Shifts that go past midnight</h3>
+        <p>For a night shift such as 10:00 PM to 6:00 AM, the clock-out time is earlier than the clock-in time. The calculator treats that as a shift that ends the next day, so it counts 8 hours instead of a negative number. Pay for the whole shift is normally counted in the workweek where it started, but check how your payroll assigns hours that fall on two calendar days.</p>
+        <h3>Rounding to the quarter hour</h3>
+        <p>Many employers round punches to the nearest 5 minutes, 6 minutes (a tenth of an hour) or 15 minutes. In the US, rounding is allowed when it is neutral and averages out so that workers are paid for all the time they work. Always rounding down in the employer's favour is not allowed. Use the rounding setting to match your employer's system and compare the result with your pay stub. If the two totals differ by more than a few minutes a week, ask your payroll team how punches are rounded.</p>
+        <table class="tbl"><thead><tr><th>Punch</th><th>Rounded to 15 minutes</th></tr></thead><tbody>
+        <tr><td>8:01 to 8:07</td><td>8:00</td></tr><tr><td>8:08 to 8:22</td><td>8:15</td></tr><tr><td>8:23 to 8:37</td><td>8:30</td></tr><tr><td>8:38 to 8:52</td><td>8:45</td></tr></tbody></table>
+        <h3>From weekly hours to overtime</h3>
+        <p>After you total the week, hours above the overtime threshold are paid at a higher rate. In the US the federal rule is time and a half after 40 hours in a workweek for most hourly workers. Some states, such as California, also pay overtime after 8 hours in a day. Other countries use different thresholds, which the rule list above covers. If you want the pay for the overtime part worked out in detail, use the overtime calculator and carry your weekly total across.</p>
+        <h3>Weekly, bi-weekly and semi-monthly pay periods</h3>
+        <p>A weekly card covers 7 days. A bi-weekly card covers 14 days, and overtime is still counted week by week, not across the two weeks. A semi-monthly period runs twice a month, for example the 1st to the 15th and the 16th to the end of the month, so the number of working days changes from period to period. Pick the period length that matches your employer, and fill each week separately so overtime is counted correctly.</p>
+        <h3>Checking your time card before you sign</h3>
+        <ul>
+          <li>Make sure every clock-in has a clock-out, and that AM and PM are right. A missing PM adds 12 hours.</li>
+          <li>Check that the unpaid break is entered once, on the right days.</li>
+          <li>Compare the total with the hours on your pay stub. If they differ, the cause is usually rounding, an unpaid break, or a punch that was edited.</li>
+          <li>Keep your own record. In the US, employers must keep time records, but your own notes help if there is ever a dispute.</li>
+          <li>Use Share link to send a filled card to a manager, or Download CSV to open it in a spreadsheet.</li>
+        </ul>
+        <h3>Common time card mistakes</h3>
+        <p>Writing 7:30 as 7.30 shortchanges you by 12 minutes. Subtracting a lunch break from a day that already excludes it counts it twice. Adding up daily rounded numbers instead of rounding each punch can shift the total by a few minutes. Forgetting that a shift crosses midnight can produce a total of zero or a negative number. The calculator avoids all four, but it only knows what you enter, so check the times against your actual clock records.</p>
+        <h3>Who uses a time card calculator</h3>
+        <p>Hourly employees use it to check their pay stub. Freelancers and contractors use it to prepare an invoice from their logged hours. Small business owners use it to total hours for a team without paying for software, and parents who employ a nanny or carer use it to keep a record of paid hours. It works the same for each of them: enter the times, check the total, and keep the record.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Worked time card examples</span></h2>
+      <div class="prose">
+
+        <p>These examples use the US federal overtime rule (time and a half after 40 hours a week) and a rate of $20 an hour. Enter the same times above to check them.</p>
+        <h3>Example 1: a standard week</h3>
+        <p>Monday to Friday, 9:00 AM to 5:30 PM with a 30-minute unpaid lunch. Each day is 8 hours, so the week is 40 hours with no overtime. Pay is 40 × $20 = $800.00.</p>
+        <h3>Example 2: a long week with overtime</h3>
+        <p>Monday to Friday, 8:00 AM to 6:00 PM with a one-hour unpaid lunch. Each day is 9 hours, so the week is 45 hours. The first 40 hours pay $800.00. The 5 overtime hours pay 5 × $30 = $150.00. Gross pay is $950.00.</p>
+        <h3>Example 3: a night shift</h3>
+        <p>Monday to Friday, 10:00 PM to 6:00 AM with a 30-minute unpaid break. Each shift is 7.5 hours, so the week is 37.5 hours. At $22 an hour, pay is 37.5 × $22 = $825.00.</p>
+        <h3>Example 4: a split shift</h3>
+        <p>On Saturday you work 9:00 AM to 1:00 PM, go home, and return from 5:00 PM to 9:00 PM. The two blocks are 4 hours each, so the day is 8 hours. Enter the gap as an unpaid break of 4 hours, or enter each block as its own row.</p>
+        <h3>Example 5: how rounding changes a day</h3>
+        <p>You clock in at 8:08 AM and out at 4:52 PM with a 30-minute lunch. Exact time is 8 hours 14 minutes, or 8.23 hours. With 15-minute rounding the punches become 8:15 and 4:45, which is 8 hours 0 minutes after the lunch. One day can move by a quarter hour either way, and rounding is fair only when it averages out over many shifts.</p>
+        <h3>Working-time rules outside the US</h3>
+        <p>Overtime and rest rules vary widely. In the EU, the Working Time Directive sets an average maximum of 48 hours a week and minimum rest periods, and each country adds its own overtime pay rules. In the UK there is no statutory overtime rate, so it depends on your contract. In India, the Factories Act generally limits work to 48 hours a week, with overtime at twice the ordinary rate for covered workers, and state laws for shops and offices differ. In Australia, awards and enterprise agreements set penalty rates. The rule list in the calculator applies a typical threshold for each country, and you can switch to custom rules if your contract is different.</p>
+        <h3>Keeping records</h3>
+        <p>Save a copy of each period's hours. Download the CSV, print the page, or copy the share link, which holds your entries in the web address. Your times are processed in your browser and are not sent to a server, so there is no account to create and nothing to delete later.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Time card tips for employers and freelancers</span></h2>
+      <div class="prose">
+
+        <h3>For small employers</h3>
+        <p>Pick one clear rule for rounding, breaks and the start of the workweek, write it down, and apply it to everyone. Make sure employees can see and approve their hours before payroll runs. Keep time records for the period your local law requires. In the US, the Fair Labor Standards Act requires employers to keep records of hours worked and wages paid, generally for at least three years for payroll records. Check state requirements, which can be longer.</p>
+        <h3>For freelancers and contractors</h3>
+        <p>Log your time as you go, since estimating at the end of the week is usually wrong. Total each client separately, and multiply by your rate for the invoice. Consider billing in 15-minute or 6-minute blocks and say so in your contract. The CSV download opens in any spreadsheet so you can attach it to an invoice as proof of hours.</p>
+        <h3>For nannies, carers and household staff</h3>
+        <p>Household employees are covered by wage rules in many places, including overtime in some US states. Keep a weekly card signed by both sides. Count unpaid breaks only when the employee is truly free to leave or rest, and be clear about overnight stays and on-call time, which are treated differently by different states and countries.</p>
+        <h3>Converting a total into decimal hours for payroll software</h3>
+        <p>Most payroll systems want decimal hours, such as 38.75, and not 38 hours 45 minutes. The result panel shows both. If you enter hours manually, round to two decimals so that the difference over a year stays small. Use the minutes chart above to convert quickly.</p>
+        <h3>Privacy</h3>
+        <p>This calculator runs in your browser. The times you enter, your name and your rate stay on your device, and are saved only in your browser's local storage so your card is there next time. Clear your browser data to remove it. When you use Share link, the entries are placed in the web address, so only send it to people you want to see your hours.</p>
+        <h3>Frequently overlooked details</h3>
+        <p>Daylight saving changes can add or remove an hour in a night shift on the days the clocks move. Time zones matter for remote teams, so record the local time of the place where the work is done. Public holidays may pay at a higher rate in your region. Lastly, always confirm the final total against your employer's own timekeeping system, since that is what is used to pay you.</p>
+
+      </div>
+    </section>
+
     <section class="section reveal faq" id="faq">
       <h2><span class="shine">Time card questions</span></h2>
       <div class="prose" data-faq>
@@ -245,7 +323,7 @@
 
     <section class="section reveal sources">
       <h2 style="font-size:1.1rem">Sources and limits</h2>
-      <p>Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> and the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
+      <p>Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>, the <a href="https://www.gov.uk/maximum-weekly-working-hours">UK government working hours guide</a> and the <a href="https://eur-lex.europa.eu/eli/dir/2003/88/oj">EU Working Time Directive 2003/88/EC</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
     </section>
   </div>
 </main>

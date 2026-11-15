@@ -31,7 +31,8 @@ export const STATES = {
   KY: { name: 'Kentucky', type: 'flat', rate: 0.035, ded: { single: 3270, mfj: 3270, hoh: 3270 } },
   LA: { name: 'Louisiana', type: 'flat', rate: 0.03, ded: { single: 12500, mfj: 25000, hoh: 25000 } },
   MI: { name: 'Michigan', type: 'flat', rate: 0.0425, ded: { single: 5800, mfj: 11600, hoh: 5800 } },
-  MS: { name: 'Mississippi', type: 'flat', rate: 0.04, ded: { single: 16000, mfj: 30600, hoh: 21400 } },
+  // Mississippi 2026: 4% above the first $10,000 (0% band), personal exemption ($6,000 single, $12,000 joint, $8,000 head of family) and standard deduction ($2,300 / $4,600 / $3,400). Joint assumes one earner's 0% band.
+  MS: { name: 'Mississippi', type: 'flat', rate: 0.04, ded: { single: 18300, mfj: 26600, hoh: 21400 } },
   NC: { name: 'North Carolina', type: 'flat', rate: 0.0399, ded: { single: 12750, mfj: 25500, hoh: 19125 } },
   OH: { name: 'Ohio', type: 'flat', rate: 0.0275, ded: { single: 26050, mfj: 26050, hoh: 26050 } },
   PA: { name: 'Pennsylvania', type: 'flat', rate: 0.0307, ded: { single: 0, mfj: 0, hoh: 0 }, retirementTaxed: true },
@@ -40,10 +41,11 @@ export const STATES = {
   OTHER: { name: 'Other state (enter your rate)', type: 'custom' },
 };
 
-// California 2026 brackets (single; MFJ is double), std deduction and exemption credit. SDI 1.3% on all wages.
+// California 2026 (FTB Tax News, October 2026: 2026 indexing, Schedules X and Y), standard deduction and exemption credit.
+// The 1% mental health surcharge above $1,000,000 is the last step to 13.3%. SDI 1.3% on all wages.
 export const CA = {
-  single: { std: 5540, credit: 153, brackets: [[11079, 0.01], [26264, 0.02], [41452, 0.04], [57542, 0.06], [72724, 0.08], [371479, 0.093], [445771, 0.103], [742953, 0.113], [1000000, 0.123], [Infinity, 0.133]] },
-  mfj: { std: 11080, credit: 306, brackets: [[22158, 0.01], [52528, 0.02], [82904, 0.04], [115084, 0.06], [145448, 0.08], [742958, 0.093], [891542, 0.103], [1000000, 0.113], [1485906, 0.123], [Infinity, 0.133]] },
+  single: { std: 5900, credit: 158, brackets: [[11456, 0.01], [27157, 0.02], [42861, 0.04], [59498, 0.06], [75197, 0.08], [384109, 0.093], [460927, 0.103], [768213, 0.113], [1000000, 0.123], [Infinity, 0.133]] },
+  mfj: { std: 11800, credit: 316, brackets: [[22912, 0.01], [54314, 0.02], [85722, 0.04], [118996, 0.06], [150394, 0.08], [768218, 0.093], [921854, 0.103], [1000000, 0.113], [1536426, 0.123], [Infinity, 0.133]] },
   sdi: 0.013,
 };
 

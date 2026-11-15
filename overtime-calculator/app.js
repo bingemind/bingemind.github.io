@@ -179,8 +179,8 @@ function toQuery() {
   if (i.rule === 'custom') { p.set('cd', i.custom.dailyOT); p.set('cdt', i.custom.dailyDT); p.set('cw', i.custom.weeklyOT); }
   return p.toString();
 }
-function fromQuery() {
-  const p = new URLSearchParams(location.search);
+function fromQuery(src = location.search) {
+  const p = new URLSearchParams(src);
   if (!KEYS.some((k) => p.has(k))) return false; // ignore gclid, utm_* etc.
   if (p.get('r')) $('rate').value = p.get('r');
   if (p.get('rule') && Object.hasOwn(RULES, p.get('rule')) && $('rule').querySelector(`option[value="${p.get('rule')}"]`)) $('rule').value = p.get('rule');
@@ -242,7 +242,12 @@ $('csvRes').addEventListener('click', () => {
 $('printRes').addEventListener('click', () => window.print());
 
 // Start
-if (!fromQuery()) { setDays([8, 8, 8, 8, 10, 6, 0]); applyRegionRule(); }
+const SAVE = 'mt-overtime-last';
+function saved() { try { const v = JSON.parse(localStorage.getItem(SAVE) || 'null'); return v && v.country === getRegion() ? v.q : null; } catch (e) { return null; } }
+if (!fromQuery()) { const sv = saved(); if (!(sv && fromQuery(sv))) { setDays([8, 8, 8, 8, 10, 6, 0]); applyRegionRule(); } }
+const keep = () => { try { localStorage.setItem(SAVE, JSON.stringify({ country: getRegion(), q: toQuery() })); } catch (e) { /* storage blocked */ } };
+form.addEventListener('input', keep);
+form.addEventListener('change', keep);
 syncMode();
 update();
 void mini;

@@ -1,4 +1,5 @@
 import { calculateCard, cardCSV, dayMinutes, toHM, toDecimal, DAYS } from './engine.js';
+// Dependency: reuses the overtime rule table from the overtime calculator, so both tools share one set of rules.
 import { RULES, RULE_GROUPS, RULE_FOR_REGION } from '../overtime-calculator/engine.js';
 import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion } from './kit.js';
 
@@ -6,6 +7,29 @@ initKit();
 const $ = (id) => document.getElementById(id);
 const STORE = 'mt-timecard-v1';
 let weeksCount = 1;
+
+// Anything from a share link or from storage is untrusted: keep only valid times, numbers and known option values.
+const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
+function cleanCard(c) {
+  if (!c || typeof c !== 'object') return null;
+  const out = {};
+  if (Array.isArray(c.rows)) {
+    out.rows = c.rows.slice(0, 2).map((wk) => (Array.isArray(wk) ? wk : []).slice(0, 7).map((d) => {
+      const o = d && typeof d === 'object' ? d : {};
+      const br = parseInt(o.breakMin, 10);
+      return { start: TIME_RE.test(o.start) ? o.start : '', end: TIME_RE.test(o.end) ? o.end : '', breakMin: br >= 0 && br <= 1440 ? br : 0 };
+    }));
+    while (out.rows.length && out.rows.some((wk) => wk.length < 7)) out.rows = out.rows.map((wk) => { while (wk.length < 7) wk.push({ start: '', end: '', breakMin: 0 }); return wk; });
+  }
+  const numStr = (v) => (/^[0-9.,\s]{1,14}$/.test(String(v ?? '')) ? String(v).trim() : undefined);
+  out.rate = numStr(c.rate);
+  out.rule = typeof c.rule === 'string' && Object.hasOwn(RULES, c.rule) ? c.rule : undefined;
+  out.name = typeof c.name === 'string' ? c.name.slice(0, 60) : '';
+  out.start = /^\d{4}-\d\d-\d\d$/.test(c.start) ? c.start : '';
+  out.period = c.period === 2 ? 2 : 1;
+  out.rounding = typeof c.rounding === 'string' && /^[a-z0-9]{1,12}$/i.test(c.rounding) ? c.rounding : undefined;
+  return out;
+}
 
 // Overtime rule list: US states plus other countries, grouped. Choosing one fills its usual multiplier.
 const ruleSel = $('rule');
@@ -73,7 +97,7 @@ function labelDates() {
 function rowEls(w, i) { const id = `w${w}d${i}`; return { inp: $(`${id}-in`), out: $(`${id}-out`), br: $(`${id}-br`), h: $(`${id}-h`), row: $(`row-${id}`) }; }
 
 function readRows() {
-  try { return JSON.parse(localStorage.getItem(STORE) || 'null')?.rows || null; } catch (e) { return null; }
+  try { return cleanCard(JSON.parse(localStorage.getItem(STORE) || 'null'))?.rows || null; } catch (e) { return null; }
 }
 
 function collect() {
@@ -176,17 +200,17 @@ function fill(start, end, br, days = [0, 1, 2, 3, 4]) {
 // Restore saved settings
 (function restore() {
   let s = null;
-  try { s = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) { /* ignore */ }
+  try { s = cleanCard(JSON.parse(localStorage.getItem(STORE) || 'null')); } catch (e) { /* ignore */ }
   const p = new URLSearchParams(location.search);
   if (p.has('card')) {
-    try { const c = JSON.parse(decodeURIComponent(escape(atob(p.get('card'))))); s = c; } catch (e) { /* bad link */ }
+    try { s = cleanCard(JSON.parse(decodeURIComponent(escape(atob(p.get('card')))))); } catch (e) { /* bad link */ }
   }
   if (s) {
-    if (s.rate !== undefined) $('rate').value = s.rate;
-    if (s.rule && $('rule').querySelector(`option[value="${s.rule}"]`)) $('rule').value = s.rule;
+    if (s.rate) $('rate').value = s.rate;
+    if (s.rule && $('rule').querySelector(`option[value="${CSS.escape(s.rule)}"]`)) $('rule').value = s.rule;
     if (s.name) $('name').value = s.name;
     if (s.start) $('startDate').value = s.start;
-    if (s.rounding && $('rounding').querySelector(`option[value="${s.rounding}"]`)) $('rounding').value = s.rounding;
+    if (s.rounding && $('rounding').querySelector(`option[value="${CSS.escape(s.rounding)}"]`)) $('rounding').value = s.rounding;
     if (s.period === 2) weeksCount = 2;
     if (p.has('card') && s.rows) { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) { /* ignore */ } }
   }

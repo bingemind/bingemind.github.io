@@ -12,6 +12,23 @@ let activeId = null;
 let seq = 0;
 const STORE = 'mt-sqft-v1';
 
+const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Share links and storage are untrusted: dimensions must be plain numbers, names are escaped when shown.
+function cleanDims(d) {
+  const out = {};
+  if (!d || typeof d !== 'object') return out;
+  for (const key of Object.keys(DIM_LABELS)) {
+    const v = d[key];
+    if (!v || typeof v !== 'object') continue;
+    out[key] = {};
+    for (const part of ['m', 'ft', 'in']) {
+      if (v[part] === undefined || v[part] === '') continue;
+      const n = Number(String(v[part]).replace(',', '.'));
+      if (Number.isFinite(n) && n >= 0 && n <= 100000) out[key][part] = String(n);
+    }
+  }
+  return out;
+}
 const newRoom = (o = {}) => ({ id: ++seq, name: o.name || `Room ${seq}`, shape: o.shape || 'rect', qty: o.qty || 1, dims: o.dims || {} });
 
 function dimInputs(room, key) {
@@ -31,10 +48,10 @@ function render() {
   box.innerHTML = rooms.map((r) => `
     <div class="room${r.id === activeId ? ' active' : ''}" data-id="${r.id}">
       <div class="room-top">
-        <div class="field"><label for="r${r.id}-name">Name</label><input class="input" id="r${r.id}-name" data-room="${r.id}" data-field="name" value="${r.name.replace(/"/g, '&quot;')}"></div>
+        <div class="field"><label for="r${r.id}-name">Name</label><input class="input" id="r${r.id}-name" data-room="${r.id}" data-field="name" value="${esc(r.name)}"></div>
         <div class="field"><label for="r${r.id}-shape">Shape</label><select class="input" id="r${r.id}-shape" data-room="${r.id}" data-field="shape">${Object.entries(SHAPES).map(([k, s]) => `<option value="${k}"${k === r.shape ? ' selected' : ''}>${s.label}</option>`).join('')}</select></div>
         <div class="field qty-f"><label for="r${r.id}-qty">How many</label><input class="input" id="r${r.id}-qty" data-room="${r.id}" data-field="qty" inputmode="numeric" value="${r.qty}"></div>
-        <button class="del" type="button" data-del="${r.id}" aria-label="Remove ${r.name.replace(/"/g, '')}"${rooms.length === 1 ? ' disabled' : ''}><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <button class="del" type="button" data-del="${r.id}" aria-label="Remove ${esc(r.name)}"${rooms.length === 1 ? ' disabled' : ''}><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
       </div>
       <div class="dims">${SHAPES[r.shape].dims.map((k) => dimInputs(r, k)).join('')}</div>
       <div class="area-chip" id="chip-${r.id}"></div>
@@ -115,7 +132,7 @@ function update() {
   });
   draw(rooms.find((r) => r.id === activeId) || rooms[0]);
 
-  $('tableWrap').innerHTML = rooms.length > 1 ? `<table class="tbl"><caption class="sr">Area by room</caption><thead><tr><th scope="col">Area</th><th scope="col">Sq ft</th><th scope="col">Sq m</th></tr></thead><tbody>${rooms.map((r, i) => `<tr><td>${r.name.replace(/</g, '&lt;')}</td><td>${num(res.rooms[i].area)}</td><td>${num(res.rooms[i].area / 10.7639104)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Total</td><td>${num(res.sqft)}</td><td>${num(res.sqm)}</td></tr></tfoot></table>` : '';
+  $('tableWrap').innerHTML = rooms.length > 1 ? `<table class="tbl"><caption class="sr">Area by room</caption><thead><tr><th scope="col">Area</th><th scope="col">Sq ft</th><th scope="col">Sq m</th></tr></thead><tbody>${rooms.map((r, i) => `<tr><td>${esc(r.name)}</td><td>${num(res.rooms[i].area)}</td><td>${num(res.rooms[i].area / 10.7639104)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Total</td><td>${num(res.sqft)}</td><td>${num(res.sqm)}</td></tr></tfoot></table>` : '';
   try { localStorage.setItem(STORE, JSON.stringify({ units, rooms, waste: $('waste').value, price: $('price').value, box: $('box').value })); } catch (e) { /* ignore */ }
   announce(`Total ${num(area(res.sqft))} ${units === 'metric' ? 'square meters' : 'square feet'}, ${num(area(res.withWaste))} with waste.`);
 }
@@ -207,7 +224,7 @@ $('printRes').addEventListener('click', () => window.print());
   const metricHome = regionInfo().units === 'metric';
   if (s && Array.isArray(s.rooms) && s.rooms.length) {
     units = s.units === 'metric' ? 'metric' : 'imperial';
-    rooms = s.rooms.slice(0, 40).map((r) => newRoom({ name: String(r.name || '').slice(0, 60), shape: Object.hasOwn(SHAPES, r.shape) ? r.shape : 'rect', qty: Math.max(parseInt(r.qty, 10) || 1, 1), dims: r.dims && typeof r.dims === 'object' ? r.dims : {} }));
+    rooms = s.rooms.slice(0, 40).map((r) => newRoom({ name: String(r.name || '').slice(0, 60), shape: Object.hasOwn(SHAPES, r.shape) ? r.shape : 'rect', qty: Math.max(parseInt(r.qty, 10) || 1, 1), dims: cleanDims(r.dims) }));
     if (s.waste && $('waste').querySelector(`option[value="${CSS.escape(String(s.waste))}"]`)) $('waste').value = s.waste;
     if (s.price) $('price').value = s.price;
     if (s.box) $('box').value = s.box;

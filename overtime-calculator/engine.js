@@ -161,7 +161,8 @@ export function calculate(input) {
   // premium part (the "half" in time-and-a-half) of overtime the FLSA requires:
   // hours over 40 in the workweek. State-only daily overtime does not count.
   // If the multiplier is below 1.5 no FLSA premium is being paid, so nothing is shown.
-  const flsaOTHours = Math.max(totalHours - 40, 0);
+  // Only hours that are actually paid at an overtime rate can carry a premium, so a rule that pays no overtime gives 0.
+  const flsaOTHours = Math.min(Math.max(totalHours - 40, 0), otHours + dtHours);
   const qualifiedPremium = otMult >= 1.5 ? flsaOTHours * rate * 0.5 : 0;
   return {
     rule: split.rule,

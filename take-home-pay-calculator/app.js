@@ -1,6 +1,6 @@
 import { calculateTakeHome, annualGross, STATES } from './engine.js';
 import { calculateGlobal, modeFor, CA_PROVINCES, COUNTRIES } from './global.js';
-import { initKit, initSeg, countUp, copyText, money, num as fmtNum, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion, regionInfo } from './kit.js';
+import { initKit, initSeg, countUp, copyText, money, num as fmtNum, announce, downloadFile, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion, regionInfo } from './kit.js';
 
 initKit();
 const $ = (id) => document.getElementById(id);
@@ -237,8 +237,8 @@ function toQuery() {
   if (mode === 'OTHER') { q.set('tp', String(i.taxPct)); q.set('sp', String(i.socialPct)); }
   return q.toString();
 }
-function fromQuery() {
-  const q = new URLSearchParams(location.search);
+function fromQuery(src = location.search) {
+  const q = new URLSearchParams(src);
   if (!KEYS.some((k) => q.has(k))) return;
   const setSel = (el, v) => { if (v && el.querySelector(`option[value="${CSS.escape(v)}"]`)) el.value = v; };
   if (q.get('s')) $('salary').value = q.get('s');
@@ -269,13 +269,32 @@ $('copyRes').addEventListener('click', () => {
 });
 $('shareRes').addEventListener('click', () => { history.replaceState(null, '', `?${toQuery()}`); copyText(`${location.origin}${location.pathname}?${toQuery()}`, 'Link copied'); });
 $('printRes').addEventListener('click', () => window.print());
+$('csvRes').addEventListener('click', () => {
+  const { r } = last; const p = r.perPeriod; const a = r.annual;
+  const L = r.labels || {};
+  const n = (v) => v || 0;
+  const rows = [['Item', PER_LABEL[r.frequency], 'Per year'], ['Gross pay', n(p.gross), n(a.gross)], [L.federal || 'Income tax', n(p.federal), n(a.federal)]];
+  if (p.ss || (L.ss && mode !== 'US')) rows.push([L.ss || 'Social Security', n(p.ss), n(a.ss)]);
+  if (p.medicare) rows.push([L.medicare || 'Medicare', n(p.medicare), n(a.medicare)]);
+  if (p.state) rows.push([L.state || 'State tax', n(p.state), n(a.state)]);
+  rows.push(['Pension and pre-tax deductions', n(p.k401) + n(p.pretax), n(a.k401) + n(a.pretax)], ['Take-home pay', n(p.net), n(a.net)]);
+  const q = (v) => (typeof v === 'number' ? (Math.round(v * 100) / 100).toFixed(2) : `"${String(v).replace(/"/g, '""')}"`);
+  downloadFile(`take-home-pay-${new Date().toISOString().slice(0, 10)}.csv`, rows.map((l) => l.map(q).join(',')).join('\n'));
+  announce('CSV downloaded');
+});
+const SAVE = 'mt-takehome-last';
+function save() { try { localStorage.setItem(SAVE, toQuery()); } catch (e) { /* storage blocked */ } }
+form.addEventListener('input', save);
+form.addEventListener('change', save);
 
 // Start: pick the country mode first, so a shared link still wins over the defaults.
 const hasLink = [...new URLSearchParams(location.search).keys()].some((k) => KEYS.includes(k));
 mode = modeFor(getRegion());
 applyMode(!hasLink);
 onRegionChange(() => { mode = modeFor(getRegion()); applyMode(true); update(); });
-fromQuery();
+if (!hasLink) {
+  try { const sv = localStorage.getItem(SAVE); if (sv && new URLSearchParams(sv).get('country') === getRegion()) fromQuery(sv); } catch (e) { /* ignore */ }
+} else fromQuery();
 syncType();
 update();
 void mini;
