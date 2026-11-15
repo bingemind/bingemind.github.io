@@ -1,0 +1,319 @@
+- generic [active] [ref=f26e1]:
+  - navigation "Bingemind" [ref=f26e3]:
+    - link "Bingemind" [ref=f26e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=f26e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=f26e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=f26e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=f26e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f26e9]:
+    - generic [ref=f26e10]:
+      - link "Banner Letter Maker" [ref=f26e11] [cursor=pointer]:
+        - /url: /banner-letter-maker/
+      - generic [ref=f26e13]:
+        - link "More free tools" [ref=f26e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=f26e15]:
+          - link "Tool" [ref=f26e16] [cursor=pointer]:
+            - /url: /banner-letter-maker/
+          - link "About" [ref=f26e17] [cursor=pointer]:
+            - /url: /banner-letter-maker/about/
+          - link "Contact" [ref=f26e18] [cursor=pointer]:
+            - /url: /banner-letter-maker/contact/
+        - button "Switch color theme" [ref=f26e19] [cursor=pointer]
+  - main [ref=f26e22]:
+    - generic [ref=f26e23]:
+      - heading "Printable banner letters" [level=1] [ref=f26e24]
+      - paragraph [ref=f26e25]: Type a message. Print one big letter on each page. Free PDF, no watermark, nothing uploaded.
+      - region "Banner letter maker" [ref=f26e27]:
+        - generic [ref=f26e28]:
+          - generic [ref=f26e29]: Your message
+          - textbox "Your message" [ref=f26e30]:
+            - /placeholder: Type a message, like HAPPY BIRTHDAY MIA
+            - text: HAPPY BIRTHDAY
+          - paragraph [ref=f26e31]:
+            - strong [ref=f26e32]: 13 pages
+            - text: of Letter portrait
+        - generic [ref=f26e33]:
+          - button "Download PDF (13 pages)" [ref=f26e34] [cursor=pointer]
+          - paragraph [ref=f26e35]
+          - list "Banner pages in print order, scroll sideways" [ref=f26e37]:
+            - listitem [ref=f26e38]:
+              - 'img "Page 1: H" [ref=f26e39]'
+              - generic [aria-hidden] [ref=f26e44]: "1"
+            - listitem [ref=f26e45]:
+              - 'img "Page 2: A" [ref=f26e46]'
+              - generic [aria-hidden] [ref=f26e51]: "2"
+            - listitem [ref=f26e52]:
+              - 'img "Page 3: P" [ref=f26e53]'
+              - generic [aria-hidden] [ref=f26e58]: "3"
+            - listitem [ref=f26e59]:
+              - 'img "Page 4: P" [ref=f26e60]'
+              - generic [aria-hidden] [ref=f26e65]: "4"
+            - listitem [ref=f26e66]:
+              - 'img "Page 5: Y" [ref=f26e67]'
+              - generic [aria-hidden] [ref=f26e72]: "5"
+            - generic [ref=f26e73]: space
+            - listitem [ref=f26e74]:
+              - 'img "Page 6: B" [ref=f26e75]'
+              - generic [aria-hidden] [ref=f26e80]: "6"
+            - listitem [ref=f26e81]:
+              - 'img "Page 7: I" [ref=f26e82]'
+              - generic [aria-hidden] [ref=f26e87]: "7"
+            - listitem [ref=f26e88]:
+              - 'img "Page 8: R" [ref=f26e89]'
+              - generic [aria-hidden] [ref=f26e94]: "8"
+            - listitem [ref=f26e95]:
+              - 'img "Page 9: T" [ref=f26e96]'
+              - generic [aria-hidden] [ref=f26e101]: "9"
+            - listitem [ref=f26e102]:
+              - 'img "Page 10: H" [ref=f26e103]'
+              - generic [aria-hidden] [ref=f26e108]: "10"
+            - listitem [ref=f26e109]:
+              - 'img "Page 11: D" [ref=f26e110]'
+              - generic [aria-hidden] [ref=f26e115]: "11"
+            - listitem [ref=f26e116]:
+              - 'img "Page 12: A" [ref=f26e117]'
+              - generic [aria-hidden] [ref=f26e122]: "12"
+            - listitem [ref=f26e123]:
+              - 'img "Page 13: Y" [ref=f26e124]'
+              - generic [aria-hidden] [ref=f26e129]: "13"
+        - generic [ref=f26e130]:
+          - group "Paper" [ref=f26e131]:
+            - generic [ref=f26e133]:
+              - generic [ref=f26e134]:
+                - radio "Letter" [checked] [ref=f26e135] [cursor=pointer]
+                - generic [ref=f26e136]: Letter
+              - generic [ref=f26e137]:
+                - radio "A4" [ref=f26e138] [cursor=pointer]
+                - generic [ref=f26e139]: A4
+          - group "Page direction" [ref=f26e140]:
+            - generic [ref=f26e142]:
+              - generic [ref=f26e143]:
+                - radio "Portrait" [checked] [ref=f26e144] [cursor=pointer]
+                - generic [ref=f26e145]: Portrait
+              - generic [ref=f26e146]:
+                - radio "Landscape" [ref=f26e147] [cursor=pointer]
+                - generic [ref=f26e148]: Landscape
+          - group "Shape" [ref=f26e149]:
+            - generic [ref=f26e151]:
+              - generic [ref=f26e152]:
+                - radio "Pennant" [checked] [ref=f26e153] [cursor=pointer]
+                - generic [ref=f26e154]: Pennant
+              - generic [ref=f26e155]:
+                - radio "Rectangle" [ref=f26e156] [cursor=pointer]
+                - generic [ref=f26e157]: Rectangle
+              - generic [ref=f26e158]:
+                - radio "None" [ref=f26e159] [cursor=pointer]
+                - generic [ref=f26e160]: None
+          - group "Letter style" [ref=f26e161]:
+            - generic [ref=f26e163]:
+              - generic [ref=f26e164]:
+                - radio "Outline" [checked] [ref=f26e165] [cursor=pointer]
+                - generic [ref=f26e166]: Outline
+              - generic [ref=f26e167]:
+                - radio "Filled" [ref=f26e168] [cursor=pointer]
+                - generic [ref=f26e169]: Filled
+          - group "Font" [ref=f26e170]:
+            - generic [ref=f26e172]:
+              - generic [ref=f26e173]:
+                - radio "Anton" [checked] [ref=f26e174] [cursor=pointer]
+                - generic [ref=f26e175]: Anton
+              - generic [ref=f26e178]:
+                - radio "Lilita One" [ref=f26e179] [cursor=pointer]
+                - generic [ref=f26e180]: Lilita One
+              - generic [ref=f26e183]:
+                - radio "Alfa Slab One" [ref=f26e184] [cursor=pointer]
+                - generic [ref=f26e185]: Alfa Slab One
+              - generic [ref=f26e188]:
+                - radio "Titan One" [ref=f26e189] [cursor=pointer]
+                - generic [ref=f26e190]: Titan One
+          - group "Color" [ref=f26e193]:
+            - generic [ref=f26e195]:
+              - generic "Black" [ref=f26e196]:
+                - radio "Black" [checked] [ref=f26e197] [cursor=pointer]
+              - generic "Red" [ref=f26e199]:
+                - radio "Red" [ref=f26e200] [cursor=pointer]
+              - generic "Orange" [ref=f26e202]:
+                - radio "Orange" [ref=f26e203] [cursor=pointer]
+              - generic "Green" [ref=f26e205]:
+                - radio "Green" [ref=f26e206] [cursor=pointer]
+              - generic "Blue" [ref=f26e208]:
+                - radio "Blue" [ref=f26e209] [cursor=pointer]
+              - generic "Purple" [ref=f26e211]:
+                - radio "Purple" [ref=f26e212] [cursor=pointer]
+              - generic "Rainbow" [ref=f26e214]:
+                - radio "Rainbow, a different color on each page" [ref=f26e215] [cursor=pointer]
+          - group "Spaces between words" [ref=f26e217]:
+            - generic [ref=f26e219]:
+              - generic [ref=f26e220]:
+                - radio "Leave a gap" [checked] [ref=f26e221] [cursor=pointer]
+                - generic [ref=f26e222]: Leave a gap
+              - generic [ref=f26e223]:
+                - radio "Blank page" [ref=f26e224] [cursor=pointer]
+                - generic [ref=f26e225]: Blank page
+          - group "Extras" [ref=f26e226]:
+            - generic [ref=f26e228] [cursor=pointer]:
+              - checkbox "Punch hole marks at the top" [checked] [ref=f26e229]
+              - text: Punch hole marks at the top
+            - generic [ref=f26e230] [cursor=pointer]:
+              - checkbox "Cut line around the shape" [checked] [ref=f26e231]
+              - text: Cut line around the shape
+            - generic [ref=f26e232] [cursor=pointer]:
+              - checkbox "Small page numbers at the bottom" [ref=f26e233]
+              - text: Small page numbers at the bottom
+    - article [ref=f26e234]:
+      - generic [ref=f26e235]:
+        - heading "How to make printable banner letters" [level=2] [ref=f26e236]
+        - paragraph [ref=f26e237]: This tool turns a short message into printable banner letters. Each page holds one big letter, number or symbol. You print the pages, cut them out and hang them on string. It suits a birthday, a welcome home, a baby shower, a class door or a store sign.
+        - list [ref=f26e238]:
+          - listitem [ref=f26e239]: Type your message in the box at the top. The preview shows each page as you type.
+          - listitem [ref=f26e240]: Pick Letter or A4 paper, and portrait or landscape.
+          - listitem [ref=f26e241]: Choose a shape. A pennant is a triangle with a point at the bottom. A rectangle gives the largest letter.
+          - listitem [ref=f26e242]: Choose Outline to save ink or let children color the letters. Choose Filled for solid letters.
+          - listitem [ref=f26e243]: Pick a font and a color, or Rainbow for a different color on each page.
+          - listitem [ref=f26e244]: Press Download PDF. Print at 100% or Actual size, cut along the dashed line and punch the holes.
+        - heading "Pennant or rectangle" [level=2] [ref=f26e245]
+        - paragraph [ref=f26e246]: A pennant banner is the classic party flag. The letter sits in the wide top part of a downward triangle, so it is smaller than the page. A rectangle uses the whole page, so the letter is as large as it can be. Pick None if you want the letter alone, for example to cut it out and glue it on a card.
+        - heading "How big are the letters?" [level=2] [ref=f26e247]
+        - paragraph [ref=f26e248]: Every letter in the banner has the same height. The tool finds the largest size that fits the widest letter, such as W or M, and uses it on every page. On a portrait page the height of the letter is limited by the page, and wide letters shrink the whole row a little. A landscape page gives a shorter and wider letter.
+        - table [ref=f26e249]:
+          - caption [ref=f26e250]: Pages needed for common messages
+          - rowgroup [ref=f26e251]:
+            - row [ref=f26e252]:
+              - columnheader "Message" [ref=f26e253]
+              - columnheader "Pages" [ref=f26e254]
+              - columnheader "Row length, Letter portrait" [ref=f26e255]
+          - rowgroup [ref=f26e256]:
+            - row [ref=f26e257]:
+              - rowheader "HAPPY BIRTHDAY" [ref=f26e258]
+              - cell "13" [ref=f26e259]
+              - cell "9.2 ft" [ref=f26e260]
+            - row [ref=f26e261]:
+              - rowheader "WELCOME HOME" [ref=f26e262]
+              - cell "11" [ref=f26e263]
+              - cell "7.8 ft" [ref=f26e264]
+            - row [ref=f26e265]:
+              - rowheader "CONGRATS" [ref=f26e266]
+              - cell "9" [ref=f26e267]
+              - cell "6.4 ft" [ref=f26e268]
+            - row [ref=f26e269]:
+              - rowheader "MERRY CHRISTMAS" [ref=f26e270]
+              - cell "14" [ref=f26e271]
+              - cell "9.9 ft" [ref=f26e272]
+            - row [ref=f26e273]:
+              - rowheader "BABY SHOWER" [ref=f26e274]
+              - cell "10" [ref=f26e275]
+              - cell "7.1 ft" [ref=f26e276]
+        - heading "Tips for a good banner" [level=2] [ref=f26e277]
+        - list [ref=f26e278]:
+          - listitem [ref=f26e279]: Print on cardstock. It hangs flat and does not curl.
+          - listitem [ref=f26e280]: Print one test page first and check that the border is not cut off.
+          - listitem [ref=f26e281]: Use string or ribbon about as long as the banner plus 2 feet for the knots.
+          - listitem [ref=f26e282]: Use tape or a hole punch. The punch marks show where the holes go.
+          - listitem [ref=f26e283]: Turn on page numbers if you print several words, so you can put the pages back in order.
+        - heading "Banner guides" [level=2] [ref=f26e284]
+        - list [ref=f26e285]:
+          - listitem [ref=f26e286]:
+            - link "Happy Birthday banner printable" [ref=f26e287] [cursor=pointer]:
+              - /url: /banner-letter-maker/happy-birthday-banner-letters/
+          - listitem [ref=f26e288]:
+            - link "Welcome Home banner printable" [ref=f26e289] [cursor=pointer]:
+              - /url: /banner-letter-maker/welcome-home-banner-letters/
+          - listitem [ref=f26e290]:
+            - link "Congratulations banner printable" [ref=f26e291] [cursor=pointer]:
+              - /url: /banner-letter-maker/congratulations-banner-letters/
+          - listitem [ref=f26e292]:
+            - link "Merry Christmas banner printable" [ref=f26e293] [cursor=pointer]:
+              - /url: /banner-letter-maker/merry-christmas-banner-letters/
+    - region [ref=f26e294]:
+      - heading "Frequently asked questions" [level=2] [ref=f26e295]
+      - generic [ref=f26e296]:
+        - group [ref=f26e297]:
+          - generic "How do I print a banner with one letter per page?" [ref=f26e298] [cursor=pointer]
+        - group [ref=f26e301]:
+          - generic "Is it really free, with no watermark?" [ref=f26e302] [cursor=pointer]
+        - group [ref=f26e305]:
+          - generic "Do my words get uploaded?" [ref=f26e306] [cursor=pointer]
+        - group [ref=f26e309]:
+          - generic "How many letters can I print?" [ref=f26e310] [cursor=pointer]
+        - group [ref=f26e313]:
+          - generic "Can I use a regular home printer?" [ref=f26e314] [cursor=pointer]
+        - group [ref=f26e317]:
+          - generic "How do I save ink?" [ref=f26e318] [cursor=pointer]
+        - group [ref=f26e321]:
+          - generic "Why does my pennant look smaller than the page?" [ref=f26e322] [cursor=pointer]
+        - group [ref=f26e325]:
+          - generic "Which characters work?" [ref=f26e326] [cursor=pointer]
+  - region [ref=f26e329]:
+    - heading "More party and print makers" [level=2] [ref=f26e330]
+    - list [ref=f26e331]:
+      - listitem [ref=f26e332]:
+        - link "Newspaper front page maker Make a front page with your photo and print it." [ref=f26e333] [cursor=pointer]:
+          - /url: https://bingemind.com/newspaper-front-page-maker/
+          - generic [ref=f26e334]: Newspaper front page maker
+          - generic [ref=f26e335]: Make a front page with your photo and print it.
+      - listitem [ref=f26e336]:
+        - link "Funny award certificate maker Print a funny award for a friend or a coworker." [ref=f26e337] [cursor=pointer]:
+          - /url: https://bingemind.com/funny-award-certificate/
+          - generic [ref=f26e338]: Funny award certificate maker
+          - generic [ref=f26e339]: Print a funny award for a friend or a coworker.
+      - listitem [ref=f26e340]:
+        - link "Poster tiler for big prints Print one big poster over many sheets of paper." [ref=f26e341] [cursor=pointer]:
+          - /url: https://bingemind.com/poster-tiler/
+          - generic [ref=f26e342]: Poster tiler for big prints
+          - generic [ref=f26e343]: Print one big poster over many sheets of paper.
+      - listitem [ref=f26e344]:
+        - link "Image to PDF converter Put your photos in one PDF to print or send." [ref=f26e345] [cursor=pointer]:
+          - /url: https://bingemind.com/image-to-pdf/
+          - generic [ref=f26e346]: Image to PDF converter
+          - generic [ref=f26e347]: Put your photos in one PDF to print or send.
+    - heading "More free tools from Bingemind" [level=2] [ref=f26e348]
+    - list [ref=f26e349]:
+      - listitem [ref=f26e350]:
+        - link "Scavenger hunt clue cards" [ref=f26e351] [cursor=pointer]:
+          - /url: https://bingemind.com/scavenger-hunt-clue-cards/
+      - listitem [ref=f26e352]:
+        - link "See all free tools" [ref=f26e353] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=f26e354]:
+    - generic [ref=f26e355]:
+      - paragraph [ref=f26e356]: © 2026 Banner Letter Maker. Free to use.
+      - navigation "Footer" [ref=f26e357]:
+        - link "About" [ref=f26e358] [cursor=pointer]:
+          - /url: /banner-letter-maker/about/
+        - link "Contact" [ref=f26e359] [cursor=pointer]:
+          - /url: /banner-letter-maker/contact/
+        - link "Privacy Policy" [ref=f26e360] [cursor=pointer]:
+          - /url: /banner-letter-maker/privacy/
+        - link "Terms" [ref=f26e361] [cursor=pointer]:
+          - /url: /banner-letter-maker/terms/
+        - link "More free tools" [ref=f26e362] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=f26e363]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=f26e364] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=f26e365] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=f26e366]:
+      - link "About" [ref=f26e367] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=f26e368]: ·
+      - link "Contact" [ref=f26e369] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=f26e370]: ·
+      - link "Privacy" [ref=f26e371] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=f26e372]: ·
+      - link "Terms" [ref=f26e373] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=f26e374]: ·
+      - link "Cookie settings" [ref=f26e375] [cursor=pointer]:
+        - /url: "#bm-consent"

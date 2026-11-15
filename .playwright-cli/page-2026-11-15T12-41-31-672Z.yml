@@ -1,0 +1,378 @@
+- generic [active] [ref=f20e1]:
+  - navigation "Bingemind" [ref=f20e3]:
+    - link "Bingemind" [ref=f20e4] [cursor=pointer]:
+      - /url: /
+    - link "All tools" [ref=f20e5] [cursor=pointer]:
+      - /url: /tools/
+    - link "About" [ref=f20e6] [cursor=pointer]:
+      - /url: /about/
+    - link "Contact" [ref=f20e7] [cursor=pointer]:
+      - /url: /contact/
+  - link "Skip to content" [ref=f20e8] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f20e9]:
+    - generic [ref=f20e10]:
+      - link "Cake Pan Converter" [ref=f20e11] [cursor=pointer]:
+        - /url: /cake-pan-converter/
+      - generic [ref=f20e13]:
+        - link "More free tools" [ref=f20e14] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+        - navigation "Main" [ref=f20e15]:
+          - link "Tool" [ref=f20e16] [cursor=pointer]:
+            - /url: /cake-pan-converter/
+          - link "About" [ref=f20e17] [cursor=pointer]:
+            - /url: /cake-pan-converter/about/
+          - link "Contact" [ref=f20e18] [cursor=pointer]:
+            - /url: /cake-pan-converter/contact/
+        - button "Switch color theme" [ref=f20e19]
+  - main [ref=f20e22]:
+    - generic [ref=f20e23]:
+      - paragraph [ref=f20e24]: Free recipe scaler
+      - heading "Cake pan size converter" [level=1] [ref=f20e25]
+      - paragraph [ref=f20e26]: Pick the pan in your recipe and the pan you have. Get the scale factor, scaled ingredients and a bake time guide.
+      - region "Cake pan converter" [ref=f20e28]:
+        - generic [ref=f20e29]:
+          - group "Units" [ref=f20e30]:
+            - button "Inches" [pressed] [ref=f20e31]
+            - button "Centimeters" [ref=f20e32]
+          - button "Swap pans" [ref=f20e33]:
+            - text: Swap pans
+            - generic [aria-hidden] [ref=f20e34]: ⇆
+        - generic [ref=f20e35]:
+          - group "Pan in the recipe (what it says)" [ref=f20e36]:
+            - generic [ref=f20e38]:
+              - generic [ref=f20e39]:
+                - text: Shape
+                - combobox "Shape" [ref=f20e40]:
+                  - option "Round" [selected]
+                  - option "Square"
+                  - option "Rectangle"
+                  - option "Loaf"
+                  - option "Bundt or tube"
+                  - option "Sheet"
+              - generic [ref=f20e41]:
+                - text: Common size
+                - combobox "Common size" [ref=f20e42]:
+                  - option "6\""
+                  - option "7\""
+                  - option "8\"" [selected]
+                  - option "9\""
+                  - option "10\""
+                  - option "12\""
+                  - option "Custom size"
+              - generic [ref=f20e43]:
+                - text: Diameter (in)
+                - textbox "Diameter (in)" [ref=f20e44]: "8"
+              - generic [ref=f20e45]:
+                - generic [ref=f20e46]: Depth (in)
+                - textbox "Depth (in)" [ref=f20e47]: "2"
+              - generic [ref=f20e48]:
+                - text: Number of pans
+                - textbox "Number of pans" [ref=f20e49]: "1"
+          - group "Pan you will use (what you have)" [ref=f20e50]:
+            - generic [ref=f20e52]:
+              - generic [ref=f20e53]:
+                - text: Shape
+                - combobox "Shape" [ref=f20e54]:
+                  - option "Round" [selected]
+                  - option "Square"
+                  - option "Rectangle"
+                  - option "Loaf"
+                  - option "Bundt or tube"
+                  - option "Sheet"
+              - generic [ref=f20e55]:
+                - text: Common size
+                - combobox "Common size" [ref=f20e56]:
+                  - option "6\""
+                  - option "7\""
+                  - option "8\""
+                  - option "9\"" [selected]
+                  - option "10\""
+                  - option "12\""
+                  - option "Custom size"
+              - generic [ref=f20e57]:
+                - text: Diameter (in)
+                - textbox "Diameter (in)" [ref=f20e58]: "9"
+              - generic [ref=f20e59]:
+                - generic [ref=f20e60]: Depth (in)
+                - textbox "Depth (in)" [ref=f20e61]: "2"
+              - generic [ref=f20e62]:
+                - text: Number of pans
+                - textbox "Number of pans" [ref=f20e63]: "1"
+          - generic [ref=f20e64]:
+            - paragraph [ref=f20e65]: Multiply the recipe by
+            - paragraph [ref=f20e66]: 1.27×
+            - paragraph [ref=f20e67]: Make 1 1/4 times the recipe. Each ingredient times 1.27.
+            - paragraph [ref=f20e68]: 9" round holds 27% more batter than 8" round. Make 27% more than the recipe.
+            - figure "Both pans are drawn to the same scale." [ref=f20e69]:
+              - 'img "Recipe pan: 8\" round. Your pan: 9\" round. Both drawn to the same scale." [ref=f20e70]':
+                - generic [ref=f20e73]: 8" round
+                - generic [ref=f20e74]: Recipe pan
+                - generic [ref=f20e77]: 9" round
+                - generic [ref=f20e78]: Your pan
+            - table [ref=f20e80]:
+              - rowgroup [ref=f20e81]:
+                - row [ref=f20e82]:
+                  - columnheader [ref=f20e83]
+                  - columnheader "Recipe pan" [ref=f20e84]
+                  - columnheader "Your pan" [ref=f20e85]
+              - rowgroup [ref=f20e86]:
+                - row [ref=f20e87]:
+                  - rowheader "Area" [ref=f20e88]
+                  - cell "50.3 sq in" [ref=f20e89]
+                  - cell "63.6 sq in" [ref=f20e90]
+                - row [ref=f20e91]:
+                  - rowheader "Pan capacity to the rim" [ref=f20e92]
+                  - cell "7 cups" [ref=f20e93]
+                  - cell "8.8 cups" [ref=f20e94]
+                - row [ref=f20e95]:
+                  - rowheader "Batter it bakes" [ref=f20e96]
+                  - cell "2.6 cups" [ref=f20e97]
+                  - cell "3.3 cups" [ref=f20e98]
+        - group [ref=f20e99]:
+          - generic "Which of my pans will work?" [ref=f20e100] [cursor=pointer]
+        - generic [ref=f20e101]:
+          - generic [ref=f20e102]:
+            - heading "Bake time and temperature" [level=2] [ref=f20e103]
+            - generic [ref=f20e104]:
+              - generic [ref=f20e105]:
+                - generic [ref=f20e106]: Recipe bake time (min)
+                - textbox "Recipe bake time (min)" [ref=f20e108]:
+                  - /placeholder: "30"
+              - generic [ref=f20e109]:
+                - generic [ref=f20e110]:
+                  - generic [ref=f20e111]: Oven
+                  - group "Oven temperature unit" [ref=f20e112]:
+                    - button "°F" [pressed] [ref=f20e113]
+                    - button "°C" [ref=f20e114]
+                - textbox "Oven" [ref=f20e115]:
+                  - /placeholder: "350"
+            - paragraph [ref=f20e116]: "Rule of thumb: deeper batter, lower the oven 25°F (15°C) and add 5 to 15 minutes. Thinner batter, same oven, check early."
+            - generic [ref=f20e117]:
+              - paragraph [ref=f20e118]: Enter the recipe bake time and oven temperature for exact numbers.
+              - paragraph [ref=f20e119]: The batter depth is close to the recipe pan. Keep the same oven temperature and check at about the same time.
+              - paragraph [ref=f20e120]: Fill any pan no more than two thirds full. Bake leftover batter as cupcakes.
+              - paragraph [ref=f20e121]: This is a guide. Ovens differ. The cake is done when a toothpick comes out clean.
+          - generic [ref=f20e122]:
+            - heading "Scale your ingredients" [level=2] [ref=f20e123]
+            - generic [ref=f20e124]:
+              - generic [ref=f20e125]: Round amounts to
+              - group "Round amounts to" [ref=f20e126]:
+                - button "Eighths" [pressed] [ref=f20e127]
+                - button "Quarters" [ref=f20e128]
+            - generic [ref=f20e129]: Paste the ingredient list, one per line
+            - textbox "Paste the ingredient list, one per line" [ref=f20e130]:
+              - /placeholder: "1 1/2 cups flour\n3/4 cup sugar\n2 large eggs\n1 tsp baking powder"
+            - button "Try an example" [ref=f20e131]
+            - list
+        - generic [ref=f20e132]:
+          - button "Copy result" [ref=f20e133]
+          - button "Copy link" [ref=f20e134]
+          - button "Print" [ref=f20e135]
+          - status
+    - region [ref=f20e136]:
+      - heading "Popular pan swaps" [level=2] [ref=f20e137]
+      - list [ref=f20e138]:
+        - listitem [ref=f20e139]:
+          - link "9x13 pan to two 8 inch round pans" [ref=f20e140] [cursor=pointer]:
+            - /url: /cake-pan-converter/9x13-to-two-8-inch-round-pans/
+        - listitem [ref=f20e141]:
+          - link "9x13 pan to a 9 inch round pan" [ref=f20e142] [cursor=pointer]:
+            - /url: /cake-pan-converter/9x13-to-9-inch-round-cake-pan/
+        - listitem [ref=f20e143]:
+          - link "8 inch round to 9 inch round cake pan" [ref=f20e144] [cursor=pointer]:
+            - /url: /cake-pan-converter/8-inch-to-9-inch-round-cake-pan/
+        - listitem [ref=f20e145]:
+          - link "9 inch round to 8 inch round cake pan" [ref=f20e146] [cursor=pointer]:
+            - /url: /cake-pan-converter/9-inch-to-8-inch-round-cake-pan/
+        - listitem [ref=f20e147]:
+          - link "12 cup bundt pan to 9x13 pan" [ref=f20e148] [cursor=pointer]:
+            - /url: /cake-pan-converter/bundt-pan-to-9x13/
+        - listitem [ref=f20e149]:
+          - link "9x13 pan to 12 cup bundt pan" [ref=f20e150] [cursor=pointer]:
+            - /url: /cake-pan-converter/9x13-to-12-cup-bundt-pan/
+        - listitem [ref=f20e151]:
+          - link "9x5 loaf pan to 9x13 pan" [ref=f20e152] [cursor=pointer]:
+            - /url: /cake-pan-converter/loaf-pan-to-9x13/
+        - listitem [ref=f20e153]:
+          - link "9x5 loaf pan to 8x4 loaf pan" [ref=f20e154] [cursor=pointer]:
+            - /url: /cake-pan-converter/9x5-loaf-to-8x4-loaf/
+        - listitem [ref=f20e155]:
+          - link "9x13 pan to half sheet pan" [ref=f20e156] [cursor=pointer]:
+            - /url: /cake-pan-converter/9x13-to-half-sheet-pan/
+        - listitem [ref=f20e157]:
+          - link "8 inch square pan to 9 inch round pan" [ref=f20e158] [cursor=pointer]:
+            - /url: /cake-pan-converter/8-inch-square-to-9-inch-round-cake-pan/
+        - listitem [ref=f20e159]:
+          - link "Printable cake pan conversion chart" [ref=f20e160] [cursor=pointer]:
+            - /url: /cake-pan-converter/cake-pan-conversion-chart/
+    - region [ref=f20e161]:
+      - article [ref=f20e162]:
+        - heading "How a cake pan converter works" [level=2] [ref=f20e163]
+        - paragraph [ref=f20e164]: "A cake pan converter tells you how much batter a new pan needs compared with the pan in your recipe. You enter both pans and read one number: the scale factor. Multiply every ingredient by that number and the cake fills the new pan to the same depth. Pan size is the most common reason a good recipe fails, so this one number saves a lot of waste."
+        - paragraph [ref=f20e165]: The math is simple. Find how much batter each pan bakes (the area times the depth, times the share of the pan you fill), then divide the new amount by the old one. When both pans are the same depth, this is the same as dividing the areas. This tool does it for you, and it also handles bundt pans and several pans at once.
+        - heading "How to convert a recipe to a different pan size" [level=2] [ref=f20e166]
+        - list [ref=f20e167]:
+          - listitem [ref=f20e168]: Choose inches or centimeters.
+          - listitem [ref=f20e169]: Under "Pan in the recipe," pick the shape and the size the recipe names.
+          - listitem [ref=f20e170]: Under "Pan you will use," pick the pan you own.
+          - listitem [ref=f20e171]: Read the scale factor. It updates as you type.
+          - listitem [ref=f20e172]: Paste the ingredient list. Each line is scaled and rounded to amounts you can measure.
+          - listitem [ref=f20e173]: Add the bake time and oven temperature for a guide to the new baking time.
+        - 'heading "Worked example: 8 inch round to 9 inch round" [level=2] [ref=f20e174]'
+        - paragraph [ref=f20e175]: An 8 inch round pan has an area of 50.3 square inches. A 9 inch round has 63.6 square inches. Divide 63.6 by 50.3 and you get 1.27. Every ingredient goes up by 27%.
+        - list [ref=f20e176]:
+          - listitem [ref=f20e177]: 1 1/2 cups flour becomes 1 7/8 cups.
+          - listitem [ref=f20e178]: 1 cup sugar becomes 1 1/4 cups.
+          - listitem [ref=f20e179]: 1/2 cup butter becomes 5/8 cup.
+          - listitem [ref=f20e180]: 2 eggs becomes 2 1/2 eggs. Beat one extra egg and use half of it.
+        - paragraph [ref=f20e181]: The batter depth stays the same, so the oven stays at 350°F. Check the cake a few minutes early, because a wider cake can finish sooner.
+        - heading "Swap a round pan for a square or rectangular pan" [level=2] [ref=f20e182]
+        - paragraph [ref=f20e183]: Shape does not change the method. A 9 inch square pan is 81 square inches, which is 27% more than a 9 inch round. An 8 inch square is 64 square inches, almost the same as a 9 inch round at 63.6, so those two swap with no change. Use the swap button to flip the two pans and see the reverse factor. Set the number of pans on each side when a recipe uses two layers and you want to bake one sheet cake.
+        - heading "Common cake pan conversions" [level=2] [ref=f20e184]
+        - paragraph [ref=f20e185]: These factors assume both pans are filled to the same depth. Use them as a quick check, or type your own sizes above.
+        - table [ref=f20e187]:
+          - rowgroup [ref=f20e188]:
+            - row [ref=f20e189]:
+              - columnheader "Recipe pan" [ref=f20e190]
+              - columnheader "Your pan" [ref=f20e191]
+              - columnheader "Multiply by" [ref=f20e192]
+          - rowgroup [ref=f20e193]:
+            - row [ref=f20e194]:
+              - cell "8\" round" [ref=f20e195]
+              - cell "9\" round" [ref=f20e196]
+              - cell "1.27" [ref=f20e197]
+            - row [ref=f20e198]:
+              - cell "9\" round" [ref=f20e199]
+              - cell "8\" round" [ref=f20e200]
+              - cell "0.79" [ref=f20e201]
+            - row [ref=f20e202]:
+              - cell "8\" round" [ref=f20e203]
+              - cell "10\" round" [ref=f20e204]
+              - cell "1.56" [ref=f20e205]
+            - row [ref=f20e206]:
+              - cell "9\" round" [ref=f20e207]
+              - cell "10\" round" [ref=f20e208]
+              - cell "1.23" [ref=f20e209]
+            - row [ref=f20e210]:
+              - cell "8\" round" [ref=f20e211]
+              - cell "8\" square" [ref=f20e212]
+              - cell "1.27" [ref=f20e213]
+            - row [ref=f20e214]:
+              - cell "9\" round" [ref=f20e215]
+              - cell "9\" square" [ref=f20e216]
+              - cell "1.27" [ref=f20e217]
+            - row [ref=f20e218]:
+              - cell "8\" square" [ref=f20e219]
+              - cell "9x13\"" [ref=f20e220]
+              - cell "1.83" [ref=f20e221]
+            - row [ref=f20e222]:
+              - cell "9x13\"" [ref=f20e223]
+              - cell "9\" square" [ref=f20e224]
+              - cell "0.69" [ref=f20e225]
+            - row [ref=f20e226]:
+              - cell "9\" square" [ref=f20e227]
+              - cell "9x13\"" [ref=f20e228]
+              - cell "1.44" [ref=f20e229]
+            - row [ref=f20e230]:
+              - cell "9x13\"" [ref=f20e231]
+              - cell "two 8\" rounds" [ref=f20e232]
+              - cell "0.86" [ref=f20e233]
+            - row [ref=f20e234]:
+              - cell "two 8\" rounds" [ref=f20e235]
+              - cell "9x13\"" [ref=f20e236]
+              - cell "1.16" [ref=f20e237]
+            - row [ref=f20e238]:
+              - cell "9x13\"" [ref=f20e239]
+              - cell "12 cup bundt" [ref=f20e240]
+              - cell "1.2" [ref=f20e241]
+            - row [ref=f20e242]:
+              - cell "12 cup bundt" [ref=f20e243]
+              - cell "9x13\"" [ref=f20e244]
+              - cell "0.83" [ref=f20e245]
+        - paragraph [ref=f20e246]: A 9x13 pan is 117 square inches. A 9 inch square is 81. A 9x5 loaf pan is 45.
+        - heading "Area or volume?" [level=2] [ref=f20e247]
+        - paragraph [ref=f20e248]: Most charts compare area only. That works when both pans are the same depth, and most cake pans are about 2 inches deep. A deep pan holds more than its area suggests. This tool compares volume, so you can set the depth of each pan. It also compares bundt and tube pans by their capacity in cups. You can fill a bundt pan only to about 60% of its rated cups, so the tool counts the batter it bakes, not the water it holds. Sheet pans are only 1 inch deep, but the tool fills them to the same depth as a cake pan (2 inches) unless you change the depth. Lower the depth for a thinner sheet cake.
+        - heading "Adjust the bake time and temperature" [level=2] [ref=f20e249]
+        - paragraph [ref=f20e250]: Batter depth matters more than pan size for baking time. When the batter is deeper than in the recipe, the middle sets later than the edges. Lower the oven by about 25°F, bake longer and tent the top with foil if it browns too fast. When the batter is thinner, keep the temperature and start checking early. The tool gives a time range, but it is a guide. Ovens differ, and a toothpick that comes out clean is the real test.
+        - heading "Tips for better results" [level=2] [ref=f20e251]
+        - list [ref=f20e252]:
+          - listitem [ref=f20e253]: Fill pans no more than two thirds full. Bake extra batter as cupcakes.
+          - listitem [ref=f20e254]: Use the pan sizes printed on the pan or the box. Measure across the inside, from edge to edge.
+          - listitem [ref=f20e255]: Weigh ingredients when you can. Grams scale more exactly than cups.
+          - listitem [ref=f20e256]: Scale eggs last. Beat an egg and measure out half when you need half.
+          - listitem [ref=f20e257]: For three layers from a two-layer recipe, set the number of pans to 3 on your side.
+        - paragraph [ref=f20e258]: You will also see this tool called a cake tin converter outside the US. Use the centimeters button for metric tins. The oven has its own °F and °C buttons.
+    - region [ref=f20e259]:
+      - heading "Frequently asked questions" [level=2] [ref=f20e260]
+      - generic [ref=f20e261]:
+        - group [ref=f20e262]:
+          - generic "How do I convert a recipe from a 9x13 pan to round pans?" [ref=f20e263] [cursor=pointer]
+        - group [ref=f20e266]:
+          - generic "What is the scale factor to go from an 8 inch to a 9 inch round pan?" [ref=f20e267] [cursor=pointer]
+        - group [ref=f20e270]:
+          - generic "Do I change the baking time when I change the pan?" [ref=f20e271] [cursor=pointer]
+        - group [ref=f20e274]:
+          - generic "How full should I fill a cake pan?" [ref=f20e275] [cursor=pointer]
+        - group [ref=f20e278]:
+          - generic "How do I scale one egg or half an egg?" [ref=f20e279] [cursor=pointer]
+        - group [ref=f20e282]:
+          - generic "Can I use a bundt or tube pan instead of a regular pan?" [ref=f20e283] [cursor=pointer]
+        - group [ref=f20e286]:
+          - generic "Does a cake tin mean the same thing as a cake pan?" [ref=f20e287] [cursor=pointer]
+        - group [ref=f20e290]:
+          - generic "Is my recipe stored anywhere?" [ref=f20e291] [cursor=pointer]
+  - region [ref=f20e294]:
+    - heading "More free tools from Bingemind" [level=2] [ref=f20e295]
+    - list [ref=f20e296]:
+      - listitem [ref=f20e297]:
+        - link "Sourdough starter calculator" [ref=f20e298] [cursor=pointer]:
+          - /url: https://bingemind.com/sourdough-starter-calculator/
+      - listitem [ref=f20e299]:
+        - link "Knitting increase calculator" [ref=f20e300] [cursor=pointer]:
+          - /url: https://bingemind.com/knitting-increase-calculator/
+      - listitem [ref=f20e301]:
+        - link "Online ruler" [ref=f20e302] [cursor=pointer]:
+          - /url: https://bingemind.com/online-ruler/
+      - listitem [ref=f20e303]:
+        - link "See all free tools" [ref=f20e304] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+  - contentinfo [ref=f20e305]:
+    - generic [ref=f20e306]:
+      - paragraph [ref=f20e307]: © 2026 Cake Pan Converter. Free to use.
+      - navigation "Footer" [ref=f20e308]:
+        - link "Conversion chart" [ref=f20e309] [cursor=pointer]:
+          - /url: /cake-pan-converter/cake-pan-conversion-chart/
+        - link "About" [ref=f20e310] [cursor=pointer]:
+          - /url: /cake-pan-converter/about/
+        - link "Contact" [ref=f20e311] [cursor=pointer]:
+          - /url: /cake-pan-converter/contact/
+        - link "Privacy Policy" [ref=f20e312] [cursor=pointer]:
+          - /url: /cake-pan-converter/privacy/
+        - link "Terms" [ref=f20e313] [cursor=pointer]:
+          - /url: /cake-pan-converter/terms/
+        - link "More free tools" [ref=f20e314] [cursor=pointer]:
+          - /url: https://bingemind.com/tools/
+    - paragraph [ref=f20e315]:
+      - text: Made by
+      - link "Abhishek Mishra" [ref=f20e316] [cursor=pointer]:
+        - /url: https://bingemind.com/abhishek-mishra/
+      - text: . Made with love by
+      - link "Bingemind" [ref=f20e317] [cursor=pointer]:
+        - /url: https://bingemind.com/
+      - text: .
+    - navigation "Bingemind site" [ref=f20e318]:
+      - link "About" [ref=f20e319] [cursor=pointer]:
+        - /url: /about/
+      - generic [aria-hidden] [ref=f20e320]: ·
+      - link "Contact" [ref=f20e321] [cursor=pointer]:
+        - /url: /contact/
+      - generic [aria-hidden] [ref=f20e322]: ·
+      - link "Privacy" [ref=f20e323] [cursor=pointer]:
+        - /url: /privacy/
+      - generic [aria-hidden] [ref=f20e324]: ·
+      - link "Terms" [ref=f20e325] [cursor=pointer]:
+        - /url: /terms/
+      - generic [aria-hidden] [ref=f20e326]: ·
+      - link "Cookie settings" [ref=f20e327] [cursor=pointer]:
+        - /url: "#bm-consent"

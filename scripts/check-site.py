@@ -71,4 +71,37 @@ print('PASS preservation:',checked,'existing AdSense loader states,',mains,'tool
 def digest():return {str(p.relative_to(r)):hashlib.sha256(p.read_bytes()).hexdigest() for p in r.rglob('*') if p.is_file() and '.git' not in p.parts}
 a=digest();output=subprocess.check_output(['node','scripts/site-footer.mjs'],cwd=r,text=True).strip();assert a==digest()
 print('PASS idempotence: complete working tree unchanged;',output)
+# SEO post-processing applies only to tool folders, including every nested HTML page.
+root_only={'about','contact','privacy','terms','services','tools','abhishek-mishra','js','img','fonts','favicon_io','_astro','scripts','node_modules'}
+policy_names={'about','contact','privacy','terms'}
+tool_dirs=[p for p in r.iterdir() if p.is_dir() and not p.name.startswith('.') and p.name not in root_only and (p/'index.html').is_file()]
+policy_count=0;tool_page_count=0
+for tool in tool_dirs:
+ for name in policy_names:
+  p=tool/name/'index.html'
+  if not p.is_file():continue
+  s=p.read_text();tags=re.findall(r'<meta\b(?=[^>]*\sname\s*=\s*([\'"])robots\1)[^>]*>',s,re.I)
+  assert len(tags)==1,('robots tag count',p)
+  tag=re.search(r'<meta\b(?=[^>]*\sname\s*=\s*([\'"])robots\1)[^>]*>',s,re.I)[0]
+  assert 'content="noindex, follow"' in tag,('policy is not noindex, follow',p)
+  policy_count+=1
+ sitemap=tool/'sitemap-0.xml'
+ if sitemap.is_file():
+  for loc in ET.parse(sitemap).getroot().iter():
+   if loc.tag.rsplit('}',1)[-1]!='loc':continue
+   url=urlsplit(loc.text or '');parts=url.path.strip('/').split('/')
+   assert not (url.hostname=='bingemind.com' and len(parts)==2 and parts[0] in {p.name for p in tool_dirs} and parts[1] in policy_names),('policy in sitemap',sitemap,loc.text)
+ for p in tool.rglob('*.html'):
+  s=p.read_text();marker='<!-- bm-topbar v1 -->';body=re.search(r'<body\b[^>]*>',s,re.I)
+  assert s.count(marker)==1,('top menu count',p)
+  assert body and s.index(marker)>=body.end(),('top menu is not after body tag',p)
+  tool_page_count+=1
+for p in pages:
+ parts=p.relative_to(r).parts
+ if len(parts)==1 or parts[0] in root_only or parts[0].startswith('.'):
+  assert 'bm-topbar' not in p.read_text(),('top menu on root page',p)
+for name in policy_names:assert 'noindex' not in (r/name/'index.html').read_text(),('root policy is noindex',name)
+a=digest();output=subprocess.check_output(['node','scripts/site-seo.mjs'],cwd=r,text=True).strip();assert a==digest()
+assert output==f'site-seo: scanned {tool_page_count} HTML, noindex set on 0 policy pages, 0 sitemap URLs removed, top menu added to 0 pages.',output
+print(f'PASS seo: {policy_count} per-tool policy pages are noindex and out of sitemaps; top menu once on {tool_page_count} tool pages; root pages untouched')
 print('All static checks passed. HTTP/browser/layout not tested by this script.')
