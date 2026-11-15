@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+<style>
+.a{animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.2,.7,.2,1);animation-fill-mode:both}
+.fb{transform-box:fill-box}
+.draw{stroke-dasharray:1;animation-name:draw}
+@keyframes draw{0%{stroke-dashoffset:1}28%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+.rise{animation-name:rise}
+@keyframes rise{0%{opacity:0;transform:translateY(18px)}22%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-6px)}}
+.pop{animation-name:pop;transform-box:fill-box;transform-origin:center}
+@keyframes pop{0%{opacity:0;transform:scale(.2)}18%{opacity:1;transform:scale(1.12)}26%,88%{transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.gy{animation-name:gy;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes gy{0%{transform:scaleY(0)}30%,88%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.gx{animation-name:gx;transform-box:fill-box;transform-origin:0 50%}
+@keyframes gx{0%{transform:scaleX(0)}30%,88%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.shrink{animation-name:shrink;transform-box:fill-box;transform-origin:0 50%}
+@keyframes shrink{0%,10%{transform:scaleX(1)}40%,88%{transform:scaleX(.001)}100%{transform:scaleX(1)}}
+.spin{animation:spin 9s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.glow{animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{opacity:.45}}
+.blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.stamp{animation-name:stamp;transform-box:fill-box;transform-origin:center}
+@keyframes stamp{0%,40%{opacity:0;transform:scale(2.4) rotate(-14deg)}50%{opacity:1;transform:scale(.92) rotate(-14deg)}56%,88%{opacity:1;transform:scale(1) rotate(-14deg)}100%{opacity:0;transform:scale(1) rotate(-14deg)}}
+.drive{animation-name:drive}
+@keyframes drive{0%{transform:translateX(-260px)}30%,88%{transform:none}100%{transform:translateX(320px)}}
+.swing{animation-name:swing;transform-box:view-box;transform-origin:240px 220px}
+@keyframes swing{0%{transform:rotate(-80deg)}22%{transform:rotate(20deg)}30%{transform:rotate(-8deg)}36%,88%{transform:rotate(0)}100%{transform:rotate(-80deg)}}
+.tick{animation:tick 3s linear infinite;transform-box:view-box}
+@keyframes tick{to{transform:rotate(360deg)}}
+.fast{animation-duration:1.2s}
+.d1{animation-delay:.25s}.d2{animation-delay:.5s}.d3{animation-delay:.75s}.d4{animation-delay:1s}.d5{animation-delay:1.25s}.d6{animation-delay:1.5s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<radialGradient id="bg" cx="70%" cy="20%" r="95%"><stop offset="0" stop-color="#1a2550"/><stop offset=".55" stop-color="#0e1530"/><stop offset="1" stop-color="#090d1c"/></radialGradient>
+<radialGradient id="hl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7d95ff" stop-opacity=".55"/><stop offset="1" stop-color="#7d95ff" stop-opacity="0"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe2a8"/><stop offset=".5" stop-color="#e7b861"/><stop offset="1" stop-color="#c8901f"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7b861" stop-opacity=".45"/><stop offset="1" stop-color="#e7b861" stop-opacity="0"/></linearGradient>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#ffffff" opacity=".07"/></pattern>
+</defs>
+<rect width="480" height="300" fill="url(#bg)"/><rect width="480" height="300" fill="url(#dots)"/>
+<circle class="glow" cx="360" cy="70" r="150" fill="url(#hl)"/>
+
+<g class="float"><rect x="70" y="60" width="170" height="180" rx="16" fill="#151d3b" stroke="#2c3866" /><rect x="70" y="60" width="170" height="44" rx="16" fill="#ff8a4c"/><rect x="70" y="88" width="170" height="16" fill="#ff8a4c"/>
+<rect x="104" y="48" width="10" height="26" rx="5" fill="#eef0fa"/><rect x="196" y="48" width="10" height="26" rx="5" fill="#eef0fa"/>
+<text x="155" y="92" font-family="ui-rounded,'SF Pro Rounded','Segoe UI',system-ui,-apple-system,sans-serif" font-size="16" font-weight="800" fill="#2a0d02" text-anchor="middle" >JUNE</text><text x="155" y="196" font-family="ui-rounded,'SF Pro Rounded','Segoe UI',system-ui,-apple-system,sans-serif" font-size="70" font-weight="800" fill="#eef0fa" text-anchor="middle" class="a pop d1">15</text></g>
+<g class="a pop d3"><rect x="312" y="150" width="96" height="70" rx="10" fill="url(#gold)"/><rect x="356" y="116" width="8" height="34" rx="3" fill="#ffe2a8"/>
+<path d="M360 94 C 372 108, 368 116, 360 118 C 352 116, 348 108, 360 94Z" fill="#ff8a4c" class="glow"/></g>
+<g class="a rise d2"><rect x="282" y="48" width="170" height="30" rx="15" fill="#7d95ff"/><text x="366.8" y="68" font-family="ui-rounded,'SF Pro Rounded','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="800" fill="#0a1030" text-anchor="middle" >31 y · 5 m · 0 d</text></g><text x="360" y="254" font-family="ui-rounded,'SF Pro Rounded','Segoe UI',system-ui,-apple-system,sans-serif" font-size="14" font-weight="700" fill="#a9b0c8" text-anchor="middle" >next birthday</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+<style>
+.a{animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.2,.7,.2,1);animation-fill-mode:both}
+.fb{transform-box:fill-box}
+.draw{stroke-dasharray:1;animation-name:draw}
+@keyframes draw{0%{stroke-dashoffset:1}28%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+.rise{animation-name:rise}
+@keyframes rise{0%{opacity:0;transform:translateY(18px)}22%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-6px)}}
+.pop{animation-name:pop;transform-box:fill-box;transform-origin:center}
+@keyframes pop{0%{opacity:0;transform:scale(.2)}18%{opacity:1;transform:scale(1.12)}26%,88%{transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.gy{animation-name:gy;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes gy{0%{transform:scaleY(0)}30%,88%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.gx{animation-name:gx;transform-box:fill-box;transform-origin:0 50%}
+@keyframes gx{0%{transform:scaleX(0)}30%,88%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.shrink{animation-name:shrink;transform-box:fill-box;transform-origin:0 50%}
+@keyframes shrink{0%,10%{transform:scaleX(1)}40%,88%{transform:scaleX(.001)}100%{transform:scaleX(1)}}
+.spin{animation:spin 9s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.glow{animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{opacity:.45}}
+.blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.stamp{animation-name:stamp;transform-box:fill-box;transform-origin:center}
+@keyframes stamp{0%,40%{opacity:0;transform:scale(2.4) rotate(-14deg)}50%{opacity:1;transform:scale(.92) rotate(-14deg)}56%,88%{opacity:1;transform:scale(1) rotate(-14deg)}100%{opacity:0;transform:scale(1) rotate(-14deg)}}
+.drive{animation-name:drive}
+@keyframes drive{0%{transform:translateX(-260px)}30%,88%{transform:none}100%{transform:translateX(320px)}}
+.swing{animation-name:swing;transform-box:view-box;transform-origin:240px 220px}
+@keyframes swing{0%{transform:rotate(-80deg)}22%{transform:rotate(20deg)}30%{transform:rotate(-8deg)}36%,88%{transform:rotate(0)}100%{transform:rotate(-80deg)}}
+.tick{animation:tick 3s linear infinite;transform-box:view-box}
+.drumroll{animation:drumroll 1.6s linear infinite}
+@keyframes drumroll{to{transform:translateX(-40px)}}
+@keyframes tick{to{transform:rotate(360deg)}}
+.fast{animation-duration:1.2s}
+.d1{animation-delay:.25s}.d2{animation-delay:.5s}.d3{animation-delay:.75s}.d4{animation-delay:1s}.d5{animation-delay:1.25s}.d6{animation-delay:1.5s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<radialGradient id="bg" cx="70%" cy="20%" r="95%"><stop offset="0" stop-color="#1a2550"/><stop offset=".55" stop-color="#0e1530"/><stop offset="1" stop-color="#090d1c"/></radialGradient>
+<radialGradient id="hl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#a9b0c8" stop-opacity=".55"/><stop offset="1" stop-color="#a9b0c8" stop-opacity="0"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe2a8"/><stop offset=".5" stop-color="#e7b861"/><stop offset="1" stop-color="#c8901f"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7b861" stop-opacity=".45"/><stop offset="1" stop-color="#e7b861" stop-opacity="0"/></linearGradient>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#ffffff" opacity=".07"/></pattern>
+</defs>
+<rect width="480" height="300" fill="url(#bg)"/><rect width="480" height="300" fill="url(#dots)"/>
+<circle class="glow" cx="360" cy="70" r="150" fill="url(#hl)"/>
+
+<path d="M30 268 L170 236 L450 248 L310 292Z" fill="#2c3866"/>
+<path d="M30 268 L170 236 L450 248 L310 292Z" fill="url(#gold)" opacity=".9" class="a gy d4"/>
+<clipPath id="drum"><ellipse cx="190" cy="128" rx="96" ry="44" transform="rotate(-12 190 128)"/></clipPath>
+<g class="float">
+<rect x="70" y="176" width="300" height="18" rx="8" fill="#2c3866"/>
+<path d="M300 110 L352 110 Q366 110 372 124 L386 176 L300 176Z" fill="#7d95ff"/><path d="M310 120 L346 120 L356 148 L310 148Z" fill="#0e1530" opacity=".8"/>
+<ellipse cx="190" cy="128" rx="100" ry="48" transform="rotate(-12 190 128)" fill="#151d3b" stroke="#e7b861" stroke-width="5"/>
+<g clip-path="url(#drum)"><g class="drumroll"><path d="M50 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M90 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M130 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M170 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M210 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M250 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M290 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M330 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M370 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/><path d="M410 60 l46 150" stroke="#e7b861" stroke-width="12" opacity=".5"/></g></g>
+<path d="M92 150 L58 212" stroke="#a9b0c8" stroke-width="10" stroke-linecap="round"/>
+<circle cx="120" cy="198" r="20" fill="#0e1530" stroke="#eef0fa" stroke-width="6"/><circle cx="330" cy="198" r="20" fill="#0e1530" stroke="#eef0fa" stroke-width="6"/></g>
+<path d="M58 214 Q 52 236 62 256" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" pathLength="1" class="a draw d2"/>
+<g class="a pop d1"><rect x="270" y="30" width="189" height="30" rx="15" fill="#e7b861"/><text x="364.4" y="50" font-family="ui-rounded,'SF Pro Rounded','Segoe UI',system-ui,-apple-system,sans-serif" font-size="15" font-weight="800" fill="#1b1404" text-anchor="middle" >2.72 yd³ · 62 bags</text></g>
+</svg>
