@@ -44,3 +44,7 @@ Sitemap: https://bingemind.com/mileage-log-maker/sitemap-index.xml
 Sitemap: https://bingemind.com/animated-gradient-generator/sitemap-index.xml
 Sitemap: https://bingemind.com/standard-galactic-alphabet-translator/sitemap-index.xml
 Sitemap: https://bingemind.com/shakespeare-translator/sitemap-index.xml
+Sitemap: https://bingemind.com/overtime-calculator/sitemap-index.xml
+Sitemap: https://bingemind.com/time-card-calculator/sitemap-index.xml
+Sitemap: https://bingemind.com/take-home-pay-calculator/sitemap-index.xml
+Sitemap: https://bingemind.com/square-footage-calculator/sitemap-index.xml

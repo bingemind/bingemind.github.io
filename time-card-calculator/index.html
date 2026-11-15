@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en-US" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Time Card Calculator with Lunch Breaks and Overtime (Free, Printable)</title>
+<meta name="description" content="Free time card calculator. Enter clock-in, clock-out and lunch for each day to get hours worked in hours:minutes and decimal, overtime and pay. Weekly or bi-weekly, overnight shifts, print or CSV.">
+<link rel="canonical" href="https://bingemind.com/time-card-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Card Calculator with Lunch Breaks and Overtime">
+<meta property="og:description" content="Clock-in and clock-out times to weekly hours, overtime and pay. Print a time card or download CSV.">
+<meta property="og:url" content="https://bingemind.com/time-card-calculator/">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:image" content="https://bingemind.com/og-bingemind.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="./kit.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Time Card Calculator","url":"https://bingemind.com/time-card-calculator/","inLanguage":"en-US","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-13","publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add up clock-in and clock-out times with lunch breaks into weekly hours, overtime and pay. Weekly or bi-weekly, with print and CSV."},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Time Card Calculator","item":"https://bingemind.com/time-card-calculator/"}]}
+]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate hours worked on a time card?", "acceptedAnswer": {"@type": "Answer", "text": "For each day, subtract the clock-in time from the clock-out time, then subtract unpaid breaks. Add the days together for the week. For example, 8:30 AM to 5:15 PM is 8 hours 45 minutes; minus a 30-minute lunch gives 8 hours 15 minutes, or 8.25 decimal hours."}}, {"@type": "Question", "name": "How do I convert minutes to decimal hours?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, 45 minutes is 0.75. So 7 hours 45 minutes is 7.75 decimal hours. Payroll uses decimal hours because you can multiply them by your hourly rate."}}, {"@type": "Question", "name": "Are lunch breaks paid?", "acceptedAnswer": {"@type": "Answer", "text": "Under federal law, meal breaks of 30 minutes or more where you are fully relieved of duty can be unpaid. Short rest breaks of about 5 to 20 minutes count as work time and must be paid. Some states have their own meal and rest break rules."}}, {"@type": "Question", "name": "How do I calculate an overnight shift?", "acceptedAnswer": {"@type": "Answer", "text": "If your clock-out time is earlier than your clock-in time, the shift crossed midnight. Add 24 hours to the clock-out time before subtracting. This calculator does that for you, so 10:00 PM to 6:30 AM with a 30-minute break is 8 hours."}}, {"@type": "Question", "name": "Is time card rounding legal?", "acceptedAnswer": {"@type": "Answer", "text": "Federal rules allow rounding to the nearest 5 minutes, tenth of an hour (6 minutes) or quarter hour (15 minutes), as long as it is neutral and does not always favor the employer over time. California courts are stricter, so many employers there pay exact minutes."}}, {"@type": "Question", "name": "How is overtime calculated on a bi-weekly time card?", "acceptedAnswer": {"@type": "Answer", "text": "Overtime is counted for each workweek on its own, even if you are paid every two weeks. 50 hours in week one and 30 in week two gives 10 overtime hours, not zero. This calculator splits bi-weekly cards into two weeks for that reason."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body>
+<a class="skip" href="#calc">Skip to calculator</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a href="https://bingemind.com/tools/">All tools</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Time Card Calculator</p>
+      <span class="eyebrow rise d1">Weekly or bi-weekly · overnight shifts</span>
+      <h1 class="lift"><span class="shine">Time Card Calculator</span></h1>
+      <p class="lede lift">Enter clock-in, clock-out and lunch for each day. Get total hours in hours:minutes and decimal, overtime, and pay. Print a clean time card or download it as CSV.</p>
+      <ul class="trust rise d4">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Daily and weekly overtime</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>5, 6 or 15-minute rounding</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Printable time card</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Saved in your browser only</li>
+      </ul>
+      <p class="byline rise d4">By the Bingemind tools team · Reviewed <time datetime="2026-11-13">13 November 2026</time> against DOL break and rounding rules.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="tool" id="calc">
+      <noscript><p class="note">This calculator needs JavaScript. Without it: daily hours = clock-out − clock-in − unpaid break.</p></noscript>
+      <form class="card lift" id="form" novalidate>
+        <h2>Your time card</h2>
+        <p class="sub">Times like 8:30, 830 or 5:30 pm all work. Leave days off blank.</p>
+
+        <div class="seg" aria-label="Pay period" id="period">
+          <button type="button" data-value="1" aria-checked="true">Weekly</button>
+          <button type="button" data-value="2" aria-checked="false">Bi-weekly</button>
+        </div>
+
+        <div class="grid-2">
+          <div class="field"><label for="name">Employee name <span class="hint">(optional)</span></label><input class="input" id="name" autocomplete="name" placeholder="For the printout"></div>
+          <div class="field"><label for="startDate">Week starting</label><input class="input" id="startDate" type="date"></div>
+        </div>
+
+        <div id="weeks"></div>
+
+        <div class="mini-actions">
+          <button class="btn small" type="button" id="copyMon">Copy Monday to Tue–Fri</button>
+          <button class="btn small" type="button" data-fill="09:00|17:00|30">9–5, 30 min lunch</button>
+          <button class="btn small" type="button" data-fill="08:00|16:30|30">8–4:30</button>
+          <button class="btn small" type="button" id="clearAll">Clear</button>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px">
+          <div class="field">
+            <label for="rate">Hourly rate</label>
+            <div class="affix"><span class="pre">$</span><input class="input has-pre" id="rate" inputmode="decimal" autocomplete="off" value="20"></div>
+          </div>
+          <div class="field">
+            <label for="rule">Overtime rules</label>
+            <select class="input" id="rule">
+              <option value="federal">Federal (over 40/week)</option>
+              <option value="california">California (daily + weekly)</option>
+              <option value="alaska">Alaska</option>
+              <option value="colorado">Colorado</option>
+              <option value="none">No overtime</option>
+            </select>
+          </div>
+        </div>
+
+        <details class="adv">
+          <summary>Rounding and multipliers</summary>
+          <div class="grid-2">
+            <div class="field">
+              <label for="rounding">Round punches to</label>
+              <select class="input" id="rounding">
+                <option value="0">Exact minutes</option>
+                <option value="5">Nearest 5 minutes</option>
+                <option value="6">Nearest 6 minutes (tenth)</option>
+                <option value="15">Nearest 15 minutes</option>
+              </select>
+            </div>
+            <div class="field"><label for="otMult">Overtime multiplier</label><input class="input" id="otMult" inputmode="decimal" value="1.5"></div>
+          </div>
+        </details>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div class="result-top">
+          <div>
+            <h2 id="resTitle">Total hours</h2>
+            <div class="big" id="hm">40:00</div>
+          </div>
+          <div style="text-align:right">
+            <div class="hint">Decimal hours</div>
+            <div style="font:800 1.6rem var(--f-head);font-variant-numeric:tabular-nums" id="dec">40</div>
+          </div>
+        </div>
+        <div class="stackbar" role="img" id="bar" aria-label="Hours split">
+          <span id="barReg" style="background:var(--reg)"></span><span id="barOt" style="background:var(--ot)"></span><span id="barDt" style="background:var(--dt)"></span>
+        </div>
+        <ul class="legend">
+          <li><span class="k"><i style="background:var(--reg)"></i>Regular</span><span class="v" id="regH">0</span><span class="s" id="regPay"></span></li>
+          <li><span class="k"><i style="background:var(--ot)"></i>Overtime</span><span class="v" id="otH">0</span><span class="s" id="otPay"></span></li>
+          <li><span class="k"><i style="background:var(--dt)"></i>Double time</span><span class="v" id="dtH">0</span><span class="s" id="dtPay"></span></li>
+        </ul>
+        <dl class="kv">
+          <dt>Gross pay</dt><dd id="gross" style="font-size:1.2rem">$0.00</dd>
+          <dt id="w1l" hidden>Week 1</dt><dd id="w1" hidden></dd>
+          <dt id="w2l" hidden>Week 2</dt><dd id="w2" hidden></dd>
+        </dl>
+        <p class="note" id="msg" hidden></p>
+        <p class="print-only" id="printSign" style="margin-top:28px">Employee signature ____________________ &nbsp; Date ________<br><br>Supervisor signature __________________ &nbsp; Date ________</p>
+        <div class="actions">
+          <button class="btn primary" type="button" id="printCard">Print time card</button>
+          <button class="btn" type="button" id="csvCard">CSV</button>
+          <button class="btn" type="button" id="copyCard">Copy totals</button>
+          <button class="btn" type="button" id="shareCard">Share link</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to calculate hours on a time card</span></h2>
+        <p>For each day, take the clock-out time, subtract the clock-in time, and subtract any unpaid break. Then add up the days. Payroll needs the total in decimal hours, so divide any leftover minutes by 60.</p>
+        <div class="formula">Daily hours = clock-out − clock-in − unpaid break<br>Decimal hours = hours + (minutes ÷ 60)<br>Pay = regular hours × rate + overtime hours × rate × 1.5</div>
+        <h3>Example</h3>
+        <p>8:30 AM to 5:15 PM is 8 hours 45 minutes. Take off a 30-minute lunch and you get 8:15, which is 8.25 decimal hours. Five days like that make 41.25 hours: 40 regular and 1.25 overtime. At $20 an hour that is $800 + $37.50 = <b>$837.50</b>.</p>
+        <button class="btn small" type="button" data-example="08:30|17:15|30|20">Load this example</button>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Minutes to decimal hours chart</span></h2>
+      <p class="prose">Use this when your payroll system asks for decimal hours.</p>
+      <div class="chart-grid" id="chart"></div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Time card questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate hours worked on a time card?</summary><p>For each day, subtract the clock-in time from the clock-out time, then subtract unpaid breaks. Add the days together for the week. For example, 8:30 AM to 5:15 PM is 8 hours 45 minutes; minus a 30-minute lunch gives 8 hours 15 minutes, or 8.25 decimal hours.</p></details>
+        <details><summary>How do I convert minutes to decimal hours?</summary><p>Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, 45 minutes is 0.75. So 7 hours 45 minutes is 7.75 decimal hours. Payroll uses decimal hours because you can multiply them by your hourly rate.</p></details>
+        <details><summary>Are lunch breaks paid?</summary><p>Under federal law, meal breaks of 30 minutes or more where you are fully relieved of duty can be unpaid. Short rest breaks of about 5 to 20 minutes count as work time and must be paid. Some states have their own meal and rest break rules.</p></details>
+        <details><summary>How do I calculate an overnight shift?</summary><p>If your clock-out time is earlier than your clock-in time, the shift crossed midnight. Add 24 hours to the clock-out time before subtracting. This calculator does that for you, so 10:00 PM to 6:30 AM with a 30-minute break is 8 hours.</p></details>
+        <details><summary>Is time card rounding legal?</summary><p>Federal rules allow rounding to the nearest 5 minutes, tenth of an hour (6 minutes) or quarter hour (15 minutes), as long as it is neutral and does not always favor the employer over time. California courts are stricter, so many employers there pay exact minutes.</p></details>
+        <details><summary>How is overtime calculated on a bi-weekly time card?</summary><p>Overtime is counted for each workweek on its own, even if you are paid every two weeks. 50 hours in week one and 30 in week two gives 10 overtime hours, not zero. This calculator splits bi-weekly cards into two weeks for that reason.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related">
+        <a href="https://bingemind.com/overtime-calculator/"><b>Overtime calculator</b><span>Daily and weekly overtime, double time and state rules.</span></a>
+        <a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-home pay calculator</b><span>Your paycheck after federal, state and FICA taxes.</span></a>
+        <a href="https://bingemind.com/hourly-to-salary-calculator/"><b>Hourly to salary calculator</b><span>Your hourly pay as weekly, monthly and yearly pay.</span></a>
+      </div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Sources and limits</h2>
+      <p>Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> and the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>
