@@ -2,14 +2,48 @@
 // Rules last reviewed: 13 Nov 2026. Sources are listed on the page.
 
 export const RULES = {
-  federal:    { label: 'Federal (FLSA): over 40 hours a week', dailyOT: null, dailyDT: null, weeklyOT: 40, seventhDay: false },
-  california: { label: 'California: daily, weekly and 7th day', dailyOT: 8, dailyDT: 12, weeklyOT: 40, seventhDay: true },
-  alaska:     { label: 'Alaska: over 8 a day or 40 a week', dailyOT: 8, dailyDT: null, weeklyOT: 40, seventhDay: false },
-  colorado:   { label: 'Colorado: over 12 a day or 40 a week', dailyOT: 12, dailyDT: null, weeklyOT: 40, seventhDay: false },
-  nevada:     { label: 'Nevada (paid under 1.5x minimum wage): over 8 a day or 40 a week', dailyOT: 8, dailyDT: null, weeklyOT: 40, seventhDay: false },
-  none:       { label: 'No overtime', dailyOT: null, dailyDT: null, weeklyOT: null, seventhDay: false },
-  custom:     { label: 'Custom thresholds', dailyOT: null, dailyDT: null, weeklyOT: 40, seventhDay: false },
+  federal:    { label: 'Federal (FLSA): over 40 hours a week', dailyOT: null, dailyDT: null, weeklyOT: 40, seventhDay: false, us: true, group: 'United States' },
+  california: { label: 'California: daily, weekly and 7th day', dailyOT: 8, dailyDT: 12, weeklyOT: 40, seventhDay: true, us: true, group: 'United States' },
+  alaska:     { label: 'Alaska: over 8 a day or 40 a week', dailyOT: 8, dailyDT: null, weeklyOT: 40, seventhDay: false, us: true, group: 'United States' },
+  colorado:   { label: 'Colorado: over 12 a day or 40 a week', dailyOT: 12, dailyDT: null, weeklyOT: 40, seventhDay: false, us: true, group: 'United States' },
+  nevada:     { label: 'Nevada (paid under 1.5x minimum wage): over 8 a day or 40 a week', dailyOT: 8, dailyDT: null, weeklyOT: 40, seventhDay: false, us: true, group: 'United States' },
+  none:       { label: 'No overtime', group: 'Other', dailyOT: null, dailyDT: null, weeklyOT: null, seventhDay: false },
+  custom:     { label: 'Custom or contract terms (any country)', group: 'Other', dailyOT: null, dailyDT: null, weeklyOT: 40, seventhDay: false },
 };
+
+
+// Rest of the world. ot / dt are the default multipliers for the rule. Statutory rules were checked
+// against official labour-law summaries on 15 Nov 2026; many countries also have collective agreements
+// that pay more, so every page says to check your contract. weeklyDT: hours past this weekly total
+// move to the second tier. otCapWeekly: overtime hours past this weekly count move to the second tier.
+const W = (label, group, rest) => ({ label, group, seventhDay: false, dailyOT: null, dailyDT: null, weeklyOT: null, ...rest });
+Object.assign(RULES, {
+  ca_fed: W('Canada, federal (Canada Labour Code): over 8 a day or 40 a week', 'Canada', { dailyOT: 8, weeklyOT: 40, ot: 1.5, hint: 'Federally regulated employers: overtime at 1.5x after 8 hours a day or 40 a week.' }),
+  ca_on:  W('Canada, Ontario: over 44 a week', 'Canada', { weeklyOT: 44, ot: 1.5, hint: 'Ontario: overtime at 1.5x after 44 hours a week. No daily rule.' }),
+  ca_bc:  W('Canada, British Columbia: daily and weekly', 'Canada', { dailyOT: 8, dailyDT: 12, weeklyOT: 40, ot: 1.5, dt: 2, hint: 'British Columbia: 1.5x after 8 hours a day or 40 a week, double time after 12 a day.' }),
+  ca_ab:  W('Canada, Alberta: over 8 a day or 44 a week', 'Canada', { dailyOT: 8, weeklyOT: 44, ot: 1.5, hint: 'Alberta: 1.5x after 8 hours a day or 44 a week, whichever is greater.' }),
+  ca_qc:  W('Canada, Quebec: over 40 a week', 'Canada', { weeklyOT: 40, ot: 1.5, hint: 'Quebec: 1.5x after 40 hours a week.' }),
+  au:     W('Australia: typical award, over 38 a week', 'Asia-Pacific', { weeklyOT: 38, otCapWeekly: 2, ot: 1.5, dt: 2, dtLabel: 'After first 2 h', hint: 'Many modern awards pay 1.5x for the first 2 overtime hours and 2x after. Your award or agreement decides, so check it and edit the multipliers.' }),
+  in:     W('India: Factories Act, over 9 a day or 48 a week', 'Asia-Pacific', { dailyOT: 9, weeklyOT: 48, ot: 2, hint: 'Factories Act: overtime at twice the ordinary rate after 9 hours a day or 48 a week. Shops and office rules differ by state.' }),
+  sg:     W('Singapore: over 8 a day or 44 a week', 'Asia-Pacific', { dailyOT: 8, weeklyOT: 44, ot: 1.5, hint: 'Employment Act, covered employees only (pay limits apply): 1.5x basic rate after 8 hours a day or 44 a week.' }),
+  my:     W('Malaysia: over 8 a day or 45 a week', 'Asia-Pacific', { dailyOT: 8, weeklyOT: 45, ot: 1.5, hint: 'Employment Act: 1.5x after 8 hours a day or 45 a week on a normal working day. Rest days and holidays pay more.' }),
+  jp:     W('Japan: over 8 a day or 40 a week', 'Asia-Pacific', { dailyOT: 8, weeklyOT: 40, ot: 1.25, hint: 'Labor Standards Act: 1.25x. Overtime past 60 hours a month is 1.5x, which this weekly calculator does not track.' }),
+  kr:     W('South Korea: over 8 a day or 40 a week', 'Asia-Pacific', { dailyOT: 8, weeklyOT: 40, ot: 1.5, hint: 'Labor Standards Act: 1.5x. The legal maximum is 52 hours a week.' }),
+  ph:     W('Philippines: over 8 a day', 'Asia-Pacific', { dailyOT: 8, ot: 1.25, hint: 'Labor Code: 1.25x for work beyond 8 hours a day. Night work adds a further 10%.' }),
+  ae:     W('United Arab Emirates: over 8 a day or 48 a week', 'Middle East and Africa', { dailyOT: 8, weeklyOT: 48, ot: 1.25, hint: 'Labour law: 1.25x. Night work, rest days and public holidays pay 1.5x. Change the multiplier for those hours.' }),
+  sa:     W('Saudi Arabia: over 8 a day or 48 a week', 'Middle East and Africa', { dailyOT: 8, weeklyOT: 48, ot: 1.5, hint: 'Labor Law: overtime pays the hourly wage plus 50%. Hours are shorter in Ramadan.' }),
+  za:     W('South Africa: over 9 a day or 45 a week', 'Middle East and Africa', { dailyOT: 9, weeklyOT: 45, ot: 1.5, dt: 2, hint: 'BCEA: 1.5x. Sunday work pays 2x unless it is your normal day.' }),
+  fr:     W('France: over 35 a week, two tiers', 'Europe', { weeklyOT: 35, weeklyDT: 43, ot: 1.25, dt: 1.5, dtLabel: 'Hours 44+', hint: 'Statutory: +25% for hours 36 to 43 and +50% from the 44th hour. A collective agreement can set a different rate, at least +10%.' }),
+  de:     W('Germany: typical contract, over 8 a day', 'Europe', { dailyOT: 8, weeklyOT: 40, ot: 1.25, hint: 'No statutory premium. Collective agreements often pay +25%. The law limits a day to 10 hours.' }),
+  gb:     W('United Kingdom: no statutory premium', 'Europe', { weeklyOT: 40, ot: 1.5, hint: 'There is no legal overtime premium. Use your contract: set the weekly hours and the multiplier it gives you.' }),
+  ie:     W('Ireland: no statutory premium', 'Europe', { weeklyOT: 39, ot: 1.5, hint: 'There is no legal overtime premium. Use your contract or sector agreement.' }),
+  mx:     W('Mexico: over 8 a day, double then triple', 'Latin America', { dailyOT: 8, otCapWeekly: 9, ot: 2, dt: 3, dtLabel: 'Triple time', hint: 'Federal Labour Law: the first 9 overtime hours a week pay 2x, further hours pay 3x. A day allows at most 3 overtime hours.' }),
+  br:     W('Brazil: over 8 a day or 44 a week', 'Latin America', { dailyOT: 8, weeklyOT: 44, ot: 1.5, hint: 'CLT: at least +50%. Sundays and holidays pay 2x.' }),
+});
+export const RULE_GROUPS = ['United States', 'Canada', 'Asia-Pacific', 'Middle East and Africa', 'Europe', 'Latin America', 'Other'];
+// Default rule for each country in the picker (anything not listed keeps the custom rule).
+export const RULE_FOR_REGION = { US: 'federal', CA: 'ca_on', AU: 'au', IN: 'in', SG: 'sg', MY: 'my', JP: 'jp', KR: 'kr', PH: 'ph',
+  AE: 'ae', SA: 'sa', ZA: 'za', FR: 'fr', DE: 'de', GB: 'gb', IE: 'ie', MX: 'mx', BR: 'br', NZ: 'custom' };
 
 export const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -78,6 +112,23 @@ export function splitWeek(days, ruleKey = 'federal', custom = {}) {
         r.ot += moved;
       }
       regSoFar += r.reg;
+    }
+  }
+  if (rule.weeklyDT != null || rule.otCapWeekly != null) {
+    // Second tier: hours past a weekly total, or overtime hours past a weekly count.
+    let cum = 0, otCum = 0;
+    for (const r of rows) {
+      if (rule.weeklyDT != null) {
+        const over = Math.max(Math.min(r.hours, cum + r.hours - rule.weeklyDT), 0);
+        const fromOt = Math.min(r.ot, over);
+        r.ot -= fromOt; r.reg = Math.max(r.reg - (over - fromOt), 0); r.dt += over;
+      }
+      if (rule.otCapWeekly != null) {
+        const room = Math.max(rule.otCapWeekly - otCum, 0);
+        if (r.ot > room) { r.dt += r.ot - room; r.ot = room; }
+        otCum += r.ot;
+      }
+      cum += r.hours;
     }
   }
   return { rule, rows };

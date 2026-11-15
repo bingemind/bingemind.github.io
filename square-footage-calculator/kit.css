@@ -311,3 +311,13 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 14px; margin-top:
   .rise, .reveal { opacity: 1 !important; transform: none !important; }
   .shine { color: #000 !important; background: none !important; }
 }
+
+/* Country and currency picker in the header */
+.region-sel { height: 40px; max-width: 11.5rem; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 12px; padding: 0 .6rem; font: 600 .82rem var(--f-body, inherit); cursor: pointer; text-overflow: ellipsis; }
+.region-sel:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 720px) { .head-nav a.hide-sm { display: none; } .region-sel { max-width: 8.5rem; } }
+@media (max-width: 520px) { .head-nav { gap: 4px; min-width: 0; } .head-nav a { padding: 8px 6px; font-size: 14px; } .region-sel { max-width: 6.4rem; padding: 0 .4rem; font-size: .78rem; } .site-head .wrap { gap: 6px; } }
+@media print { .region-sel { display: none !important; } }
+
+[data-region-picker] { display: inline-block; min-width: 6.4rem; min-height: 40px; } /* reserves space so the picker never shifts the header */
+@media (min-width: 521px) { [data-region-picker] { min-width: 8rem; } }

@@ -1,10 +1,32 @@
 import { calculateCard, cardCSV, dayMinutes, toHM, toDecimal, DAYS } from './engine.js';
-import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal } from './kit.js';
+import { RULES, RULE_GROUPS, RULE_FOR_REGION } from '../overtime-calculator/engine.js';
+import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion } from './kit.js';
 
 initKit();
 const $ = (id) => document.getElementById(id);
 const STORE = 'mt-timecard-v1';
 let weeksCount = 1;
+
+// Overtime rule list: US states plus other countries, grouped. Choosing one fills its usual multiplier.
+const ruleSel = $('rule');
+const keep = ['federal', 'california', 'alaska', 'colorado', 'none'];
+ruleSel.innerHTML = RULE_GROUPS.map((g) => {
+  const opts = Object.entries(RULES).filter(([k, r]) => (r.group || 'Other') === g && k !== 'custom' && (g !== 'United States' || keep.includes(k)));
+  return opts.length ? `<optgroup label="${g}">${opts.map(([k, r]) => `<option value="${k}">${k === 'federal' ? 'Federal (over 40/week)' : r.label}</option>`).join('')}</optgroup>` : '';
+}).join('');
+let hadSaved = false;
+try { hadSaved = !!localStorage.getItem(STORE); } catch (e) { /* storage blocked */ }
+ruleSel.value = 'federal';
+function applyRuleDefaults(key) {
+  const r = RULES[key];
+  if (!r) return;
+  $('otMult').value = String(r.ot || 1.5);
+}
+function applyRegionRule() {
+  const key = RULE_FOR_REGION[getRegion()];
+  if (key && ruleSel.querySelector(`option[value="${key}"]`)) { ruleSel.value = key; applyRuleDefaults(key); }
+}
+ruleSel.addEventListener('change', () => applyRuleDefaults(ruleSel.value));
 
 function dateLabel(startISO, offset) {
   if (!startISO) return '';
@@ -83,13 +105,13 @@ const mini = initMiniTotal($('results'), 'Total <b id="miniHM">0:00</b><span id=
 function update() {
   const weeks = collect();
   const rateEl = $('rate');
-  const rateRaw = rateEl.value.trim().replace(/[$,\s]/g, '');
-  const rate = rateRaw === '' ? 0 : parseFloat(rateRaw);
+  const rateRaw = rateEl.value.trim();
+  const rate = rateRaw === '' ? 0 : parseNum(rateRaw);
   setInvalid(rateEl, rateRaw !== '' && (isNaN(rate) || rate < 0), 'Enter your hourly rate, like 20');
   const otMult = parseFloat($('otMult').value) > 0 ? parseFloat($('otMult').value) : 1.5;
   const rule = $('rule').value;
   const rounding = +$('rounding').value;
-  const res = calculateCard({ weeks, rate: isNaN(rate) ? 0 : rate, rule, otMult, rounding });
+  const res = calculateCard({ weeks, rate: isNaN(rate) ? 0 : rate, rule, otMult, dtMult: RULES[rule]?.dt || 2, rounding });
   last = { res, weeks };
 
   let halfFilled = 0, overnight = 0;
@@ -219,5 +241,7 @@ $('shareCard').addEventListener('click', () => {
   copyText(url, 'Link copied (name not included)');
 });
 
+if (!hadSaved && !new URLSearchParams(location.search).has('card')) applyRegionRule();
+onRegionChange(() => { applyRegionRule(); update(); });
 update();
 void mini;

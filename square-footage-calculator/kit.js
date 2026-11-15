@@ -1,4 +1,5 @@
 // Micro-tool kit: shared behaviour (theme, reveal-on-scroll, count-up, tabs, toast,
+import { initRegion } from './region.js';
 // copy/share/print/CSV helpers). No dependencies.
 
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -112,11 +113,11 @@ export function downloadFile(name, text, type = 'text/csv') {
 
 export function flash(el) { if (!el || reduceMotion()) return; el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
 
-export const money = (n, cents = true) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: cents ? 2 : 0 });
-export const num = (n, d = 2) => (Math.round(n * 10 ** d) / 10 ** d).toLocaleString('en-US', { maximumFractionDigits: d });
+export { money, num, parseNum, onRegionChange, getRegion, regionInfo, setRegion, currencySymbol } from './region.js';
 
 export function initKit() {
   document.documentElement.classList.remove('js-off');
+  initRegion();
   initTheme();
   initReveal();
   const y = document.querySelector('[data-year]'); if (y) y.textContent = new Date().getFullYear();

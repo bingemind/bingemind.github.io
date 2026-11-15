@@ -1,9 +1,12 @@
 import { calculateArea, roomArea, outline, SHAPES, DIM_LABELS } from './engine.js';
-import { initKit, initSeg, countUp, copyText, downloadFile, num, money, toast, announce, initMiniTotal } from './kit.js';
+import { initKit, initSeg, countUp, copyText, downloadFile, num, money, toast, announce, initMiniTotal, parseNum, onRegionChange, regionInfo } from './kit.js';
 
 initKit();
 const $ = (id) => document.getElementById(id);
 let units = 'imperial';
+const SQM = 10.7639104;
+const area = (sqft) => (units === 'metric' ? sqft / SQM : sqft);
+const aUnit = () => (units === 'metric' ? 'm²' : 'sq ft');
 let rooms = [];
 let activeId = null;
 let seq = 0;
@@ -82,36 +85,39 @@ function update() {
     units,
     rooms: rooms.map((r) => ({ ...r.dims, shape: r.shape, qty: r.qty })),
     wastePct: +$('waste').value,
-    pricePerSqft: parseFloat($('price').value.replace(/[$,]/g, '')) || 0,
-    boxSqft: parseFloat($('box').value) || 0,
+    pricePerSqft: units === 'metric' ? (parseNum($('price').value) || 0) / SQM : (parseNum($('price').value) || 0),
+    boxSqft: units === 'metric' ? (parseNum($('box').value) || 0) * SQM : (parseNum($('box').value) || 0),
   };
   const res = calculateArea(input);
   last = { input, res };
-  countUp($('sqft'), res.sqft, (v) => num(v));
+  countUp($('sqft'), area(res.sqft), (v) => num(v));
+  $('unitBig').textContent = aUnit();
+  $('priceLbl').textContent = `Price per ${aUnit()}`;
+  $('boxLbl').firstChild.textContent = `${units === 'metric' ? 'm²' : 'Sq ft'} per box `;
   $('sqyd').textContent = num(res.sqyd);
   $('sqm').textContent = num(res.sqm);
-  $('acres').textContent = res.acres.toLocaleString('en-US', { maximumFractionDigits: 4 });
+  $('acres').textContent = num(res.acres, 4);
   $('roomCount').textContent = `${rooms.length} area${rooms.length > 1 ? 's' : ''}`;
   $('wasteLbl').textContent = `${input.wastePct}%`;
-  $('withWaste').textContent = `${num(res.withWaste)} sq ft`;
+  $('withWaste').textContent = `${num(area(res.withWaste))} ${aUnit()}`;
   const showBox = res.boxes > 0, showCost = res.cost > 0;
   $('boxes').hidden = $('boxesL').hidden = !showBox;
   $('cost').hidden = $('costL').hidden = !showCost;
   if (showBox) $('boxes').textContent = `${res.boxes} boxes`;
   if (showCost) $('cost').textContent = money(res.cost);
-  $('miniSq').textContent = `${num(res.sqft)} sq ft`;
-  $('miniW').textContent = `${num(res.withWaste)} with waste`;
+  $('miniSq').textContent = `${num(area(res.sqft))} ${aUnit()}`;
+  $('miniW').textContent = `${num(area(res.withWaste))} with waste`;
 
   rooms.forEach((r, i) => {
     const rr = res.rooms[i];
     const chip = $(`chip-${r.id}`);
-    if (chip) chip.innerHTML = rr.error ? `<span class="err">${rr.error}</span>` : `<span>${SHAPES[r.shape].label}${r.qty > 1 ? ` × ${r.qty}` : ''}</span><b>${num(rr.area)} sq ft</b>`;
+    if (chip) chip.innerHTML = rr.error ? `<span class="err">${rr.error}</span>` : `<span>${SHAPES[r.shape].label}${r.qty > 1 ? ` × ${r.qty}` : ''}</span><b>${num(area(rr.area))} ${aUnit()}</b>`;
   });
   draw(rooms.find((r) => r.id === activeId) || rooms[0]);
 
   $('tableWrap').innerHTML = rooms.length > 1 ? `<table class="tbl"><caption class="sr">Area by room</caption><thead><tr><th scope="col">Area</th><th scope="col">Sq ft</th><th scope="col">Sq m</th></tr></thead><tbody>${rooms.map((r, i) => `<tr><td>${r.name.replace(/</g, '&lt;')}</td><td>${num(res.rooms[i].area)}</td><td>${num(res.rooms[i].area / 10.7639104)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Total</td><td>${num(res.sqft)}</td><td>${num(res.sqm)}</td></tr></tfoot></table>` : '';
   try { localStorage.setItem(STORE, JSON.stringify({ units, rooms, waste: $('waste').value, price: $('price').value, box: $('box').value })); } catch (e) { /* ignore */ }
-  announce(`Total ${num(res.sqft)} square feet, ${num(res.withWaste)} with waste.`);
+  announce(`Total ${num(area(res.sqft))} ${units === 'metric' ? 'square meters' : 'square feet'}, ${num(area(res.withWaste))} with waste.`);
 }
 
 // Events (delegated)
@@ -159,6 +165,12 @@ $('addRoom').addEventListener('click', () => {
 });
 $('clearRooms').addEventListener('click', () => { seq = 0; rooms = [newRoom()]; activeId = rooms[0].id; render(); update(); });
 
+function convertMoneyFields(v) {
+  // Price per unit and coverage per box change scale with the unit. Keep the same real-world meaning.
+  const conv = (el, k) => { const n = parseNum(el.value); if (!isNaN(n) && n > 0) el.value = String(Math.round(n * k * 100) / 100); };
+  conv($('price'), v === 'metric' ? SQM : 1 / SQM);
+  conv($('box'), v === 'metric' ? 1 / SQM : SQM);
+}
 const seg = initSeg($('units'), (v) => {
   // Convert existing measurements so the user does not lose them.
   rooms.forEach((r) => Object.keys(r.dims).forEach((k) => {
@@ -166,7 +178,7 @@ const seg = initSeg($('units'), (v) => {
     if (v === 'metric') { const f = (+d.ft || 0) + (+d.in || 0) / 12; r.dims[k] = { m: f ? String(Math.round(f / 3.280839895 * 100) / 100) : '' }; }
     else { const f = (+d.m || 0) * 3.280839895; const ft = Math.floor(f); const inch = Math.round((f - ft) * 12); r.dims[k] = f ? (inch === 12 ? { ft: String(ft + 1), in: '' } : { ft: String(ft), in: inch ? String(inch) : '' }) : {}; }
   }));
-  units = v; render(); update();
+  units = v; convertMoneyFields(v); render(); update();
 });
 
 function sharePayload() {
@@ -192,6 +204,7 @@ $('printRes').addEventListener('click', () => window.print());
   const q = new URLSearchParams(location.search);
   if (q.has('plan')) { try { const p = JSON.parse(decodeURIComponent(escape(atob(q.get('plan'))))); s = { units: p.u, rooms: p.r, waste: p.w, price: p.p, box: p.b }; } catch (e) { /* bad link */ } }
   if (!s) { try { s = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch (e) { /* ignore */ } }
+  const metricHome = regionInfo().units === 'metric';
   if (s && Array.isArray(s.rooms) && s.rooms.length) {
     units = s.units === 'metric' ? 'metric' : 'imperial';
     rooms = s.rooms.slice(0, 40).map((r) => newRoom({ name: String(r.name || '').slice(0, 60), shape: Object.hasOwn(SHAPES, r.shape) ? r.shape : 'rect', qty: Math.max(parseInt(r.qty, 10) || 1, 1), dims: r.dims && typeof r.dims === 'object' ? r.dims : {} }));
@@ -199,10 +212,16 @@ $('printRes').addEventListener('click', () => window.print());
     if (s.price) $('price').value = s.price;
     if (s.box) $('box').value = s.box;
   } else {
-    rooms = [newRoom({ name: 'Living room', dims: { length: { ft: '12' }, width: { ft: '10' } } }), newRoom({ name: 'Bedroom', dims: { length: { ft: '10' }, width: { ft: '8' } } })];
+    if (metricHome) {
+      units = 'metric';
+      rooms = [newRoom({ name: 'Living room', dims: { length: { m: '4.5' }, width: { m: '3.5' } } }), newRoom({ name: 'Bedroom', dims: { length: { m: '3.5' }, width: { m: '3' } } })];
+    } else {
+      rooms = [newRoom({ name: 'Living room', dims: { length: { ft: '12' }, width: { ft: '10' } } }), newRoom({ name: 'Bedroom', dims: { length: { ft: '10' }, width: { ft: '8' } } })];
+    }
   }
   activeId = rooms[0].id;
   if (units === 'metric') seg.select('metric');
   render(); update();
 })();
+onRegionChange(() => { update(); });
 void mini;

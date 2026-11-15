@@ -32,7 +32,7 @@
       })();
     </script>
 <title>Square Footage Calculator: Rooms, L-Shapes, Circles + Cost</title>
-<meta name="description" content="Free square footage calculator. Add rooms in feet and inches, including L-shaped, round and triangular areas. Get total sq ft, sq yd and sq m, waste, cost and flooring boxes.">
+<meta name="description" content="Free square footage and square meter calculator for any country. Add rooms in feet and inches or meters, including L-shaped, round and triangular areas. Get total sq ft, sq yd and sq m, waste, cost and flooring boxes.">
 <link rel="canonical" href="https://bingemind.com/square-footage-calculator/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
@@ -49,8 +49,10 @@
 <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebApplication","name":"Square Footage Calculator","url":"https://bingemind.com/square-footage-calculator/","inLanguage":"en-US","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-13","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Calculate square footage for rooms of any shape in feet and inches or meters, with multi-room totals, waste factor, cost and flooring boxes."},
@@ -83,6 +85,7 @@
       <a href="https://bingemind.com/tools/">All tools</a>
       <a class="hide-sm" href="#how">How it works</a>
       <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
       <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </nav>
   </div>
@@ -133,9 +136,9 @@
                 <option value="20">20% (herringbone, odd shapes)</option>
               </select>
             </div>
-            <div class="field"><label for="price">Price per sq ft</label><div class="affix"><span class="pre" aria-hidden="true">$</span><input class="input has-pre" id="price" inputmode="decimal" placeholder="optional"></div></div>
+            <div class="field"><label for="price" id="priceLbl">Price per sq ft</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="price" inputmode="decimal" placeholder="optional"></div></div>
           </div>
-          <div class="field"><label for="box">Sq ft per box <span class="hint">(on the flooring box)</span></label><input class="input" id="box" inputmode="decimal" placeholder="optional, e.g. 22"></div>
+          <div class="field"><label for="box" id="boxLbl">Sq ft per box <span class="hint">(on the flooring box)</span></label><input class="input" id="box" inputmode="decimal" placeholder="optional, e.g. 22"></div>
         </details>
       </form>
 
@@ -143,7 +146,7 @@
         <div class="result-top">
           <div>
             <h2 id="resTitle">Total area</h2>
-            <div class="big"><span id="sqft">200</span> <small>sq ft</small></div>
+            <div class="big"><span id="sqft">200</span> <small id="unitBig">sq ft</small></div>
           </div>
           <div class="hint" id="roomCount">2 areas</div>
         </div>

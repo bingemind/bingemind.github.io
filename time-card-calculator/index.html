@@ -32,7 +32,7 @@
       })();
     </script>
 <title>Time Card Calculator with Lunch Breaks and Overtime (Free, Printable)</title>
-<meta name="description" content="Free time card calculator. Enter clock-in, clock-out and lunch for each day to get hours worked in hours:minutes and decimal, overtime and pay. Weekly or bi-weekly, overnight shifts, print or CSV.">
+<meta name="description" content="Free time card calculator for any country (12 or 24 hour clock, any currency). Enter clock-in, clock-out and lunch for each day to get hours worked in hours:minutes and decimal, overtime and pay. Weekly or bi-weekly, overnight shifts, print or CSV.">
 <link rel="canonical" href="https://bingemind.com/time-card-calculator/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
@@ -49,8 +49,10 @@
 <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="../overtime-calculator/engine.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebApplication","name":"Time Card Calculator","url":"https://bingemind.com/time-card-calculator/","inLanguage":"en-US","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-13","publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add up clock-in and clock-out times with lunch breaks into weekly hours, overtime and pay. Weekly or bi-weekly, with print and CSV."},
@@ -83,6 +85,7 @@
       <a href="https://bingemind.com/tools/">All tools</a>
       <a class="hide-sm" href="#how">How it works</a>
       <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
       <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </nav>
   </div>
@@ -134,7 +137,7 @@
         <div class="grid-2" style="margin-top:12px">
           <div class="field">
             <label for="rate">Hourly rate</label>
-            <div class="affix"><span class="pre">$</span><input class="input has-pre" id="rate" inputmode="decimal" autocomplete="off" value="20"></div>
+            <div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="rate" inputmode="decimal" autocomplete="off" value="20"></div>
           </div>
           <div class="field">
             <label for="rule">Overtime rules</label>

@@ -1,5 +1,5 @@
-import { calculate, parseHours, toCSV, DAYS, RULES } from './engine.js';
-import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal } from './kit.js';
+import { calculate, parseHours, toCSV, DAYS, RULES, RULE_GROUPS, RULE_FOR_REGION } from './engine.js';
+import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion, regionInfo } from './kit.js';
 
 initKit();
 
@@ -15,6 +15,26 @@ const RULE_HINTS = {
   nevada: 'Overtime after 8 hours in a workday if you earn less than 1.5 times minimum wage ($18/h in 2026), or after 40 a week.',
   custom: 'Set your own daily and weekly limits below. Leave a box empty for no limit.',
 };
+
+
+// Rule list: every rule set, grouped by region.
+const ruleSel = $('rule');
+ruleSel.innerHTML = RULE_GROUPS.map((g) => {
+  const opts = Object.entries(RULES).filter(([, r]) => (r.group || 'Other') === g);
+  return opts.length ? `<optgroup label="${g}">${opts.map(([k, r]) => `<option value="${k}">${r.label}</option>`).join('')}</optgroup>` : '';
+}).join('');
+ruleSel.value = 'federal';
+
+// Choosing a rule fills in its usual multipliers (you can still edit them) and the names of the tiers.
+function applyRuleDefaults(key) {
+  const r = RULES[key];
+  if (!r) return;
+  if (r.ot) $('otMult').value = String(r.ot);
+  else if (key === 'federal' || r.us) $('otMult').value = '1.5';
+  if (r.dt) $('dtMult').value = String(r.dt);
+  else if (key !== 'custom' && key !== 'none') $('dtMult').value = '2';
+}
+function tierName(r) { return r.dtLabel || 'Double time'; }
 
 // Day rows
 DAYS.forEach((d, i) => {
@@ -36,7 +56,7 @@ function syncMode() { $('weekBox').hidden = mode !== 'week'; $('quickBox').hidde
 function readNumber(el, fallback, { min = 0, allowZero = true, msg = 'Enter a number, like 25' } = {}) {
   const raw = el.value.trim();
   if (raw === '') { setInvalid(el, false); return fallback; }
-  const n = parseFloat(raw.replace(/[$,\s]/g, ''));
+  const n = parseNum(raw);
   const bad = isNaN(n) || n < min || (!allowZero && n === 0);
   setInvalid(el, bad, msg);
   return bad ? fallback : n;
@@ -60,6 +80,7 @@ function readInput() {
     dtMult: readNumber($('dtMult'), 2, { allowZero: false, msg: 'Use a number like 2' }),
     weeksPerYear: readNumber($('weeks'), 52, { allowZero: false, msg: 'Use 1 to 53 weeks' }),
     bracket: parseFloat($('bracket').value) || 0.12,
+    ruleKey: $('rule').value,
     custom: {
       dailyOT: (readNumber($('cDaily'), null, { allowZero: false, msg: 'Use a number above 0, or leave empty' }), $('cDaily').value),
       dailyDT: (readNumber($('cDailyDT'), null, { allowZero: false, msg: 'Use a number above 0, or leave empty' }), $('cDailyDT').value),
@@ -77,7 +98,12 @@ const mini = initMiniTotal($('results'), 'Gross this week <b id="miniGross">$0.0
 function update() {
   const input = readInput();
   $('customBox').hidden = input.rule !== 'custom';
-  $('ruleHint').textContent = RULE_HINTS[input.rule] || '';
+  const ruleObj = RULES[input.rule] || RULES.federal;
+  $('ruleHint').textContent = RULE_HINTS[input.rule] || ruleObj.hint || '';
+  const tier = tierName(ruleObj);
+  $('dtName').textContent = tier;
+  $('dtRateName').textContent = tier === 'Double time' ? 'Double-time rate' : `${tier} rate`;
+  $('dtMultName').textContent = tier === 'Double time' ? 'Double-time multiplier' : `${tier} multiplier`;
   const r = calculate(input);
   last = { input, r };
 
@@ -99,7 +125,7 @@ function update() {
   $('barReg').style.width = pct(r.regPay, r.gross) + '%';
   $('barOt').style.width = pct(r.otPay, r.gross) + '%';
   $('barDt').style.width = pct(r.dtPay, r.gross) + '%';
-  $('bar').setAttribute('aria-label', `Regular ${money(r.regPay)}, overtime ${money(r.otPay)}, double time ${money(r.dtPay)}`);
+  $('bar').setAttribute('aria-label', `Regular ${money(r.regPay)}, overtime ${money(r.otPay)}, ${tier.toLowerCase()} ${money(r.dtPay)}`);
 
   if (input.mode === 'week') {
     r.rows.forEach((row, i) => {
@@ -111,7 +137,8 @@ function update() {
   }
 
   // No tax on overtime note
-  if (r.qualifiedPremiumWeek > 0) {
+  const usTax = getRegion() === 'US' && (ruleObj.us || input.rule === 'custom');
+  if (usTax && r.qualifiedPremiumWeek > 0) {
     const yearCapped = Math.min(r.qualifiedPremiumYear, 12500);
     const saving = yearCapped * input.bracket;
     const capText = r.qualifiedPremiumYear > 12500
@@ -119,18 +146,20 @@ function update() {
       : `about ${money(r.qualifiedPremiumYear, false)} a year at this pace`;
     $('taxNote').innerHTML = `<strong>No tax on overtime (2025–2028):</strong> if you are non-exempt under the FLSA, about ${money(r.qualifiedPremiumWeek)} of this week's pay is the overtime premium that may be deductible from federal income tax: ${capText}. In the ${Math.round(input.bracket * 100)}% bracket that could cut your federal income tax by about ${money(saving, false)}. <a href="#no-tax">How it works</a>.`;
   } else {
-    $('taxNote').innerHTML = `<strong>Tip:</strong> overtime starts after 40 hours under federal law${input.rule !== 'federal' && input.rule !== 'custom' ? ', or sooner under the daily rule you picked' : ''}.`;
+    $('taxNote').innerHTML = usTax
+      ? `<strong>Tip:</strong> overtime starts after 40 hours under federal law${input.rule !== 'federal' && input.rule !== 'custom' ? ', or sooner under the daily rule you picked' : ''}.`
+      : `<strong>Check your contract.</strong> ${ruleObj.hint || 'Collective agreements and employment contracts often pay more than the legal minimum.'}`;
   }
 
   if (input.mode === 'week' && r.totalHours > 0) {
     const rows = r.rows.filter((x) => x.hours > 0).map((x) => `<tr><td>${x.day}</td><td>${num(x.hours)}</td><td>${num(x.reg)}</td><td>${num(x.ot)}</td><td>${num(x.dt)}</td><td>${money(x.pay)}</td></tr>`).join('');
-    $('tableWrap').innerHTML = `<table class="tbl"><caption class="sr">Hours and pay by day</caption><thead><tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Reg</th><th scope="col">OT</th><th scope="col">DT</th><th scope="col">Pay</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td>Total</td><td>${num(r.totalHours)}</td><td>${num(r.regHours)}</td><td>${num(r.otHours)}</td><td>${num(r.dtHours)}</td><td>${money(r.gross)}</td></tr></tfoot></table>`;
+    $('tableWrap').innerHTML = `<table class="tbl"><caption class="sr">Hours and pay by day</caption><thead><tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Reg</th><th scope="col">OT</th><th scope="col">${tier === 'Double time' ? 'DT' : 'Tier 2'}</th><th scope="col">Pay</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td>Total</td><td>${num(r.totalHours)}</td><td>${num(r.regHours)}</td><td>${num(r.otHours)}</td><td>${num(r.dtHours)}</td><td>${money(r.gross)}</td></tr></tfoot></table>`;
   } else {
     $('tableWrap').innerHTML = '';
   }
-  $('printMeta').textContent = `${r.rule.label} · ${money(r.rate)}/h · printed ${new Date().toLocaleDateString('en-US')} · bingemind.com/overtime-calculator`;
+  $('printMeta').textContent = `${r.rule.label} · ${money(r.rate)}/h · printed ${new Date().toLocaleDateString(regionInfo().locale)} · bingemind.com/overtime-calculator`;
 
-  announce(`Gross pay ${money(r.gross)}: regular ${money(r.regPay)}, overtime ${money(r.otPay)}, double time ${money(r.dtPay)}.`);
+  announce(`Gross pay ${money(r.gross)}: regular ${money(r.regPay)}, overtime ${money(r.otPay)}, ${tier.toLowerCase()} ${money(r.dtPay)}.`);
 }
 
 // Rate table (time and a half / double time)
@@ -172,6 +201,13 @@ const smooth = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? '
 
 // Events
 const form = $('form');
+ruleSel.addEventListener('change', () => applyRuleDefaults(ruleSel.value));
+function applyRegionRule() {
+  const key = RULE_FOR_REGION[getRegion()];
+  if (!key) return;
+  ruleSel.value = key; applyRuleDefaults(key);
+}
+onRegionChange(() => { applyRegionRule(); update(); });
 form.addEventListener('submit', (e) => e.preventDefault());
 form.addEventListener('input', update);
 form.addEventListener('change', update);
@@ -206,7 +242,7 @@ $('csvRes').addEventListener('click', () => {
 $('printRes').addEventListener('click', () => window.print());
 
 // Start
-if (!fromQuery()) setDays([8, 8, 8, 8, 10, 6, 0]);
+if (!fromQuery()) { setDays([8, 8, 8, 8, 10, 6, 0]); applyRegionRule(); }
 syncMode();
 update();
 void mini;
