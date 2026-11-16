@@ -1,6 +1,6 @@
 import { calculateCard, cardCSV, dayMinutes, toHM, toDecimal, DAYS } from './engine.js';
 // Dependency: reuses the overtime rule table from the overtime calculator, so both tools share one set of rules.
-import { RULES, RULE_GROUPS, RULE_FOR_REGION } from '../overtime-calculator/engine.js';
+import { RULES, RULE_GROUPS, RULE_FOR_REGION, sourcesForRegion } from '../overtime-calculator/engine.js';
 import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion } from './kit.js';
 
 initKit();
@@ -266,6 +266,20 @@ $('shareCard').addEventListener('click', () => {
 });
 
 if (!hadSaved && !new URLSearchParams(location.search).has('card')) applyRegionRule();
-onRegionChange(() => { applyRegionRule(); update(); });
+// Country text: the page is prerendered with US wording (for search). Other countries get neutral text and their own source.
+const usBy = $('bySrc').textContent;
+const usSrc = $('srcText').innerHTML; // the page's own static markup, never user input
+function applyCountryText() {
+  const s = sourcesForRegion(getRegion());
+  $('bySrc').textContent = s.us ? usBy : 'official labour-law summaries';
+  $('usGuideNote').hidden = s.us;
+  const p = $('srcText');
+  if (s.us) { p.innerHTML = usSrc; return; }
+  p.textContent = 'Break and rounding rules for your country are summarised from official labour-law information, checked on 15 November 2026. Contracts and collective agreements often differ from the law, so check yours.';
+  s.links.forEach((l) => { p.append(' See the '); const a = document.createElement('a'); a.href = l.url; a.textContent = l.label; p.append(a, '.'); });
+  p.append(' Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.');
+}
+applyCountryText();
+onRegionChange(() => { applyRegionRule(); applyCountryText(); update(); });
 update();
 void mini;

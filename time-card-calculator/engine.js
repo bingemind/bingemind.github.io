@@ -1,3 +1,7 @@
+// Official sources behind the break and rounding rules (US):
+//   DOL hours worked: https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked
+//   29 CFR 785.48 rounding: https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48
+//   California DIR meal periods: https://www.dir.ca.gov/dlse/faq_mealperiods.htm
 // Time card engine: punches -> minutes worked -> weekly overtime split.
 import { splitWeek, DAYS } from '../overtime-calculator/engine.js';
 

@@ -1,4 +1,4 @@
-import { calculate, parseHours, toCSV, DAYS, RULES, RULE_GROUPS, RULE_FOR_REGION } from './engine.js';
+import { calculate, parseHours, toCSV, DAYS, RULES, RULE_GROUPS, RULE_FOR_REGION, sourcesForRegion } from './engine.js';
 import { initKit, initSeg, countUp, copyText, downloadFile, flash, money, num, toast, announce, setInvalid, initMiniTotal, parseNum, onRegionChange, getRegion, regionInfo } from './kit.js';
 
 initKit();
@@ -207,7 +207,22 @@ function applyRegionRule() {
   if (!key) return;
   ruleSel.value = key; applyRuleDefaults(key);
 }
-onRegionChange(() => { applyRegionRule(); update(); });
+// Country text: the page is prerendered with US wording (for search). Other countries get neutral text and their own source.
+const usBy = $('bySrc').textContent;
+const usSrc = $('srcText').innerHTML; // the page's own static markup, never user input
+function applyCountryText() {
+  const s = sourcesForRegion(getRegion());
+  $('bySrc').textContent = s.us ? usBy : 'official labour-law summaries';
+  $('usGuideNote').hidden = s.us;
+  const p = $('srcText');
+  if (s.us) { p.innerHTML = usSrc; return; }
+  p.textContent = 'Rules for your country are summarised from official labour-law information, checked on 15 November 2026. Contracts and collective agreements often pay more than the law, so check yours.';
+  s.links.forEach((l) => { p.append(' See the '); const a = document.createElement('a'); a.href = l.url; a.textContent = l.label; p.append(a, '.'); });
+  p.append(' This calculator gives estimates, not legal or tax advice. Bonuses, shift differentials and commissions change your regular rate and are not included. ');
+  const about = document.createElement('a'); about.href = 'https://bingemind.com/about/'; about.textContent = 'About our tools'; p.append(about, '.');
+}
+applyCountryText();
+onRegionChange(() => { applyRegionRule(); applyCountryText(); update(); });
 form.addEventListener('submit', (e) => e.preventDefault());
 form.addEventListener('input', update);
 form.addEventListener('change', update);

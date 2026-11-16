@@ -1,5 +1,9 @@
 // Take-home pay outside the United States. Pure functions, same output shape as the US engine.
-// Sources (checked 15 Nov 2026):
+// Sources (checked 15 Nov 2026), official pages:
+//   UK 2026/27: https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027
+//   Canada 2026 (CRA T4032): https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables.html
+//   Australia 2026-27 (ATO): https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents
+//   India (Income Tax Department): https://www.incometax.gov.in/
 //   UK 2026/27: gov.uk "Rates and thresholds for employers 2026 to 2027" and Income Tax rates and bands.
 //   Canada 2026: CRA T4032 payroll deductions tables (federal, Ontario, British Columbia, Alberta), CPP and EI pages.
 //   Australia 2026-27: ato.gov.au "Tax rates - Australian resident" (15% from 1 July 2026).

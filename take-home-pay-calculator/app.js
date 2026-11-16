@@ -311,7 +311,9 @@ form.addEventListener('change', save);
 const hasLink = [...new URLSearchParams(location.search).keys()].some((k) => KEYS.includes(k));
 mode = modeFor(getRegion());
 applyMode(!hasLink);
-onRegionChange(() => { mode = modeFor(getRegion()); applyMode(true); update(); });
+const usGuideNote = (code) => { document.getElementById('usGuideNote').hidden = code === 'US'; };
+usGuideNote(getRegion());
+onRegionChange(() => { mode = modeFor(getRegion()); applyMode(true); usGuideNote(getRegion()); update(); });
 if (!hasLink) {
   try { const sv = localStorage.getItem(SAVE); if (sv && new URLSearchParams(sv).get('country') === getRegion()) fromQuery(sv); } catch (e) { /* ignore */ }
 } else fromQuery();
