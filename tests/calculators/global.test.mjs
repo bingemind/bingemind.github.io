@@ -76,6 +76,10 @@ test('numbers parse in every common style', () => {
 const week = (rule, days) => { const x = calculate({ rate: 10, rule, days, mode: 'week', otMult: RULES[rule].ot ?? 1.5, dtMult: RULES[rule].dt ?? 2 }); return [x.regHours, x.otHours, x.dtHours, x.gross]; };
 test('France: 50 hours = 35 regular, 8 at +25%, 7 at +50%', () => assert.deepEqual(week('fr', [10, 10, 10, 10, 10, 0, 0]), [35, 8, 7, 555]));
 test('Mexico: first 9 overtime hours double, rest triple', () => assert.deepEqual(week('mx', [10, 10, 10, 10, 10, 10, 0]), [48, 9, 3, 750]));
-test('Australia typical award: first 2 overtime hours 1.5x, rest 2x', () => assert.deepEqual(week('au', [9, 9, 9, 9, 9, 0, 0]), [38, 2, 5, 510]));
+test('Australia award, per day: five 9-hour days = 38 ordinary + 7 at 1.5x', () => assert.deepEqual(week('au', [9, 9, 9, 9, 9, 0, 0]), [38, 7, 0, 485]));
+test('Australia award, per day: an 11-hour day = 7.6 + 2 at 1.5x + 1.4 at 2x', () => assert.deepEqual(week('au', [11, 0, 0, 0, 0, 0, 0]), [7.6, 2, 1.4, 134]));
+test('Australia award: ordinary hours past 38 a week also pay 1.5x', () => assert.deepEqual(week('au', [7.6, 7.6, 7.6, 7.6, 7.6, 7.6, 0]), [38, 7.6, 0, 494]));
 test('British Columbia 14-hour day: 8 / 4 / 2', () => assert.deepEqual(week('ca_bc', [14, 0, 0, 0, 0, 0, 0]), [8, 4, 2, 180]));
 test('UAE 10-hour day at 1.25x', () => assert.deepEqual(week('ae', [10, 0, 0, 0, 0, 0, 0]), [8, 2, 0, 105]));
+
+test('BC 2026 lowest rate is 5.60% (BC Budget 2026)', async () => { const { CA_PROVINCES } = await import('../../take-home-pay-calculator/global.js'); assert.equal(CA_PROVINCES.BC.rate, 0.056); assert.equal(CA_PROVINCES.BC.brackets[0][1], 0.056); });

@@ -45,7 +45,7 @@ function uk(gross, pension) {
 const CA_FED = [[58523, 0.14], [117045, 0.205], [181440, 0.26], [258482, 0.29], [Infinity, 0.33]];
 const CA_PROV = {
   ON: { name: 'Ontario', bpa: 12989, rate: 0.0505, brackets: [[53891, 0.0505], [107785, 0.0915], [150000, 0.1116], [220000, 0.1216], [Infinity, 0.1316]] },
-  BC: { name: 'British Columbia', bpa: 13216, rate: 0.0506, brackets: [[50363, 0.0506], [100728, 0.077], [115648, 0.105], [140430, 0.1229], [190405, 0.147], [265545, 0.168], [Infinity, 0.205]] },
+  BC: { name: 'British Columbia', bpa: 13216, rate: 0.056, brackets: [[50363, 0.056], [100728, 0.077], [115648, 0.105], [140430, 0.1229], [190405, 0.147], [265545, 0.168], [Infinity, 0.205]] },
   AB: { name: 'Alberta', bpa: 22769, rate: 0.08, brackets: [[61200, 0.08], [154259, 0.10], [185111, 0.12], [246813, 0.13], [370220, 0.14], [Infinity, 0.15]] },
   OTHER: { name: 'Other province (enter your rate)', custom: true },
 };
@@ -132,10 +132,9 @@ export function calculateGlobal(input) {
     const t = Math.min(pos(+input.taxPct || 0), 100) / 100, s = Math.min(pos(+input.socialPct || 0), 100) / 100;
     l = { federal: wages * t, ss: wages * s, medicare: 0, state: 0, sdi: 0, marginal: t + s };
   }
-  // India (new regime) and the generic mode get no tax relief on pension; others handled inside the country function.
-  const afterPension = mode === 'IN' ? wages : wages;
+  // Pension tax relief, where it exists, is handled inside each country function.
   const taxes = l.federal + l.ss + l.medicare + l.state + l.sdi;
-  const net = Math.max(afterPension - pension - taxes, 0);
+  const net = Math.max(wages - pension - taxes, 0);
   const lines = { gross, federal: l.federal, ss: l.ss, medicare: l.medicare, state: l.state, sdi: 0, k401: pension, pretax: health, net };
   const per = (x) => r2(x / periods);
   return {

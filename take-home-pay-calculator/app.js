@@ -80,7 +80,27 @@ function drawDonut(parts, total) {
 }
 
 // Switch the form to the visitor's country: which fields exist, their labels, and sensible starting values.
+
+// Intro, badges and the "reviewed against" line follow the country (the US text is prerendered).
+const INTRO = {
+  US: ['what lands in your account each paycheck after federal income tax, Social Security, Medicare, state tax and your 401(k), and where every dollar goes.', ['2026 IRS brackets', '401(k) slider', 'Child tax credit'], ' against IRS Rev. Proc. 2025-32, SSA and Tax Foundation data.'],
+  GB: ['what lands in your account each payday after Income Tax, National Insurance and your workplace pension, and where every pound goes.', ['2026/27 HMRC rates', 'Workplace pension', 'England, Wales and NI'], ' against HMRC 2026 to 2027 rates and thresholds.'],
+  CA: ['what lands in your account each payday after federal and provincial income tax, CPP and EI, and where every dollar goes.', ['2026 CRA rates', 'Ontario, BC and Alberta', 'RRSP contributions'], ' against Canada Revenue Agency 2026 payroll tables.'],
+  AU: ['what lands in your account each payday after income tax and the Medicare levy, and where every dollar goes. Your employer pays super on top.', ['2026-27 ATO rates', 'Medicare levy', 'Salary-sacrificed super'], ' against ATO resident tax rates for 2026-27.'],
+  IN: ['what lands in your account each month after income tax under the new regime, cess and your provident fund, and where every rupee goes.', ['FY 2026-27 new regime', '12 lakh rebate', 'Standard deduction'], ' against Income Tax Department slabs for FY 2026-27.'],
+  GULF: ['what lands in your account each month. Your country does not tax wages, so the calculator shows pension and other deductions you set.', ['No income tax on wages', 'Pension deductions', 'Any pay frequency'], ' against official guidance that wages are not taxed in this country.'],
+  OTHER: ['what lands in your account each payday after your income tax and social security, using the average rates from your own payslip.', ['Your own tax rates', 'Any currency', 'Any pay frequency'], ': enter your own rates from a recent payslip.'],
+};
+function setIntro() {
+  const [lede, badges, src] = INTRO[mode] || INTRO.OTHER;
+  $('lede').textContent = 'Enter your salary or hourly pay. See ' + lede;
+  const items = [...$('trust').querySelectorAll('li')];
+  [...badges, 'No sign-up, nothing uploaded'].forEach((t, i) => { if (items[i]) items[i].lastChild.textContent = t; });
+  $('reviewed').textContent = src;
+}
+
 function applyMode(resetValues) {
+  setIntro();
   const us = mode === 'US', ca = mode === 'CA';
   $('statusBox').hidden = !us; $('childrenBox').hidden = !us; $('hsaBox').hidden = !us;
   $('stateBox').hidden = !(us || ca);
