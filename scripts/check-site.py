@@ -104,4 +104,29 @@ for name in policy_names:assert 'noindex' not in (r/name/'index.html').read_text
 a=digest();output=subprocess.check_output(['node','scripts/site-seo.mjs'],cwd=r,text=True).strip();assert a==digest()
 assert output==f'site-seo: scanned {tool_page_count} HTML, noindex set on 0 policy pages, 0 sitemap URLs removed, top menu added to 0 pages.',output
 print(f'PASS seo: {policy_count} per-tool policy pages are noindex and out of sitemaps; top menu once on {tool_page_count} tool pages; root pages untouched')
+# SEO-2 limits noindex to the listed variants and snippet changes to the head.
+seo2=json.loads((r/'scripts/seo-2.json').read_text())
+listed={r/(url.lstrip('/')+'index.html') for url in seo2['noindex']}
+listed_urls={'https://bingemind.com'+url.rstrip('/') for url in seo2['noindex']}
+for p in listed:
+ s=p.read_text();tags=list(re.finditer(r'<meta\b(?=[^>]*\sname\s*=\s*([\'"])robots\1)[^>]*>',s,re.I))
+ assert len(tags)==1,('seo-2 robots tag count',p)
+ assert 'content="noindex, follow"' in tags[0][0],('seo-2 variant is not noindex, follow',p)
+for tool in tool_dirs:
+ sitemap=tool/'sitemap-0.xml'
+ if sitemap.is_file():
+  for loc in ET.parse(sitemap).getroot().iter():
+   if loc.tag.rsplit('}',1)[-1]=='loc':assert (loc.text or '').rstrip('/') not in listed_urls,('seo-2 variant in sitemap',sitemap,loc.text)
+ for p in tool.rglob('index.html'):
+  parts=p.relative_to(tool).parts
+  if len(parts)>1 and parts[0] not in policy_names and p not in listed:
+   assert 'noindex' not in p.read_text(),('seo-2 unlisted variant is noindex',p)
+for snippet in seo2['snippets']:
+ p=r/snippet['file'];s=p.read_text();head=re.search(r'<head\b[^>]*>[\s\S]*?</head\s*>',s,re.I)
+ assert head,('seo-2 missing head',p)
+ for old,new in [(snippet['oldTitle'],snippet['newTitle']),(snippet['oldDescription'],snippet['newDescription'])]:
+  if old is None and new is None:continue
+  assert new in head[0] and old not in head[0],('seo-2 snippet mismatch',p,old)
+ assert 'noindex' not in s,('seo-2 main tool is noindex',p)
+print(f"PASS seo-2: {len(listed)} listed variant pages are noindex and out of sitemaps; {len(seo2['snippets'])} snippets updated")
 print('All static checks passed. HTTP/browser/layout not tested by this script.')

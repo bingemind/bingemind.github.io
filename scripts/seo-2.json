@@ -1,0 +1,59 @@
+{
+  "noindex": [
+    "/barbell-plate-calculator/275-lb-barbell-plates/",
+    "/board-and-batten-calculator/board-and-batten-calculator-with-rails/",
+    "/board-and-batten-calculator/board-and-batten-spacing-1x2-battens/",
+    "/board-and-batten-calculator/board-and-batten-spacing-8-ft-wall/",
+    "/board-and-batten-calculator/board-and-batten-bathroom/",
+    "/cake-pan-converter/8-inch-square-to-9-inch-round-cake-pan/",
+    "/cake-pan-converter/cake-pan-conversion-chart/",
+    "/cake-pan-converter/9-inch-to-8-inch-round-cake-pan/",
+    "/cash-drawer-counter/food-truck-cash-drawer-count/",
+    "/column-to-comma/sql-in-list-generator/",
+    "/column-to-comma/column-to-html-list/",
+    "/markdown-to-pdf/markdown-to-pdf-on-android/",
+    "/markdown-to-pdf/markdown-to-pdf-with-math-and-diagrams/",
+    "/markdown-to-pdf/markdown-to-pdf-offline/",
+    "/markdown-to-pdf/markdown-to-pdf-on-iphone/",
+    "/markdown-to-pdf/markdown-to-pdf-no-watermark/",
+    "/markdown-to-pdf/readme-to-pdf/",
+    "/markdown-to-pdf/markdown-to-pdf-no-upload/",
+    "/online-ruler/inches/",
+    "/online-ruler/phone/",
+    "/poster-tiler/classroom-bulletin-board-poster/",
+    "/rebar-weight-calculator/8-rebar-weight-per-foot/",
+    "/rebar-weight-calculator/how-many-pieces-of-rebar-in-a-ton/",
+    "/rebar-weight-calculator/4-rebar-weight-per-foot/",
+    "/rebar-weight-calculator/6-rebar-weight-per-foot/",
+    "/rebar-weight-calculator/rebar-weight-chart/",
+    "/rebar-weight-calculator/16mm-rebar-weight-per-meter/",
+    "/rebar-weight-calculator/5-rebar-weight-per-foot/",
+    "/rebar-weight-calculator/12mm-rebar-weight-per-meter/",
+    "/rebar-weight-calculator/7-rebar-weight-per-foot/",
+    "/rolling-offset-calculator/steel-pipe-rolling-offset-calculator/",
+    "/sourdough-starter-calculator/1-2-2-feeding-ratio/"
+  ],
+  "snippets": [
+    {
+      "file": "cash-drawer-counter/index.html",
+      "oldTitle": "Cash Drawer Counter | Count Your Till Fast, Free",
+      "newTitle": "Cash Drawer Counter and Count Sheet | Free Till Calculator",
+      "oldDescription": "Cash drawer counter for shift end. Enter bills, coins and rolls, set your float, and see the deposit and which bills to pull. Free and private.",
+      "newDescription": "Free cash drawer counter and count sheet. Enter bills, coins and rolls, set your opening float, and see the deposit and which bills to pull. Private, no sign-up."
+    },
+    {
+      "file": "poster-tiler/index.html",
+      "oldTitle": "Print Poster on Multiple Pages: Free Poster Tiler",
+      "newTitle": "Poster Tiler: Print a Poster on Multiple Pages, Free",
+      "oldDescription": "Split any image into a multi-page PDF poster. Free, no watermark, no sign-up. Your picture never leaves your device.",
+      "newDescription": "Free print tiler. Split any image into a 2x2, 3x3 or larger multi-page PDF poster. No watermark, no sign-up, and your picture never leaves your device."
+    },
+    {
+      "file": "barbell-plate-calculator/index.html",
+      "oldTitle": null,
+      "newTitle": null,
+      "oldDescription": "Enter a target weight and see the plates to load on each side of the barbell. lb and kg, any bar, your plates, warm-up sets.",
+      "newDescription": "How many plates is 225 or 315? Type a target weight and see the plates for each side of the barbell, in lb or kg, for any bar and your own plates, with warm-up sets."
+    }
+  ]
+}
