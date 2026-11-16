@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-US" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Time Card Calculator with Lunch Breaks and Overtime (Free, Printable)</title>
+<meta name="description" content="Free time card calculator for any country (12 or 24 hour clock, any currency). Enter clock-in, clock-out and lunch for each day to get hours worked in hours:minutes and decimal, overtime and pay. Weekly or bi-weekly, overnight shifts, print or CSV.">
+<link rel="canonical" href="https://bingemind.com/time-card-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Card Calculator with Lunch Breaks and Overtime">
+<meta property="og:description" content="Clock-in and clock-out times to weekly hours, overtime and pay. Print a time card or download CSV.">
+<meta property="og:url" content="https://bingemind.com/time-card-calculator/">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:image" content="https://bingemind.com/time-card-calculator/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://bingemind.com/time-card-calculator/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="../overtime-calculator/engine.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Time Card Calculator","url":"https://bingemind.com/time-card-calculator/","inLanguage":"en-US","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-13","publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add up clock-in and clock-out times with lunch breaks into weekly hours, overtime and pay. Weekly or bi-weekly, with print and CSV."},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Time Card Calculator","item":"https://bingemind.com/time-card-calculator/"}]}
+]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate hours worked on a time card?", "acceptedAnswer": {"@type": "Answer", "text": "For each day, subtract the clock-in time from the clock-out time, then subtract unpaid breaks. Add the days together for the week. For example, 8:30 AM to 5:15 PM is 8 hours 45 minutes; minus a 30-minute lunch gives 8 hours 15 minutes, or 8.25 decimal hours."}}, {"@type": "Question", "name": "How do I convert minutes to decimal hours?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, 45 minutes is 0.75. So 7 hours 45 minutes is 7.75 decimal hours. Payroll uses decimal hours because you can multiply them by your hourly rate."}}, {"@type": "Question", "name": "Are lunch breaks paid?", "acceptedAnswer": {"@type": "Answer", "text": "Under federal law, meal breaks of 30 minutes or more where you are fully relieved of duty can be unpaid. Short rest breaks of about 5 to 20 minutes count as work time and must be paid. Some states have their own meal and rest break rules."}}, {"@type": "Question", "name": "How do I calculate an overnight shift?", "acceptedAnswer": {"@type": "Answer", "text": "If your clock-out time is earlier than your clock-in time, the shift crossed midnight. Add 24 hours to the clock-out time before subtracting. This calculator does that for you, so 10:00 PM to 6:30 AM with a 30-minute break is 8 hours."}}, {"@type": "Question", "name": "Is time card rounding legal?", "acceptedAnswer": {"@type": "Answer", "text": "Federal rules allow rounding to the nearest 5 minutes, tenth of an hour (6 minutes) or quarter hour (15 minutes), as long as it is neutral and does not always favor the employer over time. California courts are stricter, so many employers there pay exact minutes."}}, {"@type": "Question", "name": "How is overtime calculated on a bi-weekly time card?", "acceptedAnswer": {"@type": "Answer", "text": "Overtime is counted for each workweek on its own, even if you are paid every two weeks. 50 hours in week one and 30 in week two gives 10 overtime hours, not zero. This calculator splits bi-weekly cards into two weeks for that reason."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to calculator</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Time Card Calculator</p>
+      <span class="eyebrow rise d1">Weekly or bi-weekly · overnight shifts</span>
+      <h1 class="lift"><span class="shine">Time Card Calculator</span></h1>
+      <p class="lede lift">Enter clock-in, clock-out and lunch for each day. Get total hours in hours:minutes and decimal, overtime, and pay. Print a clean time card or download it as CSV.</p>
+      <ul class="trust rise d4">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Daily and weekly overtime</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>5, 6 or 15-minute rounding</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Printable time card</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Saved in your browser only</li>
+      </ul>
+      <p class="byline rise d4">By the Bingemind tools team · Reviewed <time datetime="2026-11-13">13 November 2026</time> against DOL break and rounding rules.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="tool" id="calc">
+      <noscript><p class="note">This calculator needs JavaScript. Without it: daily hours = clock-out − clock-in − unpaid break.</p></noscript>
+      <form class="card lift" id="form" novalidate>
+        <h2>Your time card</h2>
+        <p class="sub">Times like 8:30, 830 or 5:30 pm all work. Leave days off blank.</p>
+
+        <div class="seg" aria-label="Pay period" id="period">
+          <button type="button" data-value="1" aria-checked="true">Weekly</button>
+          <button type="button" data-value="2" aria-checked="false">Bi-weekly</button>
+        </div>
+
+        <div class="grid-2">
+          <div class="field"><label for="name">Employee name <span class="hint">(optional)</span></label><input class="input" id="name" autocomplete="name" placeholder="For the printout"></div>
+          <div class="field"><label for="startDate">Week starting</label><input class="input" id="startDate" type="date"></div>
+        </div>
+
+        <div id="weeks"></div>
+
+        <div class="mini-actions">
+          <button class="btn small" type="button" id="copyMon">Copy Monday to Tue–Fri</button>
+          <button class="btn small" type="button" data-fill="09:00|17:00|30">9–5, 30 min lunch</button>
+          <button class="btn small" type="button" data-fill="08:00|16:30|30">8–4:30</button>
+          <button class="btn small" type="button" id="clearAll">Clear</button>
+        </div>
+
+        <div class="grid-2" style="margin-top:12px">
+          <div class="field">
+            <label for="rate">Hourly rate</label>
+            <div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="rate" inputmode="decimal" autocomplete="off" value="20"></div>
+          </div>
+          <div class="field">
+            <label for="rule">Overtime rules</label>
+            <select class="input" id="rule">
+              <option value="federal">Federal (over 40/week)</option>
+              <option value="california">California (daily + weekly)</option>
+              <option value="alaska">Alaska</option>
+              <option value="colorado">Colorado</option>
+              <option value="none">No overtime</option>
+            </select>
+          </div>
+        </div>
+
+        <details class="adv">
+          <summary>Rounding and multipliers</summary>
+          <div class="grid-2">
+            <div class="field">
+              <label for="rounding">Round punches to</label>
+              <select class="input" id="rounding">
+                <option value="0">Exact minutes</option>
+                <option value="5">Nearest 5 minutes</option>
+                <option value="6">Nearest 6 minutes (tenth)</option>
+                <option value="15">Nearest 15 minutes</option>
+              </select>
+            </div>
+            <div class="field"><label for="otMult">Overtime multiplier</label><input class="input" id="otMult" inputmode="decimal" value="1.5"></div>
+          </div>
+        </details>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div class="result-top">
+          <div>
+            <h2 id="resTitle">Total hours</h2>
+            <div class="big" id="hm">40:00</div>
+          </div>
+          <div style="text-align:right">
+            <div class="hint">Decimal hours</div>
+            <div style="font:800 1.6rem var(--f-head);font-variant-numeric:tabular-nums" id="dec">40</div>
+          </div>
+        </div>
+        <div class="stackbar" role="img" id="bar" aria-label="Hours split">
+          <span id="barReg" style="background:var(--reg)"></span><span id="barOt" style="background:var(--ot)"></span><span id="barDt" style="background:var(--dt)"></span>
+        </div>
+        <ul class="legend">
+          <li><span class="k"><i style="background:var(--reg)"></i>Regular</span><span class="v" id="regH">0</span><span class="s" id="regPay"></span></li>
+          <li><span class="k"><i style="background:var(--ot)"></i>Overtime</span><span class="v" id="otH">0</span><span class="s" id="otPay"></span></li>
+          <li><span class="k"><i style="background:var(--dt)"></i>Double time</span><span class="v" id="dtH">0</span><span class="s" id="dtPay"></span></li>
+        </ul>
+        <dl class="kv">
+          <dt>Gross pay</dt><dd id="gross" style="font-size:1.2rem">$0.00</dd>
+          <dt id="w1l" hidden>Week 1</dt><dd id="w1" hidden></dd>
+          <dt id="w2l" hidden>Week 2</dt><dd id="w2" hidden></dd>
+        </dl>
+        <p class="note" id="msg" hidden></p>
+        <p class="print-only" id="printSign" style="margin-top:28px">Employee signature ____________________ &nbsp; Date ________<br><br>Supervisor signature __________________ &nbsp; Date ________</p>
+        <div class="actions">
+          <button class="btn primary" type="button" id="printCard">Print time card</button>
+          <button class="btn" type="button" id="csvCard">CSV</button>
+          <button class="btn" type="button" id="copyCard">Copy totals</button>
+          <button class="btn" type="button" id="shareCard">Share link</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to calculate hours on a time card</span></h2>
+        <p>For each day, take the clock-out time, subtract the clock-in time, and subtract any unpaid break. Then add up the days. Payroll needs the total in decimal hours, so divide any leftover minutes by 60.</p>
+        <div class="formula">Daily hours = clock-out − clock-in − unpaid break<br>Decimal hours = hours + (minutes ÷ 60)<br>Pay = regular hours × rate + overtime hours × rate × 1.5</div>
+        <h3>Example</h3>
+        <p>8:30 AM to 5:15 PM is 8 hours 45 minutes. Take off a 30-minute lunch and you get 8:15, which is 8.25 decimal hours. Five days like that make 41.25 hours: 40 regular and 1.25 overtime. At $20 an hour that is $800 + $37.50 = <b>$837.50</b>.</p>
+        <button class="btn small" type="button" data-example="08:30|17:15|30|20">Load this example</button>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Minutes to decimal hours chart</span></h2>
+      <p class="prose">Use this when your payroll system asks for decimal hours.</p>
+      <div class="chart-grid" id="chart"></div>
+    </section>
+
+        <section class="section reveal">
+      <h2><span class="shine">Rounding, breaks and overnight shifts explained</span></h2>
+      <div class="prose">
+
+        <p>Most mistakes on a time card come from three places: minutes that are written as if they were decimals, unpaid breaks that are left in or taken out twice, and shifts that cross midnight. This guide covers each one so your total matches what payroll will pay.</p>
+        <h3>Minutes are not decimals</h3>
+        <p>An hour has 60 minutes, so 7:30 is 7.5 hours, not 7.30. A shift from 8:45 to 5:15 is 8 hours 30 minutes, which is 8.5 hours. To convert, divide the minutes by 60: 20 minutes is 0.33 hours, 40 minutes is 0.67 hours. Pay is then hours times rate, so 8.5 hours at $18.00 an hour is $153.00. The chart above shows every minute value so you do not have to divide each time.</p>
+        <h3>Unpaid lunch and other breaks</h3>
+        <p>Enter the length of any unpaid break and it is subtracted from that day. A 30-minute lunch on a 9-hour span leaves 8.5 paid hours. Short rest breaks of about 5 to 20 minutes are generally paid under US federal rules, so they stay in the total. Meal breaks of 30 minutes or more are generally unpaid only when the worker is fully relieved of duty. Rules differ by country and state, and your employer's policy decides what you are actually paid, so check your contract or handbook.</p>
+        <h3>Shifts that go past midnight</h3>
+        <p>For a night shift such as 10:00 PM to 6:00 AM, the clock-out time is earlier than the clock-in time. The calculator treats that as a shift that ends the next day, so it counts 8 hours instead of a negative number. Pay for the whole shift is normally counted in the workweek where it started, but check how your payroll assigns hours that fall on two calendar days.</p>
+        <h3>Rounding to the quarter hour</h3>
+        <p>Many employers round punches to the nearest 5 minutes, 6 minutes (a tenth of an hour) or 15 minutes. In the US, rounding is allowed when it is neutral and averages out so that workers are paid for all the time they work. Always rounding down in the employer's favour is not allowed. Use the rounding setting to match your employer's system and compare the result with your pay stub. If the two totals differ by more than a few minutes a week, ask your payroll team how punches are rounded.</p>
+        <table class="tbl"><thead><tr><th>Punch</th><th>Rounded to 15 minutes</th></tr></thead><tbody>
+        <tr><td>8:01 to 8:07</td><td>8:00</td></tr><tr><td>8:08 to 8:22</td><td>8:15</td></tr><tr><td>8:23 to 8:37</td><td>8:30</td></tr><tr><td>8:38 to 8:52</td><td>8:45</td></tr></tbody></table>
+        <h3>From weekly hours to overtime</h3>
+        <p>After you total the week, hours above the overtime threshold are paid at a higher rate. In the US the federal rule is time and a half after 40 hours in a workweek for most hourly workers. Some states, such as California, also pay overtime after 8 hours in a day. Other countries use different thresholds, which the rule list above covers. If you want the pay for the overtime part worked out in detail, use the overtime calculator and carry your weekly total across.</p>
+        <h3>Weekly, bi-weekly and semi-monthly pay periods</h3>
+        <p>A weekly card covers 7 days. A bi-weekly card covers 14 days, and overtime is still counted week by week, not across the two weeks. A semi-monthly period runs twice a month, for example the 1st to the 15th and the 16th to the end of the month, so the number of working days changes from period to period. Pick the period length that matches your employer, and fill each week separately so overtime is counted correctly.</p>
+        <h3>Checking your time card before you sign</h3>
+        <ul>
+          <li>Make sure every clock-in has a clock-out, and that AM and PM are right. A missing PM adds 12 hours.</li>
+          <li>Check that the unpaid break is entered once, on the right days.</li>
+          <li>Compare the total with the hours on your pay stub. If they differ, the cause is usually rounding, an unpaid break, or a punch that was edited.</li>
+          <li>Keep your own record. In the US, employers must keep time records, but your own notes help if there is ever a dispute.</li>
+          <li>Use Share link to send a filled card to a manager, or Download CSV to open it in a spreadsheet.</li>
+        </ul>
+        <h3>Common time card mistakes</h3>
+        <p>Writing 7:30 as 7.30 shortchanges you by 12 minutes. Subtracting a lunch break from a day that already excludes it counts it twice. Adding up daily rounded numbers instead of rounding each punch can shift the total by a few minutes. Forgetting that a shift crosses midnight can produce a total of zero or a negative number. The calculator avoids all four, but it only knows what you enter, so check the times against your actual clock records.</p>
+        <h3>Who uses a time card calculator</h3>
+        <p>Hourly employees use it to check their pay stub. Freelancers and contractors use it to prepare an invoice from their logged hours. Small business owners use it to total hours for a team without paying for software, and parents who employ a nanny or carer use it to keep a record of paid hours. It works the same for each of them: enter the times, check the total, and keep the record.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Worked time card examples</span></h2>
+      <div class="prose">
+
+        <p>These examples use the US federal overtime rule (time and a half after 40 hours a week) and a rate of $20 an hour. Enter the same times above to check them.</p>
+        <h3>Example 1: a standard week</h3>
+        <p>Monday to Friday, 9:00 AM to 5:30 PM with a 30-minute unpaid lunch. Each day is 8 hours, so the week is 40 hours with no overtime. Pay is 40 × $20 = $800.00.</p>
+        <h3>Example 2: a long week with overtime</h3>
+        <p>Monday to Friday, 8:00 AM to 6:00 PM with a one-hour unpaid lunch. Each day is 9 hours, so the week is 45 hours. The first 40 hours pay $800.00. The 5 overtime hours pay 5 × $30 = $150.00. Gross pay is $950.00.</p>
+        <h3>Example 3: a night shift</h3>
+        <p>Monday to Friday, 10:00 PM to 6:00 AM with a 30-minute unpaid break. Each shift is 7.5 hours, so the week is 37.5 hours. At $22 an hour, pay is 37.5 × $22 = $825.00.</p>
+        <h3>Example 4: a split shift</h3>
+        <p>On Saturday you work 9:00 AM to 1:00 PM, go home, and return from 5:00 PM to 9:00 PM. The two blocks are 4 hours each, so the day is 8 hours. Enter the gap as an unpaid break of 4 hours, or enter each block as its own row.</p>
+        <h3>Example 5: how rounding changes a day</h3>
+        <p>You clock in at 8:08 AM and out at 4:52 PM with a 30-minute lunch. Exact time is 8 hours 14 minutes, or 8.23 hours. With 15-minute rounding the punches become 8:15 and 4:45, which is 8 hours 0 minutes after the lunch. One day can move by a quarter hour either way, and rounding is fair only when it averages out over many shifts.</p>
+        <h3>Working-time rules outside the US</h3>
+        <p>Overtime and rest rules vary widely. In the EU, the Working Time Directive sets an average maximum of 48 hours a week and minimum rest periods, and each country adds its own overtime pay rules. In the UK there is no statutory overtime rate, so it depends on your contract. In India, the Factories Act generally limits work to 48 hours a week, with overtime at twice the ordinary rate for covered workers, and state laws for shops and offices differ. In Australia, awards and enterprise agreements set penalty rates. The rule list in the calculator applies a typical threshold for each country, and you can switch to custom rules if your contract is different.</p>
+        <h3>Keeping records</h3>
+        <p>Save a copy of each period's hours. Download the CSV, print the page, or copy the share link, which holds your entries in the web address. Your times are processed in your browser and are not sent to a server, so there is no account to create and nothing to delete later.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Time card tips for employers and freelancers</span></h2>
+      <div class="prose">
+
+        <h3>For small employers</h3>
+        <p>Pick one clear rule for rounding, breaks and the start of the workweek, write it down, and apply it to everyone. Make sure employees can see and approve their hours before payroll runs. Keep time records for the period your local law requires. In the US, the Fair Labor Standards Act requires employers to keep records of hours worked and wages paid, generally for at least three years for payroll records. Check state requirements, which can be longer.</p>
+        <h3>For freelancers and contractors</h3>
+        <p>Log your time as you go, since estimating at the end of the week is usually wrong. Total each client separately, and multiply by your rate for the invoice. Consider billing in 15-minute or 6-minute blocks and say so in your contract. The CSV download opens in any spreadsheet so you can attach it to an invoice as proof of hours.</p>
+        <h3>For nannies, carers and household staff</h3>
+        <p>Household employees are covered by wage rules in many places, including overtime in some US states. Keep a weekly card signed by both sides. Count unpaid breaks only when the employee is truly free to leave or rest, and be clear about overnight stays and on-call time, which are treated differently by different states and countries.</p>
+        <h3>Converting a total into decimal hours for payroll software</h3>
+        <p>Most payroll systems want decimal hours, such as 38.75, and not 38 hours 45 minutes. The result panel shows both. If you enter hours manually, round to two decimals so that the difference over a year stays small. Use the minutes chart above to convert quickly.</p>
+        <h3>Privacy</h3>
+        <p>This calculator runs in your browser. The times you enter, your name and your rate stay on your device, and are saved only in your browser's local storage so your card is there next time. Clear your browser data to remove it. When you use Share link, the entries are placed in the web address, so only send it to people you want to see your hours.</p>
+        <h3>Frequently overlooked details</h3>
+        <p>Daylight saving changes can add or remove an hour in a night shift on the days the clocks move. Time zones matter for remote teams, so record the local time of the place where the work is done. Public holidays may pay at a higher rate in your region. Lastly, always confirm the final total against your employer's own timekeeping system, since that is what is used to pay you.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Time card questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate hours worked on a time card?</summary><p>For each day, subtract the clock-in time from the clock-out time, then subtract unpaid breaks. Add the days together for the week. For example, 8:30 AM to 5:15 PM is 8 hours 45 minutes; minus a 30-minute lunch gives 8 hours 15 minutes, or 8.25 decimal hours.</p></details>
+        <details><summary>How do I convert minutes to decimal hours?</summary><p>Divide the minutes by 60. 15 minutes is 0.25 hours, 30 minutes is 0.5, 45 minutes is 0.75. So 7 hours 45 minutes is 7.75 decimal hours. Payroll uses decimal hours because you can multiply them by your hourly rate.</p></details>
+        <details><summary>Are lunch breaks paid?</summary><p>Under federal law, meal breaks of 30 minutes or more where you are fully relieved of duty can be unpaid. Short rest breaks of about 5 to 20 minutes count as work time and must be paid. Some states have their own meal and rest break rules.</p></details>
+        <details><summary>How do I calculate an overnight shift?</summary><p>If your clock-out time is earlier than your clock-in time, the shift crossed midnight. Add 24 hours to the clock-out time before subtracting. This calculator does that for you, so 10:00 PM to 6:30 AM with a 30-minute break is 8 hours.</p></details>
+        <details><summary>Is time card rounding legal?</summary><p>Federal rules allow rounding to the nearest 5 minutes, tenth of an hour (6 minutes) or quarter hour (15 minutes), as long as it is neutral and does not always favor the employer over time. California courts are stricter, so many employers there pay exact minutes.</p></details>
+        <details><summary>How is overtime calculated on a bi-weekly time card?</summary><p>Overtime is counted for each workweek on its own, even if you are paid every two weeks. 50 hours in week one and 30 in week two gives 10 overtime hours, not zero. This calculator splits bi-weekly cards into two weeks for that reason.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related">
+        <a href="https://bingemind.com/overtime-calculator/"><b>Overtime calculator</b><span>Daily and weekly overtime, double time and state rules.</span></a>
+        <a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-home pay calculator</b><span>Your paycheck after federal, state and FICA taxes.</span></a>
+        <a href="https://bingemind.com/hourly-to-salary-calculator/"><b>Hourly to salary calculator</b><span>Your hourly pay as weekly, monthly and yearly pay.</span></a>
+      </div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Sources and limits</h2>
+      <p>Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>, the <a href="https://www.gov.uk/maximum-weekly-working-hours">UK government working hours guide</a> and the <a href="https://eur-lex.europa.eu/eli/dir/2003/88/oj">EU Working Time Directive 2003/88/EC</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>

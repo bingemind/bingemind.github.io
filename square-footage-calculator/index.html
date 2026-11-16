@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en-US" class="js-off">
+<head>
+<!-- bm-consent-default v1 -->
+<script>window.dataLayer=window.dataLayer||[];window.bmAnalyticsAllowed=false;function gtag(){if(arguments[0]==='event'&&!window.bmAnalyticsAllowed)return;window.dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script>
+<!-- /bm-consent-default -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+      // GA4 event "tool_used": once per page load, on the first real use of the tool.
+      (function () {
+        var sent = false;
+        var CONTROL = 'input,select,textarea,button,label,canvas,[contenteditable],[role="button"],[role="tab"],[role="switch"],[role="checkbox"],[role="radio"],[role="slider"]';
+        function slug() {
+          // Shared hosts (bingemind.com/<slug>/, github.io previews) use the first path segment. A tool's own domain uses the host name.
+          var h = location.hostname;
+          if (/(^|\.)(bingemind\.com|github\.io)$/.test(h)) return location.pathname.split('/').filter(Boolean)[0] || h;
+          return h.replace(/^www\./, '');
+        }
+        function onUse(e) {
+          if (sent || !window.bmAnalyticsAllowed || typeof gtag !== 'function') return;
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var main = document.getElementById('main');
+          if (!main || !main.contains(t)) return;
+          if (t.closest('header,nav,footer,details,summary,a')) return;
+          if (e.type === 'click' && !t.closest(CONTROL)) return;
+          sent = true;
+          gtag('event', 'tool_used', { tool: slug() });
+        }
+        ['input', 'change', 'click'].forEach(function (n) { document.addEventListener(n, onUse, true); });
+      })();
+    </script>
+<title>Square Footage Calculator: Rooms, L-Shapes, Circles + Cost</title>
+<meta name="description" content="Free square footage and square meter calculator for any country. Add rooms in feet and inches or meters, including L-shaped, round and triangular areas. Get total sq ft, sq yd and sq m, waste, cost and flooring boxes.">
+<link rel="canonical" href="https://bingemind.com/square-footage-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bingemind">
+<meta property="og:title" content="Square Footage Calculator: Rooms, L-Shapes, Circles + Cost">
+<meta property="og:description" content="Add every room, see a live drawing, and get total square feet, waste, cost and flooring boxes.">
+<meta property="og:url" content="https://bingemind.com/square-footage-calculator/">
+<meta property="og:image" content="https://bingemind.com/square-footage-calculator/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://bingemind.com/square-footage-calculator/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon_io/favicon-32x32.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="./kit.css">
+<link rel="modulepreload" href="./engine.js"><link rel="modulepreload" href="./kit.js"><link rel="modulepreload" href="./region.js">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Square Footage Calculator","url":"https://bingemind.com/square-footage-calculator/","inLanguage":"en-US","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","dateModified":"2026-11-13","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Bingemind","url":"https://bingemind.com/"},"isPartOf":{"@type":"WebSite","name":"Bingemind","url":"https://bingemind.com/"},"description":"Calculate square footage for rooms of any shape in feet and inches or meters, with multi-room totals, waste factor, cost and flooring boxes."},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bingemind.com/tools/"},{"@type":"ListItem","position":2,"name":"Square Footage Calculator","item":"https://bingemind.com/square-footage-calculator/"}]}
+]}
+</script>
+<script type="application/ld+json" id="faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate square footage of a room?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the length by the width, both in feet. A room 12 feet long and 10 feet wide is 120 square feet. Convert inches to feet first by dividing by 12, so 10 feet 6 inches is 10.5 feet."}}, {"@type": "Question", "name": "How do I calculate square footage of an L-shaped room?", "acceptedAnswer": {"@type": "Answer", "text": "Measure the full length and width as if the room were a rectangle, then subtract the missing corner. A 20 by 15 foot room with an 8 by 6 foot corner missing is 300 − 48 = 252 square feet. You can also split it into two rectangles and add them."}}, {"@type": "Question", "name": "How many square feet are in a square yard?", "acceptedAnswer": {"@type": "Answer", "text": "There are 9 square feet in one square yard, because a yard is 3 feet and 3 × 3 = 9. To convert square feet to square yards, divide by 9. Carpet is often priced per square yard."}}, {"@type": "Question", "name": "How do I convert square feet to square meters?", "acceptedAnswer": {"@type": "Answer", "text": "Divide square feet by 10.764. So 200 square feet is about 18.58 square meters. To go the other way, multiply square meters by 10.764."}}, {"@type": "Question", "name": "How much extra flooring should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Buy about 10% extra for laminate, vinyl plank, hardwood and carpet, 15% for tile or a diagonal pattern, and 20% for herringbone or rooms with many angles. The extra covers cuts, mistakes and future repairs."}}, {"@type": "Question", "name": "How do I measure square footage of a house?", "acceptedAnswer": {"@type": "Answer", "text": "Measure each room and hallway and add them together, or measure the outside walls and subtract garages, porches and unfinished spaces. Real estate listings usually count finished, heated living space only, so your total may differ from a listing."}}, {"@type": "Question", "name": "How many square feet is a 12 by 12 room?", "acceptedAnswer": {"@type": "Answer", "text": "A 12 by 12 foot room is 144 square feet. With 10% extra for waste, buy about 159 square feet of flooring."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415157843778771"
+     crossorigin="anonymous"></script>
+<!-- bm-ad-safe v1: added by briefs/inject_adsense.py (ADS-2). Google anchor ads float over the top or bottom edge of the screen. -->
+<style id="bm-ad-safe">
+@media screen {
+  /* Room at the end of every page, so the footer and the last buttons can scroll clear of a bottom anchor ad (up to 100 px tall, plus a 24 px gap). Present from the first paint, so nothing moves when an ad shows. */
+  body::after { content: ""; display: block; height: calc(124px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 1023px) {
+  /* Phones and tablets: the header scrolls away with the page, so its links never stay under or next to a top anchor ad. */
+  header.sticky { position: static; }
+}
+</style>
+<!-- /bm-ad-safe -->
+<link rel="stylesheet" href="/js/site-footer.css">
+</head>
+<body><!-- bm-topbar v1 --><style>.bm-topbar{background:#fff;border-bottom:1px solid #e5e7eb;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;position:relative;z-index:50}.bm-topbar nav{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:44px;flex-wrap:wrap}.bm-topbar a{color:#374151;text-decoration:none;padding:12px 10px;border-radius:6px}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#111827;background:#f3f4f6}.bm-topbar a:focus-visible{outline:2px solid #2563eb;outline-offset:1px}.bm-topbar .bm-brand{font-weight:700;color:#111827;margin-right:auto;padding-left:0}@media (prefers-color-scheme:dark){.bm-topbar{background:#0b0f17;border-color:#1f2937}.bm-topbar a{color:#d1d5db}.bm-topbar a:hover,.bm-topbar a:focus-visible{color:#fff;background:#1f2937}.bm-topbar .bm-brand{color:#fff}}@media print{.bm-topbar{display:none}}</style><div class="bm-topbar"><nav aria-label="Bingemind"><a class="bm-brand" href="/">Bingemind</a><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><!-- /bm-topbar -->
+<a class="skip" href="#calc">Skip to calculator</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://bingemind.com/"><span class="brand-dot" aria-hidden="true"></span>Bingemind</a>
+    <nav class="head-nav" aria-label="Main">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <span data-region-picker></span>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumbs rise"><a href="https://bingemind.com/tools/">Tools</a> / Square Footage Calculator</p>
+      <span class="eyebrow rise d1">Any room shape · feet and inches or meters</span>
+      <h1 class="lift"><span class="shine">Square Footage Calculator</span></h1>
+      <p class="lede lift">Add each room, hallway or patio. Square, L-shaped, round or angled, you get the total square feet, a live drawing, and how much flooring, tile or carpet to buy, with waste and cost.</p>
+      <ul class="trust rise d4">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Multi-room totals</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live drawing</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Waste, cost and boxes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Print or CSV</li>
+      </ul>
+      <p class="byline rise d4">By the Bingemind tools team · Formulas checked <time datetime="2026-11-13">13 November 2026</time>.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <noscript><p class="note">This calculator needs JavaScript. Without it: square feet = length (ft) × width (ft).</p></noscript>
+    <div class="tool" id="calc">
+      <form class="card lift" id="form" novalidate>
+        <h2>Your rooms</h2>
+        <p class="sub" id="roomsHint">Enter feet and inches (12 ft 6 in) or switch to meters. Results update as you type.</p>
+        <div class="seg" aria-label="Units" id="units">
+          <button type="button" data-value="imperial" aria-checked="true">Feet + inches</button>
+          <button type="button" data-value="metric" aria-checked="false">Meters</button>
+        </div>
+        <div class="rooms" id="rooms"></div>
+        <div class="mini-actions">
+          <button class="btn" type="button" id="addRoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add room or area</button>
+          <button class="btn small" type="button" id="clearRooms">Start over</button>
+        </div>
+        <details class="adv" open>
+          <summary>Materials: waste, price and box size</summary>
+          <div class="grid-2">
+            <div class="field">
+              <label for="waste">Extra for waste</label>
+              <select class="input" id="waste">
+                <option value="0">None</option>
+                <option value="5">5% (simple carpet, paint)</option>
+                <option value="10" selected>10% (most flooring)</option>
+                <option value="15">15% (tile, diagonal layout)</option>
+                <option value="20">20% (herringbone, odd shapes)</option>
+              </select>
+            </div>
+            <div class="field"><label for="price" id="priceLbl">Price per sq ft</label><div class="affix"><span class="pre" aria-hidden="true" data-cur>$</span><input class="input has-pre" id="price" inputmode="decimal" placeholder="optional"></div></div>
+          </div>
+          <div class="field"><label for="box" id="boxLbl">Sq ft per box <span class="hint">(on the flooring box)</span></label><input class="input" id="box" inputmode="decimal" placeholder="optional, e.g. 22"></div>
+        </details>
+      </form>
+
+      <section class="card sticky-col lift" aria-labelledby="resTitle" id="results" tabindex="-1">
+        <div class="result-top">
+          <div>
+            <h2 id="resTitle">Total area</h2>
+            <div class="big"><span id="sqft">200</span> <small id="unitBig">sq ft</small></div>
+          </div>
+          <div class="hint" id="roomCount">2 areas</div>
+        </div>
+        <svg class="draw" id="draw" role="img" aria-label="Drawing of the selected room"></svg>
+        <ul class="legend">
+          <li><span class="k">Square yards</span><span class="v" id="sqyd">22.22</span><span class="s">carpet is sold in sq yd</span></li>
+          <li><span class="k">Square meters</span><span class="v" id="sqm">18.58</span><span class="s">m²</span></li>
+          <li><span class="k">Acres</span><span class="v" id="acres">0.0046</span><span class="s">43,560 sq ft each</span></li>
+        </ul>
+        <dl class="kv">
+          <dt>With waste (<span id="wasteLbl">10%</span>)</dt><dd id="withWaste">220 sq ft</dd>
+          <dt id="boxesL" hidden>Boxes to buy</dt><dd id="boxes" hidden></dd>
+          <dt id="costL" hidden>Material cost</dt><dd id="cost" hidden></dd>
+        </dl>
+        <div class="tbl-wrap" id="tableWrap"></div>
+        <div class="actions">
+          <button class="btn primary" type="button" id="copyRes">Copy result</button>
+          <button class="btn" type="button" id="shareRes">Share link</button>
+          <button class="btn" type="button" id="csvRes">CSV</button>
+          <button class="btn" type="button" id="printRes">Print</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
+
+    <section class="section reveal" id="how">
+      <div class="prose">
+        <h2><span class="shine">How to calculate square footage</span></h2>
+        <p>Measure the length and width of the room in feet and multiply them. If a measurement has inches, divide the inches by 12 and add them to the feet first: 12 feet 6 inches is 12.5 feet. For odd-shaped rooms, split the space into rectangles, add their areas, and subtract any cut-outs.</p>
+        <div class="formula">Rectangle = length × width<br>L-shape = (full length × full width) − (cut-out length × cut-out width)<br>Circle = 3.1416 × (diameter ÷ 2)²<br>Triangle = ½ × base × height<br>Trapezoid = (top + bottom) ÷ 2 × height</div>
+        <h3>How much flooring to buy</h3>
+        <p>Add 10% for waste with most plank flooring and carpet, 15% for tile or diagonal layouts, and 20% for herringbone. Divide the total by the square feet in one box and round up. Keep a spare box for future repairs.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Common room sizes</span></h2>
+      <div class="prose">
+        <div class="tbl-wrap">
+          <table class="tbl rate-table">
+            <thead><tr><th>Room</th><th>Size</th><th>Square feet</th><th>With 10% waste</th></tr></thead>
+            <tbody>
+              <tr><td>Small bedroom</td><td>10 × 10 ft</td><td>100</td><td>110</td></tr>
+              <tr><td>Primary bedroom</td><td>14 × 16 ft</td><td>224</td><td>246</td></tr>
+              <tr><td>Living room</td><td>16 × 20 ft</td><td>320</td><td>352</td></tr>
+              <tr><td>Kitchen</td><td>10 × 15 ft</td><td>150</td><td>165</td></tr>
+              <tr><td>Bathroom</td><td>5 × 8 ft</td><td>40</td><td>44</td></tr>
+              <tr><td>One-car garage</td><td>12 × 22 ft</td><td>264</td><td>290</td></tr>
+              <tr><td>Two-car garage</td><td>24 × 24 ft</td><td>576</td><td>634</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+        <section class="section reveal">
+      <h2><span class="shine">Measuring a room and choosing how much to buy</span></h2>
+      <div class="prose">
+
+        <p>Square footage tells you how much floor, wall or ceiling you have. It is the number behind almost every home project: flooring, paint, carpet, tile, sod and even rent. Getting it right avoids both a second trip to the store and a pile of leftover material.</p>
+        <h3>The basic formulas</h3>
+        <table class="tbl"><thead><tr><th>Shape</th><th>Area</th></tr></thead><tbody>
+        <tr><td>Rectangle or square</td><td>length × width</td></tr>
+        <tr><td>Triangle</td><td>½ × base × height</td></tr>
+        <tr><td>Circle</td><td>π × radius × radius (about 3.1416 × r²)</td></tr>
+        <tr><td>Trapezoid</td><td>½ × (top + bottom) × height</td></tr>
+        <tr><td>L-shaped room</td><td>split into two rectangles and add them</td></tr></tbody></table>
+        <h3>How to measure</h3>
+        <p>Use a tape measure and measure at the widest points, wall to wall, not along the baseboard. Measure twice and write the numbers down. If the room is not a perfect rectangle, divide it into simple shapes, calculate each one, and add them together. Subtract areas you will not cover, such as a kitchen island, a fireplace hearth or a built-in cabinet, if you are buying floor material.</p>
+        <h3>Converting between units</h3>
+        <table class="tbl"><thead><tr><th>From</th><th>To</th><th>Multiply by</th></tr></thead><tbody>
+        <tr><td>square feet</td><td>square meters</td><td>0.092903</td></tr>
+        <tr><td>square meters</td><td>square feet</td><td>10.7639</td></tr>
+        <tr><td>square yards</td><td>square feet</td><td>9</td></tr>
+        <tr><td>square feet</td><td>square yards</td><td>0.1111</td></tr>
+        <tr><td>acres</td><td>square feet</td><td>43,560</td></tr></tbody></table>
+        <p>Carpet in the US is often sold by the square yard, so divide your square feet by 9. In most other countries, areas and prices are in square meters. The calculator switches between feet and meters automatically based on your region, and you can change the unit yourself.</p>
+        <h3>How much extra to buy (waste)</h3>
+        <ul>
+          <li><b>Tile and straight-lay flooring:</b> add about 10% for cuts and breakage.</li>
+          <li><b>Diagonal or patterned layouts:</b> add 15% or more, since more pieces are trimmed.</li>
+          <li><b>Carpet:</b> comes in fixed-width rolls, so ask the store to plan the layout. The waste depends on room shape and roll width.</li>
+          <li><b>Hardwood and laminate:</b> add about 5% to 10%, plus a few extra boxes if the product may be discontinued.</li>
+          <li><b>Paint:</b> one gallon usually covers roughly 350 to 400 square feet of wall, one coat. Check the label, because coverage depends on the paint and the surface.</li>
+        </ul>
+        <p>Set the waste percentage in the calculator to see the quantity you should buy, and add a unit price to see the cost.</p>
+        <h3>Wall area for paint</h3>
+        <p>For paint you need wall area, not floor area. Add up the length of all walls (the perimeter), multiply by the ceiling height, and subtract doors and windows. A 12 by 14 foot room with 8 foot ceilings has a perimeter of 52 feet, so 416 square feet of wall before subtracting a door (about 20 square feet) and two windows (about 15 square feet each).</p>
+        <h3>Square footage in real estate</h3>
+        <p>Listings usually quote finished living area, which counts heated, finished space and leaves out garages, unfinished basements and porches. Standards for how to measure differ by country and even by agent, so two sources can give different totals for the same house. When the number matters, such as for a price per square foot, ask what was included and measure it yourself or hire a surveyor.</p>
+        <h3>Price per square foot</h3>
+        <p>Divide a price by the area to compare options. A $2,400 floor that covers 300 square feet costs $8 per square foot. The same method works for rent and for home sales. Use the same unit for both numbers: a price per square meter is about 10.76 times a price per square foot.</p>
+        <h3>Common mistakes</h3>
+        <p>Mixing feet and inches without converting (a room that is 10 feet 6 inches is 10.5 feet, not 10.6). Measuring the room as a single rectangle when it has an alcove. Forgetting closets that need flooring. Forgetting to add waste. And ordering the exact area with no spare, which leaves you short if one piece is damaged. The room list in this calculator lets you add each part separately so none of them is missed.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Worked square footage examples</span></h2>
+      <div class="prose">
+
+        <h3>Example 1: a bedroom and the flooring to buy</h3>
+        <p>A bedroom is 12 feet by 14 feet. Area is 12 × 14 = 168 square feet. With 10% waste you need 168 × 1.10 = 184.8, so buy about 185 square feet. If the planks come in boxes of 20 square feet, that is 10 boxes (9.24 rounds up). At $3.50 per square foot the material costs about $647.50 for the 185 square feet, or $700.00 if you buy all 10 boxes.</p>
+        <h3>Example 2: an L-shaped living room</h3>
+        <p>The main part is 16 by 12 feet, which is 192 square feet. The extra alcove is 8 by 6 feet, which is 48 square feet. The total is 240 square feet. Enter them as two parts in the room list.</p>
+        <h3>Example 3: a round patio</h3>
+        <p>A patio has a radius of 5 feet. Area is 3.1416 × 5 × 5 = 78.54 square feet. If you only know the diameter, halve it first.</p>
+        <h3>Example 4: a room measured in meters</h3>
+        <p>A room is 4.2 by 3.6 meters, so the area is 15.12 square meters. Multiplied by 10.7639, that is about 162.75 square feet. This is useful when a flooring box is labelled in one unit and your tape measure uses the other.</p>
+        <h3>Example 5: a whole apartment</h3>
+        <p>Living room 240, bedroom 168, second bedroom 120, kitchen 90, bathroom 45 and hallway 36 square feet add up to 699 square feet. The calculator adds the rooms for you and shows the total in square feet and square meters, which is helpful for comparing listings in different countries.</p>
+        <h3>Floors, walls, ceilings and outdoor areas</h3>
+        <p>Floor area is length times width. Ceiling area is usually the same as the floor. Wall area is the perimeter times the height, less openings. For a lawn or garden, split it into rectangles, circles and triangles, then add them. Large outdoor areas are often quoted in acres (43,560 square feet) or in hectares (10,000 square meters), so convert before you compare prices. Sod and gravel suppliers usually sell by area or volume, so confirm the unit before you order.</p>
+        <h3>Tile and flooring layout tips</h3>
+        <ul>
+          <li>Start from the centre of the room so cut pieces at the walls are about the same size.</li>
+          <li>Buy all the material from the same batch, because colour can vary between production runs.</li>
+          <li>Keep a box or two after the job for future repairs.</li>
+          <li>Acclimate wood and laminate in the room for the time the manufacturer recommends before you lay it.</li>
+          <li>Check whether stairs, closets and the area under appliances need covering. They are easy to forget.</li>
+        </ul>
+        <h3>Renting and buying by the square foot</h3>
+        <p>Rent and sale prices are often compared per square foot or per square meter. To compare fairly, ask whether the area is carpet area, built-up area or gross area, because the same flat can have different numbers depending on the definition. In India, for example, carpet area, built-up area and super built-up area are three different figures, and the usable floor space is the carpet area. In the US, listings usually give gross living area. Use this calculator to measure the space you can actually use.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Square footage in practice: projects and costs</span></h2>
+      <div class="prose">
+
+        <h3>Flooring cost example</h3>
+        <p>A 200 square foot room with 10% waste needs 220 square feet. With laminate at $2.50 per square foot the material is $550. Add underlay at $0.50 per square foot ($110), and installation at $3 per square foot on the room area ($600), and the project is about $1,260. Prices change a lot by region and product, so use your own quotes, and enter the unit price in the calculator to see the total.</p>
+        <h3>Paint example</h3>
+        <p>A room with 52 feet of wall and 8 foot ceilings has 416 square feet of wall. Subtract one door and two windows (about 50 square feet) to get 366 square feet. Two coats need 732 square feet of coverage, which is about 2 gallons at 400 square feet per gallon. Buy a little extra for touch-ups.</p>
+        <h3>Carpet example</h3>
+        <p>Carpet is sold in 12-foot wide rolls in the US. A 12 by 14 foot room fits on a single 12-foot width, 14 feet long, which is 168 square feet, or 18.7 square yards. A room that is 13 feet wide needs a seam or a second width, so the amount to buy is greater than the floor area.</p>
+        <h3>Heating, cooling and cleaning</h3>
+        <p>Area is also the starting point for sizing heating and cooling, and for planning cleaning supplies. A common rule of thumb for room air conditioners is about 20 BTU per square foot, adjusted for ceiling height, sun and the number of people. Treat this as a first estimate and follow the manufacturer's sizing chart, or ask an installer, before you buy.</p>
+        <h3>Accuracy tips</h3>
+        <ul>
+          <li>Round measurements up to the nearest inch, not down.</li>
+          <li>Measure in one unit only. Convert feet and inches to decimal feet first (6 inches is 0.5 feet, 3 inches is 0.25 feet).</li>
+          <li>Sketch the room and label each side before you start, so you do not mix up the numbers.</li>
+          <li>For walls and floors that are out of square, measure the longest side.</li>
+          <li>Save your result with Share link or CSV, so you can show the supplier your measurements.</li>
+        </ul>
+        <h3>Inches to decimal feet</h3>
+        <table class="tbl"><thead><tr><th>Inches</th><th>Feet</th><th>Inches</th><th>Feet</th></tr></thead><tbody>
+        <tr><td>1</td><td>0.083</td><td>7</td><td>0.583</td></tr><tr><td>2</td><td>0.167</td><td>8</td><td>0.667</td></tr><tr><td>3</td><td>0.25</td><td>9</td><td>0.75</td></tr><tr><td>4</td><td>0.333</td><td>10</td><td>0.833</td></tr><tr><td>5</td><td>0.417</td><td>11</td><td>0.917</td></tr><tr><td>6</td><td>0.5</td><td>12</td><td>1</td></tr></tbody></table>
+        <h3>Privacy</h3>
+        <p>Your measurements are calculated in the browser. Nothing is uploaded, and the page saves your rooms only on your own device so they are still there when you return.</p>
+
+      </div>
+    </section>
+
+    <section class="section reveal faq" id="faq">
+      <h2><span class="shine">Square footage questions</span></h2>
+      <div class="prose" data-faq>
+        <details><summary>How do I calculate square footage of a room?</summary><p>Multiply the length by the width, both in feet. A room 12 feet long and 10 feet wide is 120 square feet. Convert inches to feet first by dividing by 12, so 10 feet 6 inches is 10.5 feet.</p></details>
+        <details><summary>How do I calculate square footage of an L-shaped room?</summary><p>Measure the full length and width as if the room were a rectangle, then subtract the missing corner. A 20 by 15 foot room with an 8 by 6 foot corner missing is 300 − 48 = 252 square feet. You can also split it into two rectangles and add them.</p></details>
+        <details><summary>How many square feet are in a square yard?</summary><p>There are 9 square feet in one square yard, because a yard is 3 feet and 3 × 3 = 9. To convert square feet to square yards, divide by 9. Carpet is often priced per square yard.</p></details>
+        <details><summary>How do I convert square feet to square meters?</summary><p>Divide square feet by 10.764. So 200 square feet is about 18.58 square meters. To go the other way, multiply square meters by 10.764.</p></details>
+        <details><summary>How much extra flooring should I buy?</summary><p>Buy about 10% extra for laminate, vinyl plank, hardwood and carpet, 15% for tile or a diagonal pattern, and 20% for herringbone or rooms with many angles. The extra covers cuts, mistakes and future repairs.</p></details>
+        <details><summary>How do I measure square footage of a house?</summary><p>Measure each room and hallway and add them together, or measure the outside walls and subtract garages, porches and unfinished spaces. Real estate listings usually count finished, heated living space only, so your total may differ from a listing.</p></details>
+        <details><summary>How many square feet is a 12 by 12 room?</summary><p>A 12 by 12 foot room is 144 square feet. With 10% extra for waste, buy about 159 square feet of flooring.</p></details>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2><span class="shine">Related tools</span></h2>
+      <div class="related">
+        <a href="https://bingemind.com/rebar-weight-calculator/"><b>Rebar weight calculator and chart</b><span>The total weight of a rebar list in lb, kg and tons.</span></a>
+        <a href="https://bingemind.com/board-and-batten-calculator/"><b>Board and batten calculator</b><span>Spacing and marks for a board and batten wall.</span></a>
+        <a href="https://bingemind.com/online-ruler/"><b>Online ruler</b><span>A ruler on your screen at actual size.</span></a>
+      </div>
+    </section>
+
+    <section class="section reveal sources">
+      <h2 style="font-size:1.1rem">Notes</h2>
+      <p><strong>Estimate only.</strong> Areas are calculated from the measurements you enter and shown to two decimals. Waste allowances are common trade guidelines, so check the installation guide for your product, and confirm measurements before you order materials or sign a contract. Your rooms stay in this browser.</p>
+      <p>Sources: unit conversions follow <a href="https://www.nist.gov/pml/special-publication-811">NIST Special Publication 811</a> (1 foot is exactly 0.3048 meters). How homes are measured for listings is described in <a href="https://singlefamily.fanniemae.com/media/30266/display">Fannie Mae guidance on the ANSI Z765 measuring standard</a>. <a href="https://bingemind.com/about/">About our tools</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="/tools/">All tools</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    <p>© <span data-year>2026</span> Bingemind. Free tools that run in your browser.</p>
+  </div>
+<!-- bm-site-links v1 --><nav class="bm-site-links" aria-label="Cookie settings"><a href="#bm-consent" data-cookie-settings>Cookie settings</a></nav><!-- /bm-site-links --></footer>
+<script type="module" src="./app.js"></script>
+<script src="/js/consent.js" data-analytics="on" defer></script></body>
+</html>
