@@ -148,3 +148,13 @@ test('no-tax-on-overtime premium counts only overtime that is actually paid', ()
   const under = wk([8, 8, 8, 8, 8, 0, 0], 'federal');
   assert.equal(under.qualifiedPremiumWeek, 0);
 });
+
+// Country text: US keeps its own sources, the UK and EU countries get their official page, everyone else gets neutral text with no US source.
+import { sourcesForRegion } from '../../overtime-calculator/engine.js';
+test('sourcesForRegion follows the country', () => {
+  assert.equal(sourcesForRegion('US').us, true);
+  assert.deepEqual(sourcesForRegion('GB').links.map((l) => l.url), ['https://www.gov.uk/maximum-weekly-working-hours']);
+  assert.deepEqual(sourcesForRegion('FR').links.map((l) => l.url), ['https://eur-lex.europa.eu/eli/dir/2003/88/oj']);
+  for (const c of ['AU', 'IN', 'AE', 'CA', 'ZZ']) { const s = sourcesForRegion(c); assert.equal(s.us, false); assert.equal(s.links.length, 0); }
+  for (const c of ['GB', 'FR', 'AU', 'IN']) for (const l of sourcesForRegion(c).links) assert.ok(l.url.startsWith('https://'));
+});

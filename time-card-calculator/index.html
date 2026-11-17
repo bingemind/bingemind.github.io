@@ -105,7 +105,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Printable time card</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Saved in your browser only</li>
       </ul>
-      <p class="byline rise d4">By the Bingemind tools team · Reviewed <time datetime="2026-11-13">13 November 2026</time> against DOL break and rounding rules.</p>
+      <p class="byline rise d4">By the Bingemind tools team · Reviewed <time datetime="2026-11-13">13 November 2026</time> against <span id="bySrc">DOL break and rounding rules</span>.</p>
     </div>
   </section>
 
@@ -207,6 +207,7 @@
     <aside class="ad-slot" aria-label="Advertisement">Advertisement</aside>
 
     <section class="section reveal" id="how">
+      <p class="hint" id="usGuideNote" hidden>The guide below explains US rules and figures. The rule for your country is in the calculator above.</p>
       <div class="prose">
         <h2><span class="shine">How to calculate hours on a time card</span></h2>
         <p>For each day, take the clock-out time, subtract the clock-in time, and subtract any unpaid break. Then add up the days. Payroll needs the total in decimal hours, so divide any leftover minutes by 60.</p>
@@ -317,14 +318,14 @@
       <h2><span class="shine">Related tools</span></h2>
       <div class="related">
         <a href="https://bingemind.com/overtime-calculator/"><b>Overtime calculator</b><span>Daily and weekly overtime, double time and state rules.</span></a>
-        <a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-home pay calculator</b><span>Your paycheck after federal, state and FICA taxes.</span></a>
+        <a href="https://bingemind.com/take-home-pay-calculator/"><b>Take-home pay calculator</b><span>Your paycheck after tax and deductions.</span></a>
         <a href="https://bingemind.com/hourly-to-salary-calculator/"><b>Hourly to salary calculator</b><span>Your hourly pay as weekly, monthly and yearly pay.</span></a>
       </div>
     </section>
 
     <section class="section reveal sources">
       <h2 style="font-size:1.1rem">Sources and limits</h2>
-      <p>Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>, the <a href="https://www.gov.uk/maximum-weekly-working-hours">UK government working hours guide</a> and the <a href="https://eur-lex.europa.eu/eli/dir/2003/88/oj">EU Working Time Directive 2003/88/EC</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
+      <p id="srcText">Break and rounding rules checked on 13 November 2026 against the <a href="https://www.dol.gov/agencies/whd/fact-sheets/22-flsa-hours-worked">DOL hours worked fact sheet</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-B/chapter-V/subchapter-B/part-785/subpart-C/subject-group-ECFR6f9d4a2e6e3b4b1/section-785.48">29 CFR 785.48 (rounding)</a> the <a href="https://www.dir.ca.gov/dlse/faq_mealperiods.htm">California DIR</a>, the <a href="https://www.gov.uk/maximum-weekly-working-hours">UK government working hours guide</a> and the <a href="https://eur-lex.europa.eu/eli/dir/2003/88/oj">EU Working Time Directive 2003/88/EC</a>. Your entries stay in this browser. This tool gives estimates, not legal or payroll advice.</p>
     </section>
   </div>
 </main>

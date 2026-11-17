@@ -1,7 +1,12 @@
 // Take-home pay engine, tax year 2026. Pure functions.
 // Federal: IRS Rev. Proc. 2025-32. Social Security wage base: SSA ($184,500).
 // State rates: Tax Foundation "State Individual Income Tax Rates and Brackets, 2026".
-// Reviewed 13 Nov 2026.
+// Reviewed 13 Nov 2026. Official sources (links):
+//   IRS 2026 inflation adjustments (Rev. Proc. 2025-32): https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill
+//   Social Security wage base: https://www.ssa.gov/oact/cola/cbb.html
+//   California 2026 indexing (FTB): https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html
+//   Mississippi Department of Revenue: https://www.dor.ms.gov/general-information
+//   State rates (not a tax authority, cross-check against each state's revenue site): https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/
 
 export const YEAR = 2026;
 

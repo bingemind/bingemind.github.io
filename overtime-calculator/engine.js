@@ -1,5 +1,11 @@
 // Overtime engine: pure functions, no DOM. Used by the page and by tests.
-// Rules last reviewed: 13 Nov 2026. Sources are listed on the page.
+// Rules last reviewed: 13 Nov 2026. Sources are listed on the page. Official sources behind the US rules:
+//   US Department of Labor, overtime: https://www.dol.gov/agencies/whd/overtime
+//   California DIR: https://www.dir.ca.gov/dlse/faq_overtime.htm
+//   Alaska: https://labor.alaska.gov/lss/whact.htm
+//   Colorado CDLE: https://cdle.colorado.gov/wage-and-hour-law
+//   Nevada: https://labor.nv.gov/
+//   IRS qualified overtime deduction (2025 to 2028): https://www.irs.gov/newsroom/questions-and-answers-about-the-new-deduction-for-qualified-overtime-compensation
 
 export const RULES = {
   federal:    { label: 'Federal (FLSA): over 40 hours a week', dailyOT: null, dailyDT: null, weeklyOT: 40, seventhDay: false, us: true, group: 'United States' },
@@ -44,6 +50,18 @@ export const RULE_GROUPS = ['United States', 'Canada', 'Asia-Pacific', 'Middle E
 // Default rule for each country in the picker (anything not listed keeps the custom rule).
 export const RULE_FOR_REGION = { US: 'federal', CA: 'ca_on', AU: 'au', IN: 'in', SG: 'sg', MY: 'my', JP: 'jp', KR: 'kr', PH: 'ph',
   AE: 'ae', SA: 'sa', ZA: 'za', FR: 'fr', DE: 'de', GB: 'gb', IE: 'ie', MX: 'mx', BR: 'br', NZ: 'custom' };
+
+// Official source shown for a country on the overtime and time card pages (rule 14: text follows the country).
+// Only pages already vetted on these tool pages are listed. Other countries get neutral text, no link.
+//   UK:  https://www.gov.uk/maximum-weekly-working-hours
+//   EU:  https://eur-lex.europa.eu/eli/dir/2003/88/oj
+const EU = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'];
+export function sourcesForRegion(code) {
+  if (code === 'US') return { us: true, links: [] };
+  if (code === 'GB') return { us: false, links: [{ label: 'UK government working hours guide', url: 'https://www.gov.uk/maximum-weekly-working-hours' }] };
+  if (EU.includes(code)) return { us: false, links: [{ label: 'EU Working Time Directive 2003/88/EC', url: 'https://eur-lex.europa.eu/eli/dir/2003/88/oj' }] };
+  return { us: false, links: [] };
+}
 
 export const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
